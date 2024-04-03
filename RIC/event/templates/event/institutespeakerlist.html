@@ -1,0 +1,140 @@
+{% extends 'base.html' %} {% load static %} {% block banner %}
+<script>
+    @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+        .waviy {
+          position: relative;
+          -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+          font-size: 60px;
+        }
+        .waviy span {
+          font-family: 'Alfa Slab One', cursive;
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          text-transform: uppercase;
+          animation: waviy 2.5s infinite;
+          animation-delay: calc(.2s * var(--i));
+
+        }
+        @keyframes waviy {
+          0%,40%,100% {
+            transform: translateY(0)
+          }
+          20% {
+            transform: translateY(-20px)
+          }
+        }
+</script>
+
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                <h2>Speakers</h2>
+              </b></center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+
+{% endblock banner %} {% block content %}
+
+<!-- this is temporary for upcoming speakers -->
+<div class="waviy">
+   <span style="--i:1">c</span>
+   <span style="--i:2">o</span>
+   <span style="--i:3">m</span>
+   <span style="--i:4">i</span>
+   <span style="--i:5">n</span>
+   <span style="--i:6">g</span>
+   <span style="--i:7">s</span>
+   <span style="--i:8">o</span>
+   <span style="--i:9">o</span>
+   <span style="--i:10">n</span>
+  </div>
+
+
+<!--<div class="row">-->
+<!--    <div class="row">-->
+<!--        <div class="col-xs-12">-->
+<!--            <div class="sponsors-area">-->
+<!--                {% for i in institutespeaker_list %}-->
+<!--                {% if i.id == 22 %}-->
+<!--                <div class="single">-->
+<!--                    <a class="" href="{% url 'event:speakerdetail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+<!--                    <div class="speaker-info">-->
+<!--                        <h5 class="font-weight-bold mt-4 mb-3">-->
+<!--                            <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+<!--                            <p><strong>{{i.position}}</strong></p>-->
+<!--                        </h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+        <!--//col-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--    <div class="row">-->
+<!--        <div class="col-xs-12">-->
+<!--            <div class="sponsors-area">-->
+<!--                {% for i in institutespeaker_list %}-->
+<!--                {% if i.id != 22 and i.id <= 9 %}-->
+<!--                <div class="single">-->
+<!--                    <a class="" href="{% url 'event:speakerdetail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+<!--                    <div class="speaker-info">-->
+<!--                        <h5 class="font-weight-bold mt-4 mb-3">-->
+<!--                            <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+<!--                            <p><strong>{{i.position}}</strong></p>-->
+<!--                        </h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+        <!--//col-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--    <div class="row">-->
+<!--        <div class="col-xs-12">-->
+<!--            <div class="sponsors-area">-->
+<!--                {% for i in institutespeaker_list %}-->
+<!--                {% if i.id != 22 and i.id > 9 %}-->
+<!--                <div class="single">-->
+<!--                    <a class="" href="{% url 'event:speakerdetail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+<!--                    <div class="speaker-info">-->
+<!--                        <h5 class="font-weight-bold mt-4 mb-3">-->
+<!--                            <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+<!--                            <p><strong>{{i.position}}</strong></p>-->
+<!--                        </h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+
+
+<!--            </div>-->
+<!--        </div>-->
+        <!--//col-->
+<!--    </div>-->
+<!--</div>-->
+{% endblock content %}

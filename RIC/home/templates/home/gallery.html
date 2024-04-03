@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+              <h2><u>Gallery</u></h2>
+            </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<br>
+<section class="team-section text-center my-5" style="overflow-x: hidden;">
+
+
+  <div id="gallery" class="container-fluid">
+       {% for image in images %}
+        <img src="{{ image.pic.url }}" class="img-responsive box-image" alt="{{ image.name }}">
+
+       {% endfor %}
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZd1QXGsiJF-sTW_B5zgivDMF4nkmaq1s3Yn6jAKUkRg&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<video class="vid" controls>-->
+    <!--  <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">-->
+    <!--  </source>-->
+    <!--</video>-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREG1bJyD7FQAMyCthJ2Rp-xfJF5Vebwh2i1Acdgd2yuw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">   -->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">   -->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl6IlRAcp33hUbz2iLr-E9J7X4W7tWGJeNu3TrMgY6Ag&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoUkrQZ07zc7qz6ybMnxF7vEsmRSNQ5f51vJBzqViw6w&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCA6DNVJ8WElPNppLEdXejxxSF4Kkf0HgEngSjWmsaAg&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+    <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgGgTVm5HjPVf8tVYy94yrr-sz4LOU1MY_XcW3bHYPw&usqp=CAU&ec=48600112" class="img-responsive box-image">-->
+  </div>
+
+</section>
+{% endblock content %}

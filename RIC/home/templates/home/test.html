@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+              <h2><u>Registration</u></h2>
+            </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+      <br>
+      <br>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+              <center>
+
+            <h3 class="card-title">Registration/Login for Research and Industrial 2023</h3>
+            <h2 style="">IITG students are requested to register through outlook mail ID to get waive off from Registration fee</h2>
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Click Here</a>
+              </center>
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+{% endblock content %}

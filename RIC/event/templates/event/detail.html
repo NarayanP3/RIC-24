@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+                <h2>{{object}}</h2>
+                <h3 style="color:#0011ff">{{object.subtitle}}</h3>
+              </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+<center><h2> Registration Dates To Be Announced Soon</h2></center>
+  <!--{% if event.name == 'MATH OLYMPICS' %}-->
+  <!--  <center><h2> <a href="{% url 'members:mathEvent_create' %}">Register for Math Olympics</a></h2></center>-->
+  <!--{% elif event.name == 'INTEGRATION BEE' %}-->
+  <!--  <center><h2> <a href="{% url 'members:integrationBee_create' %}">Register for Integration Bee</a></h2></center>-->
+  <!--{% elif event.name == "D'SinoQuation" %}-->
+  <!--  <center><h2> <a href="{% url 'members:differentiaChallenge_create' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'SCIENTIFIQUE' %}-->
+  <!--  <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'ATELIER' %}-->
+  <!--  <center><h2> <a href="{% url 'members:workshop_create' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'CONNAISSANCE' %}-->
+  <!--  <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'DISCUTIR' %}-->
+  <!--  <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'EMPRENDIMIENTO' %}-->
+  <!--  <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'HACKATHON' %}-->
+    <!--<center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'INDSOL' %}-->
+  <!--  <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'TECH TALK' %}-->
+  <!--  <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% elif event.name == 'INNOVATION EXHIBIT' %}-->
+  <!--  <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>-->
+  <!--{% else %}-->
+  <!--  <center><h2> <a href="">Register </a></h2></center>-->
+  <!--{% endif %}-->
+{% else %}
+    <center><h2>
+        {% if event.name == 'HACKATHON' %}
+        {% else %}
+          <a href="{% url 'home:redirection' %}"> Signup/Login </a>
+          {% endif%}
+    </h2></center>
+
+{% endif %}
+
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+  }
+  tr:hover {background-color: #D6EEEE;}
+
+  /* Workshops */
+    .card-item {
+	/* display: flex; */
+    	width: 100%;
+    	padding: 5px;
+    }
+
+    .card-body {
+    	display: flex;
+        margin: auto;
+    	flex-direction: column;
+    	justify-content: space-around;
+    	width: 50%;
+    	padding: 0;
+    	background-color: #F8FFF8;
+    	border-radius: 3px;
+    	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+
+    .card-body p {
+    	flex: 1 0 auto;
+    	margin: 0;
+    }
+
+    .card-title,
+    .card-text,
+    .card-footer {
+    	padding: 5px;
+    }
+
+    .card-footer {
+    	margin-bottom: .5em;
+    }
+
+    .btn {
+    	display: inline-block;
+    	margin: 1rem;
+    	padding: .5rem 1rem;
+    	letter-spacing: .05rem;
+    	text-decoration: none;
+    	text-shadow: 0 1px 0 rgba(77,77,77,.5);
+    	background: #1E90FF;
+    	border-radius: .25rem;
+    	box-shadow: 0 0 1px 1px rgba(77,77,77,.5);
+    	color: floralwhite;
+    	cursor: pointer;
+    	transition: .5s;
+    }
+
+    .btn:hover {
+    	background: #ADD8E6;
+    	color: #333;
+    }
+
+    .time{
+        display: flex;
+    }
+
+    .time div{
+        flex: 1 1 0;
+    }
+
+    .hackathon-sponsors{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+    .hackathon-sponsors img{
+        width:20%;
+    }
+</style>
+
+
+{% if event.name == "SCIENTIFIQUE" or event.name ==  "ATELIER" %}
+  <center>
+    <h3> Fees Details
+    </h3>
+    <table>
+      <tr>
+        <th>Events</th>
+        <th>Students</th>
+        <th>Academicians</th>
+        <th>Industy Experts</th>
+        <th>Others</th>
+      </tr>
+      <tr>
+        <td>Workshop</td>
+        <td>Rs 250-500</td>
+        <td>Rs 500</td>
+        <td>Rs 500</td>
+        <td>Rs 500</td>
+      </tr>
+      <tr>
+        <td>Oral/Poster/Model/ 3MT</td>
+        <td>Rs 500</td>
+        <td>Rs 1500</td>
+        <td>Rs 3000</td>
+        <td>Rs 3000</td>
+      </tr>
+    </table>
+  </center>
+
+
+{% endif %}
+
+{% if object.id == 2 %}
+
+    {% for i in workshop_list %}
+
+        <center>
+
+
+            <div class="card-item">
+              <div class="card-body">
+                <center> <h2>{{i.title}}</h2></center>
+                <div class="speaker">
+                  <h3 class="card-title center">Speaker : {{i.name|safe}}</h3>
+                </div>
+                <div class="time">
+                  <div class="venue">
+                    <h4 class="card-title center">Venue</h4>
+                    <p class="card-text">{{i.venue|safe}}</p>
+                  </div>
+                  <div class="timing">
+                    <h4 class="card-title center">Date and Time</h4>
+                    <p class="card-text">{{i.organised_at|safe}}</p>
+                  </div>
+                </div>
+                <div class="">
+                  <h3 class="card-title">Key Takeaways</h3>
+                  {{i.desc|safe}}
+                </div>
+
+                <div class="card-footer center">
+                  <a class="btn" href="{% url 'members:workshop_create' %}">Register Here</a>
+                </div>
+              </div>
+            </div>
+
+
+
+          <!--<div class="container" style="width: 100%;">-->
+
+
+
+          <!--  {% if forloop.counter0|divisibleby:"2" %}-->
+          <!--      <div class="row" style="background-color: #FFFDD0;">-->
+          <!--  {% else %}-->
+          <!--      <div class="row" style="background-color:white;">-->
+          <!--  {% endif %}-->
+          <!--    <h1>{{i.name|safe}}</h1><br>-->
+
+          <!--    <center>-->
+          <!--      <h4>-->
+          <!--        <b>Date and Time: {{i.organised_at}}</b>-->
+          <!--      </h4>-->
+          <!--    </center>-->
+
+          <!--    <br />-->
+          <!--    <center>-->
+          <!--      <p style="padding-left: 5rem; padding-right: 5rem;">-->
+          <!--        {{i.desc|safe}}-->
+          <!--      </p><br>-->
+
+          <!--    </center>-->
+          <!--    <br>-->
+
+          <!--    <div class="row">-->
+          <!--      <div class="col-sm-6 col-xs-12 col-md-6"><a href="{{i.link}}" class="lgx-btn lgx-btn-red"><b>SPEAKER: {{i.conducted_by|safe}}-->
+          <!--          </b></a></div>-->
+                <!--  -->
+          <!--      <div class="col-sm-6 col-xs-12 col-md-6">-->
+          <!--        <h4><b><a href="w" class="lgx-btn lgx-btn-red">REGISTER HERE</a></b></h4>-->
+          <!--      </div>-->
+          <!--    </div>-->
+          <!--    </h4>-->
+          <!--  </div>-->
+          <!--</div>-->
+
+        </center>
+    {% endfor %}
+
+{% elif event.name == "HACKATHON" %}
+    <div class="container">
+        <center>
+        <div
+        	class="apply-button"
+        	data-hackathon-slug="richackathon2023"
+        	data-button-theme="light"
+        	style="height: 44px; width: 312px"
+        ></div>
+    </center>
+
+      <div class="container">
+        <p>{{object.content|safe|linebreaks}}</p>
+      </div>
+      <div class="container" style="text-align: center;">
+        <h2>In association with <b>Devs Dungeon</b></h2>
+        <p></p>
+        <img src="{% static 'home/assets/img/devsdungeon.png' %}" alt="Devs Dungeon logo" width="50%">
+      </div>
+
+
+      <div class="container" style="text-align: center;">
+        <h2>Hackathon sponsors</h2>
+        <p></p>
+        <div class="hackathon-sponsors">
+            <img src="{% static 'home/assets/img/devfolio.png' %}" alt="DEVFOLIO LOGO">
+            <img src="{% static 'home/assets/img/polygon.png' %}" alt="POLYGON LOGO">
+            <img src="{% static 'home/assets/img/solana.png' %}" alt="SOLANA LOGO">
+            <img src="{% static 'home/assets/img/filecoin.png' %}" alt="FILECOIN LOGO">
+            <img src="{% static 'home/assets/img/replit.png' %}" alt="REPLIT LOGO">
+
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="container" style="text-align: center;">
+        <p></p>
+        <div class="hackathon-sponsors">
+            <img src="{% static 'home/assets/img/tezos-new-logo-2.png' %}" alt="TEZOS LOGO" width="50%">
+
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+
+      <div class="container" style="text-align: center;">
+
+
+      </div>
+    </div>
+{% else %}
+    <div class="container">
+      <div class="container">
+        <p>{{object.content|safe|linebreaks}}</p>
+      </div>
+    </div>
+{% endif %}
+<!-- <a href="{% static 'files/RC_2022_Abstract_Template.doc' %}">link</a> -->
+
+
+{% endblock content %}

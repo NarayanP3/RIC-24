@@ -1,0 +1,48 @@
+from django.urls import path, reverse_lazy
+from . import views
+
+
+app_name='members'
+urlpatterns = [
+    path('', views.ProfileListView.as_view(),name='all'),
+    path('send-work-info/', views.send_workshop, name='send_workshop'),
+    path('update-ic/', views.update_ic_fees, name='update_ic_fees'),
+    path('pay/', views.send_payment, name='payment'),
+    path('pay-empre/', views.send_payment_empre, name='payment_empre'),
+    path('update-user-info/', views.update_workshop_bio, name='update_user_info'),
+    path('registration_stats/', views.registrations_count, name='registration_stats'),
+    path('update_names_and_emails/', views.update_names_and_emails, name='update_names_and_emails'),
+    path('update-bio-events/', views.update_bio_events, name='update_bio_events'),
+    path('send-preRIC/', views.send_instructions, name='send_preRIC'),
+    path('send-institute-invitation/', views.send_institute_invitation, name='send_institute_invitation'),
+    path('send-speaker-invitation/', views.send_speaker_invitation, name='send_speaker_invitation'),
+    path('change-all/', views.change_all, name='change_all'),
+    path('send-mail/', views.send_mail_to_selected_participants, name='send_mail'),
+    # path('register/', views.ProfileCreateView.as_view(),name='create'),
+   # path('register/', views.ProfileRICCreateView.as_view(),name='create'),
+    path('register/', views.closed_view,name='create'),
+    path('icregister/', views.ProfileICCreateView.as_view(),name='iccreate'),
+    path('workshop_create/', views.WorkshopCreateView.as_view(),name='workshop_create'),
+    path('accommodation_create/', views.AccommodationCreateView.as_view(),name='accommodation_create'),
+    path('accommodation_detail/<int:pk>/', views.AccommodationDetailView.as_view(),name='accommodation_detail'),
+    path('integrationBee/', views.IntegrationBeeCreateView.as_view(),name='integrationBee_create'),
+    path('integrationBee/<int:pk>/', views.IntegrationBeeDetailView.as_view(),name='integrationBee_detail'),
+    path('dsinoQuation/', views.DifferentiaChallengeCreateView.as_view(),name='differentiaChallenge_create'),
+    path('dsinoQuation/<int:pk>/', views.DifferentiaChallengeDetailView.as_view(),name='differentiaChallenge_detail'),
+    path('mathOlympics/', views.MathEventCreateView.as_view(),name='mathEvent_create'),
+    path('mathOlympics/<int:pk>/', views.MathEventDetailView.as_view(),name='mathEvent_detail'),
+    path('mathOlympicsInd/', views.MathEventIndCreateView.as_view(),name='mathEventInd_create'),
+    path('mathOlympicsInd/<int:pk>/', views.MathEventIndDetailView.as_view(),name='mathEventInd_detail'),
+    path('stud_detail/<int:pk>', views.StudDetailUpdateView.as_view(),name='stud_detail'),
+    path('id_card/<int:pk>', views.IDUpdateView.as_view(),name='id_card'),
+    path('detail/<int:pk>/', views.ProfileDetailView.as_view(),name='detail'),
+    path('ric-detail/<int:pk>/', views.ProfileRICDetailView.as_view(),name='ric-detail'),
+    path('detail/ic/<int:pk>/', views.ProfileICDetailView.as_view(),name='icdetail'),
+    path('workshop_detail/<int:pk>/', views.WorkshopDetailView.as_view(),name='workshop_detail'),
+    path('abstract/<int:pk>', views.AbstractUpdateView.as_view(),name='abstract'),
+    path('ic_abstract/<int:pk>', views.AbstractICUpdateView.as_view(),name='ic_abstract'),
+    path('re-upload-abstract/<int:pk>', views.AbstractRICUpdateView.as_view(),name='ric-abstract'),
+    path('success',views.success, name='success'),
+    path('mail/', views.mail, name='mail'),
+
+]

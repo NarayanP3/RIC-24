@@ -1,0 +1,2241 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- The above 3 meta tags *must* come first in the head -->
+
+    <!-- SITE TITLE -->
+    <title>Research Conclave 2019</title>
+    <meta name="description" content="Responsive EventHunt HTML Template"/>
+    <meta name="keywords" content="Bootstrap3, Event,  Conference, Meetup, Template, Responsive, HTML5"/>
+    <meta name="author" content="themearth.com"/>
+
+    <!-- twitter card starts from here, if you don't need remove this section -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@yourtwitterusername"/>
+    <meta name="twitter:creator" content="@yourtwitterusername"/>
+    <meta name="twitter:url" content="http://yourdomain.com"/>
+    <meta name="twitter:title" content="Your home page title, max 140 char"/>
+    <!-- maximum 140 char -->
+    <meta name="twitter:description" content="Your site description, maximum 140 char "/>
+    <!-- maximum 140 char -->
+    <meta name="twitter:image" content="assets/img/twittercardimg/twittercard-280-150.jpg"/>
+    <!-- when you post this page url in twitter , this image will be shown -->
+    <!-- twitter card ends from here -->
+
+    <!-- facebook open graph starts from here, if you don't need then delete open graph related  -->
+    <meta property="og:title" content="Your home page title"/>
+    <meta property="og:url" content="http://your domain here.com"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Your site name here"/>
+    <!--meta property="fb:admins" content="" /-->  <!-- use this if you have  -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="{% static 'pre_edition/rc19/assets/img/opengraph/fbphoto.jpg' %}"/>
+    <!-- when you post this page url in facebook , this image will be shown -->
+    <!-- facebook open graph ends from here -->
+
+    <!--  FAVICON AND TOUCH ICONS -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'pre_edition/rc19/assets/img/favicon.ico' %}"/>
+    <!-- this icon shows in browser toolbar -->
+    <link rel="icon" type="image/x-icon" href="{% static 'pre_edition/rc19/assets/img/favicon.ico' %}"/>
+    <!-- this icon shows in browser toolbar >
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png"-->
+    <link rel="manifest" href="{% static 'pre_edition/rc19/assets/img/favicon/manifest.json' %}">
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/bootstrap/css/bootstrap.min.css' %}" media="all"/>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/fontawesome/css/font-awesome.min.css' %}" media="all"/>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/maginificpopup/magnific-popup.css' %}" media="all"/>
+
+    <!-- Time Circle -->
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/timer/TimeCircles.css' %}" media="all"/>
+
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/owlcarousel/owl.carousel.min.css' %}" media="all" />
+    <link rel="stylesheet" href="{% static 'pre_edition/rc19/assets/libs/owlcarousel/owl.theme.default.min.css' %}" media="all" />
+
+    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:400,700%7cPoppins:300,400,400i,600,600i,700,800,900"/>
+
+    <!-- MASTER  STYLESHEET  -->
+    <link id="lgx-master-style" rel="stylesheet" href="{% static 'pre_edition/rc19/assets/css/style-default.min.css' %}" media="all"/>
+
+    <!-- MODERNIZER CSS  -->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/AFFA836B-26E6-F749-8BC4-B2443D566FAE/main.js" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/AFFA836B-26E6-F749-8BC4-B2443D566FAE/main.js" charset="UTF-8"></script><script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body class="home">
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="lgx-container ">
+<!-- ***  ADD YOUR SITE CONTENT HERE *** -->
+
+
+<!--HEADER-->
+<header>
+    <div id="lgx-header" class="lgx-header">
+        <div class="lgx-header-position lgx-header-position-white lgx-header-position-fixed "> <!--lgx-header-position-fixed lgx-header-position-white lgx-header-fixed-container lgx-header-fixed-container-gap lgx-header-position-white-->
+            <div class="lgx-container"> <!--lgx-container-fluid-->
+                <nav class="navbar navbar-default lgx-navbar">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="lgx-logo">
+                            <a href="" class="lgx-scroll">
+                                <img src="{% static 'pre_edition/rc19/assets/img/logo.png' %}"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav lgx-nav navbar-right">
+                            <li>
+                                <a href="" >About</a>
+                                <!--ul class="dropdown-menu multi-level">
+                                    <li><a href="index.html">Home (Default)</a></li>
+                                    <li><a href="index2.html">Box Layout</a></li>
+                                    <li><a href="index3.html">Home Parallax</a></li>
+                                    <li><a href="index4.html">Home Four</a></li>
+                                    <li><a href="index5.html">Home Typed</a></li>
+                                    <li><a href="index6.html">Home Six</a></li>
+                                    <li><a href="index7.html">Home Seven</a></li>
+                                    <li><a href="index8.html">Home Eight</a></li>
+                                    <li><a href="index9.html">Home Registration</a></li>
+                                    <li><a href="index10.html">Home Registration2</a></li>
+                                    <li><a href="index11.html">Home Eleven</a></li>
+                                    <li><a href="index12.html">Home Twelve</a></li>
+                                    <li><a href="index13.html">Home Slider</a></li>
+                                    <li><a href="index14.html">Home Slider2</a></li>
+                                    <li><a href="index15.html">Home Music</a></li>
+                                    <li><a href="index16.html">Home Sixteen</a></li>
+                                    <li><a href="index17.html">Home Christmas</a></li>
+                                    <li><a href="index18.html">Home Comingsoon</a></li>
+                                </ul-->
+                            </li>
+                            <li>
+                                <!--a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+                                <!--ul class="dropdown-menu multi-level">
+                                    <li><a href="about.html">Exhibitors & Supporters</a></li>
+                                    <!--li><a href="schedules.html">Our Sponsors</a></li-->
+                                    <!--li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Speakers <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="speakers.html">Speakers List</a></li>
+                                            <li><a href="speaker.html">Speaker Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="sponsors.html">Sponsors List</a></li>
+                                    <li><a href="registration.html">Registration</a></li>
+                                    <li><a href="gallery.html">Photo Gallery</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="news.html">News</a></li>
+                                            <li><a href="news-single.html">News Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Two<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Dropdown Three</a></li>
+                                                    <li><a href="#">Dropdown Three</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Dropdown Two</a></li>
+                                            <li><a href="#">Dropdown Two</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li-->
+                            <li><a class="lgx-scroll" href="index.html#lgx-events">Events</a></li>
+                            <li><a class="lgx-scroll" href="index.html#lgx-speakers">Speaker</a></li>
+                            <li><a class="lgx-scroll" href="index.html#lgx-registration">Registration</a></li>
+                            <li><a class="lgx-scroll" href="schedules.html">Schedule</a></li>
+                            <li>
+                                <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sponsors <span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level">
+                                    <li><a href="exhibitors.html">Exhibitors & Supporters</a></li>
+                                    <li><a href="index.html#lgx-sponsors">Our Sponsors</a></li>
+                                    <li><a href="thanks.html">Thanks to our previous sponsors</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="lgx-scroll" href="team.html">Team</a></li>
+                            <li><a class="lgx-scroll" href="accommodation.html" target="_blank">Accommodation</a></li>
+                            <li><a class="lgx-scroll" href="faq.html">FAQs</a></li>
+                            <li><a class="lgx-scroll" href="index.html#lgx-travelinfo">Contact</a></li>
+                            <!--li><a class="lgx-scroll" href="gallery.html">Gallery</a></li-->
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </nav>
+            </div>
+            <!-- //.CONTAINER -->
+        </div>
+    </div>
+</header>
+<!--HEADER END-->
+
+
+<!--BANNER-->
+<section>
+    <div class="lgx-banner">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+            <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
+           onmouseout="this.start();"><b style="color:#603"><h3><a href="/researchconclave/abstractBook.pdf">Click here to Download the Abstract Book of Research Conclave 2019 </a>. &nbsp; | &nbsp; Prize Money will be credited by 30th April, 2019  &nbsp;  | &nbsp;List of Reserach Conclave 2019 Award Winners <a href="assets/img/List of Awards.pdf" target="new"> Dowanload</a>. &nbsp;| &nbsp;  Thanks to all the participants for making Research Conclave 2019 successful &nbsp; | &nbsp;  We will be back with a new edition of Research Conclave 2020 &nbsp; | &nbsp;</h3> </b></marquee></div>
+                <div class="container">
+                        <div class="col-xs-12">
+                            <div class="lgx-banner-info-area">
+                                <div class="lgx-banner-info-circle" style="background: none;">
+                                    <div class="info-circle-inner">
+                                        <h3 class="date"><b class="lgx-counter">14</b> <span>March</span></h3>
+                                        <div class="lgx-countdown-area">
+                                            <!-- Date Format :"Y/m/d" || For Example: 1017/10/5  -->
+                                            <div id="lgx-countdown" data-date="2019/03/14"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lgx-banner-info"> <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg--> <!--banner-info-margin-->
+                                    <h2 class="text"><b>14-17 March, 2019</b></h2>
+                                    <h2 class="location"><b>IIT Guwahati Silver Jubilee Edition</b></h2>
+                                    <h2 class="title">Research Conclave <span><b>2</b><b>0</b><b>1</b><b>9</b></span></h2>
+                                    <h3 class="location">An Amalgamation of Academia, Industry & Start-ups</h3>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//.ROW-->
+                </div>
+                <!-- //.CONTAINER -->
+            </div>
+            <!-- //.INNER -->
+        </div>
+    </div>
+</section>
+<!--BANNER END-->
+
+
+<!--ABOUT-->
+<section>
+    <div id="about" class="lgx-about">
+        <div class="lgx-inner">
+                    <br>
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-7">
+                        <div class="lgx-about-content-area">
+                            <div class="lgx-heading">
+                                <h2 class="heading">About Research Conclave</h2>
+                                <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="100%" height="80"></h2>
+                                <!--h3 class="subheading">Do not miss the upcoming event, Who should attend?</h3-->
+                            </div>
+                            <div class="lgx-about-content">
+                                <p class="text" align="justify">
+                                    Research Conclave is organized under the banner of Students' Academic Board (SAB) of Indian Institute of Technology Guwahati (IITG). It is a staunch platform to nurture the young minds towards research, innovation and entrepreneurship, which intends to bring the integrity of the students towards both industries and academia to redress the academic research challenges, concerns of the entire student community and upcoming entrepreneurs around the globe. It is a forum to harness innovative mind to level-up the economic strata of current society from research to industries. The Research Conclave work as catalyst for building leaders through holistic, transformable and innovative ideas. It has started in 2015 with great rhythm and passion, and this year with the same enthusiasm we are conducting this event in a broader spectrum.
+
+                                </p>
+                                <br>
+                                <div class="lgx-heading">
+                                <h2 class="subheading">Objectives</h2>
+                                <!--h3 class="subheading">Do not miss the upcoming event, Who should attend?</h3-->
+                            </div>
+                            <div class="lgx-about-content">
+                                <p class="text" align="justify">
+                                    <ul>
+                                        <li>Showcase the ongoing research activities of different institutes/universities/colleges across the country.</li>
+                                        <li>Model exhibition by research groups from premier institutes and universities across the country. </li>
+                                        <li>Industry-academia interaction with industrial delegates highlighting their technological requirement, expectations from research institutes. </li>
+                                        <li>Interactive sessions with entrepreneurs across the globe to identify the avenues through local firms, businesses and other intermediaries through innovation and research. </li>
+                                        <li>A prestigious platform for start-ups to exhibit their products and ideas to industries and academia. </li>
+                                        <li>A good platform for the industries to identify highly intellectual, motivated and enthusiastic students for their firms. </li>
+                                        <li>Technological implementation towards sustainable development and encouragement to student community for pursuing higher studies. </li>
+                                    </ul>
+
+                                </p>
+                                <div class="about-date-area">
+                                    <h4 class="date">14</h4>
+                                    <p> <span>March 2019 </span> Indian Institute of Technology Guwahati</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="lgx-about-img-sp">
+                            <!--img src="http://placehold.it/556x712" alt="about"-->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- //.CONTAINER -->
+                        </br>
+        </div><!-- //.INNER -->
+    </div>
+</section>
+<!--ABOUT END-->
+
+<!--Events-->
+<section>
+    <div id="lgx-events" class="lgx-speakers lgx-speakers2">
+        <div class="lgx-inner">
+                    <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Conclave Features</h2>
+                            <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="50%" height="80"></h2>
+                            <h2 class="title" style="color: white;">Please click on the applicable</h2>
+                            <!--h3 class="subheading">Thanks to our previous speakers</h3-->
+                        </div>
+                    </div>
+                </div>
+                <!--//.ROW-->
+                <div class="row">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-col5 lgx-single-speaker2 lgx-single-speaker3">
+                                <figure>
+                                     <a class="profile-img" href="scientifique.html"><img src="{% static 'pre_edition/rc19/assets/img/event1.jpg' %}" alt="Speaker"/></a>
+                                    <figcaption>
+                                        <!--div class="social-group">
+                                            <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                            <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div-->
+                                        <div class="speaker-info">
+                                            <h3 class="title">'SCIENTIFIQUE'</a></h3>
+                                            <p class="info"><b>Oral, Poster, Model &</b></p>
+                                            <p class="info"><b>3 Minutes' Thesis Presentation</b></p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="lgx-col5 lgx-single-speaker2 lgx-single-speaker3">
+                                <figure>
+                                     <a class="profile-img" href= "atelier.html"><img src="{% static 'pre_edition/rc19/assets/img/event2.jpg' %}" alt="Speaker"/></a>
+                                    <figcaption>
+                                        <!--div class="social-group">
+                                            <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                            <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div-->
+                                        <div class="speaker-info">
+                                            <h3 class="title">'ATELIER'</a></h3>
+                                            <p class="info"><b>Workshops</b></p>
+                                            <p class="info"><b>&</b></p>
+                                            <p class="info"><b>Photography</b></p>
+                                    
+                                            <!--h4 class="subtitle">Workshops & Photography</h4-->
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="lgx-col5 lgx-single-speaker2 lgx-single-speaker3">
+                                <figure>
+                                     <a class="profile-img" href="#lgx-speakers"><img src="{% static 'pre_edition/rc19/assets/img/event3.jpg' %}" alt="Speaker"/></a>
+                                    <figcaption>
+                                        <!--div class="social-group">
+                                            <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                            <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div-->
+                                        <div class="speaker-info">
+                                            <h3 class="title">'CONNAISSANCE'</a></h3>
+                                            <p class="info"><b>Lecture Series:</b></p>
+                                            <p class="info"><b>Academicians and Industrialists</b></p>
+                                    
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="lgx-col5 lgx-single-speaker2 lgx-single-speaker3">
+                                <figure>
+                                     <a class="profile-img" href= "discutir.html"><img src="{% static 'pre_edition/rc19/assets/img/event4.jpg' %}" alt="Speaker"/></a>
+                                    <figcaption>
+                                        <!--div class="social-group">
+                                            <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                            <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div-->
+                                        <div class="speaker-info">
+                                             <h3 class="title">'DISCUTIR'</a></h3>
+                                            <p class="info"><b>Pannel Discussion,</b></p>
+                                            <p class="info"><b>Debate</b></p>
+                                            <p class="info"><b>& Quiz</b></p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="lgx-col5 lgx-single-speaker2 lgx-single-speaker3">
+                                <figure>
+                                     <a class="profile-img" href= "startup.html"><img src="{% static 'pre_edition/rc19/assets/img/event5.jpg' %}" alt="Speaker"/></a>
+                                    <figcaption>
+                                        <!--div class="social-group">
+                                            <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                            <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                            <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                            <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                        </div-->
+                                        <div class="speaker-info">
+                                            <h3 class="title">'INNOVATEUR PLATE-FORME'</a></h3>
+                                            <p class="info"><b>Redstart:Startup Challenge</b></p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+</br>
+                                </div>
+                                </div><
+                        
+</section>
+<!--EEVNTS END-->
+
+
+
+
+
+
+<!--SPEAKERS-->
+<section>
+    <div id="lgx-speakers" class="lgx-speakers lgx-speakers2">
+        <div class="lgx-inner">
+        <br>
+        <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Our Speakers</h2>
+                            <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="40%" height="80"></h2>
+                            <h3 class="subheading">Click on the name to more about the speaker</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--//.ROW-->
+
+                <div class="row">
+                        <div class="col-sm-12" align="center">
+                     <img src="{% static 'pre_edition/rc19/assets/img/ppm.jpg' %}" class="avatar"  width="320" height="350"><br>
+                   </div> 
+                   </div>
+                   </br>
+                     <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                         <h3 class="subheading"><a href="parthapratim.html">Prof. Partha Pratim Majumder</h3>
+                            <h2 class="subheading">Chief Guest</h2>
+                            <h2 class="subheading">President, Indian Academy of Science & Founder Director, National Institute of Biomedical Genomics</h2>
+
+                            </div>
+                            </div>
+                            </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="JPmittal.html"><img src="{% static 'pre_edition/rc19/assets/img/JPM.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Prof. H.C. Verma</a></h3-->
+                                        <h3 class="title"><a href="JPmittal.html">Prof. J.P. Mittal, FNA;FASc,FNASc;FTWAS</a></h3>
+                                        <h4 class="subtitle">Distinguished Professor, Centre for Excellence in Basic Sciences,
+                                         University of Mumbai- Department of Atomic Energy </h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="nagaraju.html"><img src="{% static 'pre_edition/rc19/assets/img/GN.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Prof. H.C. Verma</a></h3-->
+                                        <h3 class="title"><a href="nagaraju.html">Dr.Ganesh Nagaraju</a></h3>
+                                        <h4 class="subtitle"> Associate Professor, IISc Bangalore</h4>
+                                        <h5 class="subtitle">National Bioscience Award for Career Development, 2015 &  Shanti Swarup Bhatnagar Prize for Science and Technology, 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="mandal.html"><img src="{% static 'pre_edition/rc19/assets/img/SKM.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Padma Shri A.S. Kiran Kumar</a></h3-->
+                                        <h3 class="title"><a href="mandal.html">Prof. Swadhin K. Mandal</a></h3>
+                                        <h4 class="subtitle">Professor, IISER-Kolkata</h4>
+                                        <h5 class="subtitle">Shanti Swarup Bhatnagar Prize in Chemical Sciences-2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                     <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="vidyasagar.html"><img src="{% static 'pre_edition/rc19/assets/img/EEEE.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Prof. H.C. Verma</a></h3-->
+                                        <h3 class="title"><a href="vidyasagar.html">Prof. Mathukumalli Vidyasagar,FRS</a></h3>
+                                        <h4 class="subtitle"> Control Theorist & Distinguished Professor at IIT Hyderabad. </h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="vishalrao.html"><img src="{% static 'pre_edition/rc19/assets/img/VR.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="vishalrao.html">Dr. Vishal Rao U. S.</a></h3>
+                                        <h4 class="subtitle">MBBS, MS-ENT, Fellow Tata Memorial Hospital</h4>
+                                        <h4 class="subtitle">Head and Neck Surgeon Global Cancer Centre, Bangalore</h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="amit agarwal.html"><img src="{% static 'pre_edition/rc19/assets/img/AA.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="amit agarwal.html">Prof. Amit Agarwal</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Bombay</h4>
+                                        <h5 class="subtitle">Shanti Swarup Bhatnagar Prize in Engineering Sciences-2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="jasra.html"><img src="{% static 'pre_edition/rc19/assets/img/RVJ.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="jasra.html">Dr. Raksh Vir Jasra</a></h3>
+                                        <h4 class="subtitle">Senior VP,Reliance Industries Ltd. </h4>
+                                        </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="dipankar.html"><img src="{% static 'pre_edition/rc19/assets/img/CLI.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="dipankar.html">Prof. Dipankar Bandyopadhyay</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle">Gandhian Young Technology Innovation Award, 2016</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="chattopadhyay.html"><img src="{% static 'pre_edition/rc19/assets/img/AC.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="chattopadhyay.html">Prof. Arun Chattopadhyay </a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati </h4>
+                                        <h5 class="subtitle">Fellow of the Royal Society of Chemistry</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="bhismapatel.html"><img src="{% static 'pre_edition/rc19/assets/img/BKP.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="bhismapatel.html">Prof. Bhisma K. Patel</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle">Fellow of the Indian Academy of Sciences (FASc) and the National Academy of Sciences (NASI)</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="bimanmandal.html"><img src="{% static 'pre_edition/rc19/assets/img/BKM.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="bimanmandal.html">Dr. Biman B Mandal</a></h3>
+                                        <h4 class="subtitle">Associate Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle">NASI-SCOPUS YOUNG SCIENTIST AWARD in Medicine</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="saikia.html"><img src="{% static 'pre_edition/rc19/assets/img/MAI.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="saikia.html">Prof. Anupam Saikia</a></h3>
+                                        <h4 class="subtitle">Indian Mathematician</h4>
+                                        <h5 class="subtitle">Professor, IIT Guwahati</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="uttammanna.html"><img src="{% static 'pre_edition/rc19/assets/img/UKM.JPG' %}" alt="Speaker" align="midle"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="uttammanna.html">Dr. Uttam Manna</a></h3>
+                                        <h4 class="subtitle">Assistant Professor, IIT Guwahati </h4>
+                                        <h5 class="subtitle">NASI-Young Scientist Platinum Jubilee Award (2018) in the field of Chemical Sciences</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                     <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="pradeepguru.html"><img src="{% static 'pre_edition/rc19/assets/img/PY.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="pradeepguru.html">Prof. Pradeep Gururaj Yammiyavar</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle">Fellow of Design Research Society (DRS), UK</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="usdixit.html"><img src="{% static 'pre_edition/rc19/assets/img/UD.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="usdixit.html">Prof. Uday S Dixit</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati</h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="ankireddy.html"><img src="{% static 'pre_edition/rc19/assets/img/anki.jpg' %}" alt="Speaker" align="midle"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title"><a href="ankireddy.html">Dr. Anki Reddy Katha</a></h3>
+                                        <h4 class="subtitle">Associate Professor, IIT Guwahati </h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="sachinkumar.html"><img src="{% static 'pre_edition/rc19/assets/img/bio.jpg' %}" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="sachinkumar.html">Dr. Sachin Kumar</a></h3>
+                                        <h4 class="subtitle">Associate Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle">NASI SCOPUS Young Scientist Award (2016) & Young Scientist Research Award (2012)</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="kmohanty.html"><img src="assets/img/km.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="kmohanty.html">Prof. Kaustubha Mohanty</a></h3>
+                                        <h4 class="subtitle">Professor, IIT Guwahati</h4>
+                                        <h5 class="subtitle"> Fellow of Royal Society of Chemistry</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="dnath.html"><img src="assets/img/cei.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="dnath.html">Prof. Dhirendra Nath Buragohain</a></h3>
+                                        <h4 class="subtitle">Emeritus Professor and Founder Director, IIT Guwahati</h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                     <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="amaresh.html"><img src="assets/img/DDE.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Prof. H.C. Verma</a></h3-->
+                                        <h3 class="title"><a href="amaresh.html">Prof. Amaresh Chakrabarti</a></h3>
+                                        <h4 class="subtitle"> Professor and Chairman</h4>
+                                        <h5 class="subtitle">Centre for Product Design & Manufacturing,IISc Bangalore</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img" href="skdas.html"><img src="assets/img/sd.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title"><a href="skdas.html">Prof. Sudip Kr. Das</a></h3>
+                                        <h4 class="subtitle">Professor and Head, Department of Chemical Engineering, University of Calcutta</h4>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    </div>
+                <!--//.ROW-->
+                <!--div class="section-btn-area">
+                    <a class="lgx-btn lgx-btn-big" href="speakers.html"><span>View More Speakers</span></a>
+                    <a class="lgx-btn lgx-btn-red lgx-btn-big" href="speakers.html"><span>Become A Speaker</span></a>
+                </div-->
+           
+            </br>
+        <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Previous Edition's Speakers</h2>
+                            <img src="assets/img/border.png" class="left" width="70%" height="80"></h2>
+                            <h3 class="subheading">Thanks to our previous speakers</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--//.ROW-->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="assets/img/HCV.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Prof. H.C. Verma</a></h3-->
+                                        <h3 class="title">Prof. H.C. Verma</a></h3>
+                                        <h4 class="subtitle">Retd. Professor, IIT Kanpur</h4>
+                                        <h5 class="subtitle">Research Conclave 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="assets/img/ASK.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Padma Shri A.S. Kiran Kumar</a></h3-->
+                                        <h3 class="title">Padma Shri A.S. Kiran Kumar</a></h3>
+                                        <h4 class="subtitle">Former Chairman, ISRO</h4>
+                                        <h5 class="subtitle">Research Conclave 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="assets/img/GDR.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title">Prof. Gautan R. Desiraju</a></h3>
+                                        <h4 class="subtitle">Professor & Chemist, IISc Bangalore</h4>
+                                        <h5 class="subtitle">Research Conclave 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="assets/img/RVJ.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Dr. Raksh Vir Jasra</a></h3-->
+                                        <h3 class="title">Dr. Raksh Vir Jasra</a></h3>
+                                        <h4 class="subtitle">Senior VP,Reliance Industries Ltd. </h4>
+                                        <h5 class="subtitle">Research Conclave 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="{% static 'pre_edition/rc19/' %}assets/img/YI.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <!--h3 class="title"><a href="speaker.html">Jonathon Doe</a></h3-->
+                                        <h3 class="title">Prof. Yuji Iwahori</a></h3>
+                                        <h4 class="subtitle">Professor, Chubu University, Japan </h4>
+                                        <h5 class="subtitle">Research Conclave 2018</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="lgx-single-speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+                            <figure>
+                                <a class="profile-img"><img src="assets/img/MS.jpg" alt="Speaker"/></a>
+                                <figcaption>
+                                    <!--div class="social-group">
+                                        <a class="sp-tw" href="#"><i class="fa fa-twitter"></i></a>
+                                        <a class="sp-fb" href="#"><i class="fa fa-facebook"></i></a>
+                                        <a class="sp-insta" href="#"><i class="fa fa-instagram"></i></a>
+                                        <a class="sp-in" href="#"><i class="fa fa-linkedin"></i></a>
+                                    </div-->
+                                    <div class="speaker-info">
+                                        <h3 class="title">Prof. M.S.Ananth</a></h3>
+                                        <h4 class="subtitle">Former Director, IIT Madras</h4>
+                                        <h5 class="subtitle">Research Conclave 2017</h5>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <!--//.ROW-->
+                <!--div class="section-btn-area">
+                    <a class="lgx-btn lgx-btn-big" href="speakers.html"><span>View More Speakers</span></a>
+                    <a class="lgx-btn lgx-btn-red lgx-btn-big" href="speakers.html"><span>Become A Speaker</span></a>
+                </div-->
+            </div>
+            <!-- //.CONTAINER -->
+            </br>
+        </div>
+        <!-- //.INNER -->
+    </div>
+</section>
+<!--SPEAKERS END-->
+
+
+
+<!-- <div id="lgx-speakers" class="lgx-speakers lgx-speakers2"> -->
+
+
+
+
+
+<!--SCHEDULE-->
+<section>
+    <div id="lgx-schedule" class="lgx-schedule">
+        <div class="lgx-inner">
+        <br>
+            <div class="container">
+            <!--div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Schedule</h2>
+                            <img src="assets/img/border.png" class="left" width="40%" height="80"></h2>
+                            <h2 class="subheading">To Be Announced!</h2>
+                        </div>
+                    </div>
+                </div-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Timeline</h2>
+                            <!--h3 class="subheading">Welcome to the dedicated to building remarkable Schedule!</h3-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-tab lgx-tab2"> <!--lgx-tab2 lgx-tab-vertical-->
+                            <ul class="nav nav-pills lgx-nav lgx-nav-nogap lgx-nav-colorful">  <!--lgx-nav-nogap lgx-nav-colorful-->
+                                <li class="active"><a data-toggle="pill" href="#home"><h3>Abstract submission starts</h3> <p><span>15 </span>Nov, 2018</p></a></li>
+                                <li><a data-toggle="pill" href="#menu1"><h3>Abstract submission extended deadline</h3> <p><span>10 </span>Feb, 2019</p></a></li>
+                                <li><a data-toggle="pill" href="#menu2"><h3>Notification of Acceptance</h3></span>15 </span>Feb, 2019</p></a></li>
+                            </div>
+                            <br>
+                    <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-tab lgx-tab2"> <!--lgx-tab2 lgx-tab-vertical-->
+                            <ul class="nav nav-pills lgx-nav lgx-nav-nogap lgx-nav-colorful">  <!--lgx-nav-nogap lgx-nav-colorful-->
+                                <li class="active"><a data-toggle="pill" href="#home"><h3>Registration starts</h3> <p><span>31 </span>Jan, 2019</p></a></li>
+                                <li><a data-toggle="pill" href="#menu3"><h3>Last date of Registration and submission for Startup Challenge</h3> <p><span>20 </span>Feb, 2019</p></a></li>
+                                <li><a data-toggle="pill" href="#menu2 </span>Feb, 2019</p></a></li>"><h3>Notification of Acceptance for Startup Challenge</h3> <p><span>23 </span>Feb, 2019</p></a></li>
+                            </div>
+
+
+                                <!--div id="home" class="tab-pane fade in active">
+
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <div class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Wait is Over! Stony Brook Captures Conference</h3>
+                                                                <h4 class="author-info">By <span>Riaz Sagar</span> , Logichunt Inc.</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingTwo">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">10:30 <span>Am</span> - 11.30 <span>Am</span></h4>
+                                                                <h3 class="title">Team With At Least Three Conference Titles</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author author-multi">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">11:30 <span>Am</span> - 01.30 <span>Pm</span></h4>
+                                                                <h3 class="title">Building an Awesome Community on Your Website</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , <span>Riaz Sagar</span> & <span>Devid Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingfour">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">02:00 <span>Am</span> - 03.30 <span>Pm</span></h4>
+                                                                <h3 class="title">Hungry Shawnee boys soccer team eyeing conference, sectional title in 2019</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingfive">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">03:45 <span>Am</span> - 04.00 <span>Pm</span></h4>
+                                                                <h3 class="title">Business World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="menu1" class="tab-pane fade">
+
+                                    <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingOne2">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author author-multi">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">The Wait is Over! Stony Brook Captures First Conference Title</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , <span>Riaz Sagar</span> & <span>Devid Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseOne2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingTwo2">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo2">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseTwo2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingThree2">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree2" aria-expanded="true" aria-controls="collapseThree2">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseThree2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="menu2" class="tab-pane fade">
+
+                                    <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingOne3">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseOne3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingTwo3">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo3" aria-expanded="true" aria-controls="collapseTwo3">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseTwo3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingThree3">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree3" aria-expanded="true" aria-controls="collapseThree3">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseThree3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="menu3" class="tab-pane fade">
+
+                                    <div class="panel-group" id="accordion4" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingOne4">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4" aria-expanded="true" aria-controls="collapseOne4">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseOne4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne4">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingTwo4">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseTwo4" aria-expanded="true" aria-controls="collapseTwo4">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseTwo4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo4">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default lgx-panel">
+                                            <div class="panel-heading" role="tab" id="headingThree4">
+                                                <div class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion4" href="#collapseThree4" aria-expanded="true" aria-controls="collapseThree4">
+                                                        <div class="lgx-single-schedule">
+                                                            <div class="author">
+                                                                <img src="http://placehold.it/800x800" alt="Speaker"/>
+                                                            </div>
+                                                            <div class="schedule-info">
+                                                                <h4 class="time">09:00 <span>Am</span> - 10.30 <span>Am</span></h4>
+                                                                <h3 class="title">Digital World Event Introduction</h3>
+                                                                <h4 class="author-info">By <span>Joanna Smith</span> , Design Apple</h4>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div id="collapseThree4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree4">
+                                                <div class="panel-body">
+                                                    <p class="text">
+                                                        Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse flexitarian Truffaut synth art party deep v chillwave.
+                                                    </p>
+                                                    <h4 class="location"><strong>Location:</strong>  Hall 1, Building A , Golden Street , <span>Southafrica</span> </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <//.ROW>
+                <div class="section-btn-area schedule-btn-area">
+                    <a class="lgx-btn lgx-btn-big" href="speakers.html"><span>Download Schedule (PDF)</span></a>
+                    <a class="lgx-btn lgx-btn-red lgx-btn-big" href="speakers.html"><span>Connect via facebook</span></a>
+                </div>
+            </div-->
+            <!-- //.CONTAINER -->
+            </br>
+        </div>
+        <!-- //.INNER -->
+    </div>
+</section>
+<!--SCHEDULE END-->
+
+
+
+<!--SPONSORED-->
+<section>
+    <div id="lgx-sponsors" class="lgx-sponsors">
+        <div class="lgx-inner-bg">
+            <div class="lgx-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading">Offcial Sponsonrs</h2>
+                                <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="50%" height="80"></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <//main row>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="sponsored-heading first-heading">Co-Sponsored by</h3>
+                            <div class="sponsors-area sponsors-area-nogap sponsors-area-noshadow sponsors-area-col3"> 
+                            <sponsors-area-col3 sponsors-area-noshadow sponsors-area-nogap sponsors-area-colorfull sponsors-area-colorfull-border sponsors-area-border>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/SBI.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <!--div class="single">
+                                    <a class="" href="#"><img src="http://placehold.it/467x157" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a class="" href="#"><img src="http://placehold.it/467x157" alt="sponsor"/></a>
+                                </div-->
+                            </div>
+                        </div>
+                        <//col>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="sponsored-heading first-heading">Powered by</h3>
+                            <br>
+                            <div class="sponsors-area sponsors-area-nogap sponsors-area-noshadow sponsors-area-col3"> 
+                            <sponsors-area-col3 sponsors-area-noshadow sponsors-area-nogap sponsors-area-colorfull sponsors-area-colorfull-border sponsors-area-border>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/SP1.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/MERCK.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                <b><h2 style="color: blue;">ZENITH India</h2></b>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/SRL.png' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/NRL.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/LG.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/CB.png' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/Springer.png' %}" alt="sponsor"/></a>
+                                </div>
+                              <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/AT.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                <b><h2 style="color: blue;">North-East Chemical Ltd.</h2></b>
+                                </div>
+                                </br>
+                                <!--div class="single">
+                                    <a class="" href="#"><img src="http://placehold.it/467x157" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                    <a class="" href="#"><img src="http://placehold.it/467x157" alt="sponsor"/></a>
+                                </div-->
+                            </div>
+                        </div>
+                        <//col>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="sponsored-heading first-heading">Outreach Partner</h3>
+                            <br>
+                            <div class="sponsors-area sponsors-area-nogap sponsors-area-noshadow sponsors-area-col3"> 
+                            <sponsors-area-col3 sponsors-area-noshadow sponsors-area-nogap sponsors-area-colorfull sponsors-area-colorfull-border sponsors-area-border>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/s22.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                 </div>
+                        </div>
+                        <//col>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="sponsored-heading first-heading">Merchandise Partner</h3>
+                            <br>
+                            <div class="sponsors-area sponsors-area-nogap sponsors-area-noshadow sponsors-area-col3"> 
+                            <sponsors-area-col3 sponsors-area-noshadow sponsors-area-nogap sponsors-area-colorfull sponsors-area-colorfull-border sponsors-area-border>
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/TD.png' %}" alt="sponsor"/></a>
+                                </div>
+                                 </div>
+                        </div>
+                        <//col>
+                    </div>
+                    </br>
+                    <//row>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4 class="sponsored-heading third-heading">Online Media Partners</h4>
+                            <div class="sponsors-area sponsors-area-noshadow sponsors-area-nogap">
+                                <div class="single">
+                                    <a><img src="{% static 'pre_edition/rc19/assets/img/O1.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                     <a><img src="{% static 'pre_edition/rc19/assets/img/O2.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                     <a><img src="{% static 'pre_edition/rc19/assets/img/O3.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                     <a><img src="{% static 'pre_edition/rc19/assets/img/O5.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                     <a><img src="{% static 'pre_edition/rc19/assets/img/O4.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                                <div class="single">
+                                     <a><img src="{% static 'pre_edition/rc19/assets/img/O6.jpg' %}" alt="sponsor"/></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="sponsored-heading secound-heading">Campus Associates</h3>
+                            <div class="sponsors-area sponsors-area-noshadow sponsors-area-nogap">
+                                <b>| Outreach Education Programme |</b>
+                                <b>| Alumni Affairs & External Relations |</b>
+                                <div class="single">
+                                    <a><img src="assets/img/rsf.png" alt="sponsor"/></a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <//col>
+                    </div>
+                </div>
+                <//container>
+            </div>
+        </div>
+        <//lgx-inner>
+    </div>
+</section>
+<!--SPONSORED END-->
+
+
+
+
+
+    <!--REGISTRATION-->
+    <section>
+        <div id="lgx-registration" class="lgx-registration"> <!--lgx-registration2 lgx-registration3 lgx-registration4-->
+            <div class="lgx-inner">
+            <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <div class="lgx-heading lgx-heading-white">
+                            <h2 class="heading">Registration</h2>
+                            <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="40%" height="80"></h2>
+                            <br>
+                            <h2 class="title" style="color: white;">Please click on the applicable</h2>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="lgx-registration-area"> <!--lgx-registration-area-nogap lgx-registration-area2 lgx-registration-area3 "-->
+                               <a href="https://portal.researchconclave.in/login" target="_blank"> <div class="lgx-single-registration">
+                                    <div class="lgx-single-registration-inner">
+                                        <!--a class="icon" href="#"><img src="assets/img/icons/4.png" alt="ticket"/></a-->
+                                        <div class="single-top">
+                                            <h3 class="title">Student</h3>
+                                            <h4 class="price"><i>Rs. </i>200</h4>
+                                            <p>Fees Excluding Payment Gateway Charge</p>
+                                        </div>
+                                        <!--div class="single-bottom">
+                                            <ul class="list-unstyled list">
+                                                <li>Regular Seating</li>
+                                                <li>Comfortable Seat</li>
+                                                <li>Coffee Break</li>
+                                                <li>One Workshop</li>
+                                                <li>Certificate</li>
+                                            </ul>
+                                            <a class="lgx-btn" href="#"><span>Buy Ticket</span></a>
+                                        </div-->
+                                    </div>
+                                </div></a>
+                                <a href="https://portal.researchconclave.in/login" target="_blank"> <div class="lgx-single-registration">
+                                    <div class="lgx-single-registration-inner">
+                                        <!--a class="icon" href="#"><img src="assets/img/icons/4.png" alt="ticket"/></a-->
+                                        <div class="single-top">
+                                            <h3 class="title">Redstart-The Startup Challenge</h3>
+                                            <h4 class="price"><i>Rs. </i>300</h4>
+                                            <p>Fees Excluding Payment Gateway Charge</p>
+                                        </div>
+                                        <!--div class="single-bottom">
+                                            <ul class="list-unstyled list">
+                                                <li>Regular Seating</li>
+                                                <li>Comfortable Seat</li>
+                                                <li>Coffee Break</li>
+                                                <li>One Workshop</li>
+                                                <li>Certificate</li>
+                                            </ul>
+                                            <a class="lgx-btn" href="#"><span>Buy Ticket</span></a>
+                                        </div-->
+                                    </div>
+                                </div></a>
+                                <a href="https://portal.researchconclave.in/login" target="_blank"><div class="lgx-single-registration">
+                                    <div class="lgx-single-registration-inner">
+                                        <!--a class="icon" href="#"><img src="assets/img/icons/3.png" alt="ticket"/></a-->
+                                        <div class="single-top">
+                                            <h3 class="title">Faculty/Academician</h3>
+                                            <h4 class="price"><i>Rs. </i>2000</h4>
+                                            <p>Fees Excluding Payment Gateway Charge</p>
+                                        </div>
+                                        <!--div class="single-bottom">
+                                            <ul class="list-unstyled list">
+                                                <li>Regular Seating</li>
+                                                <li>Comfortable Seat</li>
+                                                <li>Coffee Break</li>
+                                                <li>One Workshop</li>
+                                                <li>Certificate</li>
+                                            </ul>
+                                            <a class="lgx-btn" href="#"><span>Buy Ticket</span></a>
+                                        </div-->
+                                    </div>
+                                </div></a>
+                                <a href="https://imjo.in/f5fYCs" target="_blank"><div class="lgx-single-registration">
+                                    <div class="lgx-single-registration-inner">
+                                        <!--a class="icon" href="#"><img src="assets/img/icons/2.png" alt="ticket"/></a-->
+                                        <div class="single-top">
+                                            <h3 class="title">Industrial/Corporate delegates</h3>
+                                            <h4 class="price"><i>Rs. </i>3000</h4>
+                                            <p>Fees Excluding Payment Gateway Charge</p>
+                                        </div>
+                                        <!--div class="single-bottom">
+                                            <ul class="list-unstyled list">
+                                                <li>Regular Seating</li>
+                                                <li>Comfortable Seat</li>
+                                                <li>Coffee Break</li>
+                                                <li>One Workshop</li>
+                                                <li>Certificate</li>
+                                            </ul>
+                                            <a class="lgx-btn" href="#"><span>Buy Ticket</span></a>
+                                        </div-->
+                                    </div>
+                        </div></a>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="section-btn-area">
+                                    <!--a class="lgx-btn" href="about.html"><span>More About</span></a-->
+                                    <a class="lgx-btn lgx-btn-red lgx-scroll" href="https://register.researchconclave.in/" target="_blank"><span>Submit Abstract</span></a>
+                                </div>
+                                </div>
+                </div><!-- //.CONTAINER -->
+                </br>
+            </div><!-- //.INNER -->
+        </div>
+    </section>
+    <!--REGISTRATION END-->
+
+
+    <!--TESTIMONIALS -->
+    <!--section>
+        <div id="lgx-testimonial" class="lgx-testimonial">
+            <div class="lgx-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading">What Clients Say</h2>
+                                <h3 class="subheading">Welcome to the dedicated to building remarkable Testimonials!</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//.ROW>
+                    <div class="row">
+                        <div id="lgx-owltestimonial" class="lgx-owltestimonial lgx-owlnews">
+
+                            <div class="item">
+                                <!--Testimonial-single>
+                                <blockquote class="lgx-testi-single">
+                                    <p><span>This is the best Event Organization in the world</span> Proin sodales dapibus magna, et porta leo convallis sed. Duis tincidunt libero ut neque mollis dignissim. Nullam ultricies sit amet quam non iaculis. Curabitur convallis nulla non nibh aliquet rhoncus. Donec at tempus felis.</p>
+                                    <div class="author">
+                                        <img src="http://placehold.it/83x83" alt="author">
+                                        <h4 class="title"><a href="#"></a>Jonathon Doe</h4>
+                                        <div class="rate">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </blockquote> <!--//.Testimonial-single>
+                            </div> <!--//.Item>
+                            <div class="item">
+                                <!--Testimonial-single>
+                                <blockquote class="lgx-testi-single">
+                                    <p><span>This is the best Event Organization in the world</span> Proin sodales dapibus magna, et porta leo convallis sed. Duis tincidunt libero ut neque mollis dignissim. Nullam ultricies sit amet quam non iaculis. Curabitur convallis nulla non nibh aliquet rhoncus. Donec at tempus felis.</p>
+                                    <div class="author">
+                                        <img src="http://placehold.it/83x83" alt="author">
+                                        <h4 class="title"><a href="#"></a>Jonathon Doe</h4>
+                                        <div class="rate">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </blockquote> <!--//.Testimonial-single>
+                            </div> <!--//.Item>
+                            <div class="item">
+                                <!--Testimonial-single>
+                                <blockquote class="lgx-testi-single">
+                                    <p><span>This is the best Event Organization in the world</span> Proin sodales dapibus magna, et porta leo convallis sed. Duis tincidunt libero ut neque mollis dignissim. Nullam ultricies sit amet quam non iaculis. Curabitur convallis nulla non nibh aliquet rhoncus. Donec at tempus felis.</p>
+                                    <div class="author">
+                                        <img src="http://placehold.it/83x83" alt="author">
+                                        <h4 class="title"><a href="#"></a>Jonathon Doe</h4>
+                                        <div class="rate">
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star active"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </blockquote> <!--//.Testimonial-single>
+                            </div> <!--//.Item>
+                        </div><!--l//#lgx-OWL NEWS>
+                    </div>
+                </div><!-- //.CONTAINER >
+            </div><!-- //.INNER >
+        </div>
+    </section>
+    <!--TESTIMONIALS END-->
+
+
+    <!--News>
+    <section>
+        <div id="lgx-news" class="lgx-news">
+            <div class="lgx-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading">From Our Blog</h2>
+                                <h3 class="subheading">Conferences dedicated to building remarkable events.</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="lgx-single-news">
+                                <figure>
+                                    <a href="news-single.html"><img src="http://placehold.it/1144x690" alt=""></a>
+                                </figure>
+                                <div class="single-news-info">
+                                    <div class="meta-wrapper">
+                                        <span>April 25, 2018</span>
+                                        <span>by <a href="#">Riazsagar</a></span>
+                                        <span><a href="#">Design</a></span>
+                                    </div>
+                                    <h3 class="title"><a href="news-single.html">Brooklyn Beta was the most important conferen best tristique</a></h3>
+                                    <a class="lgx-btn lgx-btn-white lgx-btn-sm" href="#"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="lgx-single-news">
+                                <figure>
+                                    <a href="news-single.html"><img src="http://placehold.it/1144x690" alt=""></a>
+                                </figure>
+                                <div class="single-news-info">
+                                    <div class="meta-wrapper">
+                                        <span>April 25, 2018</span>
+                                        <span>by <a href="#">Riazsagar</a></span>
+                                        <span><a href="#">Design</a></span>
+                                    </div>
+                                    <h3 class="title"><a href="news-single.html">Brooklyn Beta was the most important conferen best tristique</a></h3>
+                                    <a class="lgx-btn lgx-btn-white lgx-btn-sm" href="#"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="lgx-single-news">
+                                <figure>
+                                    <a href="news-single.html"><img src="http://placehold.it/1144x690" alt=""></a>
+                                </figure>
+                                <div class="single-news-info">
+                                    <div class="meta-wrapper">
+                                        <span>April 25, 2018</span>
+                                        <span>by <a href="#">Riazsagar</a></span>
+                                        <span><a href="#">Design</a></span>
+                                    </div>
+                                    <h3 class="title"><a href="news-single.html">Brooklyn Beta was the most important conferen best tristique</a></h3>
+                                    <a class="lgx-btn lgx-btn-white lgx-btn-sm" href="#"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-btn-area">
+                        <a class="lgx-btn" href="news.html">View More Blogs</a>
+                    </div>
+                </div><!-- //.CONTAINER >
+            </div><!-- //.INNER >
+        </div>
+    </section>
+    <!--News END-->
+
+
+
+    <!--Contact Details-->
+    <section>
+        <div id="lgx-travelinfo" class="lgx-travelinfo">
+            <div class="lgx-inner">
+            <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading">Contact Us</h2>
+                                <img src="{% static 'pre_edition/rc19/assets/img/border.png' %}" class="left" width="40%" height="80"></h2>
+                                <!--h3 class="subheading">Conferences dedicated to building remarkable events.</h3-->
+                            </div>
+                        </div>
+                        <!--//main COL-->
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-travelinfo-content">
+                                <div class="lgx-travelinfo-single">
+                                    <img src="{% static 'pre_edition/rc19/assets/img/user_logo.png' %}" alt="User"/>
+                                    <!--h3 class="title"></h3-->
+                                    <p class="info"><b>Faculty Convener</b></p>
+                                    <p class="info">Dr. Akshai Kumar A.S.</p>
+                                    <p class="info">+91-8133036890</p>
+                                    <br>
+                                    <p class="info"><b>Faculty Co-Convener</b></p>
+                                    <p class="info">Dr. Nelson Muthu</p>
+                                    <p class="info">+91-9820723410</p>
+                                    <br>
+                                    <p class="info"><b>Student Convener</b></p>
+                                    <p class="info">Mr. Rupak Bhowmik</p>
+                                    <p class="info">+91-9436747353</p>
+                                     <br>
+                                    <p class="info"><b>Student Co-Convener</b></p>
+                                    <p class="info">Mr. Diwanshu Jain</p>
+                                    <p class="info">+91-9954215263</p>
+                                </div>
+                                <div class="lgx-travelinfo-single">
+                                    <img src="{% static 'pre_edition/rc19/assets/img/mail2.png' %}" alt="Mailing"/>
+                                    <!--h3 class="title">Transport</h3-->
+                                    <p class="info">research_conclave@iitg.ac.in</p>
+                                    <p class="info">researchconclave.iitg@gmail.com</p>
+                                </div>
+                                <div class="lgx-travelinfo-single">
+                                    <img src="{% static 'pre_edition/rc19/assets/img/phone_icon.png' %}" alt="Contact"/>
+                                    <!--h3 class="title">Hotel & Restaurant</h3-->
+                                    <p class="info"><b>Sponsor</b></p>
+                                    <p class="info">Mr. Prashant Kumar</p>
+                                    <p class="info">+91-7011079116</p>
+                                    <br>
+                                    <p class="info"><b>Public Relations</b></p>
+                                    <p class="info">Ms. Dipanwita Bhattacharjee</p>
+                                    <p class="info">+91-7896559411</p>
+                                    <br>
+                                    <p class="info"><b>Technical</b></p>
+                                    <p class="info">Mr. Kunal Singh</p>
+                                    <p class="info">+91-9990993187</p>
+                                    <br>
+                                    <p class="info"><b>Hospitality</b></p>
+                                    <p class="info">Mr. Amrit Anand</p>
+                                    <p class="info">+91-8005448484</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//.ROW-->
+                </div>
+                <!-- //.CONTAINER -->
+                </br>
+            </div>
+        </div>
+    </section>
+    <!--TRAVEL INFO END-->
+
+
+
+
+<!--VIDEO-->
+<!--section>
+    <div id="lgx-video" class="lgx-video">
+        <div class="lgx-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--<h2 class="lgx-video-title"><span>Watch Our Promo video!</span>How to make an online order</h2>>
+                        <div class="lgx-video-area">
+                            <figure>
+                                <figcaption>
+                                    <div class="video-icon">
+                                        <div class="lgx-vertical">
+                                            <a id="myModalLabel" class="icon" href="#" data-toggle="modal" data-target="#lgx-modal">
+                                                <i class="fa fa-play " aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                            <!-- Modal>
+                            <div id="lgx-modal" class="modal fade lgx-modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <iframe id="modalvideo" src="https://www.youtube.com/embed/oSPR5Go05Vg" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //.Modal>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- //.CONTAINER >
+        </div><!-- //.INNER >
+    </div>
+</section>
+<!--//.VIDEO END-->
+
+
+
+
+
+<!--FOOTER-->
+<footer>
+    <div id="lgx-footer" class="lgx-footer"> <!--lgx-footer-white-->
+        <div class="lgx-inner-footer">
+            <!--div class="lgx-subscriber-area ">
+                <div class="container">
+                    <div class="lgx-subscriber-inner">  <!--lgx-subscriber-inner-indiv>
+                        <h3 class="subscriber-title">Join Newsletter</h3>
+                        <form class="lgx-subscribe-form" >
+                            <div class="form-group form-group-email">
+                                <input type="email" id="subscribe" placeholder="Enter your email Address  ..." class="form-control lgx-input-form form-control"  />
+                            </div>
+                            <div class="form-group form-group-submit">
+                                <button type="submit" name="lgx-submit" id="lgx-submit" class="lgx-btn lgx-submit"><span>Subscribe</span></button>
+                            </div>
+                        </form> <!--//.SUBSCRIBE>
+                    </div>
+                </div>
+            </div-->
+                                <div class="row">
+                                <br>
+                                <br>
+                                <h3 class="title"><b>Quick Links</b></h3>
+                              <ul class="list-inline quick links">
+                            <li><a href="http://www.iitg.ac.in" target="_blank" class="lgx-btn lgx-btn-red">IIT Guwahati</a></li>
+                            <li><a href="https://www.iitg.ac.in/sab" target="_blank" class="lgx-btn lgx-btn-red">SAB, IITG</a></li>
+                            <li><a href="http://www.iitg.ac.in/researchconclave/rc16/" target="_blank" class="lgx-btn lgx-btn-red">RC'16</a></li>
+                            <li><a href="http://www.iitg.ac.in/researchconclave/RC17/" target="_blank" class="lgx-btn lgx-btn-red">RC'17</a></li>
+                            <li><a href="http://www.iitg.ac.in/researchconclave/rc18/index.html" target="_blank" class="lgx-btn lgx-btn-red">RC'18</a></li>
+                                </div>
+                              <div class="row">   
+            <div class="container">
+                <div class="lgx-footer-area">
+                    <div class="lgx-footer-single">
+                        <a class="logo"><img src="{% static 'pre_edition/rc19/assets/img/iitg_sab.png' %}" alt="Logo">
+                    </div> <!--//footer-area-->
+                    <div class="lgx-footer-single">
+                        <h3 class="footer-title">Venue Location </h3>
+                        <h4 class="date">
+                            14 - 17 March, 2019
+                        </h4>
+                        <address>
+                            Indian Institute of Techology Guwahti <br>
+                            Assam-781039, India
+                        </address>
+                        <!--a id="myModalLabel2" data-toggle="modal" data-target="#lgx-modal-map" class="https://www.google.com/maps/dir/26.1890809,91.6982635/iit+guwahati/@26.1868578,91.6905461,16z/data" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> View Map location</a-->
+                    </div>
+                    <div class="lgx-footer-single">
+                        <h3 class="footer-title">Social Connection</h3>
+                        <h5 class="text-red">Keep updated via our social pages</h5>
+                        <ul class="list-inline lgx-social-footer">
+                        <br>
+                            <li><a href="https://www.facebook.com/researchconclave" target="_blank" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/RC_IITG" target="_blank" ><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/rc_iitg" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <!--li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <!--li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li-->
+                        </ul>
+                    </div>
+                    <!--<div class="lgx-footer-single">
+                        <h2 class="footer-title">Instagram Feed</h2>
+                        <div id="instafeed">
+                        </div>
+                    </div>-->
+                </div>
+                <!-- Modal-->
+                <div id="lgx-modal-map" class="modal fade lgx-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="lgxmapcanvas map-canvas-default" id="map_canvas"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- //.Modal-->
+
+                <!--div class="lgx-footer-bottom">
+                    <div class="lgx-copyright">
+                        <p> <span>©</span> 2018 EventHunt is powered by <a href="http://www.themearth.com/">themearth.</a> The property of their owners.</p>
+                    </div>
+                </div-->
+
+            </div>
+            <!-- //.CONTAINER -->
+        </div>
+        <!-- //.footer Middle -->
+    </div>
+</footer>
+<!--FOOTER END-->
+
+
+</div>
+<!--//.LGX SITE CONTAINER-->
+<!-- *** ADD YOUR SITE SCRIPT HERE *** -->
+<!-- JQUERY  -->
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+
+<!-- BOOTSTRAP JS  -->
+<script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Smooth Scroll  -->
+<script src="assets/libs/jquery.smooth-scroll.js"></script>
+
+<!-- SKILLS SCRIPT  -->
+<script src="assets/libs/jquery.validate.js"></script>
+
+<!-- if load google maps then load this api, change api key as it may expire for limit cross as this is provided with any theme -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQvRGGtL6OrpP5xVMxq_0NgiMiRhm3ycI"></script>
+
+<!-- CUSTOM GOOGLE MAP -->
+<script type="text/javascript" src="assets/libs/gmap/jquery.googlemap.js"></script>
+
+<!-- adding magnific popup js library -->
+<script type="text/javascript" src="assets/libs/maginificpopup/jquery.magnific-popup.min.js"></script>
+
+<!-- Owl Carousel  -->
+<script src="assets/libs/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- COUNTDOWN   -->
+<script src="assets/libs/countdown.js"></script>
+<script src="assets/libs/timer/TimeCircles.js"></script>
+
+<!-- Counter JS -->
+<script src="assets/libs/waypoints.min.js"></script>
+<script src="assets/libs/counterup/jquery.counterup.min.js"></script>
+
+<!-- SMOTH SCROLL -->
+<script src="assets/libs/jquery.smooth-scroll.min.js"></script>
+<script src="assets/libs/jquery.easing.min.js"></script>
+
+<!-- type js -->
+<script src="assets/libs/typed/typed.min.js"></script>
+
+<!-- header parallax js -->
+<script src="assets/libs/header-parallax.js"></script>
+
+<!-- instafeed js -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>-->
+<script src="assets/libs/instafeed.min.js"></script>
+
+<!-- CUSTOM SCRIPT  -->
+<script src="assets/js/custom.script.js"></script>
+
+</body>
+</html>

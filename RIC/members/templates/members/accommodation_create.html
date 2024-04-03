@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <h1>Accommodation Form</h1>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<br>
+    <div class="container">
+        <h3>Please Note : </h3>
+        <h4>Depending on the availability of rooms, rooms may shared or single occupancy</h4>
+        <h4>Room charges are Rs 125 per day</h4>
+        <h4>*Mattress will be charged separately</h4>
+    </div>
+    <form class="container" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" name="" class="btn btn-success" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+{% endblock content %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block banner %}
+
+<style>
+    #sampleabstractblink{
+        font-size: 20px;
+        font-weight: bold;
+        color: #DC2F21;
+        transition: 0.01s;
+    }
+</style>
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <h1>{{title}} Registration Form</h1>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<br>
+    <div class="container">
+        <a id="sampleabstractblink" href="{% static 'home/assets/pdf/sampleabstract.doc' download = "sampleabstract.doc" %} ">Download sample Abstract</a>
+    </div>
+    <form class="container" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <div id="innovation-exhibit-ideas" style="display: none;">
+    <input type="text" name="innovation_exhibit_ideas" placeholder="Ideas for exhibition">
+  </div>
+        <input type="submit" name="" class="btn btn-success" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <script>
+          // Get the radio button element
+          var innovationExhibit = document.querySelector('#id_event_2');
+
+          // Get the ideas input field element
+          var innovationExhibitIdeas = document.querySelector('#innovation-exhibit-ideas');
+
+          // Add an event listener to the radio button element
+          innovationExhibit.addEventListener('change', function() {
+            // If the radio button is checked, show the input field
+            if (innovationExhibit.checked) {
+              innovationExhibitIdeas.style.display = 'block';
+            } else {
+              innovationExhibitIdeas.style.display = 'none';
+            }
+          });
+        </script>
+
+	<style>
+		#innovation-exhibit {
+			display: none;
+		}
+	</style>
+
+
+
+    <!-- added by dhruvesh -->
+    <script type="text/javascript">
+        var sampleabstractblink = document.getElementById('sampleabstractblink');
+        setInterval(function() {
+            sampleabstractblink.style.opacity = (sampleabstractblink.style.opacity == 0 ? 1 : 0);
+        }, 250);
+    </script>
+{% endblock content %}

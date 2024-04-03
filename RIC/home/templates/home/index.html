@@ -1,0 +1,982 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<style>
+    @import "compass/css3";
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    body {
+        color: #404040;
+    }
+
+    .wrapper {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+
+    strong {
+        font-weight: 600;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: rgba(51, 153, 204, .2);
+    }
+
+    .img-placeholder {
+        background-image: url("http://placehold.it/200x100/CC99CC/ffffff&text=Feature");
+        background-size: cover;
+        min-height: 100px;
+        min-width: 100px;
+    }
+    /*Basic Grid Styles*/
+
+    .Grid {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+
+    .u-textCenter {
+        text-align: center;
+    }
+
+    .Grid-cell {
+        flex: 1;
+    }
+
+    .Demo {
+        padding: 0.8em 1em 0;
+        margin-bottom: 1em;
+        background: rgba(51, 153, 204, .2);
+        transition: background-color 0.3s ease;
+        border: 1px solid #3cc;
+        border-radius: 3px;
+    }
+
+    .Demo:after {
+        content: "";
+        display: block;
+        margin-top: 0.8em;
+        height: 1px;
+    }
+
+    .Demo:hover {
+        background: rgba(51, 153, 204, .6);
+    }
+
+    .Demo.Holly {
+        background: rgba(102, 51, 255, 0.1);
+    }
+
+    .Demo.Holly:hover {
+        background: rgba(102, 51, 255, 0.25);
+    }
+    /* With gutters*/
+
+    .Grid--gutters {
+        margin-left: -1em;
+    }
+
+    .Grid--gutters .Grid-cell {
+        padding-left: 1em;
+    }
+
+    .Grid--gutters .Grid--nested .Grid-cell:first-of-type .Demo {
+        margin-right: 1em;
+    }
+    /* Justify per row*/
+
+    .Grid--right {
+        justify-content: flex-end;
+    }
+
+    .Grid--center {
+        justify-content: center;
+    }
+    /* Alignment per row */
+
+    .Grid--top {
+        align-items: flex-start;
+    }
+
+    .Grid--bottom {
+        align-items: flex-end;
+    }
+
+    .Grid--center {
+        align-items: center;
+    }
+    /* Alignment per cell */
+
+    .Grid-cell--top {
+        align-self: flex-start;
+    }
+
+    .Grid-cell--bottom {
+        align-self: flex-end;
+    }
+
+    .Grid-cell--center {
+        align-self: center;
+    }
+
+    .navigation {
+        list-style: none;
+        /*background: deepskyblue;
+	*/
+        background: rgba(102, 51, 255, 0.1);
+        margin: 0 0 1em;
+        border: 1px solid #3cc;
+        border-radius: 3px;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: flex-end;
+    }
+
+    .navigation a {
+        text-decoration: none;
+        display: block;
+        padding: 1em;
+        color: #333;
+    }
+
+    .navigation a:hover {
+        background: rgba(64, 0, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .navigation:hover {
+        background: rgba(102, 51, 255, 0.25);
+    }
+
+    @media all and (max-width: 800px) {
+        .navigation {
+            justify-content: space-around;
+        }
+    }
+
+    @media all and (max-width: 600px) {
+        .navigation {
+            -webkit-flex-flow: column wrap;
+            flex-flow: column wrap;
+            padding: 0;
+        }
+        .navigation a {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .navigation li:last-of-type a {
+            border-bottom: none;
+        }
+    }
+    /*===========================================*/
+    /* Base classes for all media - Mobile first */
+
+    .Grid--cols-2>.Grid-cell {
+        flex: 0 0 100%;
+    }
+
+    .Grid--cols-3>.Grid-cell {
+        flex: 0 0 100%;
+        min-width: 15%;
+    }
+
+    .Grid--cols-4>.Grid-cell {
+        flex: 0 0 100%;
+    }
+
+    .Grid--cols-6>.Grid-cell {
+        flex: 0 0 calc(50% - 1em);
+    }
+
+    .Grid--cols-12>.Grid-cell {
+        flex: 0 0 calc(33.3333% - 1em);
+    }
+
+    .Grid--holly-grail .aside,
+    .Grid--holly-grail .main {
+        flex: 1 100%;
+    }
+    /* One of -- columns*/
+
+    .Grid--1of2>.Grid-cell,
+    .Grid--1of4>.Grid-cell:first-of-type,
+    .Grid--1of3>.Grid-cell:first-of-type {
+        flex: 0 0 100%;
+    }
+
+    .Grid--1of6>.Grid-cell:first-of-type {
+        flex: 0 0 50%;
+    }
+
+    .Grid--fit>.Grid-cell {
+        flex: 1;
+    }
+
+    .Grid--full>.Grid-cell {
+        flex: 0 0 100%;
+    }
+    /* Tablet (medium) screens */
+
+    @media (min-width: 30em) {
+        .Grid--cols-4>.Grid-cell {
+            flex: 0 0 calc(50% - 1em);
+        }
+        .Grid--cols-6>.Grid-cell {
+            flex: 0 0 calc(33.3333% - 1em);
+        }
+        .Grid--cols-12>.Grid-cell {
+            flex: 0 0 calc(16.6666% - 1em);
+        }
+        .Grid--holly-grail .aside {
+            flex: 1 calc(25% - 1em);
+        }
+        .Grid--1of2>.Grid-cell {
+            flex: 0 0 50%;
+        }
+        .Grid--1of6>.Grid-cell:first-of-type {
+            flex: 0 0 30%;
+        }
+        .Grid--1of4>.Grid-cell:first-of-type {
+            flex: 0 0 50%;
+        }
+        .Grid--1of3>.Grid-cell:first-of-type {
+            flex: 0 0 100%;
+        }
+    }
+    /* Large screens */
+
+    @media (min-width: 48em) {
+        .Grid--cols-2>.Grid-cell,
+        .Grid--cols-3>.Grid-cell,
+        .Grid--cols-4>.Grid-cell,
+        .Grid--cols-6>.Grid-cell,
+        .Grid--cols-12>.Grid-cell {
+            flex: 1;
+        }
+        .Grid--holly-grail .main {
+            flex: 2;
+        }
+        .Grid--holly-grail .aside {
+            flex: 1;
+        }
+        .Grid--holly-grail .aside-1 {
+            order: 1;
+        }
+        .Grid--holly-grail .main {
+            order: 2;
+        }
+        .Grid--holly-grail .aside-2 {
+            order: 3;
+        }
+        .Grid--1of2>.Grid-cell {
+            flex: 0 0 50%;
+        }
+        .Grid--1of6>.Grid-cell:first-of-type {
+            flex: 0 0 16.6666%;
+        }
+        .Grid--1of4>.Grid-cell:first-of-type {
+            flex: 0 0 25%;
+        }
+        .Grid--1of3>.Grid-cell:first-of-type {
+            flex: 0 0 30%;
+        }
+        .Grid--gutters.Grid--nested .Grid-cell:first-of-type .Demo {
+            margin-right: 0;
+        }
+    }
+
+    .content-1of1::before {
+        content: "1";
+    }
+
+    .content-1of2::before {
+        content: "1/2";
+    }
+
+    .content-1of3::before {
+        content: "1/3";
+    }
+
+    .content-1of4::before {
+        content: "1/4";
+    }
+
+    .content-1of6::before {
+        content: "1/6";
+    }
+
+    .content-1of12::before {
+        content: "1/12";
+    }
+
+
+     /*implemented by dhruvesh */
+    .embed{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    @media screen and (max-width:1200px) {
+        .embed{
+            flex-direction: column !important;
+        }
+        .embed-child{
+            margin: 2rem auto !important;
+        }
+    }
+    @media screen and (max-width:400px) {
+        .embed-child{
+            width:100% !important;
+        }
+    }
+
+    @media only screen and (min-width: 400px) {
+        .reg-announcement {
+        width: 48vw;
+        }
+        .res-announcement {
+        width: 48vw;
+        }
+        .copyArea{
+            max-width: 850px;
+            padding: 10px;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        .awNotices a{
+        width:90%;
+        }
+    }
+
+    /* Flipping announcement text */
+    .awNotices{
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    font: 400 12px Arial;
+    max-width: 50vw;
+    }
+    .awNotices a{
+    padding: 8px 25px 8px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: inherit;
+    text-decoration: none;
+    visibility: hidden;
+    transition: opacity 0.6s;
+    border-radius: 3px;
+    text-shadow: 0 0 3px rgba(1, 1, 1, 0.3);
+    line-height: 150%;
+    }
+    .awNotices a i.fa {
+    padding-right: 8px;
+    margin-right: 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .awNotices a[notice-color="orange"] {
+    background-color: #ff9800;
+    }
+    .awNotices a[notice-color="red"] {
+    background-color: #e51c23;
+    }
+    .awNotices a[notice-color="blue"] {
+    background-color: #3f51b5;
+    }
+    .awNotices a[notice-color="green"] {
+    background-color: #8bc34a;
+    }
+    .awNotices a[notice-color="dark"] {
+    background-color: #414141;
+    }
+    .awNotices a.active {
+    opacity: 1;
+    visibility: visible;
+    }
+    /* .awNotices span.controller {
+    position: absolute;
+    cursor: pointer;
+    background: transparent;
+    right: 0;
+    padding: 8px 10px;
+    line-height: 150%;
+    } */
+
+    .circular-countdown-area{
+        padding-top: 30px;
+    }
+
+    /* Announcements area */
+    .copyCenter {
+    text-align: center;
+    }
+    .copyRight {
+    text-align: right;
+    }
+    .reg-announcement {
+    background: skyblue;
+    max-width: 80vw;
+    padding: 0px 10px;
+    overflow: auto;
+    margin: 20px 5px;
+    }
+    .res-announcement {
+    background: skyblue;
+    max-width: 80vw;
+    padding: 0px 10px;
+    overflow: auto;
+    margin: 20px 5px;
+    }
+    .iconArea {
+    width:50px;
+    float: left;
+    padding: 10px;
+    /* display: inline-block; */
+    }
+    .copyArea {
+    /* max-width: 850px; */
+    min-width: 160px;
+    float: none;
+    display:block;
+    overflow: hidden;
+    }
+    .copyArea p {
+    margin:auto;
+    }
+    /* Rules for sizing the icon. */
+    .material-icons.md-18 { font-size: 18px; }
+    .material-icons.md-24 { font-size: 24px; }
+    .material-icons.md-36 { font-size: 36px; }
+    .material-icons.md-48 { font-size: 48px; }
+
+    /* Rules for using icons as black on a light background. */
+    .material-icons.md-dark { color: rgba(0, 0, 0, 0.34); }
+    .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+    /* Rules for using icons as white on a dark background. */
+    .material-icons.md-light { color: rgba(255, 255, 255, .6); }
+    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+
+        #blink1,#blink2,#blink3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #DC2F21;
+            transition: 0.01s;
+        }
+
+        /* Gallery */
+    .gallery {
+        padding-top: 80px;
+        width: 80vw;
+        margin: auto;
+        /* background-color: white; */
+        color: black;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: 300px 300px;
+        gap: 25px;
+    }
+
+    .grid img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .box-image {
+        position: relative;
+        transition: transform .2s;
+        border-radius: 5px;
+    }
+
+    /* .box-hover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    } */
+
+    .box-image:hover{
+        transform: scale(1.08);
+        z-index: 10;
+        box-shadow: 5px 5px #E7E9EB;
+    }
+
+    @media screen and (max-width: 996px) {
+    .grid img, .box-hover {
+    min-height: 300px;
+    max-height: 300px;
+    }
+    .gallery {
+    padding: 20px;
+    }
+    }
+
+    .show-more{
+        padding: 20px;
+        text-align: center;
+    }
+
+
+</style>
+{% endblock css %} {% block banner %}
+<section>
+    <div class="lgx-banner2 lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
+                    onmouseout="this.start();"><b style="color:#603"><h3><a href="/researchconclave/abstractBook.pdf">Click here to Download the Abstract Book of Research Conclave 2019 </a>. &nbsp; | &nbsp; Prize Money will be credited by 30th April, 2019  &nbsp;  | &nbsp;List of Reserach Conclave 2019 Award Winners <a href="assets/img/List of Awards.pdf" target="new"> Dowanload</a>. &nbsp;| &nbsp;  Thanks to all the participants for making Research Conclave 2019 successful &nbsp; | &nbsp;  We will be back with a new edition of Research Conclave 2020 &nbsp; | &nbsp;</h3> </b></marquee></div> -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-banner-info lgx-banner-info-center">
+                                <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
+
+                                <!--{% if user.is_authenticated %}-->
+                                    <!--<div style="background-color: rgb(161, 199, 161); color: rgb(48, 43, 43); margin-bottom:12px">-->
+                                    <!--    <h3>Welcome {{user.get_full_name}},You are now logged in</h3>-->
+                                    <!--    <p><b>You can submit your abstract in clicking Registration Form</b></p>-->
+                                    <!--</div>-->
+
+                                <!--{% endif %}-->
+                                    <!--implemented by dhruvesh -->
+
+
+
+                                <section class="awNotices">
+
+                                    <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
+                                    <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
+                                    <!--</a>-->
+                                    <!--<a notice-color="red" href="#" class="">-->
+                                    <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
+                                    <!--</a>-->
+
+
+
+                                    <!--<a notice-color="orange" href="{% url 'event:detail' 1 %}" class="active">-->
+                                    <!--    <i class="fa fa-bell"></i> Abstract Submission is Open (Deadline - 25th April,2023)-->
+                                    <!--</a>-->
+                                    <a notice-color="red" href="{% url 'home:home' %}#announcements">
+                                        <i class="fa fa-heart"></i> Integration BEE registrations will begin soon
+                                    </a>
+                                    <!--<a notice-color="orange" href="#">-->
+                                    <!--    <i class="fa fa-bell"></i> Payment Mode will be communicated soon-->
+                                    <!--</a>-->
+                                    <a notice-color="blue" href="{% url 'home:home' %}#events">
+                                        <i class="fa fa-bell"></i> Register individually for each and every event
+                                    </a>
+                                </section>
+
+
+                                <div class="circular-countdown-area">
+                                     <!--Date Format :"Y/m/d" || For Example: 1017/10/5  -->
+                                    <div id="circular-countdown" data-date="2024-08-09 18:00:00"></div>
+                                </div>
+                                <h3 class="subheading" style="font-size: 200%;">
+                                    <font color="white"><b> 09 - 11 August, 2024</b></font>
+                                </h3>
+
+                                <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3>
+                                <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br>
+                                <h3 style="color: beige;">Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park
+                                </h3>
+
+                                <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati
+                                </h3>
+
+                                <!--div class="action-area">
+                                    <div class="lgx-video-area">
+                                        <a class="lgx-btn lgx-btn-red" href="#">Buy Ticket</a>
+                                        <a class="lgx-btn lgx-btn-yellow" href="#">Registration</a-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+{% endblock banner %} {% block about %}
+
+<section>
+    <!-- implemeted by dhruvesh -->
+
+    <div id="announcements" class=" hidden lgx-about lgx-about-music">
+        <div class="lgx-inner"  style="padding:10rem 0 0 0">
+            <!--<center>-->
+            <!--    <h1>Scientific and Emprendimiento Winners</h1>-->
+            <!--    <section >-->
+            <!--        <img src="{% static 'home/assets/winners/Scientifique Results.png' %}">-->
+            <!--    </section>-->
+            <!--</center>-->
+
+                <center>
+                    <b>
+                        <font color="red"><u>ANNOUNCEMENTS</u></font>
+                    </b>
+                    <b>
+                        <ul style="list-style-type: none; padding-bottom: 16px; padding-left: 0px">
+                            <!--<li>Registration for school students for model exhibition is open</li>-->
+                            <!--<li>Final results for the PRE-RIC events will be declared on 14.4.23 (Friday)</li>-->
+                            <!--<li><div class="reg-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                            <!--    <div class="copyArea"><p>Registration for school students for model exhibition is open</p></div>-->
+                            <!--</div></li>-->
+                            <!--<li><div class="reg-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                            <!--    <div class="copyArea"><p>Deadline for submission of abstract: 25th April, 2023</p></div>-->
+                            <!--</div></li>-->
+                            <!--<li><div class="reg-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                            <!--    <div class="copyArea"><p>Payment Link will be open after 30th April</p></div>-->
+                            <!--</div></li>-->
+                            <!--<li><div class="reg-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                            <!--    <div class="copyArea"><p>Winners Announced <a href="{% url 'members:iccreate' %}" >Link</a></p></div>-->
+                            <!--</div></li>-->
+                            <!--<li><div class="reg-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                            <!--    <div class="copyArea"><p>Register individually for each and every event</p></div>-->
+                            <!--</div></li>-->
+
+                            <!--<li><div class="res-announcement">-->
+                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">emoji_events</i></p></div>-->
+                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2023 D'Sino and IB Result</a></div>-->
+                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics67.pdf' %}">Pre-RIC 2023 Math Olympics class 6th and 7th</a></div>-->
+                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics89.pdf' %}">Pre-RIC 2023 Math Olympics class 8th, 9th and 10th</a></div>-->
+                            <!--</div></li>-->
+
+
+                        </ul>
+                    </b>
+                </center>
+
+
+            <div class="container embed">
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/_IM0qQZR3o8" title="How to submit abstract for Oral/Poster in Research and Industrial Conclave Integration 2023 | IITG" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/95WT3PoPpNs" title="How to Re-Upload Abstract" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<br />
+<br />
+                <!-- <img src="{% static 'home/assets/img/callforpapers.jpeg' %}" alt="" width="100%"> -->
+                <!--<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fric.iitg%2Fposts%2F121245154265446&show_text=true&width=500" height="660" style=" border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>-->
+                <!--<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fric.iitg%2Fposts%2F1400304190745289%3A1400304190745289&show_text=true&width=500" width="500" height="575" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>-->
+
+                <!--<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/CrAIG9BqrX0/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/CrAIG9BqrX0/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/CrAIG9BqrX0/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Research &amp; Industrial Conclave, IIT Guwahati (@ric_iitg)</a></p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>-->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="lgx-about lgx-about-music">
+        <div class=""  style="padding:10rem 0 0 0;">
+            <div class="container">
+
+                {% for i in about_list %} {% if i.id == 1 %}
+
+                <div class="row">
+                    <div class="lgx-about-content-area" style="background: #F0F8FF; padding-top: 3rem; padding-left: 6rem; padding-right: 6rem;">
+                        <div class="lgx-heading">
+                            <center>
+                                <p class="">{{i|safe|linebreaks}}</p>
+                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="80%" height="3">
+                            </center>
+                        </div>
+                        {{i.content|safe}}
+                    </div>
+                    <br><br>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div><!-- //.CONTAINER -->
+    </div><!-- //.INNER -->
+    </div>
+</section>
+{% endblock about %}
+
+{% block event %}
+<section>
+    <div id="events" class="lgx-sponsors">
+        <div class="lgx-inner-bg">
+            <div class="lgx-inner"  style="padding:10rem 0 0 0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading">Events</h2>
+                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
+                            </div>
+                        </div>
+                    </div>
+                    <!--//main row-->
+                    <div class="row">
+
+                        <div class="Grid Grid--gutters Grid--cols-5 u-textCenter">
+                            {% for i in product_list %}
+                                <div class="Grid-cell">
+                                    <div class="card h-100">
+                                        <a href="{% url 'event:detail' i.name|slugify %}">
+
+                                          <img src="{{i.pic.url}}" style="border-radius: 50%;height:100px;" alt="...">
+                                        </a>
+                                        <div class="">
+                                          <h5 class=""><a href="{% url 'event:detail' i.name|slugify %}">{{i}}</a></h5>
+                                        </div>
+                                      </div>
+
+                                </div>
+                            {% endfor %}
+
+
+                        </div>
+
+                        <!--<div class="Grid Grid--gutters Grid--cols-3 u-textCenter">-->
+                        <!--    {% for i in product_list %}-->
+                        <!--    <div class="Grid-cell">-->
+                        <!--        <div class="card h-100">-->
+                        <!--            <a href="{% url 'event:detail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%;height:150px;" alt="..."></a>-->
+                        <!--            <div class="">-->
+                        <!--              <h5 class=""><a href="{% url 'event:detail' i.id %}">{{i}}</a></h5>-->
+                        <!--            </div>-->
+                        <!--          </div>-->
+                        <!--    </div>-->
+                        <!--    {% endfor %}-->
+
+
+                        <!--</div>-->
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <!--//col-->
+            </div>
+            <!--//row-->
+
+            <!--//col-->
+        </div>
+        <!--//row-->
+    </div>
+    <!--//container-->
+    </div>
+    </div>
+    <!--//lgx-inner-->
+    </div>
+</section>
+{% endblock event %}
+{% block sponsor %}
+<section>
+    <div id="about" class="lgx-about lgx-about-music">
+        <div class="lgx-inner"  style="padding:10rem 0 0 0">
+            <div class="container">
+                <div class="lgx-heading">
+                                <h2 class="heading">Souvenir Book'22</h2>
+                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
+                            </div>
+               <style>.embed-container { position: relative; padding-bottom:56.25%; height:0; overflow: hidden; max-width: 100%!important; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style><div class='embed-container' data-page-width='494' data-page-height='640' id='ypembedcontainer' ><iframe   src="https://www.yumpu.com/en/embed/view/7tJhfrzdnkWZs60L" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br><a href="https://www.yumpu.com/en/document/view/66262978/ric-2022-souvenir-book" title="RIC 2022 Souvenir Book" target="_blank">RIC 2022 Souvenir Book</a></div><script src='https://players.yumpu.com/modules/embed/yp_r_iframe.js' ></script>
+            </div>
+        </div><!-- //.CONTAINER -->
+    </div><!-- //.INNER -->
+    </div>
+</section>
+
+
+
+<!-- Gallery -->
+
+<!--<section class="gallery">-->
+<!--    <div class="lgx-heading">-->
+<!--        <h2 class="heading">Gallery</h2>-->
+<!--        <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">-->
+<!--    </div>-->
+<!--    <div class="grid">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--        <img class="box-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvf-zTHJn8BIfW5LO5l2kdHZxjpgBIT5JMjPsMeIEBg&usqp=CAU&ec=48600112" class="img-responsive">-->
+<!--    </div>-->
+<!--    <div class="show-more"><button type="button" class="btn btn-lg btn-primary" id="gallery-btn">Show More</button></div>-->
+<!--</section>-->
+
+
+
+
+<!--<section>-->
+<!--    <div id="lgx-sponsors" class="lgx-sponsors">-->
+<!--        <div class="lgx-inner-bg">-->
+<!--            <div class="lgx-inner">-->
+<!--                <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-xs-12">-->
+<!--                            <div class="lgx-heading">-->
+<!--                                <h2 class="heading">Partners</h2>-->
+<!--                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                            <div class="col-xs-12">-->
+<!--                                <div class="sponsors-area">-->
+<!--                                    {% for i in sponsor_list %}-->
+<!--                                    {% if i.cat.name == "Partners" %}-->
+<!--                                    <div class="single">-->
+<!--                                        <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+<!--                                        <div class="speaker-info">-->
+<!--                                            <h5 class="font-weight-bold mt-4 mb-3">-->
+<!--                                                 <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+<!--                                            </h5>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    {% endif %}-->
+<!--                                    {% endfor %}-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--</section>-->
+
+
+{% endblock sponsor %}
+{% block contact %}
+<section>
+    <div id="contact" class="lgx-travelinfo">
+        <div class="lgx-inner"  style="padding:10rem 0 0 0">
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-heading">
+                            <h2 class="heading">Contact Us</h2>
+                            <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
+                            <!--h3 class="subheading">Conferences dedicated to building remarkable events.</h3-->
+                        </div>
+                    </div>
+                    <!--//main COL-->
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-travelinfo-content">
+                            <div class="lgx-travelinfo-single">
+                                <img src="{% static 'home/assets/img/Contact.png' %}" alt="User" />
+                                <!--h3 class="title"></h3-->
+                                <p class="info"><b>Student Conveners</b></p>
+
+
+                            <br>
+
+                            <p class="info">Mr. Shubham Singh <br> (Student Convener) <br> +91-8920217431 </p>
+                            <p class="info">Ms. Nikhil Kumar Mishra <br>(Student Co-convener PG) <br> +91-7367088245 </p>
+                            <p class="info">Mr. Rishi Patel <br>(Student Co-convener UG) <br> +91-9926665909 </p>
+
+                        </div>
+                        <div class="lgx-travelinfo-single">
+                            <img src="{% static 'home/assets/img/Contact.png' %}" alt="User" />
+                            <p class="info"><b>Industrial Events Info.</b></p>
+
+                            <br>
+                            <p class="info">Reasearch Park(Office) <br> 0361 258 6507 </p>
+
+                        </div>
+                        <div class="lgx-travelinfo-single">
+                            <img src="{% static 'home/assets/img/Mail.png' %}" alt="Mailing" />
+                            <p class="info">research_conclave@iitg.ac.in</p>
+                            <p class="info">researchconclave.iitg@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+        </br>
+    </div>
+    </div>
+</section>
+
+<!-- javascript for flipping announcement text -->
+    <script type="text/javascript">
+    //     $('.awNotices').append('<span class="controller fa fa-pause"></span>');
+    // $('.awNotices a:nth-of-type(1)').addClass('active');
+
+    function awNotice() {
+      if(!$('.awNotices').hasClass('stopped')){
+      var $active = $('.awNotices a.active');
+      var $next = $active.next('a');
+
+      if ($next.length){
+      $next.addClass('active');
+      $active.removeClass('active');
+      }else{
+        $active.removeClass('active');
+            $('.awNotices a:first-of-type').addClass('active');
+      }
+      }
+    }
+
+    // $('.awNotices .controller').click(function(){
+    //   $(this).toggleClass('fa-pause fa-play');
+    //   $('.awNotices').toggleClass('stopped');
+    // })
+
+    function awNotices(timer){
+        setInterval( "awNotice()", timer);
+    }
+
+    awNotices(4500);
+
+
+    var blink1 = document.getElementById('blink1');
+    var blink2 = document.getElementById('blink2');
+    var blink3 = document.getElementById('blink3');
+        setInterval(function() {
+            blink1.style.opacity = (blink1.style.opacity == 0 ? 1 : 0);
+            blink2.style.opacity = (blink2.style.opacity == 0 ? 1 : 0);
+            blink3.style.opacity = (blink3.style.opacity == 0 ? 1 : 0);
+        }, 250);
+
+    </script>
+
+{% endblock contact %}

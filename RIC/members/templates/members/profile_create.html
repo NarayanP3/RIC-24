@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% block banner %}
+
+<style>
+    #sampleabstractblink{
+        font-size: 20px;
+        font-weight: bold;
+        color: #DC2F21;
+        transition: 0.01s;
+    }
+</style>
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <h1>{{title}} Registration Form</h1>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+<br>
+    <div class="container">
+        <a id="sampleabstractblink" href="{% static 'home/assets/pdf/sampleabstract.doc' download = "sampleabstract.doc" %} ">Download sample Abstract</a>
+    </div>
+    <div class="container btn-primary" id="">
+        For Innovation Exhibit and Emprendimiento, ideas should be uploaded after the submission of this form
+    </div>
+    <form class="container" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" name="" class="btn btn-success" value="Submit">
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <!-- added by dhruvesh -->
+    <script type="text/javascript">
+        var sampleabstractblink = document.getElementById('sampleabstractblink');
+        setInterval(function() {
+            sampleabstractblink.style.opacity = (sampleabstractblink.style.opacity == 0 ? 1 : 0);
+        }, 250);
+        </script>
+        <script type="text/javascript">
+        var sampleabstractblink = document.getElementById('sampleabstractblink2');
+        setInterval(function() {
+            sampleabstractblink.style.opacity = (sampleabstractblink.style.opacity == 0 ? 1 : 0);
+        }, 250);
+    </script>
+{% endblock content %}

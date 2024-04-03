@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SITE TITLE -->
+    <title>Research and Industrial Conclave 2022</title>
+
+    <!--  FAVICON AND TOUCH ICONS -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/RIC.png' %}" />
+    <!-- this icon shows in browser toolbar -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/RIC.png' %}" />
+
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    
+    <!-- manually implemented css -->
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <img src="{% static '/assets/iitg4.jpg' %}" alt="" id="header-img">
+        <nav class="test navbar">
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+              </ul>
+        </nav>
+
+        <div class="header-title">
+
+            <div class="title">
+                <span>Research </span>
+                <span>&</span>
+            </div>
+            <div>
+                <span>Industrial COnclave</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="about-info container">
+            <div class="about-text">
+               <h1>
+                   About Research and Industrial Conclave 2023
+               </h1>
+               <p>
+                The first ever industrial conclave of its own kind to enhance industry-academia collaboration is organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds towards research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time, IIT Guwahati Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) - INTEGRATION 2022. It is aimed at providing an exclusive platform for students, young innovators, entrepreneurs, industry experts, professionals, academicians, policy makers, investors and exhibitors to exchange innovative ideas, knowledge base, showcasing product/ services to rejuvenate various research and development opportunities under one roof with a special focus on northeastern states. Moreover, the conclave will also include dedicated networking schedules, mentoring sessions and showcasing of innovations that will provide new entrepreneurs and students investment opportunities for product development and scaling-up.
+               </p>
+   
+            </div>
+            <div class="about-video">
+                <iframe src="https://www.youtube.com/embed/ve81UsLCTuA" title="Research and Industrial Conclave 2023 | IIT Guwahati #IITG #RIC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <section id="events">
+        <div class="events-info container">
+            <div class="events-text">
+                <h1>
+                    Events
+                </h1>
+            </div>
+            <div class="events-all">
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event1</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event2</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event3</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event4</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event5</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event6</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event7</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event8</h6>
+                </div>
+                <div class="event-desc">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <h6>Event9</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="book">
+        <div class="book-info container">
+            <div class="book-text">
+                <h1>
+                    SOVINOUR BOOK
+                </h1>
+            </div>
+            <div class="book-desc">
+                <iframe src="https://www.yumpu.com/en/embed/view/XG6IeP2b8kralYTM" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+            </div>
+        </div>
+        <!-- <iframe src="https://www.yumpu.com/en/embed/view/7tJhfrzdnkWZs60L" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe> -->
+    </section>
+
+
+    <section id="partners">
+        <div class="partners-info container">
+            <div class="partners-text">
+                <h1>
+                    Partners
+                </h1>
+            </div>
+            <div class="partners-all">
+                <div class="partners-row">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                </div>
+                <div class="partners-row">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                    <img src="{% static 'assets/RIC.png' %}" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-info container">
+            <div class="contact-text">
+                <h1>
+                    Contact us
+                </h1>
+            </div>
+            <div class="contact-all">
+                <div class="contact-desc">
+                    <img src="{% static 'assets/Mail.png' %}" alt="">
+                    <h4>Students btech</h4>
+                    <span>Dhruvesh Bhure</span>
+                    <span>+91 9988776655></span>
+                    <span>Chetan Chinchulkar</span>
+                    <span>+91 9988776655</span>
+                    <span>Dhruvesh Bhure</span>
+                    <span>+91 9988776655</span>
+                </div>
+                <div class="contact-desc">
+                    <img src="{% static 'assets/Mail.png' %}" alt="">
+                    <h4>Students btech</h4>
+                    <span>Dhruvesh Bhure</span>
+                    <span>+91 9988776655></span>
+                    <span>Chetan Chinchulkar</span>
+                    <span>+91 9988776655</span>
+                    <span>Dhruvesh Bhure</span>
+                    <span>+91 9988776655</span>
+                </div>
+                <div class="contact-desc">
+                    <img src="{% static 'assets/Mail.png' %}" alt="">
+                    <p><a href="mailto:b.dhruvesh@iitg.ac.in">b.dhruvesh@iitg.ac.in</a></p>
+                    <p><a href="mailto:b.dhruvesh@iitg.ac.in">b.dhruvesh@iitg.ac.in</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container footer-items">
+            <div class="quick">
+                <h1>Quick Links</h1>
+                <div class="quick-items">
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                    <div class="quick-item"><a href="">IIT Guwahati</a></div>
+                </div>
+            </div>
+
+            <div class="footer-all">
+                <div class="footer-desc">
+                    <h1>Venue</h1>
+                    <span style="color: orange;"><h3>Class Room COmplex</h3></span>
+                    <span>IIT Guwahati</span>
+                    <span>Assam 781039, India</span>
+                    <span><a href="">View Map Location</a></span>
+                </div>
+                <div class="footer-desc">
+                    <img src="{% static 'assets/iitg_sab.png' %}" alt="" width="80%">
+                </div>
+                <div class="footer-desc">
+                    <h1>Social COnnect</h1>
+                    <div>
+                        <span>Connect us for more updates</span>
+                        <div class="social-items">
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <hr>
+            <div class="copy-right">
+                <p><span>© </span>2023 STUDENTS' ACADEMIC BOARD, IIT GUWAHATI</p>
+                <p><span>MIANTAINED BY <a href="">DHRUVESH</a></span></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap links -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'myapp/script.js' %}"></script>
+
+</body>
+
+</html>

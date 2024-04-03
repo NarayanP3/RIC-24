@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner %}
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <h1>Your Registration Profile</h1>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+
+{% if bio_list %}
+
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Oral, Poster, Model
+    </h1>
+          {% for i in bio_list %}
+            {% if i.owner == request.user %}
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{i.dept}} from {{i.institute}}</h5>
+                    <p class="card-text">You have participated in {% for j in i.event1.all %}{{j}} <b>;</b> {% endfor %} </p>
+                    <p class="card-text">For Payment, Abstract Submission Status and Instruction related info click below</p>
+                    <a href="{% url 'members:detail' i.id %}" class="btn btn-primary">Click Here</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+{% if ric_list %}
+
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Oral, Poster, Model
+    </h1>
+          {% for i in ric_list %}
+            {% if i.owner == request.user %}
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{i.dept}} from {{i.institute}}</h5>
+                    <p class="card-text">You have participated in <button type="button" class="btn btn-success">{{i.event}}</button> </p>
+                    <p class="card-text">For Payment, Abstract Submission Status and Instruction related info click below</p>
+                    <a href="{% url 'members:ric-detail' i.id %}" class="btn btn-primary">Click Here</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+  {% if ic_list %}
+  <div class="container">
+    <div class="row">
+      <br>
+      <h1>
+        Registration for Industrial Events
+      </h1>
+      {% for i in ic_list %}
+        {% if i.owner == request.user %}
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{i.dept}} from {{i.institute}}</h5>
+                <p class="card-text">You have participated in <button type="button" class="btn btn-success">{{i.event}}</button> </p>
+                <p class="card-text">For Payment, Status and Instruction related info click below</p>
+
+                <a href="{% url 'members:icdetail' i.id %}" class="btn btn-primary">Click Here</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <br>
+  </div>
+{% endif %}
+
+{% if workshop_bio%}
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Workshop
+    </h1>
+    {% for i in workshop_bio %}
+
+    {% if i.owner == request.user %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.dept}}</h5><button type="button" class="btn btn-primary">Workshop</button>
+            <p class="card-text">For Payment and Instruction related info click below</p>
+            <a href="{% url 'members:workshop_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+{% comment %} {% debug %} {% endcomment %}
+{% comment %} length intBee = {{ intBee|length }}
+<br>
+length diffChall = {{ diffChall|length }}
+<br>
+length mathEve = {{ mathEve|length }}
+<br> {% endcomment %}
+
+{% if intBee %}
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Integration Bee
+    </h1>
+    {% for i in intBee %}
+
+      {% if i.owner == request.user %}
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{i.school_college_name}}</h5>
+              {% comment %} <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p> {% endcomment %}
+              <p class="card-text">For Payment and other Instruction related info click below</p>
+              <a href="{% url 'members:integrationBee_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
+
+      {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+{% if diffChall %}
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for D'SinoQuation
+    </h1>
+    {% for i in diffChall %}
+
+    {% if i.owner == request.user %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.school_college_name}}</h5>
+            {% comment %} <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p> {% endcomment %}
+            <p class="card-text">For Payment and other Instruction related info click below</p>
+            <a href="{% url 'members:differentiaChallenge_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+{% if mathEve or mathEveInd %}
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Registration for Maths Olympics
+    </h1>
+    {% for i in mathEve %}
+
+    {% if i.owner == request.user %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.school_name}}</h5>
+            {% comment %} <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p> {% endcomment %}
+            <p class="card-text">For Payment and other Instruction related info click below</p>
+            <a href="{% url 'members:mathEvent_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+      {% for i in mathEveInd %}
+
+    {% if i.owner == request.user %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            {% comment %} <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p> {% endcomment %}
+            <p class="card-text">For Payment and other Instruction related info click below</p>
+            <a href="{% url 'members:mathEventInd_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+
+{% if mathEve %}
+<div class="container">
+  <div class="row">
+    <br>
+    <h1>
+      Accommodation Details
+    </h1>
+    {% for i in accommo %}
+
+    {% if i.owner == request.user %}
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.owner}}</h5>
+            {% comment %} <p class="card-text">You have participated in {{i.event2}},{% for j in i.event1.all %}{{j}}{% endfor %}</p> {% endcomment %}
+            <p class="card-text">For Payment and other Instruction related info click below</p>
+            <a href="{% url 'members:accommodation_detail' i.id %}" class="btn btn-primary">Click to know details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+  </div>
+  <br>
+</div>
+{% endif %}
+
+
+
+{% endblock content %}

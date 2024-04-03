@@ -1,0 +1,79 @@
+ {% extends 'base.html' %} {% load static %} {% load bootstrap4 %}
+ {% block banner %}
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="lgx-heading">
+                                            <center><b>
+                                Analytics
+                                                </b></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </b>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+{% endblock banner %}
+{% block content %}
+    <div class="container">
+        <h1>Event Analytics</h1>
+        <canvas id="event-chart"></canvas>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+          var eventChart = new Chart(document.getElementById('event-chart'), {
+            type: 'bar',
+            data: {
+              labels: [],
+              datasets: [{
+                label: 'Number of Events',
+                data: [],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          fetch('{% url "home:event_analytics" %}')
+            .then(response => response.json())
+            .then(data => {
+              // filter out null values
+              var labels = data.labels.filter(label => label !== null);
+              var values = data.values.filter(value => value !== null);
+              eventChart.data.labels = labels;
+              eventChart.data.datasets[0].data = values;
+              eventChart.update();
+            });
+        </script>
+
+{% endblock %}
+

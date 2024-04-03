@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <link rel="icon" href="{% static 'pre_edition/rc18/images/favicon.ico' %}" type="image/gif" sizes="16x16">
+  <title>Home | Research Conclave'18</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="{% static 'pre_edition/rc18/bootstrap-3.3.7-dist/css/bootstrap.min.css' %} ">
+  <link rel="stylesheet" href="{% static 'pre_edition/rc18/font-awesome-4.7.0/css/font-awesome.min.css' %} ">
+  <link rel="stylesheet" href="{% static 'pre_edition/rc18/rc_style.css' %} ">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js"></script>
+  <!--<script src="Scroll.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+  <script src="{% static 'pre_edition/rc18/bootstrap-3.3.7-dist/js/bootstrap.min.js' %} "></script>
+</head>
+<body >
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+  <!--<div class="container-fluid">-->
+  <div style="background-color:#f9fcff1a">
+  <div class="container" >
+  <!--  <div class="navbar-header">-->
+     
+      <!--<a class="navbar-brand" href="#"><img src="images/Final_RC logo.png" height="160" class="d-inline-block align-top" alt="RC Logo">-->
+     <!-- <a class="navbar-brand pull-left" href="#">--><br><br>
+      <div class="row"><div class="col-lg-1">
+      <img src="{% static 'pre_edition/rc18/images/logo.gif' %} " height="100"  alt="RC Logo"></div>
+      <div class="col-lg-7" style="padding-top:20px; line-height:150%; padding-left:30px;">
+      <b style="color:#009; font-size:42px; font-weight:bolder; letter-spacing: 0px;">
+      Research</b><br>
+      <b style="color:#009; font-size:32px; font-weight:bolder;letter-spacing: 0px;">
+      Conclave'18</b><br>
+      <b style="color:#009; font-size:12px;">An Amalgamation of Academia, Industry & Start-ups</b></div>
+<!--</a>-->
+
+<!--<a class="navbar-brand pull-right clearfix" href="#">
+      <div class="row" align="center">-->
+      <div class="col-lg-2" align="center" ><a href="https://www.iitg.ernet.in/sab/" target="new">
+      <b style="color:#009; font-size:12px; font-weight:bolder;letter-spacing: 0px;">Organized by</b><br>
+     <img src="{% static 'pre_edition/rc18/images/sab.png' %} " height="70"  alt="RC Logo"><br><b style="color:#009; font-size:12px;">Students’ Academic Board</b></a></div>
+      
+      <div class="col-lg-2" align="center">
+      <b style="color:#009; font-size:12px; font-weight:bolder;letter-spacing: 0px;">In Association with</b><br>
+       <img src="{% static 'pre_edition/rc18/images/logo.png' %} " height="70"  alt="RC Logo"><br><b style="color:#009; font-size:12px;">IIT Guwahati</b></div>
+      </div>
+      </a>
+<br></div></div>
+      <!--<a class="navbar-brand" href="#">Research Conclave</a><br>
+      <a class="navbar-brand" href="#"></a>-->
+    <!--</div>
+  </div>
+</nav>-->
+    
+    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#About">About</a></li>
+         <li><a href="Events.html">Events</a></li>
+        <li><a href="Registration.html">Registration</a></li>
+         <li><a href="Team.html">Team</a></li>
+        <li><a href="Schedule.html">Schedule</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sponsors <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><a href="Become_Sponsor.html">Exibitors & Supportors</a></li>
+            <li><a href="Become_Sponsor.html#Souvenir" >Souvenir Advertisement</a></li>
+            <li><a href="Our sponsors.html">Our Sponsors</a></li>
+            <li><a href="Thanks.html">Thanks to our previous Suppotors</a></li>
+          </ul>
+        </li>
+        <li><a href="Accommodation.html">Accommodation</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="FAQs.html">FAQs</a></li>
+        <li><a href="" data-toggle="modal" data-target="#gallery">Gallery</a></li>
+      </ul>
+      
+    </div>
+  </div>
+  </div>
+</nav>
+ 
+ 
+ <!--begin modal window-->
+<div class="modal fade" id="gallery">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<div class="pull-left"><b>Research Conclave' 18 Gallery</b></div>
+<button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>
+</div>
+<div class="modal-body">
+
+<!--CAROUSEL CODE GOES HERE-->
+<!--begin carousel-->
+<div id="myGallery" class="carousel slide" data-interval="false">
+<div class="carousel-inner">
+<div class="item active"> <img src="{% static 'pre_edition/rc18/Gallery/Inauguration/0001.jpg' %} " alt="item0">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Inauguration/0002.jpg' %} " alt="item1">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Inauguration/0003.jpg' %} " alt="item2">
+</div>
+<!--<div class="item"> <img src="Gallery/Inauguration/0004.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0005.jpg" alt="item4">
+</div>-->
+<!--<div class="item"> <img src="Gallery/Inauguration/0006.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0007.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0008.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0009.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0010.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0011.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0012.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0013.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0014.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0015.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0016.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0017.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0018.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0019.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0020.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0021.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0022.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0023.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0024.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0025.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0026.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0027.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0028.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0029.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0030.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0031.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0032.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0033.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Inauguration/0034.jpg" alt="item6">
+</div>-->
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Day1_HCVerma/0001.jpg' %} " alt="item0">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Day1_HCVerma/0002.jpg' %} " alt="item1">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Day1_HCVerma/0003.jpg' %} " alt="item2">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/Day1_HCVerma/0004.jpg' %} " alt="item3">
+</div>
+<!-- <div class="item"> <img src="Gallery/Day1_HCVerma/0005.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0006.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0007.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0008.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0009.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0010.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0011.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0012.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0013.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0014.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0015.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0016.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0017.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0018.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0019.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0020.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0021.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0022.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0023.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0024.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0025.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0026.jpg" alt="item7">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0027.jpg" alt="item8">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0028.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0029.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0030.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0031.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0032.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0033.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0034.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0035.jpg" alt="item9">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0036.jpg" alt="item1">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0037.jpg" alt="item2">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0038.jpg" alt="item3">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0039.jpg" alt="item4">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0040.jpg" alt="item5">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0041.jpg" alt="item6">
+</div>
+<div class="item"> <img src="Gallery/Day1_HCVerma/0042.jpg" alt="item6"> -->
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0001.jpg' %}" alt="item0">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0002.jpg' %} " alt="item1">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0003.jpg' %} " alt="item2">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0004.jpg' %} " alt="item3">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0005.jpg' %} " alt="item4">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0006.jpg' %} " alt="item5">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0007.jpg' %} " alt="item6">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0008.jpg' %} " alt="item7">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0009.jpg' %} " alt="item8">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0010.jpg' %} " alt="item9">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0011.jpg' %} " alt="item1">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0012.jpg' %} " alt="item2">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0013.jpg' %} " alt="item3">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0014.jpg' %} " alt="item4">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0015.jpg' %}" alt="item5">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0016.jpg' %} " alt="item6">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0017.jpg' %} " alt="item7">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0018.jpg' %} " alt="item8">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0019.jpg' %} " alt="item9">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0020.jpg' %} " alt="item1">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0021.jpg' %} " alt="item2">
+</div>
+<div class="item"> <img src="{% static 'pre_edition/rc18/Gallery/3MT/0022.jpg' %} " alt="item3">
+</div>
+<!--end carousel-inner--></div>
+<!--Begin Previous and Next buttons-->
+<a class="left carousel-control" href="#myGallery" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myGallery" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span></a>
+<!--end carousel--></div>
+
+
+
+
+
+
+
+<!--end modal-body--></div>
+<div class="modal-footer">
+<div class="pull-left">
+<small  style="color:#300; font-size:14px">For more photographs<a href="https://drive.google.com/open?id=13uSziCXdgBqKF-Xi7VoLW2DbaZrvKh1P" target="new"> click here</a></small>
+</div>
+<button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
+<!--end modal-footer--></div>
+<!--end modal-content--></div>
+<!--end modal-dialoge--></div>
+<!--end myModal-->></div>
+ 
+ 
+ 
+ 
+ 
+<div class="band1" align="center"><marquee behavior="scroll" onMouseOver="this.stop();"
+           onmouseout="this.start();"><b style="color:#603">All the participants are requested to fill the <a href="Registration.html" target="new">feedback form</a>. &nbsp; | &nbsp; Thanks to all the participants for making Research Conclave' 18 successful &nbsp; | &nbsp; We will be back with a new edition of Research Conclave'19. &nbsp; | &nbsp; <!--Highlights &nbsp; | &nbsp; Speakers: Prof H. C. Verma (Author of the book 'Concepts of Physics') &nbsp; | &nbsp;  Workshops by INFIZEAL Technologies (An IIT Delhi Alumni Venture): Multi-Touch and Augmented Reality, Internet of things (IoT).--><!--Oral Presentation: 10<sup>th</sup> March (8:30am – 4:00pm) &nbsp; | &nbsp; Poster presentation: 10<sup>th</sup> March (8:30am – 4:00pm) & 11<sup>th</sup> March (9:00am – 11:00am) &nbsp; | &nbsp; Model presentation: 11<sup>th</sup> March (9:00am – 1:00pm) &nbsp; | &nbsp; <a href="Schedule.html" target="new">Click here</a> for detail schedule.--></b></marquee></div> 
+ 
+<!--<div class="band" align="center"><marquee behavior="scroll" onmouseover="this.stop();"
+           onmouseout="this.start();"><b ><!--* Please carry your payment receipts and ID proofs. &nbsp; | &nbsp;
+*** Online registrations are closed. &nbsp; | &nbsp; *** On spot registrations will be taken.</span> &nbsp; | &nbsp; --><!-- &nbsp; | &nbsp; Size of the poster is 4 (height) X 3 (width) feet.--> <!--Detailed author instructions about the Springer template can be found <a href="Downloads/Latex Instructions for Authors.pdf" target="new">here</a>. Please <a href="Downloads/splnproc1703.docm">click here</a> for a word template. &nbsp; | &nbsp; Kindly send your full manuscript to notify@researchconclave.in  &nbsp; | &nbsp; Last date to submit manuscript for publication in Springer: 25<sup>th</sup> March 2018. &nbsp; | &nbsp; <a href="Downloads/List of Winners - Research Conclave 2018.pdf" style="color:#FFF">* Congratulations! List of Winners - Click here *</a>-->  <!--## Note: If one registers for any one of the following events then registration for other events will be free of cost:
+   &bull; Oral/Poster/Model Presentations
+   &bull; Advanced Excel Workshop
+   &bull; Advanced Origin Workshop
+   &bull; ImageJ Workshop
+   &bull; Patent writing and copyright workshop
+   &bull; Photography
+   &bull; Three Minutes Thesis Presentation
+   &bull; Quiz--></b></marquee></div>
+<div id="mycarousel" class="carousel slide" data-ride="carousel" >
+  <!-- Indicators -->
+ 
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active" >
+      <img src="{% static 'pre_edition/rc18/images/group_pic.jpg' %} " alt="First Image" width="100%" style="overflow:hidden">
+      <div class="carousel-caption" style="background-color: #9FF transparent">
+         <!--<h1><b>8<sup>th</sup> to 11<sup>th</sup> March 2018</h1>
+              <h2>IIT Guwahati<br><br></b>-->
+             <!--<b style="color:#FFF"> Registration of Internal Participants: 8<sup>th</sup> January 2018 (3pm onwards)<br>
+             Registration of External Participants: 9<sup>th</sup> January 2018 (8am onwards)</b>--></h2>
+              <!--<a href="Registration.html" target="new"><button type="button" class="btn btn-primary btn-lg">Registration</button></a>-->
+      </div>
+    </div>
+    <div class="item" align="center" style="background-color:#FFF">
+    <video height="600px" controls align="center">
+  <source src="{% static 'pre_edition/rc18/Downloads/50fps.mp4' %} " type="video/mp4">
+  <source src="{% static 'pre_edition/rc18/Downloads/50fps.ogg' %} " type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+    </div>
+    
+    
+    
+    <div class="item">
+      <img src="{% static 'pre_edition/rc18/images/pic7.jpg' %} " alt="Second Image" width="100%"  style="overflow:hidden">
+      <div class="carousel-caption" style="width:100%; background-color:#fcfcfccc; top:auto;  bottom: 0%;">
+      <div class="row">
+ 
+  <div class="col-lg-2" align="center" ><a href="#Scientificia" ><img src="{% static 'pre_edition/rc18/images/2.gif' %} " width="60" height="60"><br><br><b><i style="color:#00aeef">‘SCIENTIFIQUE’<br>
+Oral, Posters, Model, Three Minutes Thesis presentation and
+Laboratories visit</i></b></a></div>
+ 
+  <div class="col-lg-2" align="center"><a href="#workshops" ><img src="{% static 'pre_edition/rc18/images/23600926_10215229704446108_1836613246_o.png' %} " width="60" height="60"><br><br><b><i style="color:#2bb673">‘ATELIER’<br>Workshops and Photography
+</i></b></a></div> 
+
+ 
+ <div class="col-lg-2" align="center"><a href="#" ><img src="{% static 'pre_edition/rc18/images/1.gif' %} " width="60" height="60"><br><br><b><i style="color:#ec008c">‘CONNAISSANCE ’<br>
+Lecture Series:
+ Academicians and Industrialists</i></b></a></div> 
+
+<div class="col-lg-2" align="center" ><a href="" ><img src="{% static 'pre_edition/rc18/images/F4.png' %} " width="60" height="60"><br><br><b><i style="color:#8cc63f">‘DISCUTIR’<br>
+Panel discussion and Quiz</i></b></a></div>
+
+<div class="col-lg-2" align="center" ><a href="" ><img src="{% static 'pre_edition/rc18/images/4.gif' %} " width="60" height="60"><br><br><b><i style="color:#9a258f">‘INNOVATEUR<br>PLATE-FORME’<br>
+Startups incubation</i></b></a></div>
+
+<div class="col-lg-2" align="center"><a href="" ><img src="{% static 'pre_edition/rc18/images/3.gif' %} " width="60" height="60"><br><br><b><i style="color:#fbab18">‘ACAD-INDUSTRIE SYNERGY’<br>
+Interaction with industry
+delegates, start-ups and
+academicians</i></b></a></div>
+
+</div></div>
+     <!-- <div class="carousel-caption" style="width:300px; background-color:#0066CC80;  top: 10%;">
+      <div align="left" style="padding:20px">
+       <h5><b>Workshops</b></h5><h5>
+              <ul>
+              <li><b>Advanced Excel</li>
+<li>Advanced Origin</li>
+<li>ImageJ</li>
+<li>Django</li></b></ul></h5>
+<br>
+<h5><b>Workshops by INFIZEAL Technologies</b></h5><ul>
+<h5><li><b>Touch and Augmented Reality</li>
+<li>Internet of things (IoT)</li>
+</ul></h5></b><br>
+<a href="Events.html#workshops" target="new"><button type="button" class="btn btn-primary btn-lg">Registration</button></a>
+              </div>-->
+      </div>
+    </div>
+    <!-- more slides here -->
+  </div>
+<script>
+
+$('video').on('play', function (e) {
+    $("#mycarousel").carousel('pause');
+});
+$('video').on('stop pause ended', function (e) {
+    $("#mycarousel").carousel();
+});
+</script>
+  <!-- Controls -->
+  <!--<a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>-->
+</div>
+
+<div class="band1" align="center"><marquee behavior="scroll"><b>Thanks to all the sponsors for their support in making Research Conclave' 18 successful. <!--In Association with &nbsp;<img src="images/sponsor/numaligarh refinery limited.jpg" height="40"  alt="NRL Logo"> &nbsp; | &nbsp; <img src="images/sponsor/Springer.png" height="40" alt="Springer"> &nbsp; | &nbsp; <img src="images/sponsor/SERVO Logo unit-1.png" height="30" alt="Springer"> &nbsp; | &nbsp; <img src="images/sponsor/timelogo.jpg" height="40"  alt="Time Logo"> &nbsp; | &nbsp; <img src="images/sponsor/GPLUS logo.png"  height="40" alt="Gplus Logo">&nbsp; | &nbsp;<img src="images/sponsor/logo (1).png" height="40"  alt="pratidin Logo">&nbsp; | &nbsp;  <img src="images/sponsor/festpav.png" height="30" alt="festpav logo">&nbsp; | &nbsp; <img src="images/sponsor/Ohcampus.png" height="40"  alt="ohcampus Logo"> &nbsp; | &nbsp; <img src="images/sponsor/Metrohm India Logo.jpg" height="30"  alt="Metrohm India Logo"> &nbsp; | &nbsp; North East Chemical Corporation &nbsp; | &nbsp; <img src="images/sponsor/electro-mart logo.png" height="18"  alt="electro-mart Logo"> &nbsp; | &nbsp; <img src="images/sponsor/Aakinson_Logo_RGB_PNG.png" height="50"  alt="Springer Logo"> &nbsp; | &nbsp; <img src="images/sponsor/goog morning science_LOGO-800px.png" height="50"  alt="goog morning science_LOGO"> &nbsp; | &nbsp; <img src="images/sponsor/Xondhan_logo_3-1.jpg" height="40"  alt="Xondhan_logo"> &nbsp; | &nbsp; <img src="images/sponsor/zoutons logo.png" height="40" alt="zoutons logo"> &nbsp; | &nbsp; <img src="images/sponsor/collegedunia logo 1.png" height="40" alt="collegedunia logo"> &nbsp; | &nbsp;  <!--<img src="images/infi-zeal logo PNG.png" height="40" alt="infizeal logo"> &nbsp; | &nbsp;--><!--<img src="images/sponsor/NE8X.png" height="40" alt="NE8X logo"> &nbsp; | &nbsp; <img src="images/sponsor/edugenie logo.jpg" height="40" alt="Edugenie logo"> &nbsp; | &nbsp; <!--<img src="images/sponsor/logo_techvariable.png" height="40"  alt="logo_techvariable Logo"> &nbsp; | &nbsp;--> <!--Bidya Mandir &nbsp; | &nbsp; <img src="images/sponsor/Pop-Tales.png" height="40" alt="poptales logo"> &nbsp; | &nbsp;Alumni & External Relations &nbsp; | &nbsp; Engineering Section &nbsp; | &nbsp; Outreach Education Programme.--> <!--&nbsp;|&nbsp; <img src="images/sponsor/rsf-logo.png" height="50" alt="rdf logo">--></b></marquee></div>
+
+<div style="background-color:#fcfcfccc"><br>
+<div class="container">
+ <div id="About" class="container-fluid">
+
+ <div class="row" >
+ <div class="col-sm-7" style="padding-right:50px;"> <br>
+  <h3>About Research Conclave<br>
+  <img src="{% static 'pre_edition/rc18/images/border (2).png' %}" width="60%" height="80"></h3>
+<!--<div class="linestyle" align="center">
+  <span style="font-size: 40px;background-color:#FFF ;">
+    &#9734;
+    </span>
+</div>-->
+  <br>
+<div >
+
+<p>Research Conclave is organized under the banner of Students' Academic Board (SAB) of Indian Institute of Technology Guwahati (IITG). It is a staunch platform to nurture the young minds towards research, innovation and entrepreneurship, which intends to bring the integrity of the students towards both industries and academia to redress the academic research challenges, concerns of the entire student community and upcoming entrepreneurs around the globe. It is a forum to harness innovative mind to level-up the economic strata of current society from research to industries. The Research Conclave work as catalyst for building leaders through holistic, transformable and innovative ideas. It has started in 2015 with great rhythm and passion, and this year with the same enthusiasm we are conducting this event in a broader spectrum.</p>
+</div>
+<br>
+<div>
+<h4> Objectives</h4>
+</div>
+<div>
+<ul class="wordslist">
+   <li> Showcase  the ongoing research activities of different institutes / universities / colleges across the country.</li>
+
+   <li> Model exhibition by research groups from premier institutes and universities across the country.</li>
+
+   <li> Industry-academia interaction with industrial delegates highlighting their technological requirement, expectations from research institutes.</li>
+
+   <li> Interactive sessions with entrepreneurs across the globe to identify the avenues through local firms, businesses and other intermediaries through innovation and research.</li>
+
+   <li> A prestigious platform for start-ups to exhibit their products and ideas to industries and academia.</li>
+
+   <li> A good platform for the industries to identify highly intellectual, motivated and enthusiastic students for their firms.</li>
+
+   <li> Technological implementation towards sustainable development and encouragement to student community for pursuing higher studies.</li>
+</ul>
+</div>
+</div>
+
+ <div class="col-lg-5" style=" padding-top:60px;">
+ 
+ <div class="smallcards">
+ <table class="table table-striped"><thead><tr><th>News & Updates</th></tr></thead><tbody>
+ <tr class="found"><td> Registration of Internal Participants is on 8<sup>th</sup> March 2018 (2pm onwards)</td></tr>
+     <tr class="found"><td>Registration of External Participants is on 9<sup>th</sup> March 2018 (8am onwards)</td> </tr>
+ <tr class="found"><td>Workshops by INFIZEAL Technologies</td> </tr>
+ <tr class="found"><td>Prize worth Rs. 5 Lakhs & More</td> </tr>
+  <tr class="found"><td><a href="Registration.html" style="color:#2a2c79">Final list of participants whose abstracts are accepted is updated</a></td> </tr>
+  <tr class="found"><td><a href="{% static 'pre_edition/rc18/Downloads/List of Winners - Research Conclave 2018.pdf' %} " target="new" style="color:#2a2c79">List of the Research Conclave 2018 Winners</a></td></tr>
+  <tr class="found"><td><a href="Schedule.html" target="new" style="color:#2a2c79"> Detail schedule is updated.</a></td> </tr>
+</tbody>
+</table>
+
+</div>
+<br><br>
+ <div class="smallcards">
+ <table class="table table-striped"><thead><tr><th colspan="2">Important Dates</th></tr></thead><tbody><tr class="found"><td>Abstract submission <br>extended deadline :</td><td>25<sup>th</sup> January 2018 </td> </tr>
+  
+<tr class="found"><td>Notification of Oral/Poster/Model acceptance :</td><td>10<sup>th</sup> February 2018</td></tr>
+<tr class="found"><td>Last date for fee payment of Oral/Poster/Model:</td><td>2<sup>nd</sup> March 2018</td></tr>
+<tr class="found"><td>Institute Open Day :</td><td> 09<sup>th</sup> March 2018</td> </tr>
+<tr class="found"><td>Full Paper Deadline :</td><td> 25<sup>th</sup> March 2018</td> </tr>
+</tbody>
+</table>
+
+  </div>
+  <br><br>
+ <div class="smallcards">
+ <table class="table table-hover"><thead><tr><th colspan="2">Downloads</th></tr></thead><tbody><tr class="foundnot"><td><a href="{% static 'pre_edition/rc18/Downloads/RC18_posterA3.pdf' %} ">Research Conclave Flyer</a></td></tr>
+  <tr class="found"><td><a href="Downloads/Souvenir Ebook 2018 .pdf">Research Conclave '18 Souvenir Ebook</a></td> </tr>
+  <tr class="foundnot"><td><a href="Downloads/RC17_AbstractBook.pdf">Research Conclave '17 Souvenir Ebook</a></td></tr>
+ 
+
+</tbody>
+</table>
+
+  </div>
+  <br><br><br>
+</div>
+</div>
+</div><br><br></div></div>
+<div style="background-color:#b1e3ffcc">
+<div class="container">
+ <div id="Events" class="container-fluid">
+ <br>
+ <div align="center">
+  <h3 >Events <br><img src="{% static 'pre_edition/rc18/images/border (2).png' %} " width="50%" height="80"></h3>
+ <!--<div class="linestyle" align="center">
+  <span class="starstyle">
+   &#9734;
+  </span>
+</div>-->
+</div>
+  <br><br>
+ <div class="cards" align="center">
+  <h3>Conclave Features</h3>
+  
+   <br><br>
+<div class="row">
+ 
+  <div class="col-lg-2" align="center" ><a href="Events.html#Scientificia" ><div class="item"><img src="{% static 'pre_edition/rc18/images/2.gif' %} " width="100" height="100"><br><br><b><i style="color:#00aeef">‘SCIENTIFIQUE’<br>
+Oral, Posters, Model presentation and
+Laboratories visit</i></b></a><br><br></div></div>
+ 
+  <div class="col-lg-2" align="center"><a href="Events.html#workshops" ><div class="item"><img src="{% static 'pre_edition/rc18/images/23600926_10215229704446108_1836613246_o.png' %} " width="100" height="100"><br><br><b><i style="color:#2bb673">‘ATELIER’<br>Workshops and Photography
+</i></b></a><br><br></div> </div>
+
+ 
+ <div class="col-lg-2" align="center"><a href="#" ><div class="item"><img src="{% static 'pre_edition/rc18/images/1.gif' %} " width="100" height="100"><br><br><b><i style="color:#ec008c">‘CONNAISSANCE ’<br>
+Lecture Series:
+ Academicians and Industrialists</i></b></a><br><br></div></div> 
+
+<div class="col-lg-2" align="center" ><a href="" ><div class="item"><img src="{% static 'pre_edition/rc18/images/F4.png' %} " width="100" height="100"><br><br><b><i style="color:#8cc63f">‘DISCUTIR’<br>
+Panel discussion and Quiz</i></b></a><br><br></div></div>
+
+<div class="col-lg-2" align="center" ><a href="" ><div class="item"><img src="{% static 'pre_edition/rc18/images/4.gif' %} " width="100" height="100"><br><br><b><i style="color:#9a258f">‘INNOVATEUR<br>PLATE-FORME’<br>
+Startups incubation</i></b></a><br><br></div></div>
+
+<div class="col-lg-2" align="center"><a href="" ><div class="item"><img src="{% static 'pre_edition/rc18/images/3.gif' %} " width="100" height="100"><br><br><b><i style="color:#fbab18">‘ACAD-INDUSTRIE SYNERGY’<br>
+Interaction with industry
+delegates, start-ups and
+academicians</i></b></a><br><br></div></div>
+
+</div>
+</div>
+<br><br><br><br></div></div>
+
+<div style="background-color:#fcfcfccc">
+<div class="container">
+<div id="Contact" class="container-fluid">
+ <br>
+ <div class="row">
+ <div class="col-lg-8">
+    <div align="center">
+     <h3 >Contact Us<br> <img src="{% static 'pre_edition/rc18/images/border (2).png' %} " width="50%" height="80"></h3>
+<!--<div style="width: 50%; height: 30px; border-bottom: 1px solid #f7941e; text-align: center; color:#f7941e" align="center">
+  <span style="font-size: 40px;background-color:#fcfcfccc ;">
+   &#9734;
+  </span>
+</div>-->
+      </div><br>
+
+
+
+
+    <div class="row" align="center" style="color:#ccb82d">
+ 
+    <div class="col-lg-4" align="center" >
+    <span class="glyphicon glyphicon-user" style="width:100px"></span><br><br><b>
+  Faculty Convener<br>
+Dr. Prasenjit Khanikar<br>
+<span class="glyphicon glyphicon-earphone"></span>&nbsp; +91 88118 11308<br><br>
+Faculty Co-Convener<br>
+Dr. Akshai Kumar A. S.<br> 
+<span class="glyphicon glyphicon-earphone"></span>&nbsp;+91 81330 36890<br><br>  
+Student Convener<br>
+Mr. Prince Kumar Baranwal<br>
+<span class="glyphicon glyphicon-earphone"></span>&nbsp;+91 9854881293<br> &nbsp;+91 9706505018</b></a><br><br></div>
+ 
+  <div class="col-lg-4" align="center"><span class="glyphicon glyphicon-envelope"></span><br><br><b>research_conclave@iitg.ernet.in<br>researchconclave.iitg@gmail.com<br><br>
+  Connect with us: <a href="https://www.facebook.com/researchconclave/" class="fa fa-facebook-square" style="font-size:24px; color:#4267b2"></a>
+  <a href="https://twitter.com/RC_IITG" class="fa fa-twitter-square" style="font-size:24px; color:#1da1f2"></a>
+  
+</b><br><br></div> 
+
+ 
+ <div class="col-lg-4" align="center"><span class="glyphicon glyphicon-map-marker"></span><br><br><b><b>Indian Institute of Technology Guwahati<br>
+Guwahati, Assam, India<br>
+781039</b><br><br></div></b></div></div>
+
+<div class="col-lg-4"><br><br><br>
+
+      <!--<b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">--><h3>Useful Links</h3><br><br>
+     <b>
+      <ul style="padding-left:90px">
+      <li><a href="Schedule.html" >Schedule</a></li>
+      <li><a href="Registration.html" >Registration</a></li>
+      <li><a href="Team.html" >Team</a></li>
+      <li><a href="Events.html" >Events</a></li>
+      <li><a href="FAQs.html" >FAQs</a></li>
+       <li><a href="" data-toggle="modal" data-target="#gallery">Gallery</a></li>
+      <li><a href="http://www.iitg.ernet.in/researchconclave/rc16/" >Research Conclave 2016</a></li>
+     <!-- <li><a href="" >Gallery</a></li>-->
+      <li><a href="http://www.iitg.ernet.in/researchconclave/RC17/" >Research Conclave 2017</a></li>
+      <li><a href="http://shilloi.iitg.ernet.in/~sab/" >Students' Academic Board (SAB), IITG</a></li>
+      <li><a href="http://www.iitg.ac.in/" >IIT Guwahati</a></li></ul></div></div>
+ 
+<br><hr><br>
+
+<!--<div class="col-lg-2" align="center" >
+      <b style="color: #000; font-size:12px; font-weight:bolder;letter-spacing: 0px;">Organized by</b><br><br>
+     <img src="images/sab.png" height="70"  alt="RC Logo"><br><b style="color:#009; font-size:12px;">Students’ Academic Board</b></div>
+      
+      <div class="col-lg-2" align="center">
+      <b style="color: #000; font-size:12px; font-weight:bolder;letter-spacing: 0px;">In Association with</b><br><br>
+       <img src="images/logo.png" height="70"  alt="RC Logo"><br><b style="color:#009; font-size:12px;">IIT Guwahati</b></div>-->
+      
+    <div class="row"  style="color:#ccb82d">
+      <div class="col-lg-6" align="center">
+      <div class="row" style="color:#ccb82d">
+      
+      <div class="col-lg-12" align="center">
+      <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Powered by</b><br><br>
+       <img src="{% static 'pre_edition/rc18/images/sponsor/numaligarh refinery limited.jpg' %} " height="80"  alt="NRL Logo"></div><br><br><br>
+       <div class="row"><div class="col-lg-6" align="center">
+       <img src="{% static 'pre_edition/rc18/images/sponsor/Springer.png' %} " height="50"  alt="Springer Logo"></div>
+       <div class="col-lg-6" align="center"><img src="images/sponsor/SERVO Logo unit-1.png" height="50"  alt="Springer Logo"></div><br><br>
+      </div></div><br><br><br>
+           <div class="row">
+           <div class="col-lg-4" align="center">
+          <img src="{% static 'pre_edition/rc18/images/sponsor/Metrohm India Logo.jpg' %} " height="50"  alt="Metrohm India Logo"></div>
+          <div class="col-lg-4" align="center">
+          North East Chemical Corporation</div>
+           <div class="col-lg-4" align="center">
+          <img src="{% static 'pre_edition/rc18/images/sponsor/timelogo.jpg' %} " height="70"  alt="Time Logo"></div>
+          </div><br><br><br><br>
+          
+          <div class="row">
+           <div class="col-lg-3"><br><br>
+       <img src="{% static 'pre_edition/rc18/images/sponsor/electro-mart logo.png' %} " height="18"  alt="electro-mart Logo"></div>
+           <div class="col-lg-3" align="center">
+         <img src="{% static 'pre_edition/rc18/images/sponsor/Aakinson_Logo_RGB_PNG.png' %} " height="80"  alt="Springer Logo"></div>
+          <div class="col-lg-3" align="center">
+          <img src="{% static 'pre_edition/rc18/images/sponsor/goog morning science_LOGO-800px.png' %} " height="80"  alt="Springer Logo"></div>
+          <div class="col-lg-3" align="center">
+          <img src="{% static 'pre_edition/rc18/images/sponsor/Xondhan_logo_3-1.jpg' %} " height="80"  alt="Springer Logo"></div>
+          </div>
+       </div>
+       
+       
+       
+       <div class="col-lg-2" align="center">
+       <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Coupon Partner</b><br><br>
+        <a href="https://zoutons.com/" target="new"><img src="images/sponsor/zoutons logo.png" height="40" alt="zoutons logo"></a><br><br><br><br>
+       
+      <!--<b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Workshop Partner</b><br><br>
+       <img src="images/infi-zeal logo PNG.png" height="40" alt="infizeal logo"><br><br><br><br>-->
+      
+       <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;"> Campus Associates</b><br><br>
+       
+      <b style="color:#039; font-size:14px; font-weight:bolder;letter-spacing: 0px;"> Alumni & External Relations<br><br>Engineering Section<br><br>Outreach Education Programme<br><br> <!--<img src="images/sponsor/rsf-logo.png" height="70" alt="rdf logo">--><br></b>
+      </div>
+      
+        
+         
+      
+      <div class="col-lg-2" align="center">
+      <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Social Media Partner</b><br><br>
+       <a href="https://collegedunia.com/" target="new"><img src="{% static 'pre_edition/rc18/images/sponsor/collegedunia logo 1.png' %} " height="40" alt="collegedunia logo"></a><br><br><br><br>
+       
+       <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Gift Partners</b><br><br>
+       <!--<img src="images/sponsor/logo_techvariable.png" height="40"  alt="logo_techvariable Logo">
+      <br><br>-->
+     <b style="color:#039; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Bidya Mandir</b><br><br><br><br>
+      
+      <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;"> Online Media Partners</b><br><br>
+      
+       <a href="http://festpav.com/" target="new"><img src="{% static 'pre_edition/rc18/images/sponsor/festpav.png' %} " height="30" alt="festpav logo"></a><br><br>
+       
+       <img src="{% static 'pre_edition/rc18/images/sponsor/Ohcampus.png' %} " height="40"  alt="ohcampus Logo"><br><br><br><br></div>
+       
+       
+      
+      
+      
+       <div class="col-lg-2" align="center">
+      <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Outreach Partners</b><br><br>
+       <img src="{% static 'pre_edition/rc18/images/sponsor/edugenie logo.jpg' %} " height="50" alt="Edugenie logo"><br><br>
+      <img src="{% static 'pre_edition/rc18/images/sponsor/NE8X.png' %} " height="50" alt="NE8X logo"><br><br><br><br>
+      
+      <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;"> Media Partners</b><br><br>
+      
+       <img src="{% static 'pre_edition/rc18/images/sponsor/GPLUS logo.png' %} " height="30" alt="festpav logo"><br><br>
+       
+       <img src="{% static 'pre_edition/rc18/images/sponsor/logo (1).png' %} " height="40"  alt="ohcampus Logo"><br><br><br><br> 
+       <b style="color:#000; font-size:14px; font-weight:bolder;letter-spacing: 0px;">Merchandise Partner</b><br><br>
+       <a href="https://www.facebook.com/POPTALESONLINE/" target="new"><img src="{% static 'pre_edition/rc18/images/sponsor/Pop-Tales.png' %} " height="40" alt="poptales logo"></a><br><br>
+       </div>
+       
+       </div><br><br>
+       
+     
+      
+      
+       
+      
+    
+ </div>
+      
+
+<br>
+
+</div><br>
+</div><a href="#" class="scrollToTop"><i class="fa fa-angle-double-up" style="font-size:50px; " aria-hidden="true"></i>
+</a>
+</div>
+
+<footer style="background-color:#2a2c79; padding-bottom:20px; padding-top:20px">
+<div class="container">
+<div class="wordslist2">
+<div class="row">
+<div class="col-lg-6">
+<b style="color:#FFF">
+
+<a href="https://www.iitg.ernet.in/sab/" target="new" style="color:#FFF">© Copyright 2018 Student's Academic Board, IIT Guwahati</a>
+</b></div>
+<div class="col-lg-6" align="right">
+<b style="color:#FFF">
+
+Website designed & Maintained by: S. Madhuri & Pravandan
+</b></div>
+</div>
+
+</div></div>
+</footer>
+</body>
+<script>
+$('.carousel').carousel({
+  interval: 6000,
+  pause: "false"
+});
+</script>
+<script>
+$(document).ready(function(){
+	
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+	
+});
+
+/*$('.marquee').marquee({
+    speed in milliseconds of the marquee
+    duration: 25000,
+    gap in pixels between the tickers
+    gap: 10,
+    time in milliseconds before the marquee will start animating
+    delayBeforeStart: 0,
+    left' or 'right'
+    direction: 'left',
+	
+	onmouseover: 'marquee.stop();',
+	onmouseout:'marquee.start();',
+    true or false - should the marquee be duplicated to show an effect of continues flow
+    duplicated: true
+});*/
+</script>
+</html>

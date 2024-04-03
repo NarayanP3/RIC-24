@@ -1,0 +1,352 @@
+{% extends 'base.html' %} {% load static %}
+{% block css %}
+<style>
+    main {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.extra-margins {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+.navbar {
+  background-color: #3b3b3f;
+}
+
+footer.page-footer {
+  background-color: #3b3b3f;
+  margin-top: 2rem;
+}
+
+.lgx-heading{
+    display: flex;
+    justify-content: center;
+}
+
+.heading1 {
+    margin: auto;
+    position: absolute;
+    /* width: 556px;
+    height: 61px; */
+    /* left: 682px; */
+    /* top: calc(50% - 61px/2 - 1058px); */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2vw;
+    line-height: 35px;
+    /* or 146% */
+
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #1B273D;
+}
+
+.new1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title{
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8vw;
+    line-height: 41px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #2D2C78;
+}
+
+.card-block ol{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.card-block ol li{
+    text-align: center;
+    flex: 1 1 0;
+    border-style: solid;
+}
+
+</style>
+
+{% endblock css %}
+{% block banner %}
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                                <h2><u>Sponsors</u></h2>
+                            </b></center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+{% endblock banner %}
+{% block sponsor %}
+<section>
+    <div id="lgx-sponsors" class="lgx-sponsors">
+        <div class="lgx-inner-bg">
+            <div class="lgx-inner">
+                <div class="container">
+                    <!--<div class="row">-->
+                    <!--    <div class="col-xs-12">-->
+                    <!--        <div class="lgx-heading">-->
+                    <!--            <h2 class="heading">Offcial Sponsonrs</h2>-->
+                    <!--            <img src="{% static 'home/assets/img/border.png' %}" class="left" width="50%" height="80"></h2>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!--<h3 class="sponsored-heading first-heading">Co-Sponsored by</h3>-->
+                            <h3 class="sponsored-heading first-heading">Sponsored by</h3>
+                            <div class="sponsors-area">
+                                {% for i in oursponsor_list %}
+                                <!--{% if i.cat.name == "1" %}-->
+                                <div class="single">
+                                    <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>
+                                    <div class="speaker-info">
+                                        <h5 class="font-weight-bold mt-4 mb-3">
+                                             <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--{% endif %} -->
+                                {% endfor %}
+                            </div>
+                            <div class="sponsors-area">
+                                {% for i in oursponsor_list %} {% if i.cat.name == "Sponsors" %}
+                                <div class="single">
+                                    <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>
+                                    <div class="speaker-info">
+                                        <h5 class="font-weight-bold mt-4 mb-3">
+                                             <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                                        </h5>
+                                    </div>
+                                </div>
+                                {% endif %} {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <!--<div class="row">-->
+                    <!--    <div class="col-xs-12">-->
+                    <!--        <h3 class="sponsored-heading first-heading">Powered by</h3>-->
+                    <!--        <br>-->
+                    <!--        <div class="sponsors-area">-->
+                    <!--            {% for i in oursponsor_list %} {% if i.cat.name == "3" %}-->
+                    <!--            <div class="single">-->
+                    <!--                <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                    <!--                <div class="speaker-info">-->
+                    <!--                    <h5 class="font-weight-bold mt-4 mb-3">-->
+                    <!--                         <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                    <!--                    </h5>-->
+                    <!--                </div>-->
+                    <!--            </div>-->
+                    <!--            {% endif %} {% endfor %}-->
+                    <!--        </div>-->
+                    <!--        <div class="sponsors-area">-->
+                    <!--            {% for i in oursponsor_list %} {% if i.cat.name == "4" %}-->
+                    <!--            <div class="single">-->
+                    <!--                <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                    <!--                <div class="speaker-info">-->
+                    <!--                    <h5 class="font-weight-bold mt-4 mb-3">-->
+                    <!--                         <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                    <!--                    </h5>-->
+                    <!--                </div>-->
+                    <!--            </div>-->
+                    <!--            {% endif %} {% endfor %}-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+
+                        <!--</div>-->
+                        <!--</br>-->
+                        <!--<div class="row">-->
+                        <!--    <div class="col-xs-12">-->
+                        <!--        <h3 class="sponsored-heading first-heading">Outreach Partner</h3>-->
+                        <!--        <br>-->
+                        <!--        <div class="sponsors-area">-->
+                        <!--            {% for i in oursponsor_list %} {% if i.cat.name == "5" %}-->
+                        <!--            <div class="single">-->
+                        <!--                <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                        <!--                <div class="speaker-info">-->
+                        <!--                    <h5 class="font-weight-bold mt-4 mb-3">-->
+                        <!--                         <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                        <!--                    </h5>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--            {% endif %} {% endfor %}-->
+                        <!--        </div>-->
+                        <!--        <div class="sponsors-area">-->
+                        <!--            {% for i in oursponsor_list %} {% if i.cat.name == "6" %}-->
+                        <!--            <div class="single">-->
+                        <!--                <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                        <!--                <div class="speaker-info">-->
+                        <!--                    <h5 class="font-weight-bold mt-4 mb-3">-->
+                        <!--                         <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                        <!--                    </h5>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--            {% endif %} {% endfor %}-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+
+                        <!--</div>-->
+                        </br>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3 class="sponsored-heading first-heading">Merchandise Partner</h3>
+                                <br>
+                                <div class="sponsors-area">
+                                    {% for i in oursponsor_list %} {% if i.cat.name == "Merch" %}
+                                    <div class="single">
+                                        <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>
+                                        <div class="speaker-info">
+                                            <h5 class="font-weight-bold mt-4 mb-3">
+                                                 <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    {% endif %} {% endfor %}
+                                </div>
+                            </div>
+
+                        </div>
+                        </br>
+
+                        <!--<div class="row">-->
+                        <!--    <div class="col-xs-12">-->
+                        <!--        <h4 class="sponsored-heading third-heading">Online Media Partners</h4>-->
+                        <!--        <div class="sponsors-area">-->
+                        <!--            {% for i in oursponsor_list %} {% if i.cat.name == "8" %}-->
+                        <!--            <div class="single">-->
+                        <!--                <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                        <!--                <div class="speaker-info">-->
+                        <!--                    <h5 class="font-weight-bold mt-4 mb-3">-->
+                        <!--                         <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                        <!--                    </h5>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--            {% endif %} {% endfor %}-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--    <div class="row">-->
+                        <!--        <div class="col-xs-12">-->
+                        <!--            <h3 class="sponsored-heading secound-heading">Campus Associates</h3>-->
+                        <!--            <div class="sponsors-area">-->
+                        <!--                {% for i in oursponsor_list %} {% if i.cat.name == "9" %}-->
+                        <!--                <div class="single">-->
+                        <!--                    <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
+                        <!--                    <div class="speaker-info">-->
+                        <!--                        <h5 class="font-weight-bold mt-4 mb-3">-->
+                        <!--                             <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
+                        <!--                        </h5>-->
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                        <!--                {% endif %} {% endfor %}-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+
+                        <!--    </div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</section>
+{% endblock sponsor %}
+{% block about %}
+<section>
+    <div id="events" class="lgx-sponsors">
+        <div class="lgx-inner-bg">
+            <div class="lgx-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="lgx-heading">
+                                <h2 class="heading1 sm-display-4">Available Support Opportunities</h2>
+                                <!-- <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3"> -->
+                            </div>
+                        </div>
+                    </div>
+
+                   <center>
+                        <h3>Want to sponsor our Event RIC 2023? <a href="{% url 'sponsor:register' %}">Click here to get started</a></h3>
+                    </center>
+
+                    <!--//main row-->
+                    <div class="row new1">
+
+                                {% for i in sponsor_list %}
+                                <div class="sponsor_cat">
+                                    <!--Card-->
+                                    <div class="card wow fadeIn " data-wow-delay="0.6s">
+
+                                      <!--Card image-->
+                                      <div class="view overlay hm-white-slight">
+                                        <img src="{{i.pic.url}}" class="img-fluid" alt="">
+                                        <a href="#">
+                                          <div class="mask"></div>
+                                        </a>
+                                      </div>
+                                      <!--/.Card image-->
+
+                                      <!--Card content-->
+                                      <div class="card-block">
+                                        <!--Title-->
+                                        <h4 class="card-title ">{{i}} | Rs {{i.price}}</h4>
+                                        <!--Text-->
+
+                                            <p class="" style="font-size: medium;">{{i.text|safe}}</p>
+
+
+
+                                      </div>
+                                      <!--/.Card content-->
+
+                                    </div>
+                                    <!--/.Card-->
+                                  </div>
+                                {% endfor %}
+
+                        <!--//col-->
+                    </div>
+                    <!--//row-->
+
+                    <!--//col-->
+                </div>
+                <!--//row-->
+            </div>
+            <!--//container-->
+        </div>
+    </div>
+    <!--//lgx-inner-->
+    </div>
+</section>
+</center>
+
+{% endblock about %}

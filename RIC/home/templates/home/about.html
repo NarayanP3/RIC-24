@@ -1,0 +1,201 @@
+{% extends 'base.html' %} {% load static %} {% load bootstrap4 %} {% block css %}
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+    * {
+        box-sizing: border-box;
+    }
+    
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+    .accordion .accordion-item {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    
+    .accordion .accordion-item button[aria-expanded='true'] {
+        border-bottom: 1px solid #03b5d2;
+    }
+    
+    .accordion button {
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 1em 0;
+        color: black;
+        font-size: 1.15rem;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+    }
+    
+    .accordion button:hover,
+    .accordion button:focus {
+        cursor: pointer;
+        color: orange;
+    }
+    
+    .accordion button:hover::after,
+    .accordion button:focus::after {
+        cursor: pointer;
+        color: orange;
+        border: 1px solid orange;
+    }
+    
+    .accordion button .accordion-title {
+        padding: 0em 0em 0em 1em;
+        font-weight: bold;
+        font-size: larger;
+    }
+    
+    .accordion button[aria-expanded='true'] {
+        color: orange;
+    }
+    
+    
+    .accordion button[aria-expanded='true']+.accordion-content {
+        opacity: 1;
+        max-height: 100%;
+        transition: all 1ms linear;
+        will-change: opacity, max-height;
+    }
+    
+    .accordion .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 1ms linear, max-height 1ms linear;
+        will-change: opacity, max-height;
+        padding: 1rem ;
+        text-align: justify;
+    }
+    
+</style>
+{% endblock css %} {% block banner %}
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="lgx-heading">
+                                            <center><b>
+
+                                                </b></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </b>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+{% endblock banner %} {% block about %}
+<section>
+    <br>
+
+    <div class="accordion container">
+
+        <br>{% for i in about_list %} {% if i.id == 7 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="true"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br>{% for i in about_list %} {% if i.id == 3 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br>{% for i in about_list %} {% if i.id == 6 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br>{% for i in about_list %} {% if i.id == 2 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br>{% for i in about_list %} {% if i.id == 4 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br>{% for i in about_list %} {% if i.id == 5 %} 
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">{{i.title|safe}}</span></button>
+            <div class="accordion-content">
+                <p>{{i.content|safe}}</p>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
+        <br> 
+    </div>
+</section>
+{% endblock about %} 
+
+{% block about. %}
+<section style="background-color: rgb(166, 193, 194);">
+    <div class="accordion container">
+        <br> {% for i in about_list %} {% if i.id != 1 %}
+        <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false"><span
+                    class="accordion-title">{{i|safe|linebreaks}}</span><span class="icon"
+                    aria-hidden="true"></span></button>
+            <div class="accordion-content">
+                <h3>{{i.content|safe|linebreaks}}</h3>
+            </div>
+        </div>
+        <br> {% endif %} {% endfor %}
+    </div>
+</section>
+{% endblock about. %}
+
+{% block js %}
+<script>
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+        const itemToggle = this.getAttribute('aria-expanded');
+
+        for (i = 0; i < items.length; i++) {
+            items[i].setAttribute('aria-expanded', 'false');
+        }
+
+        if (itemToggle == 'false') {
+            this.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
+{% endblock js %}

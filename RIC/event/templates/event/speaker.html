@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+<!--{% load static %}-->
+{% block banner %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<section>
+  <div class="lgx-banner lgx-banner-music">
+    <div class="lgx-banner-style">
+      <div class="lgx-inner lgx-inner-fixed">
+        <div class="container">
+          <div class="row">
+            <center><b>
+                <h2>Speakers</h2>
+              </b></center>
+          </div>
+        </div>
+      </div>
+      <!--//.ROW-->
+    </div>
+    <!-- //.CONTAINER -->
+  </div>
+  <!-- //.INNER -->
+  </div>
+  </div>
+</section>
+{% endblock banner %}
+{% block content %}
+
+<style>
+
+</style>
+
+<style>
+    .speaker *{
+        color:black;
+        /*height: 10%;*/
+    }
+    .speaker:hover *{
+        color:white;
+        height: auto;
+    }
+    :root {
+      --clr-gray-light: #d7dfe2;
+      --clr-gray-med: #616b74;
+      --clr-gray-dark: #414b56;
+      --clr-link: #4d97b2;
+      --clr-popular: #ef257a;
+      --clr-technology: #651fff;
+      --clr-psychology: #e85808;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      overflow: hidden;
+      box-shadow: 0px 2px 20px var(--clr-gray-light);
+      background: white;
+      border-radius: 0.5rem;
+      position: relative;
+      width: 350px;
+      height: auto;
+      margin: 1rem;
+      transition: 250ms all ease-in-out;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      height: auto;
+      box-shadow: 0px 20px 40px var(--clr-gray-dark);
+    }
+
+    .banner-img {
+      position: absolute;
+      /*object-fit: cover;*/
+      height: auto;
+      width: 100%;
+    }
+
+    .category-tag {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      background: red;
+      padding: 0.5rem 1.3rem 0.5rem 1rem;
+      text-transform: uppercase;
+      position: absolute;
+      z-index: 1;
+      top: 1rem;
+      border-radius: 0 2rem 2rem 0;
+    }
+    .category-tag-right {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
+      background: red;
+      padding: 0.5rem 1.3rem 0.5rem 1rem;
+      text-transform: uppercase;
+      position: absolute;
+      z-index: 1;
+      top: 86%;
+      border-radius: 0 2rem 2rem 0;
+    }
+
+    .popular {
+      background: var(--clr-popular);
+    }
+
+    .technology {
+      background: var(--clr-technology);
+    }
+
+    .psychology {
+      background: var(--clr-psychology);
+    }
+
+    .card-body {
+        z-index: 999;
+      margin: 15rem 1rem 1rem 1rem;
+    }
+
+    .blog-hashtag {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--clr-link);
+    }
+
+    .blog-title {
+      line-height: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .blog-description {
+      color: var(--clr-gray-med);
+      font-size: 0.9rem;
+    }
+
+    .card-profile {
+      display: flex;
+      margin-top: 2rem;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .card-profile-info {
+      margin-left: 1rem;
+    }
+
+    .profile-name {
+      font-size: 1rem;
+    }
+
+    .profile-followers {
+      color: var(--clr-gray-med);
+      font-size: 0.9rem;
+    }
+</style>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- this is temporary for upcoming speakers -->
+    <center>
+        <div class="waviy mx-auto text-center" >
+           <span style="--i:1">t</span>
+           <span style="--i:2">o</span>
+           <span style="--i:3"> </span>
+           <span style="--i:4">b</span>
+           <span style="--i:5">e</span>
+           <span style="--i:6"> </span>
+           <span style="--i:7">a</span>
+           <span style="--i:8">n</span>
+           <span style="--i:9">n</span>
+           <span style="--i:10">o</span>
+           <span style="--i:11">u</span>
+           <span style="--i:12">n</span>
+           <span style="--i:13">c</span>
+           <span style="--i:14">e</span>
+           <span style="--i:15">d</span>
+           <span style="--i:16"> </span>
+           <span style="--i:17">s</span>
+           <span style="--i:18">o</span>
+           <span style="--i:19">o</span>
+           <span style="--i:20">n</span>
+        </div>
+    </center>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!--<h2>-->
+<!--    <center>Institute Speakers</center>-->
+<!--</h2>-->
+<!--<div class="wrapper" style="display: flex; flex-wrap: wrap; justify-content: space-around;">-->
+<!--    {% for i in speaker_list %}-->
+<!--        <a class="card" href="{% url 'event:speakerdetail' i.id %}">-->
+<!--          <div class="card-banner">-->
+<!--            <p class="category-tag technology">{{i.name}}</p>-->
+
+            <!--<p class="category-tag-right psycology">{{i.position}}</p>-->
+<!--            <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>-->
+<!--          </div>-->
+<!--          <div class="card-body" style="margin-top:100px">-->
+<!--            <h2 class="blog-title">{{i.subtitle|safe}}</h2>-->
+            <!--<p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>-->
+<!--            <div class="card-profile">-->
+<!--              <img class="profile-img" src='{{i.pic.url}}' alt=''>-->
+<!--              <div class="card-profile-info">-->
+<!--                <h3 class="profile-name">{{i.name}}</h3>-->
+                <!--<p class="profile-followers">45.7k followers</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+        <!--<div style="flex: 1 1 0; padding: 20px ;min-width: 400px; max-width: 480px; max-height: 900px; overflow: hidden">-->
+        <!--    <a href="{% url 'event:speakerdetail' i.id %}">-->
+        <!--        <div class="lgx-single-speaker speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
+        <!--            <center>-->
+        <!--                <figure>-->
+        <!--                    <a class=""><img src="{{i.pic.url}}" alt="Speaker" width="relative" height="300px"/></a>-->
+        <!--                    <h3 class="title">{{i.name}}</a></h3>-->
+        <!--                    <h4 class="subtitle">{{i.subtitle|safe}}</h4>-->
+        <!--                </figure>-->
+        <!--            </center>-->
+                    <!--<p class="speaker-info" style="font-size: 1.6rem;text-align: justify;">-->
+                    <!--{{i.content|safe|linebreaks}}-->
+                    <!--</p>-->
+                    <!--<button class="rm">Read more</button>-->
+        <!--        </div>-->
+        <!--    </a>-->
+        <!--</div>-->
+
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+<!--<h2>-->
+<!--    <center>Department Speakers</center>-->
+<!--</h2>-->
+<!--<div class="" style="display: flex; flex-wrap: wrap; justify-content: space-around;">-->
+<!--    {% for i in dept_speaker_list %}-->
+<!--        <a class="card" href="{% url 'event:deptspeakerdetail' i.id %}">-->
+<!--          <div class="card-banner">-->
+<!--            <p class="category-tag popular">{{i.name}}</p>-->
+<!--            <p class="category-tag-right technology">{{i.dept}}</p>-->
+<!--            <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <h2 class="blog-title">{{i.subtitle|safe}}</h2>-->
+            <!--<p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>-->
+<!--            <div class="card-profile">-->
+<!--              <img class="profile-img" src='{{i.pic.url}}' alt=''>-->
+<!--              <div class="card-profile-info">-->
+<!--                <h3 class="profile-name">{{i.name}}</h3>-->
+                <!--<p class="profile-followers">45.7k followers</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </a>-->
+
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+{% endblock content %}
+

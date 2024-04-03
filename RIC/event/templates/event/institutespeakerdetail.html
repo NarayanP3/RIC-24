@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% load static %} {% block banner %}
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                <h2>About The Speaker</h2>
+              </b></center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+<div class="container" style="padding: 100px 0;">
+    <!--<h2 style="text-align: center;">Stay tuned and patiently await the upcoming speakers !</h2>-->
+</div>
+{% endblock banner %} {% block content %}
+<main>
+    <div class="lgx-post-wrapper">
+        <!--News-->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <article>
+                            <header>
+                                        <h1 class="title">{{object}}</h1>
+                                <figure>
+                                    <img src="{{object.pic.url}}" alt="New" />
+                                </figure>
+                                <div class="text-area">
+                                    <div class="speaker-info">
+                                        <h2>{{object.subtitle|safe|linebreaks}}</h2>
+
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="lgx-heading lgx-heading-blue">
+                                            <h3 class="subheading"><b>About the Talk</b></h3>
+
+                                            <br>
+                                            <section>
+
+                                                <p class="text" align="justify">
+                                                    {{object.content|safe|linebreaks}}
+                                                </p>
+                                            </section>
+
+                                        </div>
+                                    </div>
+                                    <section>
+
+
+                                        <!--blockquote>
+                                    <p>Suspendisse hendrerit et sapien ut pretium. Aenean nulla ipsum, facilisis eu porta non, rutrum sit amet nibh. Quisque id diam feugiat, pharetra arcu eget, bibendum tortor. </p>
+                                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                                </blockquote>
+                                <blockquote>
+                                    Suspendisse hendrerit et sapien ut pretium. Aenean nulla ipsum, facilisis eu porta non, rutrum sit amet nibh. Quisque id diam feugiat, pharetra arcu eget, bibendum tortor.
+                                </blockquote>
+                            </section>
+                            <footer>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <h4 class="title">Share</h4>
+                                        <div class="lgx-share">
+                                            <ul class="list-inline lgx-social">
+                                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer-->
+                        </article>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- //.CONTAINER -->
+                    </section>
+                    <!--News END-->
+                </div>
+</main>
+
+{% endblock content %}

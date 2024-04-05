@@ -14,12 +14,12 @@ class FilterDept(ImportExportModelAdmin):
     search_fields = ("name",)
 
 class FilterEvent(ImportExportModelAdmin):
-    list_display = ("name","fee",)
-    search_fields = ("name","fee",)
+    list_display = ("name","fee",'deadline')
+    search_fields = ("name","fee",'deadline')
 
 class FilterICEvent(ImportExportModelAdmin):
-    list_display = ("name","fee",)
-    search_fields = ("name","fee",)
+    list_display = ("name","fee",'deadline')
+    search_fields = ("name","fee",'deadline')
 
 class FilterRICAdmin(ImportExportModelAdmin):
     list_display = ("__str__",'name','email','institute',"dept","abstract","razorpay_payment_id")
@@ -53,20 +53,15 @@ class WorkshopAdmin(ImportExportModelAdmin):
     list_display = ('__str__', 'dept', 'razorpay_payment_id', 'email', 'name')
     list_filter = ("workshop",)
 
-admin.site.register(Bio,FilterAdmin)
 admin.site.register(RICEvent,FilterRICAdmin)
 admin.site.register(IC,FilterICAdmin)
 admin.site.register(ICEvent,FilterICEvent)
 admin.site.register(Event1,FilterEvent)
-admin.site.register(Event2)
+admin.site.register(Event2,FilterEvent)
 admin.site.register(Dept,FilterDept)
-admin.site.register(Subdomain)
 admin.site.register(Workshop)
 admin.site.register(WorkshopBio,WorkshopAdmin)
 admin.site.register(Accommodation)
 admin.site.register(IntegrationBee,FilterAdminInt)
-admin.site.register(MathEvent,FilterAdminMO)
-admin.site.register(MathEventIndividual,FilterAdminMOI)
-admin.site.register(DifferentiaChallenge,FilterAdminD)
 admin.site.register(ProblemState)
 admin.site.register(Hackathon)

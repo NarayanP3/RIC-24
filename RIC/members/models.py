@@ -10,6 +10,8 @@ from .validators import validate_file_extension
 class Event1(models.Model):
     name = models.CharField(max_length=400)
     fee = models.IntegerField(default=50000,null=True)
+    deadline = models.DateTimeField( null=True, blank=True)
+
     def __str__(self):
         return self.name
 
@@ -19,6 +21,8 @@ class Event1(models.Model):
 class Event2(models.Model):
     name = models.CharField(max_length=50)
     fee = models.IntegerField(default=50000,null=True)
+    deadline = models.DateTimeField( null=True, blank=True)
+
     def __str__(self):
         return self.name
 
@@ -28,6 +32,8 @@ class Event2(models.Model):
 class ICEvent(models.Model):
     name = models.CharField(max_length=50)
     fee = models.IntegerField(default=50000,null=True)
+    deadline = models.DateTimeField( null=True, blank=True)
+
 
     def __str__(self):
         return self.name

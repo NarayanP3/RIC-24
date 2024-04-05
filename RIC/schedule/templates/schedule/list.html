@@ -1,5 +1,191 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block banner %}
+
+<style>
+    .sponsors-area{
+        height: max-content !important;
+    }
+</style>
+
+<style>
+    .speaker *{
+        color:black;
+        /*height: 10%;*/
+    }
+    .speaker:hover *{
+        color:white;
+        height: auto;
+    }
+    .team-section{
+        padding: 0 5% 0 5%;
+    }
+    :root {
+        --clr-gray-light: #d7dfe2;
+        --clr-gray-med: #616b74;
+        --clr-gray-dark: #414b56;
+        --clr-link: #4d97b2;
+        --clr-popular: #ef257a;
+        --clr-technology: #651fff;
+        --clr-psychology: #e85808;
+        --clr-hack: #ad127c;
+        --clr-pack: #48a221;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /*padding: 5% 0 0 5%;*/
+    }
+
+    .card {
+        overflow: hidden;
+        box-shadow: 0px 2px 20px var(--clr-gray-light);
+        background: white;
+        border-radius: 0.5rem;
+        position: relative;
+        width: 350px;
+        height: 350px;
+        margin: 1rem;
+        transition: 250ms all ease-in-out;
+        cursor: pointer;
+    }
+    @media only screen and (max-width: 600px) {
+        .card {
+            height: 280px;
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        /*height: auto;*/
+        box-shadow: 0px 20px 40px var(--clr-gray-dark);
+    }
+
+    .banner-img {
+        /*position: absolute;*/
+        /*object-fit: cover;*/
+        height: auto;
+        width: 100%;
+    }
+
+    .category-tag {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        background: red;
+        padding: 0.5rem 1.3rem 0.5rem 1rem;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        border-radius: 0 2rem 2rem 0;
+    }
+    .category-tag-right {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        background: red;
+        padding: 0.5rem 1.3rem 0.5rem 1rem;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1;
+        top: 86%;
+        border-radius: 0 2rem 2rem 0;
+    }
+
+    .popular {
+        background: var(--clr-popular);
+    }
+
+    .technology {
+        background: var(--clr-technology);
+    }
+
+    .psychology {
+        background: var(--clr-psychology);
+    }
+
+    .hack {
+        background: var(--clr-hack);
+    }
+
+    .pack {
+        background: var(--clr-pack);
+    }
+
+    .card-body {
+        z-index: 999;
+        margin: 15rem 1rem 1rem 1rem;
+    }
+
+    .blog-hashtag {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--clr-link);
+    }
+
+    .blog-title {
+        line-height: 1.5rem;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .blog-description {
+        color: var(--clr-gray-med);
+        font-size: 0.9rem;
+    }
+
+    .card-profile {
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .card-profile-info {
+        margin-left: 1rem;
+    }
+
+    .profile-name {
+        font-size: 1rem;
+    }
+
+    .profile-followers {
+        color: var(--clr-gray-med);
+        font-size: 0.9rem;
+    }
+</style>
+
+
+<section>
+    <div class="lgx-banner lgx-banner-music">
+        <div class="lgx-banner-style">
+            <div class="lgx-inner lgx-inner-fixed">
+                <div class="container">
+                    <div class="row">
+                        <center><b>
+                            <h2><u>Schedule</u></h2>
+                        </b></center>
+                    </div>
+                </div>
+            </div>
+            <!--//.ROW-->
+        </div>
+        <!-- //.CONTAINER -->
+    </div>
+    <!-- //.INNER -->
+    </div>
+    </div>
+</section>
+{% endblock banner %}
+
 {% block program %}
 
 

@@ -74,6 +74,7 @@ CKEDITOR_CONFIGS = {
 }
 
 
+
 SOCIALACCOUNT_PROVIDERS = {
     'microsoft': {
 
@@ -133,6 +134,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 
 ]
+
+
 
 WSGI_APPLICATION = "RIC.wsgi.application"
 

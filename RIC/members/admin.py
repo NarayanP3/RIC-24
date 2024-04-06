@@ -1,7 +1,9 @@
 from django.contrib import admin
-from .models import Bio,RICEvent,IC, ICEvent, Event1,Event2,Dept,Subdomain,Workshop,WorkshopBio,Accommodation,IntegrationBee,MathEvent,MathEventIndividual,DifferentiaChallenge, ProblemState,Hackathon
+from .models import *
 from import_export.admin import ImportExportModelAdmin
 from .custom_filters import DuplicatVideoFilter
+
+
 
 # Register your models here.
 class FilterAdmin(ImportExportModelAdmin):
@@ -53,6 +55,7 @@ class WorkshopAdmin(ImportExportModelAdmin):
     list_display = ('__str__', 'dept', 'razorpay_payment_id', 'email', 'name')
     list_filter = ("workshop",)
 
+admin.site.register(Theme)
 admin.site.register(RICEvent,FilterRICAdmin)
 admin.site.register(IC,FilterICAdmin)
 admin.site.register(ICEvent,FilterICEvent)

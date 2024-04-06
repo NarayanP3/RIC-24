@@ -28,7 +28,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     # path('microsoft-login/', views.microsoft_login.as_view(), name='microsoft_login'),
+
     path('', include('home.urls')),
+    path('editor/', include('editor.urls')),
     path('rc/', include('prev_edition.urls')),
     path('profile/', include('members.urls')),
     path('event/', include('event.urls')),

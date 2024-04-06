@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'chartjs',
 
     "members",
+    "editor",
     "faq",
     "team",
     "event",

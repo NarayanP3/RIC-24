@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Submission Details</h1>
+<p>Title: {{ event.title }}</p>
+<p>Theme: {{ event.theme }}</p>
+<p>Status: {{ event.status }}</p>
+<p>Submitted By: {{ event.submitted_by }}</p>
+<h2>Comments</h2>
+<ul>
+    {% for comment in comments %}
+    <li>{{ comment.comment_text }} - {{ comment.editor }}</li>
+    {% endfor %}
+</ul>
+
+{% if is_editor %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
+{% endif %}
+
+{% if is_editor %}
+<form method="post" action="{% url 'editor:change_status' event.id %}">
+    {% csrf_token %}
+    <select name="status">
+        <option value="accepted">Accepted</option>
+        <option value="rejected">Rejected</option>
+    </select>
+    <button type="submit">Change Status</button>
+</form>
+{% endif %}
+
+{% endblock %}

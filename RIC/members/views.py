@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from .models import Event1,Event2,Bio,RICEvent, IC, ICEvent,WorkshopBio,IntegrationBee,MathEvent, MathEventIndividual,DifferentiaChallenge,Accommodation
-from .forms import BioForm,RICForm,ICForm ,AbstractForm,AbstractICForm,AbstractRICForm,WorkshopForm,AccommodationForm,IntegrationBeeForm,MathEventForm, MathEventIndividualForm,IDForm, StudDetailForm,DifferentiaChallengeForm
+from .models import Event1,Event2,RICEvent, IC, ICEvent,WorkshopBio,IntegrationBee,MathEvent, MathEventIndividual,DifferentiaChallenge,Accommodation
+from .forms import RICForm,ICForm ,AbstractForm,AbstractICForm,AbstractRICForm,WorkshopForm,AccommodationForm,IntegrationBeeForm,MathEventForm, MathEventIndividualForm,IDForm, StudDetailForm,DifferentiaChallengeForm
 import razorpay
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView,ListView, DetailView, CreateView, UpdateView,DeleteView
@@ -580,13 +580,13 @@ def change_all(request):
 
 
 class ProfileListView(LoginRequiredMixin, ListView):
-    model = Bio
+    model = RICEvent
     template_name = "members/profile_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["workshop_bio"] = WorkshopBio.objects.filter(owner = self.request.user)
-        context["bio_list"] = Bio.objects.filter(owner = self.request.user)
+        context["bio_list"] = RICEvent.objects.filter(owner = self.request.user)
         context["ric_list"] = RICEvent.objects.filter(owner = self.request.user)
         context["accommo"] = Accommodation.objects.filter(owner = self.request.user)
         context["intBee"] = IntegrationBee.objects.filter(owner = self.request.user)
@@ -600,11 +600,11 @@ class ProfileListView(LoginRequiredMixin, ListView):
 
 class ProfileCreateView(LoginRequiredMixin,CreateView):
     login_required = True
-    form_class = BioForm
+    form_class = RICForm
     template_name = 'members/profile_create.html'
 
     def get_context_data(self,*args, **kwargs):
-        form = BioForm()
+        form = RICForm()
         form.instance.owner = self.request.user
         title = "Research Events"
         context = {'title':title,'form':form}
@@ -657,7 +657,7 @@ class ProfileCreateView(LoginRequiredMixin,CreateView):
 
 @method_decorator(csrf_exempt,name='dispatch')
 class ProfileDetailView(LoginRequiredMixin,DetailView):
-    model = Bio
+    model = RICEvent
     template_name = "members/profile_detail.html"
 
 
@@ -861,13 +861,13 @@ class AbstractUpdateView(LoginRequiredMixin, View):
     template_name = 'members/update.html'
     success_url = reverse_lazy('members:all')
     def get(self, request, pk) :
-        pic = get_object_or_404(Bio, id=pk, owner=self.request.user)
+        pic = get_object_or_404(RICEvent, id=pk, owner=self.request.user)
         form = AbstractForm(instance=pic)
         ctx = { 'form': form }
         return render(request, self.template_name, ctx)
 
     def post(self, request, pk=None) :
-        pic = get_object_or_404(Bio, id=pk, owner=self.request.user)
+        pic = get_object_or_404(RICEvent, id=pk, owner=self.request.user)
         form = AbstractForm(request.POST, request.FILES or None, instance=pic)
 
         if not form.is_valid() :
@@ -959,7 +959,7 @@ class WorkshopCreateView(LoginRequiredMixin,CreateView):
         username = user.username
         # events = bios.all()
         # events = Event1.objects.all()
-        # events = Bio.objects.all()
+        # events = RICEvent.objects.all()
         context = {'username': username,'email': email,'events':events}
         # mydict = {'username': username}
         user.save()
@@ -1024,7 +1024,7 @@ class AccommodationCreateView(LoginRequiredMixin, CreateView):
         email = user.email
         username = user.username
 
-        # form.instance.event_rc_list = Bio.objects.filter(owner=self.request.user)
+        # form.instance.event_rc_list = RICEvent.objects.filter(owner=self.request.user)
         # form.instance.event_ic_list = ICEvent.objects.filter(owner=self.request.user)
         # form.save_m2m()
 
@@ -1060,7 +1060,7 @@ class AccommodationDetailView(LoginRequiredMixin,DetailView):
         context['rupee'] = self.object.total/100
 
 
-        self.object.event_rc_list = Bio.objects.filter(owner=self.request.user)
+        self.object.event_rc_list = RICEvent.objects.filter(owner=self.request.user)
         self.object.event_ic_list = ICEvent.objects.filter(owner=self.request.user)
 
 
@@ -1103,12 +1103,12 @@ class IntegrationBeeCreateView(LoginRequiredMixin,CreateView):
         user = self.request.user
         email = user.email
         username = user.username
-        # bios = Bio.objects.filter(owner=user)
+        # bios = RICEvent.objects.filter(owner=user)
         title = "Integration Bee"
         events = [title]
         # events = bios.all()
         # events = Event1.objects.all()
-        # events = Bio.objects.all()
+        # events = RICEvent.objects.all()
         context = {'username': username,'email': email,'events':events,'title':title}
         # mydict = {'username': username}
         user.save()
@@ -1167,12 +1167,12 @@ class DifferentiaChallengeCreateView(LoginRequiredMixin,CreateView):
         user = self.request.user
         email = user.email
         username = user.username
-        # bios = Bio.objects.filter(owner=user)
+        # bios = RICEvent.objects.filter(owner=user)
         title = "Differentia Challenge"
         events = [title]
         # events = bios.all()
         # events = Event1.objects.all()
-        # events = Bio.objects.all()
+        # events = RICEvent.objects.all()
         context = {'username': username,'email': email,'events':events,'title':title}
         # mydict = {'username': username}
         user.save()
@@ -1367,7 +1367,7 @@ def mail(request):
     email = user.email
     username = user.username
     # events = Event1.objects.all()
-    bios = Bio.objects.filter(owner=user)
+    bios = RICEvent.objects.filter(owner=user)
     events = bios.filter(owner=user).all()
     # events = events.event1.all()
     context = {'username': username,'email': email,'events':events}

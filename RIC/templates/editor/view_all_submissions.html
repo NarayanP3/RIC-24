@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>All RICEvents</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Theme</th>
+            <th scope="col">Abstract</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in page_obj %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ event.title }}</td>
+            <td>{{ event.theme }}</td>
+            <td><a href="{{ event.abstract.url }}">Download</a></td>
+            <td>
+                <form action="{% url 'editor:change_status' event.id %}" method="post">
+                    {% csrf_token %}
+                    <select name="status" class="form-select">
+                        <option value="Pending" {% if event.status == 'Pending' %}selected{% endif %}>Pending</option>
+                        <option value="Accepted" {% if event.status == 'Accepted' %}selected{% endif %}>Accepted</option>
+                        <option value="Rejected" {% if event.status == 'Rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary btn-sm">Change Status</button>
+                </form>
+            </td>
+            <td>
+                <a href="{% url 'editor:view_submission' event.id %}" class="btn btn-info btn-sm">View Submission</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <!-- Pagination links -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

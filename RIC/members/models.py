@@ -50,16 +50,6 @@ class Dept(models.Model):
         return self.name
 
 
-class Subdomain(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-    def __unicode__(self):
-        return self.name
-
-
 class Workshop(models.Model):
     title = models.CharField(max_length=100,blank=True, null=True)
     name = RichTextField()
@@ -82,37 +72,13 @@ def content_file_name(instance, filename):
     filename = "%s_%s_%s_%s.%s" % (instance.owner.first_name,instance.owner.last_name, instance.dept,instance.institute, ext)
     return os.path.join('abstract', filename)
 
-
-class Bio(models.Model):
-    institute = models.CharField(max_length=50)
-    dept = models.ForeignKey(Dept, on_delete=models.CASCADE,default=None)
-    abstract = models.FileField(upload_to=content_file_name, max_length=100, validators=[validate_file_extension])
-    abstractFormat = models.BooleanField(default=True,null=True,blank=True)
-    event1 = models.ManyToManyField(Event1, blank=True,null=True)
-    number = PhoneNumberField()
-    role = models.CharField(max_length=100, default="Student")
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.CharField(max_length=150, default="Name")
-    email = models.CharField(max_length=150, default="abc@xyz.com")
-    text = RichTextField(blank=True, null=True)
-    total = models.IntegerField(default=0,blank=True,null=True)
-    selected = models.BooleanField(default=False,null=True,blank=True)
-    selected_oral = models.BooleanField(default=False,blank=True, null=True)
-    razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
-    iitg_student = models.BooleanField(default=False,null=True,blank=True)
-    remarks = models.CharField(max_length=50,default="None",blank=True,null=True)
-    def __str__(self):
-        return self.owner.email
+class Theme(models.Model):
+    theme = models.CharField(max_length=250)
 
     def __unicode__(self):
-        return self.owner.email
-
-    def setpaymentid(self,id):
-        print('test')
-        print(id)
-        self.razorpay_payment_id = id
-        self.save()
-
+        return self.theme
+    def __str__(self):
+        return self.theme
 
 
 class RICEvent(models.Model):
@@ -120,14 +86,16 @@ class RICEvent(models.Model):
     dept = models.ForeignKey(Dept, on_delete=models.CASCADE,default=None)
     abstract = models.FileField(upload_to=content_file_name, max_length=100, validators=[validate_file_extension])
     abstractFormat = models.BooleanField(default=True,null=True,blank=True)
-    event = models.ForeignKey(Event1, on_delete=models.CASCADE, blank=True, null=True)
+    event = models.ForeignKey(Event1, on_delete=models.SET_NULL, blank=True, null=True)
     number = PhoneNumberField()
     role = models.CharField(max_length=100, default="Student")
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=150, default="Name")
+    theme = models.ForeignKey(Theme, on_delete=models.SET_NULL, null = True, blank=True)
     email = models.CharField(max_length=150, default="abc@xyz.com")
     text = RichTextField(blank=True, null=True)
     total = models.IntegerField(default=0,blank=True,null=True)
+    status = models.CharField(max_length=50, default='Pending')
     selected = models.BooleanField(default=False,null=True,blank=True)
     selected_oral = models.BooleanField(default=False,blank=True, null=True)
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
@@ -159,6 +127,8 @@ class IC(models.Model):
     icSubmission = models.FileField(upload_to=ic_content_file_name, max_length=100,blank=True,null=True)
     icSubmissionFormat = models.BooleanField(default=False,null=True,blank=True)
     event = models.ForeignKey(ICEvent, on_delete=models.CASCADE, blank=True, null=True)
+    theme = models.ForeignKey(Theme, on_delete=models.SET_NULL, null = True, blank=True)
+
     # event = models.ManyToManyField(ICEvent, blank=True,null=True)
     number = PhoneNumberField(null=True)
     role = models.CharField(max_length=100, default="Student")

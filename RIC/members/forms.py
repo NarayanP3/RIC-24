@@ -3,74 +3,49 @@ from django.forms import widgets
 from phonenumber_field.formfields import PhoneNumberField
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
-from .models import Event1,Event2,ICEvent , Bio,RICEvent , IC,WorkshopBio,Workshop,Accommodation,IntegrationBee,MathEvent,MathEventIndividual,DifferentiaChallenge
+from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 import uuid
 
-
-class BioForm(forms.ModelForm):
-    TRUE_FALSE_CHOICES = (
-    (True, 'Yes'),
-    (False, 'No')
-    )
-    ROLE = (
-        ('Student','Student'),
-        ('Academician','Academician'),
-        ('Industrial Expert','Industrial Expert/Scientist/Project Staffs/Research Associates/Post Doctorates'),
-        ('Other','Other')
-    )
-    event1 = forms.ModelMultipleChoiceField(
-            queryset=Event1.objects.all(),
-            widget=forms.CheckboxSelectMultiple,
-            required=False,
-            label="Events You Want to Participate"
-            )
-    # iitg_student = forms.BooleanField(widget=forms.Select(),label="Are you IIT Guwahati Student", required=True)
-    iitg_student = forms.ChoiceField(choices = TRUE_FALSE_CHOICES, label="Are you IIT Guwahati Student", initial='', widget=forms.Select(), required=True)
-    number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IN'))
-    role = forms.ChoiceField(choices=ROLE,label="Mention your Role")
-    class Meta:
-        model = Bio
-        fields = ("institute","dept","iitg_student","role","abstract","event1","number")
-        labels = {
-            "institute": "Please Enter your institute (Note: Please Enter Your institute name in Block Letters) *",
-            "dept": "Please Select your related Department *",
-            "abstract": "Please upload your Abstract file in .doc/.docx format (sample abstract is uploaded above) *",
-
-        }
-
+from phonenumber_field.formfields import PhoneNumberField
 
 class RICForm(forms.ModelForm):
     TRUE_FALSE_CHOICES = (
-    (True, 'Yes'),
-    (False, 'No')
+        (True, 'Yes'),
+        (False, 'No')
     )
     ROLE = (
-        ('Student','Student'),
-        ('Academician','Academician'),
-        ('Industrial Expert','Industrial Expert/Scientist/Project Staffs/Research Associates/Post Doctorates'),
-        ('Other','Other')
+        ('Student', 'Student'),
+        ('Academician', 'Academician'),
+        ('Industrial Expert', 'Industrial Expert/Scientist/Project Staffs/Research Associates/Post Doctorates'),
+        ('Other', 'Other')
     )
     event = forms.ModelChoiceField(
-            queryset=Event1.objects.all(),
-            widget=forms.RadioSelect,
-            required=True,
-            label="Events You Want to Participate"
-            )
-    # iitg_student = forms.BooleanField(widget=forms.Select(),label="Are you IIT Guwahati Student", required=True)
-    iitg_student = forms.ChoiceField(choices = TRUE_FALSE_CHOICES, label="Are you IIT Guwahati Student", initial='', widget=forms.Select(), required=True)
+        queryset=Event1.objects.all(),
+        widget=forms.RadioSelect,
+        required=True,
+        label="Events You Want to Participate"
+    )
+    theme = forms.ModelChoiceField(
+        queryset=Theme.objects.all(),
+        widget=forms.RadioSelect,
+        required=True,
+        label="Theme"
+        )
+    iitg_student = forms.ChoiceField(choices=TRUE_FALSE_CHOICES, label="Are you IIT Guwahati Student", initial='', required=True)
     number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IN'))
-    role = forms.ChoiceField(choices=ROLE,label="Mention your Role")
+    role = forms.ChoiceField(choices=ROLE, label="Mention your Role")
+
     class Meta:
         model = RICEvent
-        fields = ("institute","dept","iitg_student","role","abstract","event","number")
+        fields = ("institute", "dept", "iitg_student", "theme", "role", "abstract", "event", "number")
         labels = {
             "institute": "Please Enter your institute (Note: Please Enter Your institute name in Block Letters) *",
             "dept": "Please Select your related Department *",
             "abstract": "Please upload your Abstract file in .doc/.docx format (sample abstract is uploaded above) *",
-
         }
+
 
 
 class ICForm(forms.ModelForm):
@@ -91,13 +66,18 @@ class ICForm(forms.ModelForm):
             required=True,
             label="Events You Want to Participate"
             )
-
+    theme = forms.ModelChoiceField(
+        queryset=Theme.objects.all(),
+        widget=forms.RadioSelect,
+        required=True,
+        label="Theme"
+        )
     iitg_student = forms.ChoiceField(choices = TRUE_FALSE_CHOICES, label="Are you IIT Guwahati Student", initial='', widget=forms.Select(), required=True)
     number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IN'))
     role = forms.ChoiceField(choices=ROLE,label="Mention your Role")
     class Meta:
         model = IC
-        fields = ("institute","iitg_student","role","event","number","remarks")
+        fields = ("institute","theme","iitg_student","role","event","number","remarks")
         labels = {
             "institute": "Please Enter your Institute/Organization (Note: Please Enter Your institute/organization name in Block Letters) *",
             "Remarks": "Any Remarks",
@@ -186,7 +166,7 @@ class AccommodationForm(forms.ModelForm):
 
 class AbstractForm(forms.ModelForm):
     class Meta:
-        model = Bio
+        model = RICEvent
         fields = ("abstract",)
 
 

@@ -24,7 +24,8 @@
 {% block content %}
 <form action="" enctype="multipart/form-data" method="POST">
     {% csrf_token %}
-    {% bootstrap_form form %}
+    {{ form.media }}
+                      {% bootstrap_form form %}
     <input type="submit" name="" class="btn btn-outline-success" value="Submit">
 </form>
 {% endblock content %}

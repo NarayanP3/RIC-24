@@ -37,7 +37,8 @@
     </div>
     <form class="container" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {% bootstrap_form form %}
+        {{ form.media }}
+                      {% bootstrap_form form %}
         <div id="innovation-exhibit-ideas" style="display: none;">
     <input type="text" name="innovation_exhibit_ideas" placeholder="Ideas for exhibition">
   </div>

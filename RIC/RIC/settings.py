@@ -382,3 +382,5 @@ CKEDITOR_5_CONFIGS = {
 }
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+
+CRISPY_TEMPLATE_PACK = 'uni_form'

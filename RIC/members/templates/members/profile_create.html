@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% load crispy_forms_tags %}
+
 {% load static %}
 
 {% block head %}
@@ -57,13 +59,16 @@
                   <form method="POST" enctype="multipart/form-data">
                       {% csrf_token %}
                       {{ form.media }}
+                      {% bootstrap_form form %}
                       
-                      {% for field in form %}
+                      
+                      
+                      {% comment %} {% for field in form %}
                         <div class="form-group">
                             <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>
                             {{ field }}
                         </div>
-                      {% endfor %}
+                      {% endfor %} {% endcomment %}
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
               </div>

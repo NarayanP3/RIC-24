@@ -227,7 +227,7 @@ body {
 </section>
 {% endblock banner %}
 {% block content %}
-<div class="main">
+<div class="main min-w-8">
   <h2>General Information</h2>
   <div class="card">
       <div class="card-body">
@@ -267,7 +267,7 @@ body {
                   <tr>
                       <td>Abstract File</td>
                       <td>:</td>
-                      <td><a href="{{object.abstract.url}}">Abstract File</a></td>
+                      <td>{{object.abstract|safe}}</td>
                   </tr>
                   <tr>
                       <td>Events Registered</td>

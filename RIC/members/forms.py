@@ -7,6 +7,8 @@ from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 import uuid
+from django_ckeditor_5.fields import CKEditor5Field
+
 
 from phonenumber_field.formfields import PhoneNumberField
 
@@ -37,13 +39,40 @@ class RICForm(forms.ModelForm):
     number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IN'))
     role = forms.ChoiceField(choices=ROLE, label="Mention your Role")
 
+    default_abstract = '<h2>Content</h2>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<h3 class="card-text">Details of the Workshop</h3>' \
+                                   '<p class="card-text" style="text-align: left;"><strong>Title</strong>&nbsp;- Title Title<br />' \
+                                   '<strong>Instructor 1</strong>&nbsp;- Instructor 1<br />' \
+                                   '<strong>Instructor 2</strong>&nbsp;- Instructor 2<br />' \
+                                   '<strong>Mode</strong>&nbsp;- Offline<br />' \
+                                   '<strong>Date</strong>- dd-dd mmm, yyyy<br />' \
+                                   '<strong>Registration Fees</strong>- ₹250<br />' \
+                                   '<strong>Registration Link :&nbsp;</strong><a href="https://sabiitg.mojo.page/latex-workshop-sab-iitg" target="_blank" rel="noopener">Register here</a></p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Day 1</strong>: 09 September 2023 10 AM - 4 PM<br />' \
+                                   '<strong>Day 2</strong>: 10 September 2023 10 AM - 4 PM</p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Location</strong>: Conference Centre, IIT Guwahati</p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Highlights</strong></p>' \
+                                   '<ul>' \
+                                   '<li>[ Line 1 for details ]</li>' \
+                                   '<li>[ Add more lines for additional details&nbsp;]</li>' \
+                                   '</ul>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Benefits</strong>: E-Certificates will be provided</p>'
+
+
+    abstract = CKEditor5Field(default=default_abstract, config_name='extends')
+
     class Meta:
         model = RICEvent
-        fields = ("institute", "dept", "iitg_student", "theme", "role", "abstract", "event", "number")
+        fields = ("institute", "dept","title", "iitg_student", "theme", "role", "abstract", "event", "number")
         labels = {
             "institute": "Please Enter your institute (Note: Please Enter Your institute name in Block Letters) *",
             "dept": "Please Select your related Department *",
-            "abstract": "Please upload your Abstract file in .doc/.docx format (sample abstract is uploaded above) *",
+            "abstract": "Please submit your Abstract file in following format (sample abstract is given below) *",
         }
 
 
@@ -77,7 +106,7 @@ class ICForm(forms.ModelForm):
     role = forms.ChoiceField(choices=ROLE,label="Mention your Role")
     class Meta:
         model = IC
-        fields = ("institute","theme","iitg_student","role","event","number","remarks")
+        fields = ("institute","theme","title","iitg_student","role","event","number","remarks")
         labels = {
             "institute": "Please Enter your Institute/Organization (Note: Please Enter Your institute/organization name in Block Letters) *",
             "Remarks": "Any Remarks",

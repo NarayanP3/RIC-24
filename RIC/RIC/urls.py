@@ -27,6 +27,7 @@ admin.site.index_title = "Welcome to RIC ADMIN PORTAL"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     # path('microsoft-login/', views.microsoft_login.as_view(), name='microsoft_login'),
 
     path('', include('home.urls')),

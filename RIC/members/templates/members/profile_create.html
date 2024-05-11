@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+          selector: '#id_abstract',
+          height: 400,
+          plugins: 'advlist autolink lists link image charmap print preview anchor',
+          toolbar: 'undo redo | formatselect | bold italic backcolor | \
+              alignleft aligncenter alignright alignjustify | \
+              bullist numlist outdent indent | removeformat | help'
+        });
+    </script>
+{% endblock head %}
+
 {% block banner %}
 
 <style>
@@ -31,33 +47,28 @@
 </section>
 {% endblock banner %}
 {% block content %}
-<br>
-    <div class="container">
-        <a id="sampleabstractblink" href="{% static 'home/assets/pdf/sampleabstract.doc' download = "sampleabstract.doc" %} ">Download sample Abstract</a>
-    </div>
-    <div class="container btn-primary" id="">
-        For Innovation Exhibit and Emprendimiento, ideas should be uploaded after the submission of this form
-    </div>
-    <form class="container" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" name="" class="btn btn-success" value="Submit">
-    </form>
-    <br>
-    <br>
-    <br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ title }} Registration Form : {{ TINYMCE_JS_URL }}</div>
 
-    <!-- added by dhruvesh -->
-    <script type="text/javascript">
-        var sampleabstractblink = document.getElementById('sampleabstractblink');
-        setInterval(function() {
-            sampleabstractblink.style.opacity = (sampleabstractblink.style.opacity == 0 ? 1 : 0);
-        }, 250);
-        </script>
-        <script type="text/javascript">
-        var sampleabstractblink = document.getElementById('sampleabstractblink2');
-        setInterval(function() {
-            sampleabstractblink.style.opacity = (sampleabstractblink.style.opacity == 0 ? 1 : 0);
-        }, 250);
-    </script>
+                <div class="card-body">
+                  <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {{ form.media }}
+                      
+                      {% for field in form %}
+                        <div class="form-group">
+                            <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>
+                            {{ field }}
+                        </div>
+                      {% endfor %}
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

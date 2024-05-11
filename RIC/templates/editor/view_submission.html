@@ -4,7 +4,7 @@
 <p>Title: {{ event.title }}</p>
 <p>Theme: {{ event.theme }}</p>
 <p>Status: {{ event.status }}</p>
-<p>Submitted By: {{ event.submitted_by }}</p>
+<p>Submitted By: {{ event.owner.full_name }}</p>
 <h2>Comments</h2>
 <ul>
     {% for comment in comments %}
@@ -21,13 +21,14 @@
 {% endif %}
 
 {% if is_editor %}
-<form method="post" action="{% url 'editor:change_status' event.id %}">
+<form action="{% url 'editor:change_status' event.id %}" method="post">
     {% csrf_token %}
-    <select name="status">
-        <option value="accepted">Accepted</option>
-        <option value="rejected">Rejected</option>
+    <select name="status" class="form-select">
+        <option value="Pending" {% if event.status == 'Pending' %}selected{% endif %}>Pending</option>
+        <option value="Accepted" {% if event.status == 'Accepted' %}selected{% endif %}>Accepted</option>
+        <option value="Rejected" {% if event.status == 'Rejected' %}selected{% endif %}>Rejected</option>
     </select>
-    <button type="submit">Change Status</button>
+    <button type="submit" class="btn btn-primary btn-sm">Change Status</button>
 </form>
 {% endif %}
 

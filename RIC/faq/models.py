@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 
@@ -11,8 +11,8 @@ class Cat(models.Model):
         return self.name
 
 class FAQ(models.Model):
-    question = RichTextField()
-    answer = RichTextField()
+    question = CKEditor5Field()
+    answer = CKEditor5Field()
     cat = models.ForeignKey(Cat, on_delete=models.CASCADE,null=True)
 
     def __str__(self):

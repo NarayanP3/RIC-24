@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h1>Status Changed Successfully!</h1>
+    <p>The status of the submission has been successfully changed.</p>
+    <a href="{% url 'editor:view_all_ricevents' %}" class="btn btn-primary">View All Submissions</a>
+</div>
+{% endblock %}

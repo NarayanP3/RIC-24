@@ -1,12 +1,12 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class Sponsor(models.Model):
     name = models.CharField(max_length=50)
     price = models.IntegerField()
     pic  = models.ImageField(upload_to='sponsor')
-    text = RichTextField()
+    text = CKEditor5Field()
 
     def __str__(self):
         return self.name

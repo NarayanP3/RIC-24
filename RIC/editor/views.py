@@ -37,7 +37,40 @@ def is_editor(user):
 def editor_required(view_func):
     decorated_view_func = user_passes_test(is_editor)
     return decorated_view_func(view_func)
+
+
+class ViewAllRICEventsView(View):
+    @method_decorator(editor_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get(self, request):
+        status = request.GET.get('status', 'pending')  # Default status is 'pending'
+        events_list = None
+        if status == 'pending':
+            events_list = RICEvent.objects.filter(status='Pending').order_by('-id')
+        elif status == 'accepted':
+            events_list = RICEvent.objects.filter(status='Accepted').order_by('-id')
+        elif status == 'rejected':
+            events_list = RICEvent.objects.filter(status='Rejected').order_by('-id')
+
+        paginator = Paginator(events_list, 10)  # Show 10 events per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context = {
+            'page_obj': page_obj,
+            'status': status,
+        }
+        return render(request, 'editor/view_all_submissions.html', context)
+
+
+
 class ViewRICEventSubmissionView(UserPassesTestMixin, View):
+    @method_decorator(editor_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def test_func(self):
         return self.request.user.groups.filter(name='Editor').exists()
 
@@ -70,28 +103,16 @@ class ViewRICEventSubmissionView(UserPassesTestMixin, View):
         }
         return render(request, 'editor/view_submission.html', context)
 
-class ViewAllRICEventsView(UserPassesTestMixin, View):
-    def test_func(self):
-        return self.request.user.groups.filter(name='Editor').exists()
-
-    def get(self, request):
-        events_list = RICEvent.objects.all().order_by('-id')
-        paginator = Paginator(events_list, 10)  # Show 10 events per page
-
-        page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
-
-        context = {
-            'page_obj': page_obj
-        }
-        return render(request, 'editor/view_all_submissions.html', context)
-
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 class ChangeStatusView(LoginRequiredMixin, View):
+    @method_decorator(csrf_exempt)  # Add this decorator to exempt CSRF token check
     @method_decorator(editor_required)
     def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+       return super().dispatch(*args, **kwargs)
 
     def post(self, request, event_id):
+        # Handle POST request
         event = get_object_or_404(RICEvent, pk=event_id)
         status = request.POST.get('status')
         if status == 'Accepted':

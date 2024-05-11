@@ -24,7 +24,7 @@ class FilterICEvent(ImportExportModelAdmin):
     search_fields = ("name","fee",'deadline')
 
 class FilterRICAdmin(ImportExportModelAdmin):
-    list_display = ("__str__",'name','email','institute',"dept","abstract","razorpay_payment_id")
+    list_display = ("__str__",'name','email','institute',"dept","razorpay_payment_id")
     list_filter = ("dept","event","institute","iitg_student")
     search_fields = ('name','email','institute',)
 

@@ -697,7 +697,8 @@ class ProfileRICCreateView(LoginRequiredMixin,CreateView):
         form = RICForm()
         form.instance.owner = self.request.user
         title = "Research Events"
-        context = {'title':title,'form':form}
+        context = {}
+        context = {'title':title,'form':form,}
         return context
 
 

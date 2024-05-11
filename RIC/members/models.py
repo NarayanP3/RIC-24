@@ -2,9 +2,13 @@ from django.db import models
 import os
 from phonenumber_field.modelfields import PhoneNumberField
 from django.conf import settings
-from ckeditor.fields import RichTextField
+
+from django_ckeditor_5.fields import CKEditor5Field
+
 import uuid
 from .validators import validate_file_extension
+
+from ric_year.models import RICYEAR
 
 # Create your models here.
 class Event1(models.Model):
@@ -52,12 +56,12 @@ class Dept(models.Model):
 
 class Workshop(models.Model):
     title = models.CharField(max_length=100,blank=True, null=True)
-    name = RichTextField()
+    name = CKEditor5Field()
     fee = models.IntegerField()
-    venue = RichTextField(blank=True, null=True)
-    desc = RichTextField(blank=True, null=True)
+    venue = CKEditor5Field(blank=True, null=True)
+    desc = CKEditor5Field(blank=True, null=True)
     organised_at = models.DateTimeField(auto_now=False, auto_now_add=False,blank=True, null=True)
-    conducted_by = RichTextField(blank=True, null=True)
+    conducted_by = CKEditor5Field(blank=True, null=True)
     link = models.URLField(max_length=200,default="www.ric.iitg.ac.in/",null=True,blank=True)
 
     def __str__(self):
@@ -84,16 +88,47 @@ class Theme(models.Model):
 class RICEvent(models.Model):
     institute = models.CharField(max_length=50)
     dept = models.ForeignKey(Dept, on_delete=models.CASCADE,default=None)
-    abstract = models.FileField(upload_to=content_file_name, max_length=100, validators=[validate_file_extension])
+
+
+    
+    default_abstract = '<h2>Content</h2>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<h3 class="card-text">Details of the Workshop</h3>' \
+                                   '<p class="card-text" style="text-align: left;"><strong>Title</strong>&nbsp;- Title Title<br />' \
+                                   '<strong>Instructor 1</strong>&nbsp;- Instructor 1<br />' \
+                                   '<strong>Instructor 2</strong>&nbsp;- Instructor 2<br />' \
+                                   '<strong>Mode</strong>&nbsp;- Offline<br />' \
+                                   '<strong>Date</strong>- dd-dd mmm, yyyy<br />' \
+                                   '<strong>Registration Fees</strong>- ₹250<br />' \
+                                   '<strong>Registration Link :&nbsp;</strong><a href="https://sabiitg.mojo.page/latex-workshop-sab-iitg" target="_blank" rel="noopener">Register here</a></p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Day 1</strong>: 09 September 2023 10 AM - 4 PM<br />' \
+                                   '<strong>Day 2</strong>: 10 September 2023 10 AM - 4 PM</p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Location</strong>: Conference Centre, IIT Guwahati</p>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Highlights</strong></p>' \
+                                   '<ul>' \
+                                   '<li>[ Line 1 for details ]</li>' \
+                                   '<li>[ Add more lines for additional details&nbsp;]</li>' \
+                                   '</ul>' \
+                                   '<hr style="font-size: medium; font-weight: 400;" />' \
+                                   '<p style="font-size: medium; font-weight: 400;"><strong>Benefits</strong>: E-Certificates will be provided</p>'
+
+
+    abstract = CKEditor5Field(default=default_abstract, config_name='extends')
+
+    
     abstractFormat = models.BooleanField(default=True,null=True,blank=True)
     event = models.ForeignKey(Event1, on_delete=models.SET_NULL, blank=True, null=True)
     number = PhoneNumberField()
     role = models.CharField(max_length=100, default="Student")
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=150, default="Name")
+    title = models.CharField(max_length=150, default="Title")
     theme = models.ForeignKey(Theme, on_delete=models.SET_NULL, null = True, blank=True)
     email = models.CharField(max_length=150, default="abc@xyz.com")
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
     total = models.IntegerField(default=0,blank=True,null=True)
     status = models.CharField(max_length=50, default='Pending')
     selected = models.BooleanField(default=False,null=True,blank=True)
@@ -101,6 +136,12 @@ class RICEvent(models.Model):
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
     iitg_student = models.BooleanField(default=False,null=True,blank=True)
     remarks = models.CharField(max_length=50,default="None",blank=True,null=True)
+
+    ricyear = models.ForeignKey(RICYEAR, null=True, blank=True, on_delete=models.SET_NULL)
+
+
+
+
     def __str__(self):
         return self.owner.email
 
@@ -128,12 +169,13 @@ class IC(models.Model):
     icSubmissionFormat = models.BooleanField(default=False,null=True,blank=True)
     event = models.ForeignKey(ICEvent, on_delete=models.CASCADE, blank=True, null=True)
     theme = models.ForeignKey(Theme, on_delete=models.SET_NULL, null = True, blank=True)
+    title = models.CharField(max_length=150, default="Title")
 
     # event = models.ManyToManyField(ICEvent, blank=True,null=True)
     number = PhoneNumberField(null=True)
     role = models.CharField(max_length=100, default="Student")
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
     total = models.IntegerField(default=0,blank=True,null=True)
     selected = models.BooleanField(default=False,null=True,blank=True)
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
@@ -188,7 +230,7 @@ class WorkshopBio(models.Model):
     number = PhoneNumberField()
     email = models.EmailField(max_length=100, null=True, blank=True)
     name = models.CharField(max_length=100, null=True, blank=True)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
     total = models.IntegerField(default=0,blank=True,null=True)
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
 
@@ -222,7 +264,7 @@ class IntegrationBee(models.Model):
     class_name = models.CharField(choices=CLASS_CHOICES, max_length=10)
     number = PhoneNumberField()
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
 
     selected = models.BooleanField(default=True,null=True,blank=True)
 
@@ -258,7 +300,7 @@ class DifferentiaChallenge(models.Model):
     # class_name = models.CharField(max_length=10)
     number = PhoneNumberField()
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
 
     selected = models.BooleanField(default=True,null=True,blank=True)
 
@@ -282,7 +324,7 @@ class MathEvent(models.Model):
     teacher_list = models.TextField()
     point_of_contact = models.CharField(max_length=100)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
 
     selected = models.BooleanField(default=True,null=True,blank=True)
 
@@ -315,7 +357,7 @@ class MathEventIndividual(models.Model):
     school_address = models.CharField(max_length=200)
     school_contact = PhoneNumberField()
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
 
     selected = models.BooleanField(default=True,null=True,blank=True)
 
@@ -332,11 +374,11 @@ class MathEventIndividual(models.Model):
 
 class ProblemState(models.Model):
     title = models.CharField(max_length=100,blank=True, null=True)
-    # name = RichTextField()
+    # name = CKEditor5Field()
     fee = models.IntegerField()
-    desc = RichTextField(blank=True, null=True)
+    desc = CKEditor5Field(blank=True, null=True)
     organised_at = models.DateTimeField(auto_now=False, auto_now_add=False,blank=True, null=True)
-    conducted_by = RichTextField(blank=True, null=True)
+    conducted_by = CKEditor5Field(blank=True, null=True)
     link = models.URLField(max_length=200,default="")
 
     def __str__(self):
@@ -356,7 +398,7 @@ class Hackathon(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     problem_statement = models.ForeignKey(ProblemState, on_delete=models.CASCADE,default=None,null=True)
     iitg_student = models.BooleanField(default=False,null=True,blank=True)
-    text = RichTextField(blank=True, null=True)
+    text = CKEditor5Field(blank=True, null=True)
     total = models.IntegerField(default=0,blank=True,null=True)
     selected = models.BooleanField(default=False,null=True,blank=True)
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)

@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from random import random
 # Create your models here.
 class Cat(models.Model):
@@ -12,8 +12,8 @@ class Cat(models.Model):
         return self.name
 
 class About(models.Model):
-    title = RichTextField()
-    content = RichTextField()
+    title = CKEditor5Field()
+    content = CKEditor5Field()
     cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
 
     def __str__(self):

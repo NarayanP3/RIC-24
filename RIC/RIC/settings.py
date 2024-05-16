@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.microsoft",
 
+    "phonenumber_field",
+    "import_export",
+    "django_filters",
+    "django_cleanup.apps.CleanupConfig",
 
     "bootstrap4",
     "crispy_forms",
@@ -67,10 +71,7 @@ INSTALLED_APPS = [
 
     "ric_year",
 
-    "phonenumber_field",
-    "import_export",
-    "django_filters",
-    "django_cleanup.apps.CleanupConfig",
+
 ]
 
 
@@ -200,7 +201,6 @@ OUTLOOK_FOLDER = "Chetan_2023"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "/static/"
 
 
 # Default primary key field type
@@ -210,10 +210,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
+
 STATIC_DIR = BASE_DIR/'static'
-STATICFILES_DIRS = [STATIC_DIR,]
-STATIC_ROOT = os.path.join(BASE_DIR, "static/staticfiles")
+
+STATICFILES_DIRS = [STATIC_DIR, ]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'main/static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'main/media')
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/staticfiles")
 MEDIA_ROOT = BASE_DIR/'media'
 
 IMPORT_EXPORT_USE_TRANSACTIONS = True

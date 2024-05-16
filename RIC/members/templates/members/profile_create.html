@@ -4,20 +4,6 @@
 
 {% load static %}
 
-{% block head %}
-    {{ block.super }}
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-          selector: '#id_abstract',
-          height: 400,
-          plugins: 'advlist autolink lists link image charmap print preview anchor',
-          toolbar: 'undo redo | formatselect | bold italic backcolor | \
-              alignleft aligncenter alignright alignjustify | \
-              bullist numlist outdent indent | removeformat | help'
-        });
-    </script>
-{% endblock head %}
 
 {% block banner %}
 
@@ -60,9 +46,9 @@
                       {% csrf_token %}
                       {{ form.media }}
                       {% bootstrap_form form %}
-                      
-                      
-                      
+
+
+
                       {% comment %} {% for field in form %}
                         <div class="form-group">
                             <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>

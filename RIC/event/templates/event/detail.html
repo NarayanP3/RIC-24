@@ -31,32 +31,34 @@
             <center><h2> Registration Dates To Be Announced Soon</h2></center>
           {% endif %}
 
-          {% if event.name == 'INTEGRATION BEE' %}
-            <center><h2> <a href="{% url 'members:integrationBee_create' %}">Register for Integration Bee</a></h2></center>
-          {% elif event.name == 'MATH OLYMPICS' %}
-            <center><h2> <a href="{% url 'members:mathEvent_create' %}">Register for Math Olympics</a></h2></center>
-          {% elif event.name == "D'SinoQuation" %}
-            <center><h2> <a href="{% url 'members:differentiaChallenge_create' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'SCIENTIFIQUE' %}
-            <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'ATELIER' %}
-            <center><h2> <a href="{% url 'members:workshop_create' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'CONNAISSANCE' %}
-            <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'DISCUTIR' %}
-            <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'EMPRENDIMIENTO' %}
+          {% if user.is_superuser %}
+            {% if event.name == 'INTEGRATION BEE' %}
+              <center><h2> <a href="{% url 'members:integrationBee_create' %}">Register for Integration Bee</a></h2></center>
+            {% elif event.name == 'MATH OLYMPICS' %}
+              <center><h2> <a href="{% url 'members:mathEvent_create' %}">Register for Math Olympics</a></h2></center>
+            {% elif event.name == "D'SinoQuation" %}
+              <center><h2> <a href="{% url 'members:differentiaChallenge_create' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'SCIENTIFIQUE' %}
+              <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'ATELIER' %}
+              <center><h2> <a href="{% url 'members:workshop_create' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'CONNAISSANCE' %}
+              <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'DISCUTIR' %}
+              <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'EMPRENDIMIENTO' %}
+              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'HACKATHON' %}
             <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'HACKATHON' %}
-          <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'INDSOL' %}
-            <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'TECH TALK' %}
-            <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-          {% elif event.name == 'INNOVATION EXHIBIT' %}
-            <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-          {% else %}
-            <center><h2> <a href="">Register </a></h2></center>
+            {% elif event.name == 'INDSOL' %}
+              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'TECH TALK' %}
+              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
+            {% elif event.name == 'INNOVATION EXHIBIT' %}
+              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
+            {% else %}
+              <center><h2> <a href="">Register </a></h2></center>
+            {% endif %}
           {% endif %}
 {% else %}
 <center><h2>

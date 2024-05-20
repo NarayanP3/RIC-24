@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+{% load compress %}
 {% load static %}
 
 <head>
@@ -320,11 +321,10 @@
     <div class="lgx-container ">
         <!-- ***  ADD YOUR SITE CONTENT HERE *** -->
 
-
         <!--HEADER-->
         <header>
             <div id="lgx-header" class="lgx-header">
-                <div class="lgx-header-position lgx-header-position-white lgx-header-position-fixed ">
+                <div class=" lgx-header-position-white" style="background-color: #013A67;">
                     <!--lgx-header-position-fixed lgx-header-position-white lgx-header-fixed-container lgx-header-fixed-container-gap lgx-header-position-white-->
                     <div class="lgx-container-fluid">
                         <!--lgx-container-fluid-->
@@ -350,10 +350,7 @@
 
                                     <li>
                                         <a href="{% url 'home:home' %}">
-                                            <font color="white" size="5.2rem"><b><span
-                                                        style="color:#e74c3c">R</span><span
-                                                        style="color:#e67e22">IC</span> 2024</b></b></font>
-                                            </span>
+                                            <font color="white" size="5.2rem"><b>Home</font></b>
                                         </a>
                                     </li>
                                     <li>
@@ -361,16 +358,16 @@
                                             <font color="white"><b>About</font></b>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a class="lgx-scroll" href="{% url 'home:home' %}#events">
                                             <font color="white"><b>Events</font></b>
                                         </a>
-                                    </li>
-                                    <li>
+                                    </li> -->
+                                    <!-- <li>
                                         <a class="lgx-scroll" href="{% url 'event:speakerlist' %}#events">
                                             <font color="white"><b>Speakers</font></b>
                                         </a>
-                                    </li>
+                                    </li> -->
 
                                     <li><a class="lgx-scroll hidden " href="{% url 'home:home' %}#lgx-sponsors">
                                             <font color="white"><b>Partners
@@ -383,7 +380,7 @@
                                     <!-- <li><a class="lgx-scroll" href="index.html#registration"><font color="white"><b>Registration
                             </b></font></a></li> -->
                                     <li>
-                                        <a class="lgx-scroll hidden" href="{% url 'sponsor:all' %}">
+                                        <a class="lgx-scroll" href="{% url 'sponsor:all' %}">
                                             <font color="white"><b>Sponsors
                                                 </b></font>
                                         </a>
@@ -402,7 +399,7 @@
 
                                     <li>
                                         <a class="lgx-scroll" href="{% url 'team:all' %}">
-                                            <font color="white"><b>Team</font></b>
+                                            <font color="white"><b>Committee</font></b>
                                         </a>
                                     </li>
 
@@ -412,7 +409,7 @@
                                     <!--            </a>-->
                                     <!--</li>-->
 
-                                    <li class="nav-item dropdown">
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <font color="white"><b>Contact &darr;</b></font>
@@ -430,7 +427,7 @@
                                             </li>
 
                                         </ul>
-                                    </li>
+                                    </li> -->
 
                                         {% if user.is_superuser %}
                                             <li>
@@ -479,7 +476,7 @@
                                         <!--</ul>-->
                                     <!--</li>-->
 
-                                    <li class="nav-item dropdown">
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false" href="#">
                                             <font color="white"><b>Pre RIC Events &darr;</b></font>
@@ -498,7 +495,7 @@
 
 
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     
 
                                     <li class="nav-item dropdown">
@@ -558,8 +555,8 @@
 <!--<div id="announcement-section"></div>-->
 
 
-
-
+        <!-- Side Nabvar -->
+        {% block sidenavbar %}{% endblock sidenavbar %}
         <!--BANNER-->
         {% block banner %}{% endblock banner %}
         <!--BANNER END-->

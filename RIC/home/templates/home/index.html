@@ -151,6 +151,15 @@
         background: rgba(102, 51, 255, 0.25);
     }
 
+    .countdown-title{
+        color: white;
+    }
+
+    .countdown-time{
+        color: #00B0A6;
+        font-size: 2vw;
+    }
+
     @media all and (max-width: 800px) {
         .navigation {
             justify-content: space-around;
@@ -322,6 +331,8 @@
         justify-content: space-between;
         flex-direction: row;
     }
+
+
 
     @media screen and (max-width:1200px) {
         .embed{
@@ -543,90 +554,229 @@
 
 
 </style>
-{% endblock css %} {% block banner %}
+{% endblock css %} {% block sidenavbar %}
+<navbarleft >
+    <header1>
+        <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+            <nav class="flex flex-1 flex-col">
+                <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                    <li>
+                        <ul role="list" class="-mx-2 space-y-1">
+                            <li>
+                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                                <a href="{% url 'home:home' %}"
+                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                    </svg> -->
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                                <a href="{% url 'home:about' %}"
+                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                    </svg> -->
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    About 
+                                </a>
+                            </li>
+                            <li>
+                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                                <a href="{% url 'home:home' %}#events"
+                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                    </svg> -->
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    Events
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'event:speakerlist' %}#events"
+                                    class="hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                                    </svg> -->
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    Speakers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'home:gallery' %}">
+                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                    </svg> -->
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{% url 'home:home' %}#contact">
+                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header1>
+</navbarleft>
+{% endblock sidenavbar %}
+
+
+ {% block banner %}
 <section>
-    <div class="lgx-banner2 lgx-banner-music">
-        <div class="lgx-banner-style">
-            <div class="lgx-inner lgx-inner-fixed">
-                <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
+    <div style="background-color: #013A67;">
+        <div class="lgx-banner-style"></div>
+        <div class="lgx-inner lgx-inner-fixed flex">
+            <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
                     onmouseout="this.start();"><b style="color:#603"><h3><a href="/researchconclave/abstractBook.pdf">Click here to Download the Abstract Book of Research Conclave 2019 </a>. &nbsp; | &nbsp; Prize Money will be credited by 30th April, 2019  &nbsp;  | &nbsp;List of Reserach Conclave 2019 Award Winners <a href="assets/img/List of Awards.pdf" target="new"> Dowanload</a>. &nbsp;| &nbsp;  Thanks to all the participants for making Research Conclave 2019 successful &nbsp; | &nbsp;  We will be back with a new edition of Research Conclave 2020 &nbsp; | &nbsp;</h3> </b></marquee></div> -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="lgx-banner-info lgx-banner-info-center">
-                                <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="lgx-banner-info lgx-banner-info-center">
+                            <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
 
-                                <!--{% if user.is_authenticated %}-->
-                                    <!--<div style="background-color: rgb(161, 199, 161); color: rgb(48, 43, 43); margin-bottom:12px">-->
-                                    <!--    <h3>Welcome {{user.get_full_name}},You are now logged in</h3>-->
-                                    <!--    <p><b>You can submit your abstract in clicking Registration Form</b></p>-->
-                                    <!--</div>-->
+                            <!--{% if user.is_authenticated %}-->
+                            <!--<div style="background-color: rgb(161, 199, 161); color: rgb(48, 43, 43); margin-bottom:12px">-->
+                            <!--    <h3>Welcome {{user.get_full_name}},You are now logged in</h3>-->
+                            <!--    <p><b>You can submit your abstract in clicking Registration Form</b></p>-->
+                            <!--</div>-->
 
-                                <!--{% endif %}-->
-                                    <!--implemented by dhruvesh -->
-
-
-
-                                <section class="awNotices">
-
-                                    <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
-                                    <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
-                                    <!--</a>-->
-                                    <!--<a notice-color="red" href="#" class="">-->
-                                    <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
-                                    <!--</a>-->
+                            <!--{% endif %}-->
+                            <!--implemented by dhruvesh -->
 
 
 
-                                    <!--<a notice-color="orange" href="{% url 'event:detail' 1 %}" class="active">-->
-                                    <!--    <i class="fa fa-bell"></i> Abstract Submission is Open (Deadline - 25th April,2024)-->
-                                    <!--</a>-->
-                                    <!--<a notice-color="red" href="{% url 'home:home' %}#announcements">-->
-                                    <!--    <i class="fa fa-heart"></i> Integration BEE registrations will begin soon-->
-                                    <!--</a>-->
-                                    <!--<a notice-color="orange" href="#">-->
-                                    <!--    <i class="fa fa-bell"></i> Payment Mode will be communicated soon-->
-                                    <!--</a>-->
-                                    <!--<a notice-color="blue" href="{% url 'home:home' %}#events">-->
-                                    <!--    <i class="fa fa-bell"></i> Register individually for each and every event-->
-                                    <!--</a>-->
-                                </section>
+                            <section class="awNotices">
+
+                                <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
+                                <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
+                                <!--</a>-->
+                                <!--<a notice-color="red" href="#" class="">-->
+                                <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
+                                <!--</a>-->
 
 
-                                <div class="circular-countdown-area">
-                                     <!--Date Format :"Y/m/d" || For Example: 1017/10/5  -->
-                                    <div id="circular-countdown" data-date="2024-08-09 18:00:00"></div>
+
+                                <!--<a notice-color="orange" href="{% url 'event:detail' 1 %}" class="active">-->
+                                <!--    <i class="fa fa-bell"></i> Abstract Submission is Open (Deadline - 25th April,2024)-->
+                                <!--</a>-->
+                                <!--<a notice-color="red" href="{% url 'home:home' %}#announcements">-->
+                                <!--    <i class="fa fa-heart"></i> Integration BEE registrations will begin soon-->
+                                <!--</a>-->
+                                <!--<a notice-color="orange" href="#">-->
+                                <!--    <i class="fa fa-bell"></i> Payment Mode will be communicated soon-->
+                                <!--</a>-->
+                                <!--<a notice-color="blue" href="{% url 'home:home' %}#events">-->
+                                <!--    <i class="fa fa-bell"></i> Register individually for each and every event-->
+                                <!--</a>-->
+                            </section>
+
+                            <div class="countdown" style="display: flex; margin-left: 10%;">
+                                <div>
+                                    <p class="countdown-title" >DAY</p><p class="countdown-time"
+                                        id="days"></p>
                                 </div>
-                                <h3 class="subheading" style="font-size: 200%;">
+                                <div>
+                                    <p class="countdown-title">HRS</p><p class="countdown-time"
+                                        id="hours"></p>
+                                </div>
+                                <div>
+                                    <p class="countdown-title">MIN</p><p class="countdown-time"
+                                        id="minutes"></p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="circular-countdown-area"> -->
+                            <!-- Date Format :"Y/m/d" || For Example: 1017/10/5  -->
+                            <!-- <div id="circular-countdown" data-date="2024-08-09 18:00:00"></div> -->
+                            <!-- </div> -->
+                            <!-- <h3 class="subheading" style="font-size: 200%;">
                                     <font color="white"><b> 09 - 11 August, 2024</b></font>
-                                </h3>
+                                </h3> -->
 
-                                <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3>
-                                <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br>
-                                <h3 style="color: beige;">Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park
-                                </h3>
+                            <!-- <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3> -->
+                            <!-- <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br> -->
+                            <h3 style="color: beige;">Research and Research and Industrial Conclave-Integration'24 is
+                                the flagship event
+                                of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research
+                                Park
+                            </h3>
 
-                                <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati
-                                </h3>
+                            <!-- <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati -->
+                            <!-- </h3> -->
 
-                                <!--div class="action-area">
+                            <!--div class="action-area">
                                     <div class="lgx-video-area">
                                         <a class="lgx-btn lgx-btn-red" href="#">Buy Ticket</a>
                                         <a class="lgx-btn lgx-btn-yellow" href="#">Registration</a-->
 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--//.ROW-->
+            <div>
+                <img src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title">
+            </div>
         </div>
-        <!-- //.CONTAINER -->
+        <!--//.ROW-->
+    <img src="{%static 'home/assets/img/rlog.png'%}" alt="riclog" style="justify-content: center;"> 
+    </div>
+    <!-- //.CONTAINER -->
     </div>
     <!-- //.INNER -->
     </div>
     </div>
 </section>
+
+<img src="{% static './home/assets/img/uppercurve.png' %}" alt="upcurve" style="width: 100vw;">
+
+<script>
+    // Define the target datetime to countdown to
+    const targetDate = new Date('2024-08-09T18:00:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        // Calculate remaining days, hours, and minutes
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Format the values with leading zeros if needed
+        const formattedHours = String(hours).padStart(2, '0');
+        const formattedMinutes = String(minutes).padStart(2, '0');
+
+        // Update countdown elements
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = formattedHours;
+        document.getElementById('minutes').textContent = formattedMinutes;
+
+        // Repeat the update every second
+        setTimeout(updateCountdown, 1000);
+    }
+
+    // Initial call to start the countdown
+    updateCountdown();
+</script>
 {% endblock banner %} {% block about %}
 
 <section>
@@ -797,7 +947,7 @@
     </div>
     </div>
     <!--//lgx-inner-->
-    </div>
+    
 </section>
 {% endblock event %}
 {% block sponsor %}
@@ -908,7 +1058,7 @@
                             <br>
 
                             <p class="info">Mr. Shubham Singh <br> (Student Convener) <br> +91-8920217431 </p>
-                            <p class="info">Ms. Nikhil Kumar Mishra <br>(Student Co-convener PG) <br> +91-7367088245 </p>
+                            <p class="info">Mr. Nikhil Kumar Mishra <br>(Student Co-convener PG) <br> +91-7367088245 </p>
                             <p class="info">Mr. Rishi Patel <br>(Student Co-convener UG) <br> +91-9926665909 </p>
 
                         </div>
@@ -979,4 +1129,8 @@
 
     </script>
 
+
+
 {% endblock contact %}
+
+

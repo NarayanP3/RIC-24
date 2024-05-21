@@ -152,12 +152,45 @@
     }
 
     .countdown-title{
-        color: white;
+        color: #cbd2d9;
+        font-size: 1.9vh;
+    }
+
+    .countdown-title-line{
+        width: 3vw ; 
+        background-color: yellow; 
+        height: 0.4vh;
+        border-radius: 70vw;
+        margin-top: -1.6vh;
+        margin-bottom: 2.4vh;
     }
 
     .countdown-time{
         color: #00B0A6;
-        font-size: 2vw;
+        font-size: 9vh;
+        font-weight: 800;
+        /* outline-color: white; */
+        text-shadow: 0px 1px 2px black;
+
+        -webkit-text-stroke: 0.5px white;
+    }
+
+    .Navbarleft-a-tags{
+        color: white;
+        text-decoration: none;
+        font-size: 1.5vw;
+        padding-bottom: 6vw;
+    }
+
+    .Navbarleft-a-tags:hover{
+        text-decoration: none;
+        color: white;
+    }
+
+    .navbarleft-home{
+        padding: 6vw 0vw 0vw 8vw;
+        justify-content: space-between;
+        width: 20vw;
     }
 
     @media all and (max-width: 800px) {
@@ -554,103 +587,71 @@
 
 
 </style>
-{% endblock css %} {% block sidenavbar %}
-<navbarleft >
-    <header1>
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
-            <nav class="flex flex-1 flex-col">
-                <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                    <li>
-                        <ul role="list" class="-mx-2 space-y-1">
-                            <li>
-                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                                <a href="{% url 'home:home' %}"
-                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
-                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                    </svg> -->
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                                <a href="{% url 'home:about' %}"
-                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
-                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                    </svg> -->
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    About 
-                                </a>
-                            </li>
-                            <li>
-                                <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                                <a href="{% url 'home:home' %}#events"
-                                    class="bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
-                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                    </svg> -->
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    Events
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'event:speakerlist' %}#events"
-                                    class="hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
-                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                                    </svg> -->
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    Speakers
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'home:gallery' %}">
-                                    <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
-                                    </svg> -->
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    Gallery
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{% url 'home:home' %}#contact">
-                                    <img src="{% static 'home/assets/img/HOME.png' %}" alt="home Logo"/>
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header1>
-</navbarleft>
-{% endblock sidenavbar %}
+{% endblock css %} 
 
 
- {% block banner %}
+{% block banner %}
 <section>
     <div style="background-color: #013A67;">
         <div class="lgx-banner-style"></div>
-        <div class="lgx-inner lgx-inner-fixed flex">
+        <div class=" lgx-inner-fixed flex" style="display: flex;">
+            <navbarleft class="navbarleft-home">
+                <div style="display: flex; flex-direction: column; ">
+                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                    <a href="{% url 'home:home' %}" class="Navbarleft-a-tags" style="font-size: 2.7vw;display: flex;">
+            
+                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                                                        </svg> -->
+                        <div style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;"> </div>
+                        HOME
+                    </a>
+                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                    <a href="{% url 'home:about' %}" class="Navbarleft-a-tags">
+                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                                                        </svg> -->
+                        ABOUT
+                    </a>
+                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                    <a href="{% url 'home:home' %}#events" class="Navbarleft-a-tags">
+                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                                                                        </svg> -->
+                        EVENTS
+                    </a>
+                    <a href="{% url 'event:speakerlist' %}#events" class="Navbarleft-a-tags">
+                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                                                                        </svg> -->
+                        SPEAKERS
+                    </a>
+                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags">
+                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                                                        </svg> -->
+                        GALLERY
+                    </a>
+                    <a  href="{% url 'home:home' %}#contact" class="Navbarleft-a-tags ">
+                        CONTACT US
+                    </a>
+                </div>
+            
+            </navbarleft>
             <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
                     onmouseout="this.start();"><b style="color:#603"><h3><a href="/researchconclave/abstractBook.pdf">Click here to Download the Abstract Book of Research Conclave 2019 </a>. &nbsp; | &nbsp; Prize Money will be credited by 30th April, 2019  &nbsp;  | &nbsp;List of Reserach Conclave 2019 Award Winners <a href="assets/img/List of Awards.pdf" target="new"> Dowanload</a>. &nbsp;| &nbsp;  Thanks to all the participants for making Research Conclave 2019 successful &nbsp; | &nbsp;  We will be back with a new edition of Research Conclave 2020 &nbsp; | &nbsp;</h3> </b></marquee></div> -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="lgx-banner-info lgx-banner-info-center">
+            <div class="container" style="width: 40vw; padding-top: 25vh;">
+                        <div class="lgx-banner-info">
                             <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
 
                             <!--{% if user.is_authenticated %}-->
@@ -689,17 +690,23 @@
                                 <!--</a>-->
                             </section>
 
-                            <div class="countdown" style="display: flex; margin-left: 10%;">
+                            <div class="countdown" style="display: flex; gap: 50px;">
                                 <div>
-                                    <p class="countdown-title" >DAY</p><p class="countdown-time"
+                                    <p class="countdown-title" >DAYS</p>
+                                    <div class="countdown-title-line"></div>
+                                    <p class="countdown-time"
                                         id="days"></p>
                                 </div>
                                 <div>
-                                    <p class="countdown-title">HRS</p><p class="countdown-time"
+                                    <p class="countdown-title">HRS</p>
+                                    <div class="countdown-title-line"></div>
+                                    <p class="countdown-time"
                                         id="hours"></p>
                                 </div>
                                 <div>
-                                    <p class="countdown-title">MIN</p><p class="countdown-time"
+                                    <p class="countdown-title">MIN</p>
+                                    <div class="countdown-title-line"></div>
+                                    <p class="countdown-time"
                                         id="minutes"></p>
                                 </div>
                             </div>
@@ -714,11 +721,10 @@
 
                             <!-- <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3> -->
                             <!-- <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br> -->
-                            <h3 style="color: beige;">Research and Research and Industrial Conclave-Integration'24 is
-                                the flagship event
-                                of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research
-                                Park
-                            </h3>
+                            <p style="color: #fefbef; margin-top: 4vh;text-transform: uppercase;">Research and Industrial Conclave-Integration'24 is 
+                                the flagship event of IIT Guwahati jointly organized by Students' Academic Board and 
+                                IIT Guwahati Research Park
+                            </p>
 
                             <!-- <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati -->
                             <!-- </h3> -->
@@ -727,17 +733,16 @@
                                     <div class="lgx-video-area">
                                         <a class="lgx-btn lgx-btn-red" href="#">Buy Ticket</a>
                                         <a class="lgx-btn lgx-btn-yellow" href="#">Registration</a-->
+                            <img src="{%static 'home/assets/img/rlog.png'%}" alt="riclog" style="position: absolute; margin-left: -15vh; margin-top: -3vh; width: 56vw;"> 
+                            
 
                         </div>
-                    </div>
-                </div>
             </div>
             <div>
-                <img src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title">
+                <img src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title" style="padding-right: 5vh; width: 30vw;">
             </div>
         </div>
-        <!--//.ROW-->
-    <img src="{%static 'home/assets/img/rlog.png'%}" alt="riclog" style="justify-content: center;"> 
+        <img src="{%static 'home/assets/img/9thedition.png'%}" alt="9th edition">
     </div>
     <!-- //.CONTAINER -->
     </div>

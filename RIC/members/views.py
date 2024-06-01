@@ -616,6 +616,8 @@ class ProfileCreateView(LoginRequiredMixin,CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
+        if 'abstract_file' in self.request.FILES:
+            form.instance.abstract_file = self.request.FILES['abstract_file']
         pic = form.save(commit=False)
         pic.save()
         form.save_m2m()

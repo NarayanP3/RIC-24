@@ -42,7 +42,7 @@
                 <div class="card-header">{{ title }} Registration Form : {{ TINYMCE_JS_URL }}</div>
 
                 <div class="card-body">
-                  <form method="POST" enctype="multipart/form-data">
+                  <form method="POST" action="{% url 'members:create' %}" enctype="multipart/form-data">
                       {% csrf_token %}
                       {{ form.media }}
                       {% bootstrap_form form %}

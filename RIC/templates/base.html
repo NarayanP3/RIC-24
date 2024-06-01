@@ -12,7 +12,8 @@
     <!-- SITE TITLE -->
     <title>Research and Industrial Conclave 2024</title>
 
-    <meta name="description" content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
+    <meta name="description"
+        content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
     <meta name="keywords" content="RIC Research Industrial Conclave IITG RC" />
     <meta name="author" content="https://www.linkedin.com/in/chetan-chinchulkar/" />
 
@@ -23,15 +24,17 @@
     <meta name="twitter:url" content="https://www.ric.iitg.ac.in/" />
     <meta name="twitter:title" content="Research and Industrial Conclave-Integration'24,IIT Guwahati" />
     <!-- maximum 140 char -->
-    <meta name="twitter:description" content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
+    <meta name="twitter:description"
+        content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
     <!-- maximum 140 char -->
 
-    <meta name="twitter:image" content="https://www.ric.iitg.ac.in/static/files/RC.png" >
+    <meta name="twitter:image" content="https://www.ric.iitg.ac.in/static/files/RC.png">
     <!-- when you post this page url in twitter , this image will be shown -->
     <!-- twitter card ends from here -->
     <!-- facebook open graph starts from here, if you don't need then delete open graph related  -->
     <meta property="og:title" content="Research and Industrial Conclave-Integration'24,IIT Guwahati" />
-    <meta property="og:description" content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
+    <meta property="og:description"
+        content="Research and Industrial Conclave-Integration'24 is the flagship event of IIT Guwahati jointly organized by Students' Academic Board and IIT Guwahati Research Park" />
     <!-- maximum 140 char -->
     <meta property="og:url" content="https://www.ric.iitg.ac.in/" />
     <meta property="og:locale" content="en_US" />
@@ -39,7 +42,7 @@
     <!--meta property="fb:admins" content="" /-->
     <!-- use this if you have  -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.ric.iitg.ac.in/static/files/RC.png"/>
+    <meta property="og:image" content="https://www.ric.iitg.ac.in/static/files/RC.png" />
     <meta property="og:image:alt" content="Research and Industrial Conclave 2024">
     <!--<meta property="og:image:width" content="1200">-->
     <!--<meta property="og:image:height" content="600">-->
@@ -66,7 +69,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/img/favicon/manifest.json"-->
 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{% static 'home/assets/libs/bootstrap/css/bootstrap.min.css' %}" media="all" />
 
@@ -94,56 +99,91 @@
     <!-- MODERNIZER CSS  -->
     <script src="{% static 'home/assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
 
-            <script src="{% static 'home/assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'home/assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- implemented by dhruvesh -->
     <style>
-        .lgx-inner-footer{
-            padding-top: 3rem;
+        body {
+            font-family: 'Lato', sans-serif;
+            overflow-x: hidden;
         }
-        .d-footer-links{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-        }
-        .d-footer-link{
-            padding: 1rem 2rem;
+
+        #lgx-footer {
+            /* width: 100vw; */
+            background-image: url('/static/home/assets/img/footer-bg.png');
+            background-size: auto 100%;
+            /* object-fit: cover; */
+            /* url('/static/home/assets/img/footer-mail-icon.png'); */
+            /* background-size: cover, 100px 500px; */
+            /* background-repeat: no-repeat, no-repeat; */
+            /* background-position: center, right bottom; */
+            /* width: 100vw; */
+            /* height: 60vw; */
             color: white;
-            background-color: blue;
-            margin: 2rem 0;
+            padding-top: 145px;
+            padding-bottom: 110px;
+            text-align: left;
+            z-index: -1;
         }
 
-        .d-icons {
-            padding: 6rem 10rem 3rem 10rem;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        .footer-conv {
+            /* width: 200px;  */
+            /* height: 100px;  */
+            border: 0.01px solid #fefbef;
+            border-radius: 0 0px 30px 0;
         }
 
-        footer #lgx-footer .lgx-inner-footer a{
+        #lgx-footer h3 {
+            color: #00C8C8;
+            /* Adjust the color as needed */
+            margin-top: 0;
+            text-align: left;
+            /* Align paragraph and anchor text to the left */
+        }
+
+        #lgx-footer p,
+        #lgx-footer a {
+            color: white;
             text-decoration: none;
+            text-align: left;
+            /* Align paragraph and anchor text to the left */
         }
-        footer a:hover{
-            color: #e67e22;
+
+        /* #lgx-inner-footer{
+    width : auto;
+    background-color: none;
+    align-content: flex-start;
+} */
+
+        #lgx-footer .list-inline {
+            padding-left: 0;
         }
-        .d-icon:hover p{
-            color: orange;
+
+        #lgx-footer .list-inline li {
+            display: inline-block;
+            margin-right: 12px;
         }
-        .d-icons p {
+
+        /* #container {
+    max-width: auto;
+    align-items:center;
+} */
+
+        #lgx-footer .d-footer-link {
+            font-size: 20px;
+            display: inline-block;
+            background: none;
+            margin-bottom: 10px;
             color: white;
+            background-color: none;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            text-align: left;
+            font-family: 'Lato',sans-serif;
         }
 
-        .d-icon {
-            width: 15%;
-        }
-
-        .d-icon img {
-            width: 100%;
-            border-radius: 50%;
-            aspect-ratio: 1;
-        }
 
         .d-wrapper {
             display: flex;
@@ -155,37 +195,53 @@
         .d-wrapper-child {
             color: white;
             width: 50%;
+            text-align: left;
         }
-        .d-wrapper-child a:hover{
+
+        .d-wrapper-child a:hover {
             color: #e67e22;
         }
-        .d-social .list-inline,p{
+
+        .d-social .list-inline,
+        p {
             padding: 1rem 0;
+            text-align: left;
         }
-        .d-wrapper-child a{
+
+        .d-wrapper-child a {
             color: blanchedalmond;
         }
 
-        .lgx-footer-bottom{
-            padding: 0;
+        /* .lgx-footer-bottom {
+    padding: 0;
+} */
+
+        .footer-indus {
+            padding-left: 80px;
+            width: 37vw;
+            padding-top: 40px;
         }
 
-        @media screen and (max-width:600px) {
-            .d-wrapper-child{
+        @media screen and (max-width: 600px) {
+            .d-wrapper-child {
                 width: 100%;
             }
         }
-        @media screen and (max-width:800px) {
-            .d-icons{
+
+        @media screen and (max-width: 800px) {
+            .d-icons {
                 padding: 6rem 0rem 3rem 0rem;
             }
-            .d-icon img{
+
+            .d-icon img {
                 width: 60%;
             }
-            .d-icon{
+
+            .d-icon {
                 width: 25%;
             }
         }
+
 
         #blink {
             font-size: 20px;
@@ -195,74 +251,82 @@
         }
 
         #announcement-section {
-           position: fixed;
-           top: 50%;
-           width: 290px;
-           left: -200px; /* hide the announcement section to the left side of the screen */
-           transform: translateY(-50%);
-           background-color: #f7f7f7;
-           padding: 10px;
-           border: 1px solid #ddd;
-           border-radius: 5px;
-           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-           z-index: 9999;
-           transition: left 0.5s ease-in-out; /* add a transition effect when the announcement section slides in and out */
+            position: fixed;
+            top: 50%;
+            width: 290px;
+            left: -200px;
+            /* hide the announcement section to the left side of the screen */
+            transform: translateY(-50%);
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            transition: left 0.5s ease-in-out;
+            /* add a transition effect when the announcement section slides in and out */
         }
 
         #announcement-section:hover {
-           left: 0; /* slide the announcement section to the right side of the screen when the user hovers over it */
+            left: 0;
+            /* slide the announcement section to the right side of the screen when the user hovers over it */
         }
 
         /* Gallery */
 
-        #gallery{
+        #gallery {
             width: 80vw;
-        -webkit-column-count:4;
-        -moz-column-count:4;
-        column-count:4;
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
 
-        -webkit-column-gap:36px;
-        -moz-column-gap:36px;
-        column-gap:36px;
-        padding: 30px 10px;
+            -webkit-column-gap: 36px;
+            -moz-column-gap: 36px;
+            column-gap: 36px;
+            padding: 30px 10px;
         }
-        @media (max-width:1200px){
-        #gallery{
-        -webkit-column-count:3;
-        -moz-column-count:3;
-        column-count:3;
 
-        -webkit-column-gap:20px;
-        -moz-column-gap:20px;
-        column-gap:20px;
-        }
-        }
-        @media (max-width:800px){
-        #gallery{
-        -webkit-column-count:2;
-        -moz-column-count:2;
-        column-count:2;
+        @media (max-width:1200px) {
+            #gallery {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
 
-        -webkit-column-gap:20px;
-        -moz-column-gap:20px;
-        column-gap:20px;
+                -webkit-column-gap: 20px;
+                -moz-column-gap: 20px;
+                column-gap: 20px;
+            }
         }
+
+        @media (max-width:800px) {
+            #gallery {
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+                column-count: 2;
+
+                -webkit-column-gap: 20px;
+                -moz-column-gap: 20px;
+                column-gap: 20px;
+            }
         }
-        @media (max-width:600px){
-        #gallery{
-        -webkit-column-count:1;
-        -moz-column-count:1;
-        column-count:1;
+
+        @media (max-width:600px) {
+            #gallery {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+            }
         }
-        }
-        #gallery img,#gallery video {
-        width:100%;
-        height:auto;
-        margin: 10% auto;
-        box-shadow:-3px 5px 15px #000;
-        cursor: pointer;
-        -webkit-transition: all 0.2s;
-        transition: all 0.2s;
+
+        #gallery img,
+        #gallery video {
+            width: 100%;
+            height: auto;
+            margin: 10% auto;
+            box-shadow: -3px 5px 15px #000;
+            cursor: pointer;
+            -webkit-transition: all 0.2s;
+            transition: all 0.2s;
         }
 
         .box-image {
@@ -271,7 +335,7 @@
             border-radius: 5px;
         }
 
-        .box-image:hover{
+        .box-image:hover {
             transform: scale(1.08);
             z-index: 10;
             box-shadow: 5px 5px #E7E9EB;
@@ -282,28 +346,268 @@
         @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
         .waviy {
-          position: relative;
-          -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-          font-size: 60px;
+            position: relative;
+            -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
+            font-size: 60px;
         }
+
         .waviy span {
-          font-family: 'Alfa Slab One', cursive;
-          position: relative;
-          display: inline-block;
-          color: blue;
-          text-transform: uppercase;
-          animation: waviy 2.5s infinite;
-          animation-delay: calc(.2s * var(--i));
+            font-family: 'Alfa Slab One', cursive;
+            position: relative;
+            display: inline-block;
+            color: blue;
+            text-transform: uppercase;
+            animation: waviy 2.5s infinite;
+            animation-delay: calc(.2s * var(--i));
 
         }
+
         @keyframes waviy {
-          0%,40%,100% {
-            transform: translateY(0)
-          }
-          20% {
-            transform: translateY(-20px)
-          }
+
+            0%,
+            40%,
+            100% {
+                transform: translateY(0)
+            }
+
+            20% {
+                transform: translateY(-20px)
+            }
         }
+
+        .header {
+            font-family: 'Lato', sans-serif;
+        }
+
+        @media screen and (min-width: 940px) {
+            .navtags li a {
+                font-family: 'Lato', sans-serif;
+                font-size: 1.4vw;
+                margin-left: 1.2vw;
+            }
+        }
+
+        .logos-home {
+            margin-left: 4vw;
+            /* margin-top: 15px; */
+        }
+
+        .logos-home img {
+            height: 3.5vw;
+            width: auto;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .logos-home {
+                margin-top: 7px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .logos-home img {
+                height: 7vw;
+                width: auto;
+            }
+
+        }
+
+        @media screen and (max-width: 440px) {
+            .logos-home img {
+                height: 7vh;
+                width: auto;
+            }
+
+        }
+
+        @media screen and (max-width:767px) {
+            .pcfooter {
+                display: none;
+            }
+        }
+
+        /* mobile footer */
+
+        #mobile-footer {
+            background: url('static/home/assets/img/footer-bg-mobile.png');
+            width: 100vw;
+            height: auto;
+            display: none;
+            color: #FEFBEF;
+            margin-top: 18vw;
+            background-size: cover;
+
+        }
+
+
+        @media (max-width: 767px) {
+            #mobile-footer {
+                display: block;
+            }
+        }
+
+        .student-info-mobile {
+            width: 290px;
+            margin-left: 5vw;
+            border: 1px solid #FEFBEF;
+
+
+        }
+
+        .student-info-mobile h1 {
+            margin-left: 3vw;
+            margin-bottom: 3vh;
+            font-size: 23px;
+            text-shadow: -1px -1px 0 #00B0A6,
+                1px -1px 0 #00B0A6,
+                -1px 1px 0 #00B0A6,
+                1px 1px 0 #00B0A6;
+            color: #FEFBEF;
+            font-family: 'Lato',sans-serif;
+        }
+
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+
+            margin-left: 3vw;
+            font-size: 15px;
+            margin-bottom: 3vh;
+        }
+
+        .contact-info span{
+            font-family: 'Lato',sans-serif;
+        }
+
+        .contact-info-mfooter-name {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .industrial-events-mobile {
+            margin-left: 5vw;
+            margin-top: 5vh;
+            margin-bottom: 5vh;
+        }
+
+        .industrial-events-mobile h1 {
+
+            font-size: 23px;
+            text-shadow: -1px -1px 0 #00B0A6,
+                1px -1px 0 #00B0A6,
+                -1px 1px 0 #00B0A6,
+                1px 1px 0 #00B0A6;
+            color:#FEFBEF;
+            font-family: 'Lato',sans-serif;
+        }
+
+        .contact-info-researchpark {
+            font-size: 18px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .contact-info-researchpar h2{
+            font-family: 'Lato',sans-serif;
+        }
+
+
+
+
+        .email-adress-mobile {
+            margin-left: 10px;
+        }
+
+        .email-mobile {
+            display: flex;
+            flex-direction: row;
+            margin-left: 5vw;
+            align-items: flex-end;
+            margin-bottom: 5vh;
+        }
+
+        .links-mobile-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 300px;
+            margin-left: 2vw;
+        }
+
+        .follow-mobile-footer {
+            margin-left: 5vw;
+            margin-bottom: 5vh;
+        }
+
+        .follow-pages-footer-mobile {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+        }
+
+        .mobile-footer-links a {
+
+
+            color: #FEFBEF;
+            text-decoration: none;
+        }
+
+        .mobile-footer-links h2 {
+            color: #00B0A6;
+            font-family: 'Lato',sans-serif;
+
+        }
+
+        .follow-mobile-footer h2 {
+            color: #00B0A6;
+            font-family: 'Lato',sans-serif;
+
+        }
+
+        .mobile-footer-links {
+            margin-left: 5vw;
+            padding-bottom: 5vh;
+
+        }
+        @media screen and (max-width:995px) {
+            .footer-indus{
+                padding-left: 2vw;
+            }
+        }
+        .riclogo-fmobile{
+            position: absolute; 
+            margin-top: -12vw; 
+            margin-left: 63vw; 
+            width: 42vw;
+        }
+        @media screen and (min-width:530px) {
+            .riclogo-fmobile{
+                margin-top: -17vw;
+            }
+        }  
+        .riclogo-f{
+            position: absolute; 
+            margin-top: -12vw; 
+            margin-left: 75vw;
+            width: 20vw;
+        }
+        @media screen and (max-width:910px) {
+            .riclogo-f{
+                margin-top: -4.2vw;
+                margin-left: 77vw;
+                width: 18vw;
+            }
+        }
+        @media screen and (max-width:869px) {
+            .riclogo-f{
+                margin-top: -3vw;
+                margin-left: 79vw;
+                width: 18vw;
+            }
+        }
+
 
 
     </style>
@@ -313,26 +617,26 @@
 
 <body class="home">
 
-<!--    [if lt IE 8]>-->
-<!--<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade-->
-<!--    your browser</a> to improve your experience.</p>-->
-<!--<![endif]-->
+    <!--    [if lt IE 8]>-->
+    <!--<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade-->
+    <!--    your browser</a> to improve your experience.</p>-->
+    <!--<![endif]-->
 
-    <img src="{%static 'home/assets/img/lines1.png' %}" alt="lines1" style="position: absolute;margin-left: 21vw;">
-    <img src="{%static 'home/assets/img/lines1.png' %}" alt="lines1" style="position: absolute;margin-left: 55vw;">
+    <!-- <img src="{%static 'home/assets/img/lines1.png' %}" alt="lines1" style="position: absolute;margin-left: 21vw;"> -->
+    <!-- <img src="{%static 'home/assets/img/lines1.png' %}" alt="lines1" style="position: absolute;margin-left: 55vw;"> -->
 
 
     <div class="lgx-container ">
         <!-- ***  ADD YOUR SITE CONTENT HERE *** -->
 
         <!--HEADER-->
-        <header>
-            <div id="lgx-header" class="lgx-header">
-                <div class=" lgx-header-position-white" style="background-color: #013A67;">
+        <header class="header">
+            <div class="lgx-header">
+                <div style="background-color: #013A67; padding-top: 2.5vw; padding-bottom: 10px;">
                     <!--lgx-header-position-fixed lgx-header-position-white lgx-header-fixed-container lgx-header-fixed-container-gap lgx-header-position-white-->
-                    <div class="lgx-container-fluid">
+                    <div>
                         <!--lgx-container-fluid-->
-                        <nav class="navbar navbar-default lgx-navbar">
+                        <nav class=" navbar-default lgx-navbar">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                     data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -341,27 +645,30 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <div class="lgx-logo" >
-                                    <a href="{% url 'home:home' %}" class="lgx-scroll"
-                                        style="display: inline-block; padding-right: 10px;">
-                                        <div class="lgx-scroll">
-                                            <img src="{% static 'home/assets/img/RC.png' %}" alt="Eventhunt Logo"/>
-                                            <font color="white" size="5.2rem"><b>RIC'2024</font></b>
+                                <div class="logos-home">
+                                    <a href="https://www.iitg.ac.in">
+                                        <img src="{%static  'home/assets/img/iitglogo-home.png' %}">
+                                    </a>
+                                    <a href="{% url 'home:home' %}" style="display: inline-block;">
+                                        <div>
+                                            <img src="{%static  'home/assets/img/riclogo-home.png' %}">
+                                            <!-- <img src="{% static 'home/assets/img/RC.png' %}" alt="Eventhunt Logo"/> -->
+                                            <!-- <font color="white" size="5.2rem"><b>RIC'2024</font></b> -->
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
 
-                                <ul class="nav navbar-nav lgx-nav navbar-right">
+                                <ul class="navtags nav navbar-nav  navbar-right">
 
-                                    <li>
+                                    <!-- <li>
                                         <a href="{% url 'home:home' %}">
                                             <font color="white" size="5.2rem"><b>Home</font></b>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <a class="lgx-scroll" href="{% url 'home:about' %}">
+                                        <a href="{% url 'home:about' %}">
                                             <font color="white"><b>About</font></b>
                                         </a>
                                     </li>
@@ -376,7 +683,7 @@
                                         </a>
                                     </li> -->
 
-                                    <li><a class="lgx-scroll hidden " href="{% url 'home:home' %}#lgx-sponsors">
+                                    <li><a class=" hidden " href="{% url 'home:home' %}#lgx-sponsors">
                                             <font color="white"><b>Partners
                                                 </b></font>
                                         </a>
@@ -387,7 +694,7 @@
                                     <!-- <li><a class="lgx-scroll" href="index.html#registration"><font color="white"><b>Registration
                             </b></font></a></li> -->
                                     <li>
-                                        <a class="lgx-scroll" href="{% url 'sponsor:all' %}">
+                                        <a href="{% url 'sponsor:all' %}">
                                             <font color="white"><b>Sponsors
                                                 </b></font>
                                         </a>
@@ -399,13 +706,13 @@
                                     <!-- <li><a class="lgx-scroll" href="https://event.iitg.ac.in/rc2020/login/"><font color="white"><b>LOGIN</font></b></a></li> -->
 
                                     <li>
-                                        <a class="lgx-scroll" href="{% url 'schedule:all' %}">
+                                        <a href="{% url 'schedule:all' %}">
                                             <font color="white"><b>Schedule</font></b>
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="lgx-scroll" href="{% url 'team:all' %}">
+                                        <a href="{% url 'team:all' %}">
                                             <font color="white"><b>Committee</font></b>
                                         </a>
                                     </li>
@@ -436,51 +743,51 @@
                                         </ul>
                                     </li> -->
 
-                                        {% if user.is_superuser %}
-                                            <li>
-                                                <a class="lgx-scroll" href="{% url 'home:event_analytics' %}">
-                                                    <font color="red"><b>Analytics</font></b>
-                                                </a>
-                                            </li>
-                                            <!--<li>-->
-                                            <!--    <a class="lgx-scroll" href="{% url 'members:send_institute_invitation' %}">-->
-                                            <!--        <font color="white"><b>Send Mail Institute</font></b>-->
-                                            <!--    </a>-->
-                                            <!--</li>-->
-                                            <!--<li>-->
-                                            <!--    <a class="lgx-scroll" href="{% url 'members:send_speaker_invitation' %}">-->
-                                            <!--        <font color="white"><b>Send Mail Speakers</font></b>-->
-                                            <!--    </a>-->
-                                            <!--</li>-->
-                                            {% endif %}
+                                    {% if user.is_superuser %}
+                                    <li>
+                                        <a href="{% url 'home:event_analytics' %}">
+                                            <font color="red"><b>Analytics</font></b>
+                                        </a>
+                                    </li>
+                                    <!--<li>-->
+                                    <!--    <a class="lgx-scroll" href="{% url 'members:send_institute_invitation' %}">-->
+                                    <!--        <font color="white"><b>Send Mail Institute</font></b>-->
+                                    <!--    </a>-->
+                                    <!--</li>-->
+                                    <!--<li>-->
+                                    <!--    <a class="lgx-scroll" href="{% url 'members:send_speaker_invitation' %}">-->
+                                    <!--        <font color="white"><b>Send Mail Speakers</font></b>-->
+                                    <!--    </a>-->
+                                    <!--</li>-->
+                                    {% endif %}
                                     {% if user.is_authenticated %}
 
 
 
 
                                     <!--<li class="nav-item dropdown">-->
-                                        <!--<a class="nav-link dropdown-toggle" href="#" role="button"-->
-                                        <!--    data-bs-toggle="dropdown" aria-expanded="false">-->
-                                        <!--    <font color="white"><b>Registration Forms &darr;</b></font>-->
-                                        <!--</a>-->
-                                        <!--<ul class="dropdown-menu">-->
-                                            <!--<li>-->
-                                            <!--    <a class="lgx-scroll" href="{% url 'members:create' %}">-->
-                                            <!--        <font color="white"><b>Research Events Registration Form</font></b>-->
-                                            <!--    </a>-->
-                                            <!--</li>-->
-                                        <!--    <li>-->
-                                        <!--         <a class="lgx-scroll" href="{% url 'members:iccreate' %}">-->
-                                        <!--             <font color="white"><b>Industrial Events Registration Form</font></b>-->
-                                        <!--         </a>-->
-                                        <!--     </li>-->
-                                        <!--    <li>-->
-                                                <!--<a class="lgx-scroll" href="{% url 'members:accommodation_create' %}">-->
-                                        <!--            <a class="lgx-scroll" href="https://forms.office.com/Pages/ResponsePage.aspx?id=jacKheGUxkuc84wRtTBwHBY_cXNxiOtJqqeYfGetp1xUMFpYUVFJOUROUUlBVU00RkxTVkNVRllSUC4u">-->
-                                        <!--            <font color="white"><b>Accommodation Form</font></b>-->
-                                        <!--        </a>-->
-                                        <!--    </li>-->
-                                        <!--</ul>-->
+                                    <!--<a class="nav-link dropdown-toggle" href="#" role="button"-->
+                                    <!--    data-bs-toggle="dropdown" aria-expanded="false">-->
+                                    <!--    <font color="white"><b>Registration Forms &darr;</b></font>-->
+                                    <!--</a>-->
+                                    <!--<ul class="dropdown-menu">-->
+                                    <!--<li>-->
+                                    <!--    <a class="lgx-scroll" href="{% url 'members:create' %}">-->
+                                    <!--        <font color="white"><b>Research Events Registration Form</font></b>-->
+                                    <!--    </a>-->
+                                    <!--</li>-->
+                                    <!--    <li>-->
+                                    <!--         <a class="lgx-scroll" href="{% url 'members:iccreate' %}">-->
+                                    <!--             <font color="white"><b>Industrial Events Registration Form</font></b>-->
+                                    <!--         </a>-->
+                                    <!--     </li>-->
+                                    <!--    <li>-->
+                                    <!--<a class="lgx-scroll" href="{% url 'members:accommodation_create' %}">-->
+                                    <!--            <a class="lgx-scroll" href="https://forms.office.com/Pages/ResponsePage.aspx?id=jacKheGUxkuc84wRtTBwHBY_cXNxiOtJqqeYfGetp1xUMFpYUVFJOUROUUlBVU00RkxTVkNVRllSUC4u">-->
+                                    <!--            <font color="white"><b>Accommodation Form</font></b>-->
+                                    <!--        </a>-->
+                                    <!--    </li>-->
+                                    <!--</ul>-->
                                     <!--</li>-->
 
                                     <!-- <li class="nav-item dropdown">
@@ -503,37 +810,37 @@
 
                                         </ul>
                                     </li> -->
-                                    
 
-                                    <li class="nav-item dropdown">
+
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <font color="white"><b>Dashboard &darr;</b></font>
+                                        </a> -->
+                                    <!-- <ul class="dropdown-menu"> -->
+                                    <li>
+                                        <a href="{% url 'members:all' %}">
+                                            <font color="white"><b>Profile</font></b>
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="lgx-scroll" href="{% url 'members:all' %}">
-                                                    <font color="white"><b>Profile</font></b>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="lgx-scroll" href="{% url 'account_logout' %}">
-                                                    <font color="white"><b>Logout</font></b>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
+                                    <li style="margin-right: 3vw;">
+                                        <a href="{% url 'account_logout' %}">
+                                            <font color="white"><b>Logout</font></b>
+                                        </a>
+                                    </li>
+                                    <!-- </ul> -->
+                                    <!-- </li> -->
 
-                                    
+
 
 
                                     {% else %}
-                                    <li>
-                                        <a class="lgx-scroll" href="{% url 'home:redirection' %}">
-                                            <font color="white"><b>Register/Login</font></b>
+                                    <li style="margin-right: 3vw;">
+                                        <a href="{% url 'home:redirection' %}">
+                                            <font color="white"><b>Login</font></b>
                                         </a>
                                     </li>
-                                    
+
                                     <!--<li>-->
                                     <!--    <a class="lgx-scroll" href="{% url 'microsoft_login' %}">-->
                                     <!--        <font color="white"><b>Login with Microsoft</font></b>-->
@@ -542,11 +849,11 @@
                                     <!--</li>-->
                                     {% endif %}
 
-                                    <li>
+                                    <!-- <li>
                                         <a class="lgx-scroll" href="{% url 'home:gallery' %}">
                                             <font color="white"><b>Gallery</font></b>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <!--/.nav-collapse -->
@@ -559,7 +866,7 @@
         <!--HEADER END-->
 
 
-<!--<div id="announcement-section"></div>-->
+        <!--<div id="announcement-section"></div>-->
 
 
         <!-- Side Nabvar -->
@@ -568,10 +875,10 @@
         {% block banner %}{% endblock banner %}
         <!--BANNER END-->
         {% block content %} {% endblock content %}
-<!--        Announcemnets Start-->
+        <!--        Announcemnets Start-->
 
 
-<!--        Announcements End-->
+        <!--        Announcements End-->
         <!--about-->
 
         {% block about %}{% endblock about %}
@@ -583,7 +890,7 @@
         {% block program %} {% endblock program %}
 
 
-        
+
 
         <!-- Programme outline end-->
 
@@ -717,7 +1024,7 @@
                         </section> -->
 
         <!--Registration end-->
-
+        {% block gallery %} {% endblock gallery %}
         {% block sponsor %} {% endblock sponsor %}
 
         <!--Contact-->
@@ -728,138 +1035,234 @@
 
 
 
-        <!--FOOTER-->   <!-- implemented by dhruvesh -->
-        <footer>
-            <div id="lgx-footer" class="lgx-footer lgx-footer-music lgx-footer-black">
-                <!--lgx-footer-white-->
-                <div class="lgx-inner-footer">
-                    <h3 style="font-size: 250%; color: white;">Quick Links</h3>
-                    <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="30%" height="3">
-                    <div class="container d-footer_links">
-                        <a class="d-footer-link lgx-btn" href="http://www.iitg.ac.in">
-                            IIT Guwahati
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="https://www.iitg.ac.in/sab">
-                            SAB, IITG
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="https://sites.google.com/view/newgeniedciitg/introductio">
-                            NEWGEN IEDC
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="https://tic.iitg.ac.in/">
-                            IIT TIC
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="http://www.respark.iitg.ac.in/">
-                            IITG Research Park
-                        </a>
-                        <!--<a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc16/">-->
-                        <!--    RC'16-->
-                        <!--</a>-->
-                        <!--<a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc17/">-->
-                        <!--    RC'17-->
-                        <!--</a>-->
-                        <!--<a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc18/">-->
-                        <!--    RC'18-->
-                        <!--</a>-->
-                        <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc19/">
-                            RC'19
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc20/">
-                            RC'20
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="https://researchconclave.pythonanywhere.com/">
-                            RIC'22
-                        </a>
-                        <a class="d-footer-link lgx-btn" href="https://ric2023.pythonanywhere.com/">
-                            RIC'23
-                        </a>
-
-                    </div>
-
-                    <div class="container">
-                        <div class="d-wrapper">
-                            <div class="d-wrapper-child d-venue">
-                                <h2 style="color: white">Venue </h2>
-                                <img src="{% static 'home/assets/img/rr.png' %}" width="30%" height="3">
-                                <h3 style="color: #e67e22;">
-                                    Class Room Complex
-                                </h3>
-                                <address style="font-size: large;">
-                                    IIT Guwahati <br>
-                                    Assam-781039, India
-                                </address>
-                                <!--<a style="font-size: large;" id="myModalLabel2" data-toggle="modal" class="map-link"-->
-                                <!--    data-target="#lgx-modal-map"-->
-                                <!--    href="https://goo.gl/maps/K2AzAKjXBFo23eoE7"><i class="fa fa-map-marker"-->
-                                <!--        aria-hidden="true" style="color:#e67e22"></i> View Map location</a>-->
-                            </div>
-
-                            <div class="d-wrapper-child d-social">
-                                <h2 style="color: white">Social Connection</h2>
-                                <img src="{% static 'home/assets/img/rr.png' %}" width="30%" height="3">
-                                <p class="text" style="color: blanchedalmond;">
-                                    Connect our social network for any update
+        <!--FOOTER--> <!-- implemented by dhruvesh -->
+        <footer class="pcfooter" style="overflow-y: hidden;">
+            <div id="lgx-footer" class="lgx-footer">
+                <!-- <div class="lgx-inner-footer"> -->
+                <div class="container">
+                    <div class="row" style="padding-top: 30px;display: flex;">
+                        <div class=" footer-conv" style="padding: 30px 18px 25px 18px;">
+                            <p
+                                style="line-height: 28px; font-size: 31px; text-shadow: -1px -1px 0 #00B0A6,
+                                1px -1px 0 #00B0A6,
+                                -1px 1px 0 #00B0A6,
+                                1px 1px 0 #00B0A6;
+                            color: #FEFBEF;
+                            font-family: 'Lato',sans-serif;">
+                                STUDENT CONVENERS</p>
+                            <div>
+                                <p style="font-size: 20px;font-family: 'Lato',sans-serif;">
+                                    Mr. Shubham Singh<br>
+                                    (Student Convener)<br>
+                                    +91-8920217431
                                 </p>
-                                <ul class="list-inline">
-                                    <li style="padding-right: 12px;"><a href="http://facebook.com/ric.iitg" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                                    <li style="padding-right: 12px;"><a href="https://twitter.com/RIC_IITG" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-                                    <li style="padding-right: 12px;"><a href="https://www.instagram.com/ric_iitg" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                                    <li style="padding-right: 12px;"><a href="https://www.linkedin.com/company/rc-iitg/about/g" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li>
-                                    <li style="padding-right: 12px;"><a href="mailto:research_conclave@iitg.ac.in"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li>
-                                </ul>
+                                <p style="font-size: 20px;font-family: 'Lato',sans-serif;">
+                                    Mr. Nikhil Kumar Mishra<br>
+                                    (Student Co-convener PG)<br>
+                                    +91-7367088245
+                                </p>
+                                <p style="font-size: 20px;font-family: 'Lato',sans-serif;">
+                                    Mr. Rishi Patel<br>
+                                    (Student Co-convener UG)<br>
+                                    +91-9926665909
+                                </p>
                             </div>
                         </div>
-
-                        <div class="d-icons">
-                            <a class="d-icon" href="https://www.iitg.ac.in/" target="_blank">
-                                <img src="{% static 'home/assets/img/iitg.png' %}" alt="">
-                                <p>IIT Guwahati</p>
-                            </a>
-                            <a class="d-icon" href="https://www.iitg.ac.in/sab" target="_blank">
-                                <img src="{% static 'home/assets/img/sabpng.png' %}" alt="">
-                                <p>Students' Academic Board</p>
-                            </a>
-                            <a class="d-icon" href="http://www.respark.iitg.ac.in/" target="_blank">
-                                <img src="{% static 'home/assets/img/RP.png' %}" alt="">
-                                <p>IITG Research Park</p>
-                            </a>
-                            <a class="d-icon" href="https://amritmahotsav.nic.in/" target="_blank">
-                                <img src="{% static 'home/assets/img/2.png' %}" alt="">
-                                <p></p>
-                            </a>
-                        </div>
-
-                        <!-- Modal-->
-                        <div id="lgx-modal-map" class="modal fade lgx-modal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
+                        <div class="col-md-4 footer-indus">
+                            <p
+                                style="line-height: 28px; font-size: 30px; color: white; text-shadow: -1px -1px 0 #00B0A6,
+                                1px -1px 0 #00B0A6,
+                                -1px 1px 0 #00B0A6,
+                                1px 1px 0 #00B0A6;
+                            color: #FEFBEF;
+                            font-family: 'Lato',sans-serif;">
+                                INDUSTRIAL EVENTS INFO</p>
+                            <div>
+                                <p style="margin-bottom: 20px; font-size: 20px;font-family: 'Lato',sans-serif;">
+                                    Research Park(Office)<br>
+                                    0361 258 6507
+                                </p>
+                                <p style="margin-bottom: 25px;">
+                                    <img src="\static\home\assets\img\footer-mail-icon.png" alt="Mail Icon"
+                                        style="float: left; margin-right: 14px;margin-top: 7px; width: 3.3vw;">
+                                    <a style="font-size: 17px;font-family: 'Lato',sans-serif;"
+                                        href="mailto:research_conclave@iitg.ac.in">research_conclave@iitg.ac.in</a><br>
+                                    <a style="font-size: 17px;font-family: 'Lato',sans-serif;"
+                                        href="mailto:researchconclave.iitg@gmail.com">researchconclave.iitg@gmail.com</a>
+                                </p>
+                                <div style="display: flex; flex-direction: row; gap: 2vw;">
+                                    <div>
+                                        <img src="{%static 'home/assets/img/footer-iitg-logo.png' %}"
+                                            style="width: 55px;" alt="iitg-logo">
+                                        <!-- <p>IIT Guwahati</p> -->
                                     </div>
-                                    <div class="modal-body">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.3258957158264!2d91.68705817557495!3d26.186074890939295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5b1b674c1bcd%3A0x8d7332628127a835!2sNew%20Classroom%20Complex%2CIIT%20Guwahati!5e0!3m2!1sen!2sin!4v1683865338106!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                        <!--<div class="lgxmapcanvas map-canvas-default" id="map_canvas"> </div>-->
+                                    <div >
+                                        <img src="{%static 'home/assets/img/footer-park-logo.png' %}"
+                                            style="width: 55px;" alt="park-logo">
+                                        <!-- <p>IITG Research Park</p> -->
+                                    </div>
+                                    <div>
+                                        <img src="{%static 'home/assets/img/footer-sab-logo.png' %}"
+                                            style="width: 55px; " alt="sab-logo">
+                                        <!-- <p>Students’ Academic Board</p> -->
+                                    </div>
+                                    <div >
+                                        <img src="{%static 'home/assets/img/footer-ric-logo.png' %}"
+                                            style="width: 55px; height: 56;" alt="ric-logo">
+                                        <!-- <p>Research and Industrial Conclave</p> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- //.Modal-->
-
-                        <div class="lgx-footer-bottom">
-                            <div class="lgx-copyright">
-                                <p> <span>©</span> 2024 Students' Academic Board, IIT Guwahati</p>
-                                <p> <span>Maintained By: </span>
-                                        <a href="https://www.linkedin.com/in/chetan-chinchulkar/">Chetan Chinchulkar</a>,
-                                         <a href="https://www.linkedin.com/in/dhruvesh222/">Dhruvesh Bhure</a></p>
-                            </div>
+                        <div class="col-md-4" style="width: 23vw;padding: 30px 0vw 0vw 40px;">
+                            <h3 style="margin-bottom: 20px;font-family: 'Lato',sans-serif;">Follow Us</h3>
+                            <ul class="list-inline" style="margin-bottom: 30px;">
+                                <li>
+                                    <a href="https://twitter.com/RIC_IITG" target="_blank">
+                                        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/ric_iitg" target="_blank">
+                                        <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://facebook.com/ric.iitg" target="_blank">
+                                        <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/rc-iitg/about/g" target="_blank">
+                                        <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:research_conclave@iitg.ac.in">
+                                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h3 style="font-family: 'Lato',sans-serif;">Quick Links</h3>
+                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc23/">
+                                RIC'23
+                            </a>
+                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc19/">
+                                RIC'19
+                            </a>
+                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc18/">
+                                RIC'18
+                            </a>
                         </div>
-
                     </div>
-                    <!-- //.CONTAINER -->
+                    <img src="{%static 'home/assets/img/footer-riclogo-lines.png'%}" class="riclogo-f">
                 </div>
-                <!-- //.footer Middle -->
+                <div>
+                    <img src="{%static 'home/assets/img/footer-contact.png'%}"
+                        style="margin-bottom: -30.7vh;left: 0; width: 50vw; margin-left: 3vw;">
+                </div>
+
+
+                <!-- <div class="lgx-footer-bottom">
+                        <div class="lgx-copyright">
+                            <p> <span>©</span> 2024 Students' Academic Board, IIT Guwahati</p>
+                            <p> <span>Maintained By: </span>
+                                <a href="https://www.linkedin.com/in/chetan-chinchulkar/">Chetan Chinchulkar</a>,
+                                <a href="https://www.linkedin.com/in/dhruvesh222/">Dhruvesh Bhure</a>
+                            </p>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
             </div>
         </footer>
+        <footer class="mobilefooter">
+            <div id="mobile-footer" style="padding-top: 18vw;">
+                <div class="student-info-mobile">
+                    <h1>STUDENT CONVENERS</h1>
+                    <div class="contact-info">
+                        <span class="contact-info-mfooter-name">Mr. Shubham Singh</span>
+                        <span class="contact-info-mfooter-post">(Student Convener)</span>
+                        <span class="contact-info-mfooter-phone">+91-8920217431</span>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-info-mfooter-name">Mr. Nikhil Kumar Mishra</span>
+                        <span class="contact-info-mfooter-post">(Student Co-convener PG)</span>
+                        <span class="contact-info-mfooter-phone">+91-7367088245</span>
+                    </div>
+                    <div class="contact-info">
+                        <span class="contact-info-mfooter-name">Mr. Rishi Patel</span>
+                        <span class="contact-info-mfooter-post">(Student Co-convener UG)</span>
+                        <span class="contact-info-mfooter-phone">+91-9926665909</span>
+                    </div>
+                </div>
+                <div class="industrial-events-mobile">
+                    <h1>INDUSTRIAL EVENTS INFO</h1>
+                    <div class="contact-info-researchpark">
+                        <span>Research Park(Office)</span>
+                        <span>0361 258 6507</span>
+                    </div>
+                </div>
+                <div class="email-mobile">
+                    <div><img src="{%static 'home/assets/img/email-mobile.png'%}" alt=""></div>
+
+                    <div class="email-adress-mobile">
+                        <span class="email" style="display: block;">research_conclave@iitg.ac.in</span>
+                        <span class="email">researchconclave.iitg@gmail.com</span>
+                    </div>
+                </div>
+                <div class="links-mobile-footer">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{%static 'home/assets/img/IITG-mobile-footer.png' %}" alt="Image 1"
+                            class="original-size">
+                    </a>
+                    <a href="https://google.com" target="_blank">
+                        <img src="{%static 'home/assets/img/Research_Park-mobile-footer.png' %}" alt="Image 1"
+                            class="original-size">
+                    </a>
+                    <a href="https://google.com" target="_blank">
+                        <img src="{%static 'home/assets/img/SAB-mobile-footer.png' %}" alt="Image 1"
+                            class="original-size">
+                    </a>
+                    <a href="https://google.com" target="_blank">
+                        <img src="{%static 'home/assets/img/RIC-mobile-footer.png' %}" alt="Image 1"
+                            class="original-size">
+                    </a>
+
+                </div>
+                <div class="follow-mobile-footer">
+                    <h2>Follow us</h2>
+                    <div class="follow-pages-footer-mobile">
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+                            <i class="bi bi-twitter-x" style=" color:white;"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i class="bi bi-instagram" style=" color:white;"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+                            <i class="bi bi-facebook" style=" color:white;"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin" style=" color:white;"></i>
+                        </a>
+                        <img src="{%static 'home/assets/img/footer-riclogo-lines.png'%}" class="riclogo-fmobile">
+                    </div>
+                </div>
+                <div class="mobile-footer-links">
+                    <h2>Quick Links</h2>
+                    <a href="https://www.twitter.com" target="_blank" class="social-icon" aria-label="Twitter"
+                        style="margin-right:10px">RIC'23</a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-icon" aria-label="Twitter"
+                        style="margin-right:10px">RIC'19</a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-icon"
+                        aria-label="Twitter">RIC'18</a>
+
+
+
+                </div>
+
+            </div>
+        </footer>
+
         <!--FOOTER END-->
 
 
@@ -920,7 +1323,7 @@
     <!-- added by dhruvesh -->
     <script type="text/javascript">
         var blink = document.getElementById('blink');
-        setInterval(function() {
+        setInterval(function () {
             blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
         }, 250);
     </script>
@@ -931,40 +1334,35 @@
         var announcementDiv = document.getElementById("announcement-section");
         announcementDiv.innerHTML = "Venue: Classroom Complex, Core 5, IIT Guwahati";
 
-        setTimeout(function() {
-           announcementDiv.style.left = "0"; /* slide the announcement section to the right side of the screen */
+        setTimeout(function () {
+            announcementDiv.style.left = "0"; /* slide the announcement section to the right side of the screen */
         }, 1000); /* adjust the delay time as desired */
 
-        setTimeout(function() {
-           announcementDiv.style.left = "-200px"; /* hide the announcement section to the left side of the screen again */
+        setTimeout(function () {
+            announcementDiv.style.left = "-200px"; /* hide the announcement section to the left side of the screen again */
         }, 5000); /* adjust the delay time as desired */
 
     </script>
 
     <script>
-      // set the date and time when the div should stop displaying
-      $(document).ready(function() {
-          // Get current date and time
-          var now = new Date();
-          // Set end date and time
-          var endDate = new Date("2024-08-09T18:00:00Z");
-          // Compare current date and time with end date and time
-          if (now >= endDate) {
+        // set the date and time when the div should stop displaying
+        $(document).ready(function () {
+            // Get current date and time
+            var now = new Date();
+            // Set end date and time
+            var endDate = new Date("2024-08-09T18:00:00Z");
+            // Compare current date and time with end date and time
+            if (now >= endDate) {
 
-            $(".hidetime").hide();
-          }
+                $(".hidetime").hide();
+            }
         });
 
 
     </script>
-
-
+    
 
     {% block js %} {% endblock js %}
-
-
-
-
 
 </body>
 

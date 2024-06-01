@@ -165,14 +165,14 @@
     }
 </style>
 
-<br>
-<br>
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
 
 
 <!-- this is temporary for upcoming speakers -->
-    <center>
+    <!-- <center>
         <div class="waviy mx-auto text-center" >
            <span style="--i:1">t</span>
            <span style="--i:2">o</span>
@@ -195,86 +195,86 @@
            <span style="--i:19">o</span>
            <span style="--i:20">n</span>
         </div>
-    </center>
+    </center> -->
 <br>
 <br>
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
 
 
 
-<!--<h2>-->
-<!--    <center>Institute Speakers</center>-->
-<!--</h2>-->
-<!--<div class="wrapper" style="display: flex; flex-wrap: wrap; justify-content: space-around;">-->
-<!--    {% for i in speaker_list %}-->
-<!--        <a class="card" href="{% url 'event:speakerdetail' i.id %}">-->
-<!--          <div class="card-banner">-->
-<!--            <p class="category-tag technology">{{i.name}}</p>-->
+<h2>
+   <center>Institute Speakers</center>
+</h2>
+<div class="wrapper" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+   {% for i in speaker_list %}
+       <!-- <a class="card" href="{% url 'event:speakerdetail' i.id %}"> -->
+         <!-- <div class="card-banner"> -->
+           <!-- <p class="category-tag technology">{{i.name}}</p> -->
 
-            <!--<p class="category-tag-right psycology">{{i.position}}</p>-->
-<!--            <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>-->
-<!--          </div>-->
-<!--          <div class="card-body" style="margin-top:100px">-->
-<!--            <h2 class="blog-title">{{i.subtitle|safe}}</h2>-->
-            <!--<p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>-->
-<!--            <div class="card-profile">-->
-<!--              <img class="profile-img" src='{{i.pic.url}}' alt=''>-->
-<!--              <div class="card-profile-info">-->
-<!--                <h3 class="profile-name">{{i.name}}</h3>-->
-                <!--<p class="profile-followers">45.7k followers</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </a>-->
-        <!--<div style="flex: 1 1 0; padding: 20px ;min-width: 400px; max-width: 480px; max-height: 900px; overflow: hidden">-->
-        <!--    <a href="{% url 'event:speakerdetail' i.id %}">-->
-        <!--        <div class="lgx-single-speaker speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3-->
-        <!--            <center>-->
-        <!--                <figure>-->
-        <!--                    <a class=""><img src="{{i.pic.url}}" alt="Speaker" width="relative" height="300px"/></a>-->
-        <!--                    <h3 class="title">{{i.name}}</a></h3>-->
-        <!--                    <h4 class="subtitle">{{i.subtitle|safe}}</h4>-->
-        <!--                </figure>-->
-        <!--            </center>-->
-                    <!--<p class="speaker-info" style="font-size: 1.6rem;text-align: justify;">-->
-                    <!--{{i.content|safe|linebreaks}}-->
-                    <!--</p>-->
-                    <!--<button class="rm">Read more</button>-->
-        <!--        </div>-->
-        <!--    </a>-->
-        <!--</div>-->
+            <!-- <p class="category-tag-right psycology">{{i.position}}</p> -->
+           <!-- <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'> -->
+         <!-- </div> -->
+         <!-- <div class="card-body" style="margin-top:100px"> -->
+           <!-- <h2 class="blog-title">{{i.subtitle|safe}}</h2> -->
+            <!-- <p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p> -->
+           <!-- <div class="card-profile"> -->
+             <!-- <img class="profile-img" src='{{i.pic.url}}' alt=''> -->
+             <!-- <div class="card-profile-info"> -->
+               <!-- <h3 class="profile-name">{{i.name}}</h3> -->
+                <!-- <p class="profile-followers">45.7k followers</p> -->
+             <!-- </div> -->
+           <!-- </div> -->
+         <!-- </div> -->
+       <!-- </a> -->
+        <div style="flex: 1 1 0; padding: 20px ;min-width: 400px; max-width: 480px; max-height: 900px; overflow: hidden">
+           <a href="{% url 'event:speakerdetail' i.id %}">
+                <div class="lgx-single-speaker speaker"> <!--lgx-single-speaker-circle lgx-single-speaker2 lgx-single-speaker3 -->
+                   <center>
+                       <figure>
+                           <a class=""><img src="{{i.pic.url}}" alt="Speaker" width="relative" height="300px"/></a>
+                           <h3 class="title">{{i.name}}</a></h3>
+                           <h4 class="subtitle">{{i.subtitle|safe}}</h4>
+                       </figure>
+                   </center>
+                    <!-- <p class="speaker-info" style="font-size: 1.6rem;text-align: justify;">
+                    {{i.content|safe|linebreaks}}
+                    </p> -->
+                    <!-- <button class="rm">Read more</button> -->
+               </div>
+           </a>
+        </div>
 
-<!--    {% endfor %}-->
-<!--</div>-->
+   {% endfor %}
+</div>
 
 
-<!--<h2>-->
-<!--    <center>Department Speakers</center>-->
-<!--</h2>-->
-<!--<div class="" style="display: flex; flex-wrap: wrap; justify-content: space-around;">-->
-<!--    {% for i in dept_speaker_list %}-->
-<!--        <a class="card" href="{% url 'event:deptspeakerdetail' i.id %}">-->
-<!--          <div class="card-banner">-->
-<!--            <p class="category-tag popular">{{i.name}}</p>-->
-<!--            <p class="category-tag-right technology">{{i.dept}}</p>-->
-<!--            <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>-->
-<!--          </div>-->
-<!--          <div class="card-body">-->
-<!--            <h2 class="blog-title">{{i.subtitle|safe}}</h2>-->
-            <!--<p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>-->
-<!--            <div class="card-profile">-->
-<!--              <img class="profile-img" src='{{i.pic.url}}' alt=''>-->
-<!--              <div class="card-profile-info">-->
-<!--                <h3 class="profile-name">{{i.name}}</h3>-->
-                <!--<p class="profile-followers">45.7k followers</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </a>-->
+<h2>
+   <center>Department Speakers</center>
+</h2>
+<div class="" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+   {% for i in dept_speaker_list %}
+       <a class="card" href="{% url 'event:deptspeakerdetail' i.id %}">
+         <div class="card-banner">
+           <p class="category-tag popular">{{i.name}}</p>
+           <p class="category-tag-right technology">{{i.dept}}</p>
+           <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>
+         </div>
+         <div class="card-body">
+           <h2 class="blog-title">{{i.subtitle|safe}}</h2>
+            <p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>
+           <div class="card-profile">
+             <img class="profile-img" src='{{i.pic.url}}' alt=''>
+             <div class="card-profile-info">
+               <h3 class="profile-name">{{i.name}}</h3>
+                <p class="profile-followers">45.7k followers</p>
+             </div>
+           </div>
+         </div>
+       </a>
 
-<!--    {% endfor %}-->
-<!--</div>-->
+   {% endfor %}
+</div>
 
 
 {% endblock content %}

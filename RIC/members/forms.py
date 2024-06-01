@@ -39,6 +39,7 @@ class RICForm(forms.ModelForm):
     number = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IN'))
     role = forms.ChoiceField(choices=ROLE, label="Mention your Role")
 
+
     default_abstract = '''<div>
                         <p style="font-size:14pt;line-height:normal;margin:0.55pt 120.4pt 0.55pt 96.4pt;orphans:0;text-align:center;widows:0;">
                             <a id="_Hlk133139167"><span style="font-family:'Times New Roman';"><strong>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</strong></span></a>
@@ -68,7 +69,7 @@ class RICForm(forms.ModelForm):
 
     class Meta:
         model = RICEvent
-        fields = ("institute", "dept","title", "iitg_student", "theme", "role", "abstract", "event", "number")
+        fields = ("name" ,"institute", "dept","title", "iitg_student", "theme", "role", "abstract", "event", "number")
         labels = {
             "institute": "Please Enter your institute (Note: Please Enter Your institute name in Block Letters) *",
             "dept": "Please Select your related Department *",

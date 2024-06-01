@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block css %}
+<style>
+  .userdet{
+    margin: 1vw 12vw;
+  }
+  .userdetail{
+    color: rgb(99, 144, 220); 
+    font-size: 2vw; 
+    font-weight: 600;
+  }
+  @media screen and (max-width:800px) {
+    .userdet{
+      margin: 1vw 1vw;
+    }
+    .userdetail{
+      font-size: 3vw;
+    }
+  }
+  @media screen and (max-width:600px) {
+    .userdet{
+      margin: 1vw 1vw;
+    }
+    .userdetail{
+      font-size: 4.3vw;
+    }
+  }
+
+</style>
+
+{% endblock css %}
 {% block banner %}
 <section>
   <div class="lgx-banner lgx-banner-music">
@@ -20,9 +50,20 @@
   </div>
 </section>
 {% endblock banner %}
+
+
+
+
 {% block content %}
 
-{% if bio_list %}
+{% if user.is_authenticated %}
+  <div class="userdet">
+    <p class="userdetail" >Name : {{user.get_full_name}} </p>
+    <p class="userdetail" >Email : {{user.email}} </p>
+  </div>
+{% endif %}
+
+<!-- {% if bio_list %}
 
 <div class="container">
   <div class="row">
@@ -47,7 +88,7 @@
   </div>
   <br>
 </div>
-{% endif %}
+{% endif %} -->
 
 {% if ric_list %}
 

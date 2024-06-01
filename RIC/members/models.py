@@ -9,6 +9,7 @@ import uuid
 from .validators import validate_file_extension
 
 from ric_year.models import RICYEAR
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 class Event1(models.Model):
@@ -89,6 +90,14 @@ class RICEvent(models.Model):
     institute = models.CharField(max_length=50)
     dept = models.ForeignKey(Dept, on_delete=models.CASCADE,default=None)
 
+    # participant_id = models.IntegerField(null=True, blank=True)
+
+    # def save(self, *args, **kwargs):
+    #     if not self.participant_id:
+    #         if self.owner:  # Assuming owner is the associated user
+    #             self.participant_id = self.owner.id
+    #     super().save(*args, **kwargs)
+
 
     default_abstract = '''<div>
                         <p style="font-size:14pt;line-height:normal;margin:0.55pt 120.4pt 0.55pt 96.4pt;orphans:0;text-align:center;widows:0;">
@@ -117,6 +126,7 @@ class RICEvent(models.Model):
 
     abstract = CKEditor5Field(default=default_abstract, config_name='extends')
 
+    # abstract_file = models.FileField(upload_to='abstract/', validators=[FileExtensionValidator(allowed_extensions=['pdf', 'doc', 'docx'])])
 
     abstractFormat = models.BooleanField(default=True,null=True,blank=True)
     event = models.ForeignKey(Event1, on_delete=models.SET_NULL, blank=True, null=True)
@@ -137,9 +147,6 @@ class RICEvent(models.Model):
     remarks = models.CharField(max_length=50,default="None",blank=True,null=True)
 
     ricyear = models.ForeignKey(RICYEAR, null=True, blank=True, on_delete=models.SET_NULL)
-
-
-
 
     def __str__(self):
         return self.owner.email

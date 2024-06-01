@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block css %}
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
     @import "compass/css3";
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
     body {
         color: #404040;
+        overflow-x: hidden;
     }
 
     .wrapper {
@@ -30,6 +31,7 @@
         min-height: 100px;
         min-width: 100px;
     }
+
     /*Basic Grid Styles*/
 
     .Grid {
@@ -73,6 +75,7 @@
     .Demo.Holly:hover {
         background: rgba(102, 51, 255, 0.25);
     }
+
     /* With gutters*/
 
     .Grid--gutters {
@@ -86,6 +89,7 @@
     .Grid--gutters .Grid--nested .Grid-cell:first-of-type .Demo {
         margin-right: 1em;
     }
+
     /* Justify per row*/
 
     .Grid--right {
@@ -95,6 +99,7 @@
     .Grid--center {
         justify-content: center;
     }
+
     /* Alignment per row */
 
     .Grid--top {
@@ -108,6 +113,7 @@
     .Grid--center {
         align-items: center;
     }
+
     /* Alignment per cell */
 
     .Grid-cell--top {
@@ -151,21 +157,52 @@
         background: rgba(102, 51, 255, 0.25);
     }
 
-    .countdown-title{
+    .home-home{
+        background: url('static/home/assets/img/home-background.png');
+    }
+
+    .home-container{
+        width: 36vw; 
+        padding-top: 11.5vw;
+        margin-left: 7vw;
+    }
+    .home-intro{
+        color: #fefbef; 
+        margin-top: 4vh;
+        text-transform: uppercase;
+        font-family: 'Lato',sans-serif;
+        font-weight:100;
+        font-size: 1.3vw;
+    }
+
+    .rlog{
+        position: absolute; 
+        margin-left: -7vw; 
+        margin-top: -8vh; 
+        width: 53vw; 
+        z-index: 1;
+    }
+
+    .countdown{
+        display: flex; 
+        gap: 50px;
+    }
+
+    .countdown-title {
         color: #cbd2d9;
         font-size: 1.9vh;
     }
 
-    .countdown-title-line{
-        width: 3vw ; 
-        background-color: yellow; 
+    .countdown-title-line {
+        width: 3vw;
+        background-color: yellow;
         height: 0.4vh;
         border-radius: 70vw;
-        margin-top: -1.6vh;
-        margin-bottom: 2.4vh;
+        margin-top: -1.2vh;
+        margin-bottom: 3vh;
     }
 
-    .countdown-time{
+    .countdown-time {
         color: #00B0A6;
         font-size: 9vh;
         font-weight: 800;
@@ -175,23 +212,262 @@
         -webkit-text-stroke: 0.5px white;
     }
 
-    .Navbarleft-a-tags{
-        color: white;
-        text-decoration: none;
-        font-size: 1.5vw;
-        padding-bottom: 6vw;
+    @media screen and (max-width:767px) {
+        .home-container{
+            padding-top: 3vw;
+            margin-left: 11vw;  
+            width: 50vw;         
+        }
+        .home-intro{
+            font-size: 1.8vw;
+            margin-top: 2vw;
+        }
+        .rlog{
+            margin-left: 4vw;
+            margin-top: -5vh;
+        }
+        .countdown{
+            gap:6vw;
+        }
+        .countdown-time{
+            font-size: 7vw;
+        }
+        .countdown-title-line{
+            margin-bottom: 2vw;
+        }
     }
 
-    .Navbarleft-a-tags:hover{
-        text-decoration: none;
+    .Navbarleft-a-tags {
         color: white;
+        text-decoration: none;
+        font-size: 1.6vw;
+        padding-bottom: 5vw;
+        display: flex;
+        font-family: 'Lato',sans-serif;
     }
 
-    .navbarleft-home{
-        padding: 6vw 0vw 0vw 8vw;
+    .Navbarleft-a-tags:hover {
+        text-decoration: none;
+        color: white;
+        font-size: 2.8vw;
+        font-weight: 700;
+        display: flex;
+    }
+
+    .navbarleft-home {
+        padding: 5vw 0vw 0vw 7.5vw;
         justify-content: space-between;
         width: 20vw;
     }
+
+    .background9th {
+        /* width: 200vw; */
+        /* height: 100vw; */
+        animation: moveBg 15s linear infinite;
+        z-index: -1;
+        /* overflow-x: hidden; */
+    }
+
+    @keyframes moveBg {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Events */
+    .scrolling-section {
+        position: relative;
+        width: 71%;
+        height: 33vw;
+        margin: 0vh 20vw;
+        /* overflow-y: scroll; */
+        background: url('static/home/assets/img/yellowcard-events.png');
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .cards {
+        overflow-y: scroll;
+    }
+
+    .cards::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+
+    .card {
+        width: 31vw;
+        padding-left: 3.3vw;
+        padding-right: 0vw;
+        margin: 0.5vw 0;
+        transition: transform 0.3s;
+    }
+
+    .card-right-align {
+        margin-left: 6vw;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .icon-sidenavbar {
+        /* position: fixed; */
+        width: 3vw;
+        padding-bottom: 10vh;
+    }
+
+    /* About Video */
+    body {
+        margin: 0%;
+        overflow-x: hidden;
+        font-family: 'Lato', sans-serif;
+
+
+    }
+
+    #about {
+        background-image: url('static/home/assets/img/about_bg.png');
+        position: relative;
+        width: 100vw;
+        /* height: 100vh; */
+        background-size:100vw 69vw;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 9vw;
+    }
+
+    .about-image {
+        position: absolute;
+        z-index: 6;
+        margin-top: 5vw;
+        margin-left: -3.5vw;
+        width: 6vw;
+    }
+
+    .icons-about {
+        width: 22.5vw;
+
+    }
+
+    .about-video {
+        margin-top:20vw;
+        width: 70vw;
+        height: vh;
+    }
+
+    #about-vid {
+        /* margin-top: 9vw; */
+        width: 70vw;
+        /* height: 70vh; */
+        height: auto;
+        object-fit: cover;
+    }
+
+    .about-text {
+        z-index: -1;
+        position: absolute;
+        max-width: 50vw;
+        height: 39.34vw;
+        background-image: url('static/home/assets/img/side_bar.png');
+        background-size: 50vw 40vw;
+        /* display: none; */
+        cursor: pointer;
+        transform: translateX(100%);
+        transition: transform 2s ease, z-index 2s;
+
+    }
+
+    .about-side {
+        z-index: 4;
+        position: absolute;
+
+        height: 70vh;
+        display: none;
+        cursor: pointer;
+
+    }
+
+    .about-side img {
+        height: 39.34vw;
+        object-fit: cover;
+    }
+
+    .about-video {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    .about-video:hover .about-side {
+        display: block;
+        /* Show overlay when hovering over video container */
+    }
+
+
+    .about-text h1 {
+        margin-left: 8vw;
+        margin-top: 7vw;
+        font-weight: 1000;
+        font-size: 50px;
+        color: #00B0A6;
+        -webkit-text-fill-color: #00B0A6;
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+
+    }
+
+    .about_content {
+        margin-top: 9vh;
+        margin-left: 8vw;
+        margin-right: 9vw;
+        text-align: left;
+        /* font-size: 1.2vw; */
+        /* line-height: 1.4vw; */
+        color: #FEFBEF;
+        font-weight: 400;
+        -webkit-text-stroke: 0.3px rgb(15, 13, 13);
+        -webkit-text-fill-color: #FEFBEF;
+    }
+
+    .about-sec{
+        margin-left: 20vw;
+    }
+
+    @media (max-width: 1200px) {
+        .about_content {
+            font-size: 1.4vw;
+            line-height: 1.6vw;
+        }
+
+        .about-text h1 {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .about_content {
+            font-size: 12px;
+            line-height: 2vw;
+        }
+
+        .about-text h1 {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .about_content {
+            font-size: 12px;
+            line-height: 2.2vw;
+        }
+    }
+
 
     @media all and (max-width: 800px) {
         .navigation {
@@ -205,16 +481,19 @@
             flex-flow: column wrap;
             padding: 0;
         }
+
         .navigation a {
             text-align: center;
             padding: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
+
         .navigation li:last-of-type a {
             border-bottom: none;
         }
     }
+
     /*===========================================*/
     /* Base classes for all media - Mobile first */
 
@@ -243,6 +522,7 @@
     .Grid--holly-grail .main {
         flex: 1 100%;
     }
+
     /* One of -- columns*/
 
     .Grid--1of2>.Grid-cell,
@@ -262,37 +542,47 @@
     .Grid--full>.Grid-cell {
         flex: 0 0 100%;
     }
+
     /* Tablet (medium) screens */
 
     @media (min-width: 30em) {
         .Grid--cols-4>.Grid-cell {
             flex: 0 0 calc(50% - 1em);
         }
+
         .Grid--cols-6>.Grid-cell {
             flex: 0 0 calc(33.3333% - 1em);
         }
+
         .Grid--cols-12>.Grid-cell {
             flex: 0 0 calc(16.6666% - 1em);
         }
+
         .Grid--holly-grail .aside {
             flex: 1 calc(25% - 1em);
         }
+
         .Grid--1of2>.Grid-cell {
             flex: 0 0 50%;
         }
+
         .Grid--1of6>.Grid-cell:first-of-type {
             flex: 0 0 30%;
         }
+
         .Grid--1of4>.Grid-cell:first-of-type {
             flex: 0 0 50%;
         }
+
         .Grid--1of3>.Grid-cell:first-of-type {
             flex: 0 0 100%;
         }
     }
+
     /* Large screens */
 
     @media (min-width: 48em) {
+
         .Grid--cols-2>.Grid-cell,
         .Grid--cols-3>.Grid-cell,
         .Grid--cols-4>.Grid-cell,
@@ -300,33 +590,43 @@
         .Grid--cols-12>.Grid-cell {
             flex: 1;
         }
+
         .Grid--holly-grail .main {
             flex: 2;
         }
+
         .Grid--holly-grail .aside {
             flex: 1;
         }
+
         .Grid--holly-grail .aside-1 {
             order: 1;
         }
+
         .Grid--holly-grail .main {
             order: 2;
         }
+
         .Grid--holly-grail .aside-2 {
             order: 3;
         }
+
         .Grid--1of2>.Grid-cell {
             flex: 0 0 50%;
         }
+
         .Grid--1of6>.Grid-cell:first-of-type {
             flex: 0 0 16.6666%;
         }
+
         .Grid--1of4>.Grid-cell:first-of-type {
             flex: 0 0 25%;
         }
+
         .Grid--1of3>.Grid-cell:first-of-type {
             flex: 0 0 30%;
         }
+
         .Grid--gutters.Grid--nested .Grid-cell:first-of-type .Demo {
             margin-right: 0;
         }
@@ -357,8 +657,8 @@
     }
 
 
-     /*implemented by dhruvesh */
-    .embed{
+    /*implemented by dhruvesh */
+    .embed {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -368,88 +668,101 @@
 
 
     @media screen and (max-width:1200px) {
-        .embed{
+        .embed {
             flex-direction: column !important;
         }
-        .embed-child{
+
+        .embed-child {
             margin: 2rem auto !important;
         }
     }
+
     @media screen and (max-width:400px) {
-        .embed-child{
-            width:100% !important;
+        .embed-child {
+            width: 100% !important;
         }
     }
 
     @media only screen and (min-width: 400px) {
         .reg-announcement {
-        width: 48vw;
+            width: 48vw;
         }
+
         .res-announcement {
-        width: 48vw;
+            width: 48vw;
         }
-        .copyArea{
+
+        .copyArea {
             max-width: 850px;
             padding: 10px;
         }
     }
 
     @media screen and (max-width:480px) {
-        .awNotices a{
-        width:90%;
+        .awNotices a {
+            width: 90%;
         }
     }
 
     /* Flipping announcement text */
-    .awNotices{
-    text-align: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: white;
-    font: 400 12px Arial;
-    max-width: 50vw;
+    .awNotices {
+        text-align: center;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        color: white;
+        font: 400 12px Arial;
+        max-width: 50vw;
     }
-    .awNotices a{
-    padding: 8px 25px 8px 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    color: inherit;
-    text-decoration: none;
-    visibility: hidden;
-    transition: opacity 0.6s;
-    border-radius: 3px;
-    text-shadow: 0 0 3px rgba(1, 1, 1, 0.3);
-    line-height: 150%;
+
+    .awNotices a {
+        padding: 8px 25px 8px 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        color: inherit;
+        text-decoration: none;
+        visibility: hidden;
+        transition: opacity 0.6s;
+        border-radius: 3px;
+        text-shadow: 0 0 3px rgba(1, 1, 1, 0.3);
+        line-height: 150%;
     }
+
     .awNotices a i.fa {
-    padding-right: 8px;
-    margin-right: 5px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+        padding-right: 8px;
+        margin-right: 5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .awNotices a[notice-color="orange"] {
-    background-color: #ff9800;
+        background-color: #ff9800;
     }
+
     .awNotices a[notice-color="red"] {
-    background-color: #e51c23;
+        background-color: #e51c23;
     }
+
     .awNotices a[notice-color="blue"] {
-    background-color: #3f51b5;
+        background-color: #3f51b5;
     }
+
     .awNotices a[notice-color="green"] {
-    background-color: #8bc34a;
+        background-color: #8bc34a;
     }
+
     .awNotices a[notice-color="dark"] {
-    background-color: #414141;
+        background-color: #414141;
     }
+
     .awNotices a.active {
-    opacity: 1;
-    visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
+
     /* .awNotices span.controller {
     position: absolute;
     cursor: pointer;
@@ -459,71 +772,101 @@
     line-height: 150%;
     } */
 
-    .circular-countdown-area{
+    .circular-countdown-area {
         padding-top: 30px;
     }
 
     /* Announcements area */
     .copyCenter {
-    text-align: center;
+        text-align: center;
     }
+
     .copyRight {
-    text-align: right;
+        text-align: right;
     }
+
     .reg-announcement {
-    background: skyblue;
-    max-width: 80vw;
-    padding: 0px 10px;
-    overflow: auto;
-    margin: 20px 5px;
+        background: skyblue;
+        max-width: 80vw;
+        padding: 0px 10px;
+        overflow: auto;
+        margin: 20px 5px;
     }
+
     .res-announcement {
-    background: skyblue;
-    max-width: 80vw;
-    padding: 0px 10px;
-    overflow: auto;
-    margin: 20px 5px;
+        background: skyblue;
+        max-width: 80vw;
+        padding: 0px 10px;
+        overflow: auto;
+        margin: 20px 5px;
     }
+
     .iconArea {
-    width:50px;
-    float: left;
-    padding: 10px;
-    /* display: inline-block; */
+        width: 50px;
+        float: left;
+        padding: 10px;
+        /* display: inline-block; */
     }
+
     .copyArea {
-    /* max-width: 850px; */
-    min-width: 160px;
-    float: none;
-    display:block;
-    overflow: hidden;
+        /* max-width: 850px; */
+        min-width: 160px;
+        float: none;
+        display: block;
+        overflow: hidden;
     }
+
     .copyArea p {
-    margin:auto;
+        margin: auto;
     }
+
     /* Rules for sizing the icon. */
-    .material-icons.md-18 { font-size: 18px; }
-    .material-icons.md-24 { font-size: 24px; }
-    .material-icons.md-36 { font-size: 36px; }
-    .material-icons.md-48 { font-size: 48px; }
+    .material-icons.md-18 {
+        font-size: 18px;
+    }
+
+    .material-icons.md-24 {
+        font-size: 24px;
+    }
+
+    .material-icons.md-36 {
+        font-size: 36px;
+    }
+
+    .material-icons.md-48 {
+        font-size: 48px;
+    }
 
     /* Rules for using icons as black on a light background. */
-    .material-icons.md-dark { color: rgba(0, 0, 0, 0.34); }
-    .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+    .material-icons.md-dark {
+        color: rgba(0, 0, 0, 0.34);
+    }
+
+    .material-icons.md-dark.md-inactive {
+        color: rgba(0, 0, 0, 0.26);
+    }
 
     /* Rules for using icons as white on a dark background. */
-    .material-icons.md-light { color: rgba(255, 255, 255, .6); }
-    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+    .material-icons.md-light {
+        color: rgba(255, 255, 255, .6);
+    }
+
+    .material-icons.md-light.md-inactive {
+        color: rgba(255, 255, 255, 0.3);
+    }
 
 
 
-        #blink1,#blink2,#blink3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #DC2F21;
-            transition: 0.01s;
-        }
+    #blink1,
+    #blink2,
+    #blink3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #DC2F21;
+        transition: 0.01s;
+    }
 
-        /* Gallery */
+    /* Gallery */
     .gallery {
         padding-top: 80px;
         width: 80vw;
@@ -531,6 +874,7 @@
         /* background-color: white; */
         color: black;
     }
+
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -564,185 +908,387 @@
         display: none;
     } */
 
-    .box-image:hover{
+    .box-image:hover {
         transform: scale(1.08);
         z-index: 10;
         box-shadow: 5px 5px #E7E9EB;
     }
 
     @media screen and (max-width: 996px) {
-    .grid img, .box-hover {
-    min-height: 300px;
-    max-height: 300px;
-    }
-    .gallery {
-    padding: 20px;
-    }
+
+        .grid img,
+        .box-hover {
+            min-height: 300px;
+            max-height: 300px;
+        }
+
+        .gallery {
+            padding: 20px;
+        }
     }
 
-    .show-more{
+    .show-more {
         padding: 20px;
         text-align: center;
     }
 
-
+    .gallery-sec{
+        margin-left: 25vw;
+    }
+    .galleryim4{
+        padding-bottom: 1vw; 
+        width: 16vw;
+    }
+    .galleryim1{
+        width: 10.4vw;
+        margin-left: 5.6vw;
+    }
+    .galleryim3{
+        padding-bottom: 1vw; 
+        width: 33vw;
+    }
+    .galleryim2{
+        width: 24vw;
+    }
+    .gallery-yellowcard{
+        width: 13vw; 
+        position: absolute;
+        z-index: -1;
+        margin-left: 7vw; 
+        margin-top: -3vw;
+    }
+    .gallery-bluecard{
+        position: absolute;
+        width: 53vw;
+        margin-left: -43vw;
+        z-index: -2; 
+        margin-top: 6vw;;
+    }
+    .gallery-bllueline{
+        position: relative; 
+        width: 3px;
+        height: 6.5vw; 
+        background-color: #013a67; 
+        margin-top: -6.7vw;
+        margin-left: 24.4vw;
+    }
+    .gallery-title{
+        width: 6vw; 
+        margin-left: 7.6vw; 
+        position: absolute; 
+        margin-top: -3.9vw;
+    }
+    .gallery-blueline1{
+        position: absolute; 
+        width: 3px;
+        height: 30vw; 
+        background-color: #013a67; 
+        margin-top: -3vw;
+        margin-left: 1vw;
+    }
+    .g-div2{
+        display: flex;
+        flex-direction: column; 
+        padding-left: 1.5vw;
+    }
+    @media screen and (min-width: 767px) {
+        .g-title-mob{
+            display: none;
+        }
+        .g-bluecardmob{
+            display: none;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .gallery-sec{
+            margin-left: 7vw;
+        }
+        .galleryim4{
+            width: 31vw;
+            padding-bottom: 2vw;
+        }
+        .galleryim1{
+            width: 18.4vw;
+            margin-left: 12.6vw;
+        }
+        .galleryim2{
+            width: 45vw;
+        }
+        .galleryim3{
+            width: 64vw;
+            padding-bottom: 2vw;
+        }
+        .gallery-bluecard{
+            display:none;
+        }
+        .gallery-title{
+            display: none;
+        }
+        .gallery-qoute{
+            display: none;
+        }
+        .gallery-yellowcard{
+            width: 22vw;
+            margin-left: 15vw;
+            margin-top: -4vw;
+        }
+        .gallery-bllueline{
+            margin-left: 46vw;
+            width: 2px;
+            height: 13vw;
+            margin-top: -13.2vw;
+        }
+        .gallery-blueline1{
+            height: 53vw;
+        }
+        .g-title-mob{
+            position: absolute;
+            margin-left: 12vw;
+            margin-top: -9vw;
+            width: 36vw;
+        }
+        .g-bluecardmob{
+            position: absolute;
+            z-index: -1;
+            width: 65vw;
+            margin-left: 20vw;
+            margin-top: 3vw;
+            /* height: 67vw; */
+        }
+        .gallery-navig{
+            margin-left: -40vw;
+            margin-top: 60vw;
+        }
+        .g-div2{
+            padding-left: 3.2vw;
+        }
+    }
+    .view-btn{
+        position: relative; 
+        margin-left: 29vw;
+        margin-top: -0.5vw;
+        width: 12vw;
+    }
+    .g-y-l1{
+        position: absolute;
+        z-index: 1;
+        width: 12vw;
+        margin-top: 8vw;
+        margin-left: 12vw;
+    }
+    .g-y-l2{
+        margin-top: 22vw;
+        margin-left: 4vw;
+        width: 35vw;
+        z-index: -1;
+    }
+    @media screen and (max-width:767px) {
+        .navbarleft-home{
+            display: none;
+        }
+        .g-y-l1{
+            margin-left: 22vw;
+            margin-top: 14.5vw;
+            width: 22vw;
+        }
+    }
+    
 </style>
-{% endblock css %} 
+{% endblock css %}
+
 
 
 {% block banner %}
-<section>
-    <div style="background-color: #013A67;">
+<section id="home-home">
+    <div  style="overflow-x: hidden; background: url('static/home/assets/img/home-bg.png'); background-size: 100vw;">
         <div class="lgx-banner-style"></div>
         <div class=" lgx-inner-fixed flex" style="display: flex;">
             <navbarleft class="navbarleft-home">
                 <div style="display: flex; flex-direction: column; ">
-                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                    <a href="{% url 'home:home' %}" class="Navbarleft-a-tags" style="font-size: 2.7vw;display: flex;">
-            
-                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                                                        </svg> -->
-                        <div style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;"> </div>
+                    <a href="{% url 'home:home' %}" class="Navbarleft-a-tags home-h"
+                        style="font-size: 2.8vw;font-weight: 700;display: flex;">
+                        <div class="verline"
+                            style="position: absolute; width:2.5px; height: 7.5vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.3vh; margin-left: -0.8vh;">
+                        </div>
                         HOME
                     </a>
-                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                    <a href="{% url 'home:about' %}" class="Navbarleft-a-tags">
-                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                                                        </svg> -->
+                    <a href="{% url 'home:home' %}#about" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
+                        onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
                         ABOUT
                     </a>
-                    <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
-                    <a href="{% url 'home:home' %}#events" class="Navbarleft-a-tags">
-                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                                                                        </svg> -->
+                    <a href="{% url 'home:home' %}#events" class="Navbarleft-a-tags"
+                        onmouseover="showVerticalLine(this)" onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
                         EVENTS
                     </a>
-                    <a href="{% url 'event:speakerlist' %}#events" class="Navbarleft-a-tags">
-                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                                                                        </svg> -->
+                    <a href="{% url 'event:speakerlist' %}#events" class="Navbarleft-a-tags"
+                        onmouseover="showVerticalLine(this)" onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
                         SPEAKERS
                     </a>
-                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags">
-                        <!-- <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24"
-                                                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
-                                                                        </svg> -->
+                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
+                        onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
                         GALLERY
                     </a>
-                    <a  href="{% url 'home:home' %}#contact" class="Navbarleft-a-tags ">
+                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
+                        onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
+                        SPONSORS
+                    </a>
+                    <a href="{% url 'home:home' %}#contact" class="Navbarleft-a-tags "
+                        onmouseover="showVerticalLine(this)" onmouseout="hideVerticalLine(this)">
+                        <div class="verline hidden"
+                            style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
+                        </div>
                         CONTACT US
                     </a>
                 </div>
-            
+
+                <script>
+
+                    function showVerticalLine(element) {
+                        var verticalLine = element.querySelector('.verline');
+                        if (verticalLine) {
+                            verticalLine.classList.remove('hidden');
+                        }
+                        var homeTab = document.querySelector('.navbarleft-home .home-home');
+                        if (homeTab && homeTab !== element) {
+                            homeTab.style.fontSize = '1.5vw';
+                        }
+                        var verline = document.querySelector('.navbarleft-home .home-home .verline');
+                        if (verline) {
+                            verline.classList.add('hidden');
+                        }
+                    }
+
+                    function hideVerticalLine(element) {
+                        var verticalLine = element.querySelector('.verline');
+                        if (verticalLine) {
+                            verticalLine.classList.add('hidden');
+                        }
+                        var homeTab = document.querySelector('.navbarleft-home .home-home');
+                        if (homeTab && homeTab !== element) {
+                            homeTab.style.fontSize = '2.7vw';
+                        }
+                        var verline = document.querySelector('.navbarleft-home .home-home .verline');
+                        if (verline) {
+                            verline.classList.remove('hidden');
+                        }
+                    }
+
+
+                </script>
+
+
             </navbarleft>
             <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"
                     onmouseout="this.start();"><b style="color:#603"><h3><a href="/researchconclave/abstractBook.pdf">Click here to Download the Abstract Book of Research Conclave 2019 </a>. &nbsp; | &nbsp; Prize Money will be credited by 30th April, 2019  &nbsp;  | &nbsp;List of Reserach Conclave 2019 Award Winners <a href="assets/img/List of Awards.pdf" target="new"> Dowanload</a>. &nbsp;| &nbsp;  Thanks to all the participants for making Research Conclave 2019 successful &nbsp; | &nbsp;  We will be back with a new edition of Research Conclave 2020 &nbsp; | &nbsp;</h3> </b></marquee></div> -->
-            <div class="container" style="width: 40vw; padding-top: 25vh;">
-                        <div class="lgx-banner-info">
-                            <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
+            <div class="home-container" >
+                <div class="lgx-banner-info">
+                    <!--lgx-banner-info-center lgx-banner-info-black lgx-banner-info-big lgx-banner-info-bg-->
 
-                            <!--{% if user.is_authenticated %}-->
-                            <!--<div style="background-color: rgb(161, 199, 161); color: rgb(48, 43, 43); margin-bottom:12px">-->
-                            <!--    <h3>Welcome {{user.get_full_name}},You are now logged in</h3>-->
-                            <!--    <p><b>You can submit your abstract in clicking Registration Form</b></p>-->
-                            <!--</div>-->
+                    <!--{% if user.is_authenticated %}-->
+                    <!--<div style="background-color: rgb(161, 199, 161); color: rgb(48, 43, 43); margin-bottom:12px">-->
+                    <!--    <h3>Welcome {{user.get_full_name}},You are now logged in</h3>-->
+                    <!--    <p><b>You can submit your abstract in clicking Registration Form</b></p>-->
+                    <!--</div>-->
 
-                            <!--{% endif %}-->
-                            <!--implemented by dhruvesh -->
-
-
-
-                            <section class="awNotices">
-
-                                <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
-                                <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
-                                <!--</a>-->
-                                <!--<a notice-color="red" href="#" class="">-->
-                                <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
-                                <!--</a>-->
+                    <!--{% endif %}-->
+                    <!--implemented by dhruvesh -->
 
 
 
-                                <!--<a notice-color="orange" href="{% url 'event:detail' 1 %}" class="active">-->
-                                <!--    <i class="fa fa-bell"></i> Abstract Submission is Open (Deadline - 25th April,2024)-->
-                                <!--</a>-->
-                                <!--<a notice-color="red" href="{% url 'home:home' %}#announcements">-->
-                                <!--    <i class="fa fa-heart"></i> Integration BEE registrations will begin soon-->
-                                <!--</a>-->
-                                <!--<a notice-color="orange" href="#">-->
-                                <!--    <i class="fa fa-bell"></i> Payment Mode will be communicated soon-->
-                                <!--</a>-->
-                                <!--<a notice-color="blue" href="{% url 'home:home' %}#events">-->
-                                <!--    <i class="fa fa-bell"></i> Register individually for each and every event-->
-                                <!--</a>-->
-                            </section>
+                    <section class="awNotices">
 
-                            <div class="countdown" style="display: flex; gap: 50px;">
-                                <div>
-                                    <p class="countdown-title" >DAYS</p>
-                                    <div class="countdown-title-line"></div>
-                                    <p class="countdown-time"
-                                        id="days"></p>
-                                </div>
-                                <div>
-                                    <p class="countdown-title">HRS</p>
-                                    <div class="countdown-title-line"></div>
-                                    <p class="countdown-time"
-                                        id="hours"></p>
-                                </div>
-                                <div>
-                                    <p class="countdown-title">MIN</p>
-                                    <div class="countdown-title-line"></div>
-                                    <p class="countdown-time"
-                                        id="minutes"></p>
-                                </div>
-                            </div>
+                        <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
+                        <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
+                        <!--</a>-->
+                        <!--<a notice-color="red" href="#" class="">-->
+                        <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
+                        <!--</a>-->
 
-                            <!-- <div class="circular-countdown-area"> -->
-                            <!-- Date Format :"Y/m/d" || For Example: 1017/10/5  -->
-                            <!-- <div id="circular-countdown" data-date="2024-08-09 18:00:00"></div> -->
-                            <!-- </div> -->
-                            <!-- <h3 class="subheading" style="font-size: 200%;">
+
+
+                        <!--<a notice-color="orange" href="{% url 'event:detail' 1 %}" class="active">-->
+                        <!--    <i class="fa fa-bell"></i> Abstract Submission is Open (Deadline - 25th April,2024)-->
+                        <!--</a>-->
+                        <!--<a notice-color="red" href="{% url 'home:home' %}#announcements">-->
+                        <!--    <i class="fa fa-heart"></i> Integration BEE registrations will begin soon-->
+                        <!--</a>-->
+                        <!--<a notice-color="orange" href="#">-->
+                        <!--    <i class="fa fa-bell"></i> Payment Mode will be communicated soon-->
+                        <!--</a>-->
+                        <!--<a notice-color="blue" href="{% url 'home:home' %}#events">-->
+                        <!--    <i class="fa fa-bell"></i> Register individually for each and every event-->
+                        <!--</a>-->
+                    </section>
+
+                    <div class="countdown">
+                        <div>
+                            <p class="countdown-title">DAYS</p>
+                            <div class="countdown-title-line"></div>
+                            <p class="countdown-time" id="days"></p>
+                        </div>
+                        <div>
+                            <p class="countdown-title">HRS</p>
+                            <div class="countdown-title-line"></div>
+                            <p class="countdown-time" id="hours"></p>
+                        </div>
+                        <div>
+                            <p class="countdown-title">MIN</p>
+                            <div class="countdown-title-line"></div>
+                            <p class="countdown-time" id="minutes"></p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="circular-countdown-area"> -->
+                    <!-- Date Format :"Y/m/d" || For Example: 1017/10/5  -->
+                    <!-- <div id="circular-countdown" data-date="2024-08-09 18:00:00"></div> -->
+                    <!-- </div> -->
+                    <!-- <h3 class="subheading" style="font-size: 200%;">
                                     <font color="white"><b> 09 - 11 August, 2024</b></font>
                                 </h3> -->
 
-                            <!-- <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3> -->
-                            <!-- <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br> -->
-                            <p style="color: #fefbef; margin-top: 4vh;text-transform: uppercase;">Research and Industrial Conclave-Integration'24 is 
-                                the flagship event of IIT Guwahati jointly organized by Students' Academic Board and 
-                                IIT Guwahati Research Park
-                            </p>
+                    <!-- <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3> -->
+                    <!-- <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br> -->
+                    <p class="home-intro"  >Research and Industrial
+                        Conclave-Integration'24 is
+                        the flagship event of IIT Guwahati jointly organized by Students' Academic Board and
+                        IIT Guwahati Research Park
+                    </p>
 
-                            <!-- <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati -->
-                            <!-- </h3> -->
+                    <!-- <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati -->
+                    <!-- </h3> -->
 
-                            <!--div class="action-area">
+                    <!--div class="action-area">
                                     <div class="lgx-video-area">
                                         <a class="lgx-btn lgx-btn-red" href="#">Buy Ticket</a>
                                         <a class="lgx-btn lgx-btn-yellow" href="#">Registration</a-->
-                            <img src="{%static 'home/assets/img/rlog.png'%}" alt="riclog" style="position: absolute; margin-left: -15vh; margin-top: -3vh; width: 56vw;"> 
-                            
+                    <img class="rlog" src="{%static 'home/assets/img/rlog.png'%}" alt="riclog">
 
-                        </div>
+
+                </div>
             </div>
             <div>
-                <img src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title" style="padding-right: 5vh; width: 30vw;">
+                <img id="ric-title" src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title"
+                    style="margin-left: 5vw; width: 27.5vw;">
             </div>
         </div>
-        <img src="{%static 'home/assets/img/9thedition.png'%}" alt="9th edition">
+        <div style="width: 420vw;margin-top: 2vw;">
+            <img height="49vw" class="background9th" src="{%static 'home/assets/img/9thedition.png'%}" alt="9th edition">
+        </div>
     </div>
     <!-- //.CONTAINER -->
     </div>
@@ -751,7 +1297,7 @@
     </div>
 </section>
 
-<img src="{% static './home/assets/img/uppercurve.png' %}" alt="upcurve" style="width: 100vw;">
+<!-- <img src="{% static './home/assets/img/uppercurve.png' %}" alt="upcurve" style="width: 100vw;"> -->
 
 <script>
     // Define the target datetime to countdown to
@@ -785,10 +1331,117 @@
 {% endblock banner %} {% block about %}
 
 <section>
-    <!-- implemeted by dhruvesh -->
+
+    <div id="about">
+        <div>
+            <!--icon sidenavbar -->
+            <div class="hidden" style="display: flex; flex-direction: column; width: 15vw; position: fixed;top: 0; left: 8vw; bottom: 0;">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-home.png' %}">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-about.png' %}">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-event.png' %}">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-speaker.png' %}">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-gallery.png' %}">
+                <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
+            </div>
+            <div class="about-sec">
+            <div class="about-image" onclick=pauseVideo()>
+                <img src=" {%static 'home/assets/img/about.png' %} " alt="">
+            </div>
+            <div class="about-video">
+                <div class="about-text" onclick="toggleDivs();playVideo()">
+                    <h1>ABOUT</h1>
+                    <div class="about_content">
+                        <p style="font-size: 1.2vw">
+                        The first ever industrial conclave of its own kind to enhance industry-academia collaboration is
+                        organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds
+                        towards
+                        research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time, IIT
+                        Guwahati
+                        Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) -
+                        INTEGRATION 2024.
+                        It is aimed at providing an exclusive platform for students, young
+                        innovators, entrepreneurs, industry.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-side" onclick="toggleDivs();pauseVideo() ">
+                    <img src=" {% static  'home/assets/img/about_side.png' %}" alt="">
+                </div>
+
+                <video id="about-vid"  controls autoplay loop muted>
+                    <source src="{%static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
+                </video>
+
+            </div>
+            </div>
+            <script>
+                function toggleDivs() {
+                    const div1 = document.querySelector('.about-text');
+                    const div2 = document.querySelector('.about-side');
+
+                    if (div1.style.transform === 'translateX(100%)') {
+
+                        div1.style.transform = 'translateX(0%)';
+                        div1.style.zIndex = '5';
+                        div2.style.zIndex = '-1';
+                    } else {
+                        div1.style.transform = 'translateX(100%)';
+
+                        div1.style.zIndex = '-1';
+                        div1.addEventListener('transitionend', () => {
+                            setTimeout(() => {
+                                div2.style.zIndex = '4';
+                            }, 2000);
+                        });
+                    }
+                };
+
+
+
+                function pauseVideo() {
+                    var video = document.querySelector("#about-vid");
+                    video.pause();
+                };
+                function playVideo() {
+                    const div1 = document.querySelector('.about-text');
+                    div1.addEventListener('transitionend', () => {
+                        var video = document.querySelector("#about-vid");
+                        video.play();
+                    });
+                };
+
+
+            </script>
+        </div>
+        <!-- <div>
+            <div id="about" class="lgx-about lgx-about-music">
+                <div class=""  style="padding:10rem 0 0 0;">
+                    <div class="container">
+        
+                        {% for i in about_list %} {% if i.id == 1 %}
+        
+                        <div class="row">
+                            <div class="lgx-about-content-area" style="background: #F0F8FF; padding-top: 3rem; padding-left: 6rem; padding-right: 6rem;">
+                                <div class="lgx-heading">
+                                    <center>
+                                        <p class="">{{i|safe|linebreaks}}</p>
+                                        <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="80%" height="3">
+                                    </center>
+                                </div>
+                                {{i.content|safe}}
+                            </div>
+                            <br><br>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
 
     <div id="announcements" class=" hidden lgx-about lgx-about-music">
-        <div class="lgx-inner"  style="padding:10rem 0 0 0">
+        <div class="lgx-inner" style="padding:10rem 0 0 0">
             <!--<center>-->
             <!--    <h1>Scientific and Emprendimiento Winners</h1>-->
             <!--    <section >-->
@@ -796,53 +1449,53 @@
             <!--    </section>-->
             <!--</center>-->
 
-                <center>
-                    <b>
-                        <font color="red"><u>ANNOUNCEMENTS</u></font>
-                    </b>
-                    <b>
-                        <ul style="list-style-type: none; padding-bottom: 16px; padding-left: 0px">
-                            <!--<li>Registration for school students for model exhibition is open</li>-->
-                            <!--<li>Final results for the PRE-RIC events will be declared on 14.4.23 (Friday)</li>-->
-                            <!--<li><div class="reg-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
-                            <!--    <div class="copyArea"><p>Registration for school students for model exhibition is open</p></div>-->
-                            <!--</div></li>-->
-                            <!--<li><div class="reg-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
-                            <!--    <div class="copyArea"><p>Deadline for submission of abstract: 25th April, 2024</p></div>-->
-                            <!--</div></li>-->
-                            <!--<li><div class="reg-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
-                            <!--    <div class="copyArea"><p>Payment Link will be open after 30th April</p></div>-->
-                            <!--</div></li>-->
-                            <!--<li><div class="reg-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
-                            <!--    <div class="copyArea"><p>Winners Announced <a href="{% url 'members:iccreate' %}" >Link</a></p></div>-->
-                            <!--</div></li>-->
-                            <!--<li><div class="reg-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
-                            <!--    <div class="copyArea"><p>Register individually for each and every event</p></div>-->
-                            <!--</div></li>-->
+            <center>
+                <b>
+                    <font color="red"><u>ANNOUNCEMENTS</u></font>
+                </b>
+                <b>
+                    <ul style="list-style-type: none; padding-bottom: 16px; padding-left: 0px">
+                        <!--<li>Registration for school students for model exhibition is open</li>-->
+                        <!--<li>Final results for the PRE-RIC events will be declared on 14.4.23 (Friday)</li>-->
+                        <!--<li><div class="reg-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                        <!--    <div class="copyArea"><p>Registration for school students for model exhibition is open</p></div>-->
+                        <!--</div></li>-->
+                        <!--<li><div class="reg-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                        <!--    <div class="copyArea"><p>Deadline for submission of abstract: 25th April, 2024</p></div>-->
+                        <!--</div></li>-->
+                        <!--<li><div class="reg-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                        <!--    <div class="copyArea"><p>Payment Link will be open after 30th April</p></div>-->
+                        <!--</div></li>-->
+                        <!--<li><div class="reg-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                        <!--    <div class="copyArea"><p>Winners Announced <a href="{% url 'members:iccreate' %}" >Link</a></p></div>-->
+                        <!--</div></li>-->
+                        <!--<li><div class="reg-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">how_to_reg</i></p></div>-->
+                        <!--    <div class="copyArea"><p>Register individually for each and every event</p></div>-->
+                        <!--</div></li>-->
 
-                            <!--<li><div class="res-announcement">-->
-                            <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">emoji_events</i></p></div>-->
-                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div>-->
-                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics67.pdf' %}">Pre-RIC 2024 Math Olympics class 6th and 7th</a></div>-->
-                            <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics89.pdf' %}">Pre-RIC 2024 Math Olympics class 8th, 9th and 10th</a></div>-->
-                            <!--</div></li>-->
+                        <!--<li><div class="res-announcement">-->
+                        <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">emoji_events</i></p></div>-->
+                        <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div>-->
+                        <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics67.pdf' %}">Pre-RIC 2024 Math Olympics class 6th and 7th</a></div>-->
+                        <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics89.pdf' %}">Pre-RIC 2024 Math Olympics class 8th, 9th and 10th</a></div>-->
+                        <!--</div></li>-->
 
 
-                        </ul>
-                    </b>
-                </center>
+                    </ul>
+                </b>
+            </center>
 
 
             <div class="container embed">
                 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/_IM0qQZR3o8" title="How to submit abstract for Oral/Poster in Research and Industrial Conclave Integration 2024 | IITG" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
                 <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/95WT3PoPpNs" title="How to Re-Upload Abstract" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
-<br />
-<br />
+                <br />
+                <br />
                 <!-- <img src="{% static 'home/assets/img/callforpapers.jpeg' %}" alt="" width="100%"> -->
                 <!--<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fric.iitg%2Fposts%2F121245154265446&show_text=true&width=500" height="660" style=" border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>-->
                 <!--<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fric.iitg%2Fposts%2F1400304190745289%3A1400304190745289&show_text=true&width=500" width="500" height="575" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>-->
@@ -853,57 +1506,33 @@
         </div>
     </div>
 
-    <div id="about" class="lgx-about lgx-about-music">
-        <div class=""  style="padding:10rem 0 0 0;">
-            <div class="container">
-
-                {% for i in about_list %} {% if i.id == 1 %}
-
-                <div class="row">
-                    <div class="lgx-about-content-area" style="background: #F0F8FF; padding-top: 3rem; padding-left: 6rem; padding-right: 6rem;">
-                        <div class="lgx-heading">
-                            <center>
-                                <p class="">{{i|safe|linebreaks}}</p>
-                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="80%" height="3">
-                            </center>
-                        </div>
-                        {{i.content|safe}}
-                    </div>
-                    <br><br>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div><!-- //.CONTAINER -->
-    </div><!-- //.INNER -->
-    </div>
 </section>
 {% endblock about %}
 
 {% block event %}
 <section>
-    <div id="events" class="lgx-sponsors">
+    <div id="events">
         <div class="lgx-inner-bg">
-            <div class="lgx-inner"  style="padding:10rem 0 0 0">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="lgx-heading">
-                                <h2 class="heading">Events</h2>
-                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
-                            </div>
-                        </div>
-                    </div>
-                    <!--//main row-->
-                    <div class="row">
+            <div class="lgx-inner">
+                <!-- <div class="container"> -->
+                <!-- <div class="row"> -->
+                <!-- <div class="col-xs-12"> -->
+                <!-- <div class="lgx-heading"> -->
+                <!-- <h2 class="heading">Events</h2> -->
+                <!-- <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3"> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!--//main row-->
+                <!-- <div class="row"> -->
 
-                        <div class="Grid Grid--gutters Grid--cols-5 u-textCenter">
+                <!-- <div class="Grid Grid--gutters Grid--cols-5 u-textCenter">
                             {% for i in product_list %}
                                 <div class="Grid-cell">
                                     <div class="card h-100">
                                         <a href="{% url 'event:detail' i.name|slugify %}">
 
-                                          <img src="{{i.pic.url}}" style="border-radius: 50%;height:100px;" alt="...">
+                                          <img src="{{i.pic.url}}" alt="...">
                                         </a>
                                         <div class="">
                                           <h5 class=""><a href="{% url 'event:detail' i.name|slugify %}">{{i}}</a></h5>
@@ -914,30 +1543,66 @@
                             {% endfor %}
 
 
+                        </div> -->
+
+                <!--<div class="Grid Grid--gutters Grid--cols-3 u-textCenter">-->
+                <!--    {% for i in product_list %}-->
+                <!--    <div class="Grid-cell">-->
+                <!--        <div class="card h-100">-->
+                <!--            <a href="{% url 'event:detail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%;height:150px;" alt="..."></a>-->
+                <!--            <div class="">-->
+                <!--              <h5 class=""><a href="{% url 'event:detail' i.id %}">{{i}}</a></h5>-->
+                <!--            </div>-->
+                <!--          </div>-->
+                <!--    </div>-->
+                <!--    {% endfor %}-->
+
+
+                <!--</div>-->
+
+
+                <!-- </div> -->
+
+
+
+                <!-- </div> -->
+                <img src="{% static 'home/assets/img/uparrow-events.png'%}"
+                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw;" alt="up arrow">
+                <img src="{% static 'home/assets/img/uparrow-events.png'%}"
+                    style="margin-left: 37vw; margin-bottom: 2vw;" alt="up arrow">
+                <div class="scrolling-section" style="display: flex;">
+                    <div class="cards">
+                        {% for i in product_list %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <div class="card card-right-align">
+                            <a href="{% url 'event:detail' i.name|slugify %}">
+
+                                <img src="{{i.pic.url}}" alt="...">
+                            </a>
                         </div>
+                        {% else %}
+                        <div class="card">
+                            <a href="{% url 'event:detail' i.name|slugify %}">
 
-                        <!--<div class="Grid Grid--gutters Grid--cols-3 u-textCenter">-->
-                        <!--    {% for i in product_list %}-->
-                        <!--    <div class="Grid-cell">-->
-                        <!--        <div class="card h-100">-->
-                        <!--            <a href="{% url 'event:detail' i.id %}"><img src="{{i.pic.url}}" style="border-radius: 50%;height:150px;" alt="..."></a>-->
-                        <!--            <div class="">-->
-                        <!--              <h5 class=""><a href="{% url 'event:detail' i.id %}">{{i}}</a></h5>-->
-                        <!--            </div>-->
-                        <!--          </div>-->
-                        <!--    </div>-->
-                        <!--    {% endfor %}-->
-
-
-                        <!--</div>-->
-
-
+                                <img src="{{i.pic.url}}" alt="...">
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
-
-
-
+                    <div style="padding-left: 0vw;">
+                        <img style="position: absolute; padding-top: 1.3vw; width: 28vw;"
+                            src="{%static 'home/assets/img/waterspread-event.png' %}" alt="water bg">
+                        <img style="position: absolute; margin-top: -9.2vw; padding-left: 3.5vw; width: 28.4vw;"
+                            src="{%static 'home/assets/img/riclog-event.png'%}" alt="rlog">
+                        <img src="{%static 'home/assets/img/EVENTS.png' %}" alt="event-title"
+                            style="padding-left: 31.2vw; padding-top: 2.6vw; position: absolute; width: 36.5vw;">
+                    </div>
                 </div>
-
+                <img src="{% static 'home/assets/img/downarrow-events.png'%}"
+                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw; margin-top: 2vw;" alt="down arrow">
+                <img src="{% static 'home/assets/img/downarrow-events.png'%}" style="margin-left: 37vw;"
+                    alt="down arrow">
 
 
                 <!--//col-->
@@ -952,11 +1617,47 @@
     </div>
     </div>
     <!--//lgx-inner-->
-    
+
 </section>
 {% endblock event %}
+
+{% block gallery %}
+<section class="gallery-sec" style="margin-bottom: 4vw;">
+    <div class="gallery-section" style="display: flex; flex-direction: row;">
+        <div style="display: flex;flex-direction: column;">
+            <div class="gallery-blueline1"></div>
+            <img class="g-bluecardmob" src="{%static 'home/assets/img/gallery-bluecardmob.png' %}">
+            <img src="{%static 'home/assets/img/galleryim4.png' %}" class="galleryim4" >
+            <img src="{% static 'home/assets/img/g-y-l1.png' %}" class="g-y-l1">
+            <img src="{%static 'home/assets/img/galleryim1.png' %}" class="galleryim1">
+        </div>
+        <div class="g-div2">
+            <img src="{%static 'home/assets/img/gallery-yellowcard.png' %}" class="gallery-yellowcard">
+            <img class="g-title-mob" src="{%static 'home/assets/img/gallery-title-mob.png' %}">
+            <img src="{%static 'home/assets/img/galleryim3.png' %}" class="galleryim3">
+            <img src="{%static 'home/assets/img/galleryim2.png' %}" class="galleryim2">
+            <img src="{% static 'home/assets/img/g-y-l2.png' %}" style="position: absolute;" class="g-y-l2">
+            <div class="gallery-bllueline"></div>
+            <div class="view-btn" >
+                <img src="{%static 'home/assets/img/g-viewblue.png' %}"  style="position: absolute;"> 
+                <img src="{%static 'home/assets/img/g-viewline.png' %}" style="position: absolute; margin-top: 0.4vw;margin-left: 0.2vw;"> 
+                <img src="{%static 'home/assets/img/g-view.png' %}" style="position: absolute; margin-top: 1.6vw;margin-left: 2vw;width: 8vw;"> 
+            </div>
+        </div>
+        <div>
+            <img src="{%static 'home/assets/img/gallery-bluecard.png' %}" class="gallery-bluecard">
+            <p class="gallery-qoute" style="width: 0vw; position: absolute;">jbjdjhabebkewbkjeberbferfeisbnhdcbshjbcjh</p>
+        </div>
+        <div>
+            <img class="gallery-title" src="{%static 'home/assets/img/gallery-title.png' %}">
+            
+        </div>
+    </div>
+</section>
+{% endblock gallery %}
+
 {% block sponsor %}
-<section>
+<!-- <section>
     <div id="about" class="lgx-about lgx-about-music">
         <div class="lgx-inner"  style="padding:10rem 0 0 0">
             <div class="container">
@@ -966,10 +1667,10 @@
                             </div>
                <style>.embed-container { position: relative; padding-bottom:56.25%; height:0; overflow: hidden; max-width: 100%!important; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style><div class='embed-container' data-page-width='494' data-page-height='640' id='ypembedcontainer' ><iframe   src="https://www.yumpu.com/en/embed/view/7tJhfrzdnkWZs60L" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br><a href="https://www.yumpu.com/en/document/view/66262978/ric-2022-souvenir-book" title="RIC 2022 Souvenir Book" target="_blank">RIC 2022 Souvenir Book</a></div><script src='https://players.yumpu.com/modules/embed/yp_r_iframe.js' ></script>
             </div>
-        </div><!-- //.CONTAINER -->
-    </div><!-- //.INNER -->
+        </div>
     </div>
-</section>
+    </div>
+</section> -->
 
 
 
@@ -1035,107 +1736,3 @@
 
 
 {% endblock sponsor %}
-{% block contact %}
-<section>
-    <div id="contact" class="lgx-travelinfo">
-        <div class="lgx-inner"  style="padding:10rem 0 0 0">
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="lgx-heading">
-                            <h2 class="heading">Contact Us</h2>
-                            <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
-                            <!--h3 class="subheading">Conferences dedicated to building remarkable events.</h3-->
-                        </div>
-                    </div>
-                    <!--//main COL-->
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="lgx-travelinfo-content">
-                            <div class="lgx-travelinfo-single">
-                                <img src="{% static 'home/assets/img/Contact.png' %}" alt="User" />
-                                <!--h3 class="title"></h3-->
-                                <p class="info"><b>Student Conveners</b></p>
-
-
-                            <br>
-
-                            <p class="info">Mr. Shubham Singh <br> (Student Convener) <br> +91-8920217431 </p>
-                            <p class="info">Mr. Nikhil Kumar Mishra <br>(Student Co-convener PG) <br> +91-7367088245 </p>
-                            <p class="info">Mr. Rishi Patel <br>(Student Co-convener UG) <br> +91-9926665909 </p>
-
-                        </div>
-                        <div class="lgx-travelinfo-single">
-                            <img src="{% static 'home/assets/img/Contact.png' %}" alt="User" />
-                            <p class="info"><b>Industrial Events Info.</b></p>
-
-                            <br>
-                            <p class="info">Reasearch Park(Office) <br> 0361 258 6507 </p>
-
-                        </div>
-                        <div class="lgx-travelinfo-single">
-                            <img src="{% static 'home/assets/img/Mail.png' %}" alt="Mailing" />
-                            <p class="info">research_conclave@iitg.ac.in</p>
-                            <p class="info">researchconclave.iitg@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--//.ROW-->
-        </div>
-        <!-- //.CONTAINER -->
-        </br>
-    </div>
-    </div>
-</section>
-
-<!-- javascript for flipping announcement text -->
-    <script type="text/javascript">
-    //     $('.awNotices').append('<span class="controller fa fa-pause"></span>');
-    // $('.awNotices a:nth-of-type(1)').addClass('active');
-
-    function awNotice() {
-      if(!$('.awNotices').hasClass('stopped')){
-      var $active = $('.awNotices a.active');
-      var $next = $active.next('a');
-
-      if ($next.length){
-      $next.addClass('active');
-      $active.removeClass('active');
-      }else{
-        $active.removeClass('active');
-            $('.awNotices a:first-of-type').addClass('active');
-      }
-      }
-    }
-
-    // $('.awNotices .controller').click(function(){
-    //   $(this).toggleClass('fa-pause fa-play');
-    //   $('.awNotices').toggleClass('stopped');
-    // })
-
-    function awNotices(timer){
-        setInterval( "awNotice()", timer);
-    }
-
-    awNotices(4500);
-
-
-    var blink1 = document.getElementById('blink1');
-    var blink2 = document.getElementById('blink2');
-    var blink3 = document.getElementById('blink3');
-        setInterval(function() {
-            blink1.style.opacity = (blink1.style.opacity == 0 ? 1 : 0);
-            blink2.style.opacity = (blink2.style.opacity == 0 ? 1 : 0);
-            blink3.style.opacity = (blink3.style.opacity == 0 ? 1 : 0);
-        }, 250);
-
-    </script>
-
-
-
-{% endblock contact %}
-
-

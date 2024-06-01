@@ -185,6 +185,24 @@ USE_I18N = True
 USE_TZ = True
 
 
+# # mail setup
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = os.getenv('django_email')
+# EMAIL_HOST_PASSWORD = os.getenv('django_password')
+# EMAIL_HOST_USER = "researchconclave.iitg@gmail.com"
+# EMAIL_HOST_PASSWORD = "onbzpxaipscnpvhg"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp-mail.outlook.com"
+EMAIL_HOST_USER = "research_conclave@iitg.ac.in"
+EMAIL_HOST_PASSWORD = "S@B@23R!c"
+OUTLOOK_FOLDER = "Chetan_2023"
 
 
 

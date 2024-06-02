@@ -933,6 +933,7 @@
     }
 
     .gallery-sec{
+        position: relative;
         margin-left: 25vw;
     }
     .galleryim4{
@@ -1092,6 +1093,39 @@
             width: 22vw;
         }
     }
+
+    .sticky-sidebar {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  flex-direction: column;
+  width: 180px;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  /* transition: position 0.3s ease, top 0.3s ease; Smooth transition for position changes */
+}
+
+.sticky-sidebar img {
+  width: 60px;
+  height: auto;
+  transition: width 0.3s ease, height 0.3s ease;
+  margin-top: 50px;
+}
+
+.fixed {
+  position: fixed;
+  top:0px;
+}
+
+
+        .stop-position {
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+        }
     
 </style>
 {% endblock css %}
@@ -1328,7 +1362,20 @@
     // Initial call to start the countdown
     updateCountdown();
 </script>
-{% endblock banner %} {% block about %}
+{% endblock banner %}
+
+{% block sideIcons %}
+
+
+   
+        <!-- Add more icons as needed -->
+    
+{% endblock sideIcons %}
+
+
+
+
+{% block about %}
 
 <section>
 
@@ -1343,6 +1390,13 @@
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-gallery.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
             </div>
+
+            <div id="sticky-sidebar" class="sticky-sidebar">
+                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
+            </div>
+            
             <div class="about-sec">
             <div class="about-image" onclick=pauseVideo()>
                 <img src=" {%static 'home/assets/img/about.png' %} " alt="">
@@ -1622,6 +1676,7 @@
 {% endblock event %}
 
 {% block gallery %}
+
 <section class="gallery-sec" style="margin-bottom: 4vw;">
     <div class="gallery-section" style="display: flex; flex-direction: row;">
         <div style="display: flex;flex-direction: column;">
@@ -1631,6 +1686,8 @@
             <img src="{% static 'home/assets/img/g-y-l1.png' %}" class="g-y-l1">
             <img src="{%static 'home/assets/img/galleryim1.png' %}" class="galleryim1">
         </div>
+
+       
         <div class="g-div2">
             <img src="{%static 'home/assets/img/gallery-yellowcard.png' %}" class="gallery-yellowcard">
             <img class="g-title-mob" src="{%static 'home/assets/img/gallery-title-mob.png' %}">
@@ -1648,10 +1705,16 @@
             <img src="{%static 'home/assets/img/gallery-bluecard.png' %}" class="gallery-bluecard">
             <p class="gallery-qoute" style="width: 0vw; position: absolute;">jbjdjhabebkewbkjeberbferfeisbnhdcbshjbcjh</p>
         </div>
+
+        
         <div>
             <img class="gallery-title" src="{%static 'home/assets/img/gallery-title.png' %}">
             
         </div>
+
+        <section id="target-section" style="height:0px;">
+                                
+        </section>
     </div>
 </section>
 {% endblock gallery %}

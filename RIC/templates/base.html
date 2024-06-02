@@ -435,6 +435,7 @@
             color: #FEFBEF;
             margin-top: 18vw;
             background-size: cover;
+       
 
         }
 
@@ -879,6 +880,8 @@
 
 
         <!--        Announcements End-->
+
+        {% block sideIcons %}{% endblock sideIcons %}
         <!--about-->
 
         {% block about %}{% endblock about %}
@@ -1210,6 +1213,7 @@
                         <span class="email">researchconclave.iitg@gmail.com</span>
                     </div>
                 </div>
+               
                 <div class="links-mobile-footer">
                     <a href="https://google.com" target="_blank">
                         <img src="{%static 'home/assets/img/IITG-mobile-footer.png' %}" alt="Image 1"
@@ -1341,6 +1345,46 @@
         setTimeout(function () {
             announcementDiv.style.left = "-200px"; /* hide the announcement section to the left side of the screen again */
         }, 5000); /* adjust the delay time as desired */
+
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.getElementById('sticky-sidebar');
+        const targetSection = document.getElementById('target-section');
+        const offset = 0;  // Adjust based on your layout
+        
+        function handleScroll() {
+            const sidebarRect = sidebar.getBoundingClientRect();
+            const targetRect = targetSection.getBoundingClientRect();
+            
+            if (targetRect.top <= offset) {
+                sidebar.classList.add('stop-position');
+                sidebar.style.top = `${targetSection.offsetTop + offset}px`;
+            } else {
+                sidebar.classList.remove('stop-position');
+                sidebar.style.top = '';
+            }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+    });
+</script>
+
+
+
+    <script>
+       const sidebar = document.getElementById('sticky-sidebar');
+const offsetTop = 1100; // Adjust this value to your desired offset (in pixels)
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY >= offsetTop) {
+    sidebar.classList.add('fixed');
+  } else {
+    sidebar.classList.remove('fixed');
+  }
+});
+          
 
     </script>
 

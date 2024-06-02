@@ -156,10 +156,20 @@
     .navigation:hover {
         background: rgba(102, 51, 255, 0.25);
     }
-
-    .home-home{
-        background: url('static/home/assets/img/home-background.png');
+    
+    @media screen and (min-width:560px) {
+        .home-sec{
+        overflow-x: hidden; 
+        background: url('static/home/assets/img/home-bg.png'); 
+        background-size: 100vw;
     }
+    }
+    @media screen and (max-width:560px) {
+        .home-sec{
+            background-color: #013a67;
+        }
+    }
+    
 
     .home-container{
         width: 36vw; 
@@ -265,7 +275,12 @@
         /* height: 100vw; */
         animation: moveBg 15s linear infinite;
         z-index: -1;
+        height: 8vh;
         /* overflow-x: hidden; */
+    }
+    .movingimg{
+        width: 420vw;
+        margin-top: 2vw;
     }
 
     @keyframes moveBg {
@@ -467,6 +482,24 @@
             line-height: 2.2vw;
         }
     }
+
+    @media (max-width: 560px) {
+        /* .about-sec{
+            margin-left: 0vw;
+            justify-content: center;
+            align-items: center;
+        } */
+        .about-image{
+            display: none;
+        }
+        .background9th{
+            height: 4.8vh;
+        }
+        .movingimg{
+            width: 700vw;
+        }
+    }
+
 
 
     @media all and (max-width: 800px) {
@@ -1100,7 +1133,7 @@
 
 {% block banner %}
 <section id="home-home">
-    <div  style="overflow-x: hidden; background: url('static/home/assets/img/home-bg.png'); background-size: 100vw;">
+    <div  class="home-sec">
         <div class="lgx-banner-style"></div>
         <div class=" lgx-inner-fixed flex" style="display: flex;">
             <navbarleft class="navbarleft-home">
@@ -1286,8 +1319,8 @@
                     style="margin-left: 5vw; width: 27.5vw;">
             </div>
         </div>
-        <div style="width: 420vw;margin-top: 2vw;">
-            <img height="49vw" class="background9th" src="{%static 'home/assets/img/9thedition.png'%}" alt="9th edition">
+        <div class="movingimg">
+            <img class="background9th" src="{%static 'home/assets/img/9thedition.png'%}" alt="9th edition">
         </div>
     </div>
     <!-- //.CONTAINER -->
@@ -1335,44 +1368,44 @@
     <div id="about">
         <div>
             <!--icon sidenavbar -->
-            <div class="hidden" style="display: flex; flex-direction: column; width: 15vw; position: fixed;top: 0; left: 8vw; bottom: 0;">
+            <!-- <div class="hidden" style="display: flex; flex-direction: column; width: 15vw; position: fixed;top: 0; left: 8vw; bottom: 0;">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-home.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-about.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-event.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-speaker.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-gallery.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
-            </div>
+            </div> -->
             <div class="about-sec">
-            <div class="about-image" onclick=pauseVideo()>
-                <img src=" {%static 'home/assets/img/about.png' %} " alt="">
-            </div>
-            <div class="about-video">
-                <div class="about-text" onclick="toggleDivs();playVideo()">
-                    <h1>ABOUT</h1>
-                    <div class="about_content">
-                        <p style="font-size: 1.2vw">
-                        The first ever industrial conclave of its own kind to enhance industry-academia collaboration is
-                        organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds
-                        towards
-                        research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time, IIT
-                        Guwahati
-                        Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) -
-                        INTEGRATION 2024.
-                        It is aimed at providing an exclusive platform for students, young
-                        innovators, entrepreneurs, industry.
-                        </p>
+                <div class="about-image" onclick=pauseVideo()>
+                    <img src=" {%static 'home/assets/img/about.png' %} " alt="">
+                </div>
+                <div class="about-video">
+                    <div class="about-text" onclick="toggleDivs();playVideo()">
+                        <h1>ABOUT</h1>
+                        <div class="about_content">
+                            <p style="font-size: 1.2vw">
+                                The first ever industrial conclave of its own kind to enhance industry-academia collaboration is
+                                organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds
+                                towards
+                                research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time, IIT
+                                Guwahati
+                                Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) -
+                                INTEGRATION 2024.
+                                It is aimed at providing an exclusive platform for students, young
+                                innovators, entrepreneurs, industry.
+                            </p>
+                        </div>
                     </div>
+                    <div class="about-side" onclick="toggleDivs();pauseVideo() ">
+                        <img src=" {% static  'home/assets/img/about_side.png' %}" alt="">
+                    </div>
+            
+                    <video id="about-vid" controls autoplay loop muted>
+                        <source src="{%static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
+                    </video>
+            
                 </div>
-                <div class="about-side" onclick="toggleDivs();pauseVideo() ">
-                    <img src=" {% static  'home/assets/img/about_side.png' %}" alt="">
-                </div>
-
-                <video id="about-vid"  controls autoplay loop muted>
-                    <source src="{%static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
-                </video>
-
-            </div>
             </div>
             <script>
                 function toggleDivs() {
@@ -1567,9 +1600,9 @@
 
                 <!-- </div> -->
                 <img src="{% static 'home/assets/img/uparrow-events.png'%}"
-                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw;" alt="up arrow">
+                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw; width: 8vw;" alt="up arrow">
                 <img src="{% static 'home/assets/img/uparrow-events.png'%}"
-                    style="margin-left: 37vw; margin-bottom: 2vw;" alt="up arrow">
+                    style="margin-left: 37vw; margin-bottom: 2vw;width: 8vw;" alt="up arrow">
                 <div class="scrolling-section" style="display: flex;">
                     <div class="cards">
                         {% for i in product_list %}
@@ -1600,8 +1633,8 @@
                     </div>
                 </div>
                 <img src="{% static 'home/assets/img/downarrow-events.png'%}"
-                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw; margin-top: 2vw;" alt="down arrow">
-                <img src="{% static 'home/assets/img/downarrow-events.png'%}" style="margin-left: 37vw;"
+                    style="display: flex; margin-left: 37vw; margin-bottom: -1vw; margin-top: 2vw;width: 8vw;" alt="down arrow">
+                <img src="{% static 'home/assets/img/downarrow-events.png'%}" style="margin-left: 37vw;width: 8vw;"
                     alt="down arrow">
 
 

@@ -1096,20 +1096,20 @@
 
     .sticky-sidebar {
   position: absolute;
-  top: 100px;
-  left: 0;
+  top: 110px;
+  left: 8vw;
   flex-direction: column;
-  width: 180px;
+  /* width: 180px; */
   z-index: 1000;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   /* transition: position 0.3s ease, top 0.3s ease; Smooth transition for position changes */
 }
 
 .sticky-sidebar img {
-  width: 60px;
+  width: 2vw;
   height: auto;
   transition: width 0.3s ease, height 0.3s ease;
   margin-top: 50px;
@@ -1119,6 +1119,13 @@
   position: fixed;
   top:0px;
 }
+
+@media screen and (max-width:767px) {
+    .sticky-sidebar {
+        display: none;
+    }
+}
+    
 
 
         .stop-position {
@@ -1364,16 +1371,6 @@
 </script>
 {% endblock banner %}
 
-{% block sideIcons %}
-
-
-   
-        <!-- Add more icons as needed -->
-    
-{% endblock sideIcons %}
-
-
-
 
 {% block about %}
 
@@ -1382,19 +1379,24 @@
     <div id="about">
         <div>
             <!--icon sidenavbar -->
-            <div class="hidden" style="display: flex; flex-direction: column; width: 15vw; position: fixed;top: 0; left: 8vw; bottom: 0;">
+            <!-- <div class="hidden" style="display: flex; flex-direction: column; width: 15vw; position: fixed;top: 0; left: 8vw; bottom: 0;">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-home.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-about.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-event.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-speaker.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-gallery.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
-            </div>
+            </div> -->
 
             <div id="sticky-sidebar" class="sticky-sidebar">
-                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/side Icons.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/about_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Sidebar Icons" >
             </div>
             
             <div class="about-sec">
@@ -1534,7 +1536,7 @@
 
                         <!--<li><div class="res-announcement">-->
                         <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">emoji_events</i></p></div>-->
-                        <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div>-->
+                        <!-- <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div> -->
                         <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics67.pdf' %}">Pre-RIC 2024 Math Olympics class 6th and 7th</a></div>-->
                         <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics89.pdf' %}">Pre-RIC 2024 Math Olympics class 8th, 9th and 10th</a></div>-->
                         <!--</div></li>-->

@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% load static %} {% block css %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lomon+Milk&display=swap">
 <style>
     @import "compass/css3";
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -156,20 +157,6 @@
     .navigation:hover {
         background: rgba(102, 51, 255, 0.25);
     }
-    
-    @media screen and (min-width:560px) {
-        .home-sec{
-        overflow-x: hidden; 
-        background: url('static/home/assets/img/home-bg.png'); 
-        background-size: 100vw;
-    }
-    }
-    @media screen and (max-width:560px) {
-        .home-sec{
-            background-color: #013a67;
-        }
-    }
-    
 
     .home-container{
         width: 36vw; 
@@ -183,14 +170,6 @@
         font-family: 'Lato',sans-serif;
         font-weight:100;
         font-size: 1.3vw;
-    }
-
-    .rlog{
-        position: absolute; 
-        margin-left: -7vw; 
-        margin-top: -8vh; 
-        width: 53vw; 
-        z-index: 1;
     }
 
     .countdown{
@@ -208,145 +187,28 @@
         background-color: yellow;
         height: 0.4vh;
         border-radius: 70vw;
-        margin-top: -1.2vh;
-        margin-bottom: 3vh;
+        margin-top: -0.5vh;
+        margin-bottom: 4vh;
     }
 
     .countdown-time {
         color: #00B0A6;
-        font-size: 9vh;
+        font-size: 8vh;
         font-weight: 800;
         /* outline-color: white; */
         text-shadow: 0px 1px 2px black;
 
         -webkit-text-stroke: 0.5px white;
+        margin-bottom: 1vw;
+        font-family: 'Lomon Milk',sans-serif;
     }
 
-    @media screen and (max-width:767px) {
-        .home-container{
-            padding-top: 3vw;
-            margin-left: 11vw;  
-            width: 50vw;         
-        }
-        .home-intro{
-            font-size: 1.8vw;
-            margin-top: 2vw;
-        }
-        .rlog{
-            margin-left: 4vw;
-            margin-top: -5vh;
-        }
-        .countdown{
-            gap:6vw;
-        }
-        .countdown-time{
-            font-size: 7vw;
-        }
-        .countdown-title-line{
-            margin-bottom: 2vw;
+    @media screen and (min-width:561px) {
+        #about{
+            background-image: url('static/home/assets/img/about_bg.png');
         }
     }
-
-    .Navbarleft-a-tags {
-        color: white;
-        text-decoration: none;
-        font-size: 1.6vw;
-        padding-bottom: 5vw;
-        display: flex;
-        font-family: 'Lato',sans-serif;
-    }
-
-    .Navbarleft-a-tags:hover {
-        text-decoration: none;
-        color: white;
-        font-size: 2.8vw;
-        font-weight: 700;
-        display: flex;
-    }
-
-    .navbarleft-home {
-        padding: 5vw 0vw 0vw 7.5vw;
-        justify-content: space-between;
-        width: 20vw;
-    }
-
-    .background9th {
-        /* width: 200vw; */
-        /* height: 100vw; */
-        animation: moveBg 15s linear infinite;
-        z-index: -1;
-        height: 8vh;
-        /* overflow-x: hidden; */
-    }
-    .movingimg{
-        width: 420vw;
-        margin-top: 2vw;
-    }
-
-    @keyframes moveBg {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
-    }
-
-    /* Events */
-    .scrolling-section {
-        position: relative;
-        width: 71%;
-        height: 33vw;
-        margin: 0vh 20vw;
-        /* overflow-y: scroll; */
-        background: url('static/home/assets/img/yellowcard-events.png');
-        background-size: cover;
-        z-index: 1;
-    }
-
-    .cards {
-        overflow-y: scroll;
-    }
-
-    .cards::-webkit-scrollbar {
-        width: 0;
-        background: transparent;
-    }
-
-    .card {
-        width: 31vw;
-        padding-left: 3.3vw;
-        padding-right: 0vw;
-        margin: 0.5vw 0;
-        transition: transform 0.3s;
-    }
-
-    .card-right-align {
-        margin-left: 6vw;
-    }
-
-    .card:hover {
-        transform: scale(1.05);
-    }
-
-    .icon-sidenavbar {
-        /* position: fixed; */
-        width: 3vw;
-        padding-bottom: 10vh;
-    }
-
-    /* About Video */
-    body {
-        margin: 0%;
-        overflow-x: hidden;
-        font-family: 'Lato', sans-serif;
-
-
-    }
-
     #about {
-        background-image: url('static/home/assets/img/about_bg.png');
         position: relative;
         width: 100vw;
         /* height: 100vh; */
@@ -391,7 +253,7 @@
         max-width: 50vw;
         height: 39.34vw;
         background-image: url('static/home/assets/img/side_bar.png');
-        background-size: 50vw 40vw;
+        background-size: 50.3vw 40vw;
         /* display: none; */
         cursor: pointer;
         transform: translateX(100%);
@@ -438,9 +300,10 @@
     }
 
     .about_content {
-        margin-top: 9vh;
-        margin-left: 8vw;
-        margin-right: 9vw;
+        font-size: 1.2vw;
+        margin-top: 3vw;
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
         text-align: left;
         /* font-size: 1.2vw; */
         /* line-height: 1.4vw; */
@@ -451,53 +314,294 @@
     }
 
     .about-sec{
-        margin-left: 20vw;
+        margin-left: 21vw;
+    }
+    .rlog{
+        position: absolute; 
+        margin-left: -7vw; 
+        margin-top: -6vh; 
+        width: 54.5vw; 
+        z-index: 1;
     }
 
     @media (max-width: 1200px) {
         .about_content {
-            font-size: 1.4vw;
-            line-height: 1.6vw;
+            /* font-size: 1.4vw; */
+            line-height: 2vw;
         }
 
         .about-text h1 {
             font-size: 40px;
         }
+        .rlog{
+            width: 55.5vw;
+        }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 880px) {
         .about_content {
-            font-size: 12px;
-            line-height: 2vw;
+            font-size: 1.4vw;
+            line-height: 2.2vw;
         }
 
         .about-text h1 {
             font-size: 30px;
+            margin-top: 4vw;
+        }
+        .rlog{
+            width: 57vw;
         }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         .about_content {
-            font-size: 12px;
             line-height: 2.2vw;
+            font-size: 1.5vw;
         }
     }
 
-    @media (max-width: 560px) {
-        /* .about-sec{
-            margin-left: 0vw;
-            justify-content: center;
-            align-items: center;
-        } */
+    @media screen and (max-width:767px) {
+        .home-container{
+            padding-top: 3vw;
+            margin-left: 11vw;  
+            width: 50vw;         
+        }
+        .home-intro{
+            font-size: 1.8vw;
+            margin-top: 2vw;
+        }
+        .rlog{
+            margin-left: 4vw;
+            margin-top: -5vh;
+            width: 57vw;
+        }
+        .countdown{
+            gap:6vw;
+        }
+        .countdown-time{
+            font-size: 7vw;
+        }
+        #about{
+            background-size: 100vw 74vw;
+        }
+        #about-vid{
+            width: 80vw;
+        }
+        .about-side img{
+            height: 45vw;
+        }
+        .about-text{
+            max-width: 50vw;
+            height: 45.7vw;
+            background-size: 50.3vw 45.7vw;
+        }
+        .about-image{
+            margin-left: -14.5vw;
+        }
+    }
+    @media screen and (max-width:667px) {
+        .rlog{
+            width: 55vw;
+        }
+    }
+
+
+    .Navbarleft-a-tags {
+        color: white;
+        text-decoration: none;
+        font-size: 1.6vw;
+        padding-bottom: 5vw;
+        display: flex;
+        font-family: 'Lato',sans-serif;
+    }
+
+    .Navbarleft-a-tags:hover {
+        text-decoration: none;
+        color: white;
+        font-size: 2.8vw;
+        font-weight: 700;
+        display: flex;
+    }
+
+    .navbarleft-home {
+        padding: 5vw 0vw 0vw 7.5vw;
+        justify-content: space-between;
+        width: 20vw;
+    }
+
+    .background9th {
+        animation: moveBg 15s linear infinite;
+        z-index: -1;
+        height: 8vh;
+    }
+    .movingimg{
+        width: 420vw;
+        margin-top: 2vw;
+    }
+
+    @keyframes moveBg {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media screen and (min-width:561px) {
+        .home-sec{
+        overflow-x: hidden; 
+        background: url('static/home/assets/img/home-bg.png'); 
+        background-size: 100vw;
+    }    
+    .mobile-rlog{
+        display: none;
+    }
+    #ric-title-mobile{
+        display: none;
+    }
+    }
+    @media screen and (max-width:560px) {
+        .home-sec{
+            background-color: #013a67;
+        }
+        .rlog{
+            display: none;
+        }
+        .mobile-rlog{
+            position: absolute;
+            z-index: 99;
+            width: 81vw;
+            margin-top: -6vw;
+            margin-left: -4vw;
+        }
+        #ric-title{
+            display: none;
+        }
+        .about-text{
+            display: none;
+        }
+        .about-side{
+            display: none;
+            z-index: -99;
+        }
+        #ric-title-mobile{
+            right: 0;
+            width: 28vw;
+            position: absolute;
+            margin-top: 10vw;
+        }
+        .home-container{
+            margin-left: 8.5vw;
+            padding-top:3vw;
+            width: 70vw;
+            height: 78vw;
+        }
+        .countdown-title-line{
+            width: 6vw;
+            margin-bottom: 3vw;
+        }
+        .home-intro{
+            font-size: 3vw;
+            font-family: 'Lato',sans-serif;
+            line-height: 4vw;
+        }
+        .countdown-title{
+            font-size: 3vw;
+        }
+        .countdown-time{
+            margin-bottom: 3vw;
+        }
+        #about{
+            background-image: url('static/home/assets/img/about-bg-mobile.png');
+            background-size: 100vw 109vw;
+        }
+        .about-sec{
+            margin-left: 0vw 10vw;
+        }
+        #about-vid{
+            width: 80vw;
+            margin-top: 35vw;
+        }
         .about-image{
             display: none;
         }
         .background9th{
-            height: 4.8vh;
+            height: 9.8vw;
         }
         .movingimg{
             width: 700vw;
         }
+    }
+    @media screen and (max-width:451px) {
+        .mobile-rlog{
+            width: 80vw;
+        }
+    }
+    @media screen and (max-width:386px) {
+        .mobile-rlog{
+            width: 79vw;
+        }
+    }
+    @media screen and (max-width:330px) {
+        .mobile-rlog{
+            width: 78vw;
+        }
+    }
+    @media screen and (max-width:300px) {
+        .mobile-rlog{
+            width: 77vw;
+        }
+    }
+    @media screen and (max-width:269px) {
+        .mobile-rlog{
+            width: 76vw;
+        }
+    }
+
+
+    /* Events */
+    .scrolling-section {
+        position: relative;
+        width: 71%;
+        height: 33vw;
+        margin: 0vh 20vw;
+        /* overflow-y: scroll; */
+        background: url('static/home/assets/img/yellowcard-events.png');
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .cards {
+        overflow-y: scroll;
+    }
+
+    .cards::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+
+    .card {
+        width: 31vw;
+        padding-left: 3.3vw;
+        padding-right: 0vw;
+        margin: 0.5vw 0;
+        transition: transform 0.3s;
+    }
+
+    .card-right-align {
+        margin-left: 6vw;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .icon-sidenavbar {
+        /* position: fixed; */
+        width: 3vw;
+        padding-bottom: 10vh;
     }
 
 
@@ -966,6 +1070,7 @@
     }
 
     .gallery-sec{
+        position: relative;
         margin-left: 25vw;
     }
     .galleryim4{
@@ -979,6 +1084,7 @@
     .galleryim3{
         padding-bottom: 1vw; 
         width: 33vw;
+        z-index: 2;
     }
     .galleryim2{
         width: 24vw;
@@ -989,6 +1095,7 @@
         z-index: -1;
         margin-left: 7vw; 
         margin-top: -3vw;
+        z-index: 1;
     }
     .gallery-bluecard{
         position: absolute;
@@ -1079,6 +1186,7 @@
             margin-left: 12vw;
             margin-top: -9vw;
             width: 36vw;
+            z-index: 2;
         }
         .g-bluecardmob{
             position: absolute;
@@ -1102,9 +1210,15 @@
         margin-top: -0.5vw;
         width: 12vw;
     }
+    .view-btn-text{
+        position: absolute; 
+        margin-top: 1.6vw;
+        margin-left: 2vw;
+        width: 8vw;
+    }
     .g-y-l1{
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         width: 12vw;
         margin-top: 8vw;
         margin-left: 12vw;
@@ -1124,7 +1238,57 @@
             margin-top: 14.5vw;
             width: 22vw;
         }
+        .view-btn{
+            margin-top: 6vw;
+            margin-left: 26vw;
+            width: 20vw;
+        }
+        .view-btn-text{
+            margin-top: 2.4vw;
+            width: 14vw;
+            margin-left: 2.1vw;
+        }
     }
+
+    .sticky-sidebar {
+  position: absolute;
+  top: 110px;
+  left: 8vw;
+  flex-direction: column;
+  /* width: 180px; */
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: white; */
+  /* transition: position 0.3s ease, top 0.3s ease; Smooth transition for position changes */
+}
+
+.sticky-sidebar img {
+  width: 2vw;
+  height: auto;
+  transition: width 0.3s ease, height 0.3s ease;
+  margin-top: 50px;
+}
+
+.fixed {
+  position: fixed;
+  top:0px;
+}
+
+@media screen and (max-width:767px) {
+    .sticky-sidebar {
+        display: none;
+    }
+}
+    
+
+
+        .stop-position {
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+        }
     
 </style>
 {% endblock css %}
@@ -1270,19 +1434,19 @@
 
                     <div class="countdown">
                         <div>
-                            <p class="countdown-title">DAYS</p>
+                            <div class="countdown-title">DAYS</div>
                             <div class="countdown-title-line"></div>
-                            <p class="countdown-time" id="days"></p>
+                            <div class="countdown-time" id="days"></div>
                         </div>
                         <div>
-                            <p class="countdown-title">HRS</p>
+                            <div class="countdown-title">HRS</div>
                             <div class="countdown-title-line"></div>
-                            <p class="countdown-time" id="hours"></p>
+                            <div class="countdown-time" id="hours"></div>
                         </div>
                         <div>
-                            <p class="countdown-title">MIN</p>
+                            <div class="countdown-title">MIN</div>
                             <div class="countdown-title-line"></div>
-                            <p class="countdown-time" id="minutes"></p>
+                            <div class="countdown-time" id="minutes"></div>
                         </div>
                     </div>
 
@@ -1296,11 +1460,11 @@
 
                     <!-- <h3 class="title"> <span style="color: rgb(240, 75, 75);"> Research </span> <span style="font-size: 50%;">&</span> <br> <span style="color: #e8a125;">Industrial Conclave </span></h3> -->
                     <!-- <h4 style="color: white; padding-left: 65%; font-size:150%;">Integration 2024</h4><br> -->
-                    <p class="home-intro"  >Research and Industrial
+                    <div class="home-intro"  >Research and Industrial
                         Conclave-Integration'24 is
                         the flagship event of IIT Guwahati jointly organized by Students' Academic Board and
                         IIT Guwahati Research Park
-                    </p>
+                    </div>
 
                     <!-- <h3 class="location"><i class="fa fa-map-marker"></i> Indian Institute of Technology Guwahati -->
                     <!-- </h3> -->
@@ -1310,13 +1474,14 @@
                                         <a class="lgx-btn lgx-btn-red" href="#">Buy Ticket</a>
                                         <a class="lgx-btn lgx-btn-yellow" href="#">Registration</a-->
                     <img class="rlog" src="{%static 'home/assets/img/rlog.png'%}" alt="riclog">
-
+                    <img class="mobile-rlog" src="{%static 'home/assets/img/mobile-rlog.png'%}" alt="riclog">
 
                 </div>
             </div>
             <div>
                 <img id="ric-title" src="{% static 'home/assets/img/RICTITLE.png' %}" alt="ric title"
                     style="margin-left: 5vw; width: 27.5vw;">
+                <img id="ric-title-mobile" src="{% static 'home/assets/img/rictitle-mobile.png' %}" alt="ric title mobile">
             </div>
         </div>
         <div class="movingimg">
@@ -1361,7 +1526,10 @@
     // Initial call to start the countdown
     updateCountdown();
 </script>
-{% endblock banner %} {% block about %}
+{% endblock banner %}
+
+
+{% block about %}
 
 <section>
 
@@ -1376,15 +1544,28 @@
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-gallery.png' %}">
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
             </div> -->
+
+            <div id="sticky-sidebar" class="sticky-sidebar">
+                <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/about_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sidebar Icons" >
+                <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Sidebar Icons" >
+            </div>
+            
             <div class="about-sec">
-                <div class="about-image" onclick=pauseVideo()>
-                    <img src=" {%static 'home/assets/img/about.png' %} " alt="">
+                <img src="{%static 'home/assets/img/about-title-mobile.png' %}" style="position: absolute;width: 30vw; margin-left: 39vw;margin-top: 27vw;"> 
+                <div class="about-image">
+                    <img src="{%static 'home/assets/img/about.png' %} " alt="">
                 </div>
                 <div class="about-video">
                     <div class="about-text" onclick="toggleDivs();playVideo()">
                         <h1>ABOUT</h1>
                         <div class="about_content">
-                            <p style="font-size: 1.2vw">
+                            <div>
                                 The first ever industrial conclave of its own kind to enhance industry-academia collaboration is
                                 organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds
                                 towards
@@ -1393,15 +1574,15 @@
                                 Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) -
                                 INTEGRATION 2024.
                                 It is aimed at providing an exclusive platform for students, young
-                                innovators, entrepreneurs, industry.
-                            </p>
+                                innovators, entrepreneurs, industry
+                            </div>
                         </div>
                     </div>
                     <div class="about-side" onclick="toggleDivs();pauseVideo() ">
                         <img src=" {% static  'home/assets/img/about_side.png' %}" alt="">
                     </div>
             
-                    <video id="about-vid" controls autoplay loop muted>
+                    <video id="about-vid" controls autoplay loop muted style="z-index: 1;">
                         <source src="{%static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
                     </video>
             
@@ -1513,7 +1694,7 @@
 
                         <!--<li><div class="res-announcement">-->
                         <!--    <div class="iconArea"><p><i class="material-icons md-24 md-light">emoji_events</i></p></div>-->
-                        <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div>-->
+                        <!-- <div class="copyArea"><a href="{% static 'home/assets/pdf/Dsinoquation.pdf' %}">Pre-RIC 2024 D'Sino and IB Result</a></div> -->
                         <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics67.pdf' %}">Pre-RIC 2024 Math Olympics class 6th and 7th</a></div>-->
                         <!--    <div class="copyArea"><a href="{% static 'home/assets/pdf/matholympics89.pdf' %}">Pre-RIC 2024 Math Olympics class 8th, 9th and 10th</a></div>-->
                         <!--</div></li>-->
@@ -1544,7 +1725,7 @@
 
 {% block event %}
 <section>
-    <div id="events">
+    <div id="events" style="background-color: #fefbef;">
         <div class="lgx-inner-bg">
             <div class="lgx-inner">
                 <!-- <div class="container"> -->
@@ -1655,6 +1836,7 @@
 {% endblock event %}
 
 {% block gallery %}
+
 <section class="gallery-sec" style="margin-bottom: 4vw;">
     <div class="gallery-section" style="display: flex; flex-direction: row;">
         <div style="display: flex;flex-direction: column;">
@@ -1664,6 +1846,8 @@
             <img src="{% static 'home/assets/img/g-y-l1.png' %}" class="g-y-l1">
             <img src="{%static 'home/assets/img/galleryim1.png' %}" class="galleryim1">
         </div>
+
+       
         <div class="g-div2">
             <img src="{%static 'home/assets/img/gallery-yellowcard.png' %}" class="gallery-yellowcard">
             <img class="g-title-mob" src="{%static 'home/assets/img/gallery-title-mob.png' %}">
@@ -1674,17 +1858,23 @@
             <div class="view-btn" >
                 <img src="{%static 'home/assets/img/g-viewblue.png' %}"  style="position: absolute;"> 
                 <img src="{%static 'home/assets/img/g-viewline.png' %}" style="position: absolute; margin-top: 0.4vw;margin-left: 0.2vw;"> 
-                <img src="{%static 'home/assets/img/g-view.png' %}" style="position: absolute; margin-top: 1.6vw;margin-left: 2vw;width: 8vw;"> 
+                <img src="{%static 'home/assets/img/g-view.png' %}" class="view-btn-text" > 
             </div>
         </div>
         <div>
             <img src="{%static 'home/assets/img/gallery-bluecard.png' %}" class="gallery-bluecard">
             <p class="gallery-qoute" style="width: 0vw; position: absolute;">jbjdjhabebkewbkjeberbferfeisbnhdcbshjbcjh</p>
         </div>
+
+        
         <div>
             <img class="gallery-title" src="{%static 'home/assets/img/gallery-title.png' %}">
             
         </div>
+
+        <section id="target-section" style="height:0px;">
+                                
+        </section>
     </div>
 </section>
 {% endblock gallery %}

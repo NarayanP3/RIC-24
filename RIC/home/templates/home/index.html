@@ -1304,7 +1304,7 @@
                 <div style="display: flex; flex-direction: column; ">
                     <a href="{% url 'home:home' %}" class="Navbarleft-a-tags home-h"
                         style="font-size: 2.8vw;font-weight: 700;display: flex;">
-                        <div class="verline"
+                        <div class="verline hidden"
                             style="position: absolute; width:2.5px; height: 7.5vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.3vh; margin-left: -0.8vh;">
                         </div>
                         HOME
@@ -1354,40 +1354,36 @@
                 </div>
 
                 <script>
-
                     function showVerticalLine(element) {
                         var verticalLine = element.querySelector('.verline');
                         if (verticalLine) {
                             verticalLine.classList.remove('hidden');
                         }
-                        var homeTab = document.querySelector('.navbarleft-home .home-home');
+                        var homeTab = document.querySelector('.navbarleft-home .home-h');
                         if (homeTab && homeTab !== element) {
                             homeTab.style.fontSize = '1.5vw';
-                        }
-                        var verline = document.querySelector('.navbarleft-home .home-home .verline');
-                        if (verline) {
-                            verline.classList.add('hidden');
+                            var homeVerticalLine = homeTab.querySelector('.verline');
+                            if (homeVerticalLine) {
+                                homeVerticalLine.classList.add('hidden');
+                            }
                         }
                     }
-
+            
                     function hideVerticalLine(element) {
                         var verticalLine = element.querySelector('.verline');
                         if (verticalLine) {
                             verticalLine.classList.add('hidden');
                         }
-                        var homeTab = document.querySelector('.navbarleft-home .home-home');
+                        var homeTab = document.querySelector('.navbarleft-home .home-h');
                         if (homeTab && homeTab !== element) {
-                            homeTab.style.fontSize = '2.7vw';
-                        }
-                        var verline = document.querySelector('.navbarleft-home .home-home .verline');
-                        if (verline) {
-                            verline.classList.remove('hidden');
+                            homeTab.style.fontSize = '2.8vw';
+                            var homeVerticalLine = homeTab.querySelector('.verline');
+                            if (homeVerticalLine) {
+                                homeVerticalLine.classList.remove('hidden');
+                            }
                         }
                     }
-
-
                 </script>
-
 
             </navbarleft>
             <!-- <div class="band1" align="center"><marquee behavior="scroll" scrollamount="15" onMouseOver="this.stop();"

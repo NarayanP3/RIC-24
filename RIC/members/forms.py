@@ -67,9 +67,10 @@ class RICForm(forms.ModelForm):
 
     abstract = CKEditor5Field(default=default_abstract, config_name='extends')
 
+
     class Meta:
         model = RICEvent
-        fields = ("name" ,"institute", "dept","title", "iitg_student", "theme", "role", "abstract", "event", "number")
+        fields = ("institute", "dept","title", "iitg_student", "theme", "role", "abstract", "event","number")
         labels = {
             "institute": "Please Enter your institute (Note: Please Enter Your institute name in Block Letters) *",
             "dept": "Please Select your related Department *",

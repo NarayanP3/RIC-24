@@ -688,21 +688,27 @@ def closed_view(request):
     # def get_success_url(self):
     #     return reverse('members:all')
 
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.urls import reverse
+from django.views.generic import CreateView
+from .models import RICEvent
+from .forms import RICForm
 
-class ProfileRICCreateView(LoginRequiredMixin,CreateView):
+class ProfileRICCreateView(LoginRequiredMixin, CreateView):
     login_required = True
     form_class = RICForm
     template_name = 'members/profile_create.html'
 
-
-    def get_context_data(self,*args, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         form = RICForm()
         form.instance.owner = self.request.user
         title = "Research Events"
-        context = {}
-        context = {'title':title,'form':form,}
+        context = {'title': title, 'form': form}
         return context
-
 
     def get_success_url(self):
         return reverse('members:all')
@@ -712,29 +718,39 @@ class ProfileRICCreateView(LoginRequiredMixin,CreateView):
         pic = form.save(commit=False)
         pic.save()
 
-        temp=0
-
-
-
         selected_event = form.cleaned_data['event']
-        if form.instance.role == "Student":
-            temp = selected_event.fee
-        elif form.instance.role == "Academician":
-            temp = 3 * selected_event.fee
-        elif form.instance.role == "Industry Expert":
-            temp = 6 * selected_event.fee
-        else:
-            temp = 6 * selected_event.fee
+        event = get_object_or_404(Event1, id=selected_event.id)
 
-        print(temp)
+        if form.instance.role == "Student":
+            temp = event.fee_student
+        elif form.instance.role == "Academician":
+            temp = event.fee_academician
+        elif form.instance.role == "Industry Expert":
+            temp = event.fee_industry_expert
+        else:
+            temp = event.fee_others
+
         form.instance.total = temp
+
+        # Get presenters data from form and save it
+        presenters = []
+        for i in range(1, 4):  # Assuming maximum 3 presenters
+            name = self.request.POST.get(f'presenter_name_{i}')
+            email = self.request.POST.get(f'presenter_email_{i}')
+            if name and email:
+                presenters.append({'name': name, 'email': email})
+        form.instance.presenters_list = presenters
+
+        form.instance.name = self.request.user.get_full_name()
+        form.instance.email = self.request.user.email
         form.save()
 
         user = self.request.user
         email = user.email
         username = user.username
         events = form.instance.event
-        context = {'username': username,'email': email,'events':events}
+
+        context = {'name': user.get_full_name(), 'email': email, 'events': events, 'title': form.instance.title, 'unique_id': form.instance.unique_id, 'theme': form.instance.theme}
 
         user.save()
         html_template = 'mail_ric.html'
@@ -742,12 +758,9 @@ class ProfileRICCreateView(LoginRequiredMixin,CreateView):
         subject = 'Welcome to RIC 2024'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
-        message = EmailMessage(subject, html_message,
-                                email_from, recipient_list)
+        message = EmailMessage(subject, html_message, email_from, recipient_list)
         message.content_subtype = 'html'
         message.send()
-        # return redirect("members:mail")
-
 
         return super().form_valid(form)
 

@@ -10,5 +10,4 @@ urlpatterns = [
     path('speaker/', views.DeptSpeakerListView.as_view(),name='speakerlist'),
     path('speaker/<int:pk>', views.SpeakerDetailView.as_view(),name='speakerdetail'),
     path('deptspeaker/<int:pk>', views.DeptSpeakerDetailView.as_view(),name='deptspeakerdetail'),
-
 ]

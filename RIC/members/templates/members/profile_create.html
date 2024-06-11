@@ -4,7 +4,6 @@
 
 {% load static %}
 
-
 {% block banner %}
 
 <style>
@@ -21,7 +20,7 @@
       <div class="lgx-inner lgx-inner-fixed">
         <div class="container">
           <div class="row">
-            <h1>{{title}} Registration Form</h1>
+            <h1>{{ title }} Registration Form</h1>
           </div>
         </div>
       </div>
@@ -34,6 +33,7 @@
   </div>
 </section>
 {% endblock banner %}
+
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
@@ -42,24 +42,61 @@
                 <div class="card-header">{{ title }} Registration Form : {{ TINYMCE_JS_URL }}</div>
 
                 <div class="card-body">
-                  <form method="POST" action="{% url 'members:create' %}" enctype="multipart/form-data">
-                      {% csrf_token %}
-                      {{ form.media }}
-                      {% bootstrap_form form %}
+                    <form method="POST" action="{% url 'members:create' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {% bootstrap_form form %}
+                        
+                        <div class="row ">
+                          <div class="form-group col">
+                              <label for="presenterName">Presenter Name:</label>
+                              <input type="text" class="form-control" id="presenterName" name="presenter_name_1">
+                          </div>
+                          <div class="form-group col">
+                              <label for="presenterEmail">Presenter Email:</label>
+                              <input type="email" class="form-control" id="presenterEmail" name="presenter_email_1">
+                          </div>
+                          <button type="button" class="btn btn-primary col" id="addPresenterBtn">Add Presenter</button>
 
-
-
-                      {% comment %} {% for field in form %}
-                        <div class="form-group">
-                            <div><label for="{{ field.id_for_label }}" class="text-dark">{{ field.label }}: </label></div>
-                            {{ field }}
                         </div>
-                      {% endfor %} {% endcomment %}
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-              </div>
+                    </form>
+                    <div id="successBanner" class="alert alert-success" style="display: none;"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        // Add Presenter Button Click Event
+        $('#addPresenterBtn').click(function() {
+            var name = $('#presenterName').val();
+            var email = $('#presenterEmail').val();
+
+            // AJAX to add presenter
+            $.ajax({
+                url: "{% url 'members:create' %}",  // Update URL to match your view
+                type: "POST",
+                data: {
+                    'presenter_name_1': name,
+                    'presenter_email_1': email,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(data) {
+                    $('#successBanner').text(email + ' has been added.').show();
+                    $('#successBanner').append('<button type="button" class="btn btn-danger" id="deletePresenterBtn">Delete Presenter</button>');
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+
+        // Delete Presenter Button Click Event
+        $(document).on('click', '#deletePresenterBtn', function() {
+            // AJAX to delete presenter
+            
+        });
+    });
+</script>
 {% endblock content %}

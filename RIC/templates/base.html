@@ -1045,6 +1045,7 @@
                         </section> -->
 
         <!--Registration end-->
+        {% block speakers %} {% endblock speakers %}
         {% block gallery %} {% endblock gallery %}
         {% block sponsor %} {% endblock sponsor %}
 
@@ -1388,6 +1389,48 @@
         window.addEventListener('scroll', handleScroll);
     });
 </script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        var htmlCollection = document.getElementsByClassName('speaker');
+        var itemsId = Array.from(htmlCollection);
+        var sectionDeg = 360 / itemsId.length;
+        var radianSectionDeg = sectionDeg * Math.PI * 2 / 360;
+        var radiusLength = 280; // Adjusted radius length to fit within the container
+    
+        for (var i = 0; i < itemsId.length; i++) {
+            itemsId[i].style.top = radiusLength * Math.sin(radianSectionDeg * i - 1.5708) + 'px';
+            itemsId[i].style.left = radiusLength * Math.cos(radianSectionDeg * i - 1.5708) + 'px';
+        }
+    
+        var rotation = 0;
+        var center = document.getElementById('center');
+        var isRotating = false;
+        var rotationFactor = 0.001; // Adjust this value to reduce the degree of rotation
+    
+        function rotateElements(event) {
+            if (isRotating) {
+                event.preventDefault(); // Prevent page from scrolling
+                rotation += event.deltaY * rotationFactor;
+                center.style.transform = 'rotate(' + rotation + 'rad)';
+                for (var i = 0; i < itemsId.length; i++) {
+                    itemsId[i].style.transform = 'rotate(' + (-rotation) + 'rad)';
+                }
+            }
+        }
+    
+        center.addEventListener('mouseenter', () => {
+            isRotating = true;
+            document.addEventListener('wheel', rotateElements, { passive: false });
+        });
+    
+        center.addEventListener('mouseleave', () => {
+            isRotating = false;
+            document.removeEventListener('wheel', rotateElements);
+        });
+    });   
+    </script>
 
 
 

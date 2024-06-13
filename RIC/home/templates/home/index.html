@@ -1289,6 +1289,61 @@
             top: 0px;
             bottom: 0;
         }
+
+
+        .container {
+    position: relative;
+    width: 600px; /* Increase the size */
+    height: 600px; /* Increase the size */
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('static/home/assets/img/speakers background.png') no-repeat center center/cover;
+    border-radius: 50%;
+}
+
+.circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speaker {
+    width: 120px; /* Increase the size */
+    height: 120px; /* Increase the size */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.speaker:nth-child(1) { transform: rotate(0deg) translate(225px) rotate(0deg); } 
+.speaker:nth-child(2) { transform: rotate(90deg) translate(225px) rotate(-90deg); }
+.speaker:nth-child(3) { transform: rotate(180deg) translate(225px) rotate(-180deg); }
+.speaker:nth-child(4) { transform: rotate(270deg) translate(225px) rotate(-270deg); } 
+/* .speaker:nth-child(5) { transform: rotate(270deg) translate(225px) rotate(-270deg); } 
+.speaker:nth-child(6) { transform: rotate(270deg) translate(225px) rotate(-270deg); }  */
+
+#rotatable-component {
+    width: 800px; 
+    height: 800px; 
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: 600px; 
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center;
+}
     
 </style>
 {% endblock css %}
@@ -1830,6 +1885,23 @@
 
 </section>
 {% endblock event %}
+
+
+{% block speakers %}
+<div id="rotatable-component">
+    <div class="container" id="center">
+        <div class="background"></div>
+        <div class="circle">
+            <div class="speaker" style="background-image: url('static/home/assets/img/speaker.png');"></div>
+            <div class="speaker" style="background-image: url('static/home/assets/img/speaker.png');"></div>
+            <div class="speaker" style="background-image: url('static/home/assets/img/speaker.png');"></div>
+            <div class="speaker" style="background-image: url('static/home/assets/img/speaker.png');"></div>
+    
+        </div>
+    </div>
+</div>
+{% endblock speakers %}
+
 
 {% block gallery %}
 

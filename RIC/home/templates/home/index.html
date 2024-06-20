@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% block css %}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lomon+Milk&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
 <style>
     @import "compass/css3";
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -170,6 +171,7 @@
         font-family: 'Lato',sans-serif;
         font-weight:100;
         font-size: 1.3vw;
+        line-height: 2vw;
     }
 
     .countdown{
@@ -187,7 +189,7 @@
         background-color: yellow;
         height: 0.4vh;
         border-radius: 70vw;
-        margin-top: -0.5vh;
+        /* margin-top: -0.5vh; */
         margin-bottom: 4vh;
     }
 
@@ -245,30 +247,39 @@
         /* height: 70vh; */
         height: auto;
         object-fit: cover;
+        z-index: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .about-video.video-fade {
+        opacity: 0.5;
     }
 
     .about-text {
-        z-index: -1;
+        z-index: 5;
         position: absolute;
         max-width: 50vw;
         height: 39.34vw;
         background-image: url('static/home/assets/img/side_bar.png');
         background-size: 50.3vw 40vw;
-        /* display: none; */
         cursor: pointer;
-        transform: translateX(100%);
-        transition: transform 2s ease, z-index 2s;
-
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
+
+    .about-text.visible {
+        display: block;
+        opacity: 1;
+    }
+
 
     .about-side {
         z-index: 4;
         position: absolute;
-
         height: 70vh;
-        display: none;
+        /* display: none; */
         cursor: pointer;
-
+        margin-right: -1vw;
     }
 
     .about-side img {
@@ -319,9 +330,28 @@
     .rlog{
         position: absolute; 
         margin-left: -7vw; 
-        margin-top: -6vh; 
-        width: 54.5vw; 
+        margin-top: -3vw; 
+        width: 54vw; 
         z-index: 1;
+    }
+    .background9th {
+        animation: moveBg 15s linear infinite;
+        z-index: -1;
+        height: 8vh;
+    }
+    .movingimg{
+        width: 420vw;
+        margin-top: 2vw;
+    }
+
+    @keyframes moveBg {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
     }
 
     @media (max-width: 1200px) {
@@ -334,10 +364,34 @@
             font-size: 40px;
         }
         .rlog{
-            width: 55.5vw;
+            width: 50vw;
+        }
+        /* .home-intro{
+            line-height: 2.5vw;
+        } */
+        .background9th{
+            height: 8vw;
+        }
+        .countdown-time{
+            font-size: 8vw;
+        }
+        .countdown-title-line{
+            margin-bottom: 4vw;
+        }
+        .home-intro{
+            margin-top: 4vw;
+            font-size: 1.9vw;
+            line-height: 2.4vw;
+        }
+        .home-container{
+            width: 39vw;
         }
     }
-
+    @media (max-width: 1030px) {
+        .rlog{
+            width: 52vw;
+        }
+    }
     @media (max-width: 880px) {
         .about_content {
             font-size: 1.4vw;
@@ -349,7 +403,7 @@
             margin-top: 4vw;
         }
         .rlog{
-            width: 57vw;
+            width: 53vw;
         }
     }
 
@@ -372,8 +426,8 @@
         }
         .rlog{
             margin-left: 4vw;
-            margin-top: -5vh;
-            width: 57vw;
+            margin-top: -4vw;
+            width: 59vw;
         }
         .countdown{
             gap:6vw;
@@ -390,18 +444,13 @@
         .about-side img{
             height: 45vw;
         }
-        .about-text{
+        /* .about-text{
             max-width: 50vw;
             height: 45.7vw;
             background-size: 50.3vw 45.7vw;
-        }
+        } */
         .about-image{
             margin-left: -14.5vw;
-        }
-    }
-    @media screen and (max-width:667px) {
-        .rlog{
-            width: 55vw;
         }
     }
 
@@ -429,27 +478,8 @@
         width: 20vw;
     }
 
-    .background9th {
-        animation: moveBg 15s linear infinite;
-        z-index: -1;
-        height: 8vh;
-    }
-    .movingimg{
-        width: 420vw;
-        margin-top: 2vw;
-    }
 
-    @keyframes moveBg {
-        from {
-            transform: translateX(0);
-        }
-
-        to {
-            transform: translateX(-50%);
-        }
-    }
-
-    @media screen and (min-width:561px) {
+    @media screen and (min-width:767px) {
         .home-sec{
         overflow-x: hidden; 
         background: url('static/home/assets/img/home-bg.png'); 
@@ -462,7 +492,7 @@
         display: none;
     }
     }
-    @media screen and (max-width:560px) {
+    @media screen and (max-width:767px) {
         .home-sec{
             background-color: #013a67;
         }
@@ -593,10 +623,10 @@
     .card-right-align {
         margin-left: 6vw;
     }
-
+/* 
     .card:hover {
         transform: scale(1.05);
-    }
+    } */
 
     .icon-sidenavbar {
         /* position: fixed; */
@@ -1004,13 +1034,13 @@
     }
 
     /* Gallery */
-    .gallery {
+    /* .gallery {
         padding-top: 80px;
         width: 80vw;
         margin: auto;
-        /* background-color: white; */
+        background-color: white;
         color: black;
-    }
+    } */
 
     .grid {
         display: grid;
@@ -1059,9 +1089,9 @@
             max-height: 300px;
         }
 
-        .gallery {
+        /* .gallery {
             padding: 20px;
-        }
+        } */
     }
 
     .show-more {
@@ -1141,7 +1171,8 @@
     }
     @media screen and (max-width: 767px) {
         .gallery-sec{
-            margin-left: 7vw;
+            margin-left: 6vw;
+            margin-top: 33vw;
         }
         .galleryim4{
             width: 31vw;
@@ -1250,32 +1281,29 @@
         }
     }
 
-    .sticky-sidebar {
-  position: absolute;
-  top: 110px;
-  left: 8vw;
-  flex-direction: column;
-  /* width: 180px; */
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  /* background-color: white; */
-  /* transition: position 0.3s ease, top 0.3s ease; Smooth transition for position changes */
-}
-
-.sticky-sidebar img {
-  width: 2vw;
-  height: auto;
-  transition: width 0.3s ease, height 0.3s ease;
-  margin-top: 50px;
-}
-
-.fixed {
-  position: fixed;
-  top:0px;
-}
-
+        .sticky-sidebar {
+            position: fixed;
+            left: 7vw;
+            flex-direction: column;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* background-color: #f8f9fa; */
+            /* border-right: 1px solid #dee2e6; */
+            padding: 10px;
+        }
+        .sticky-sidebar img {
+            width: 3vw;
+            height: auto;
+            transition: width 0.3s ease, height 0.3s ease;
+            margin-top: 12vh;
+        }
+        .sticky-sidebar img:hover {
+            width: 4vw;
+            border-left: 1px solid blue;
+        }
+    
 @media screen and (max-width:767px) {
     .sticky-sidebar {
         display: none;
@@ -1289,22 +1317,270 @@
             top: 0px;
             bottom: 0;
         }
+
+    /* mobile-sticky-navbar */
+    @media screen and (min-width:767px) {
+        .home-sticky-navbar{
+            display: none;
+        }
+    }
+    .sticky-navbar {
+    background-color: #003057;
+    /* padding: 1vh 0; */
+    /* height: 10vh; */
+    /* margin: 5vh auto; */
+    border-radius: 1vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 84vw;
+    /* margin-left: 10vw; */
+}
+
+.sticky-navbar {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    white-space: nowrap;
+    /* padding: 10px 0; */
+}
+
+.sticky-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3vw;
+    padding: 3vw 3vw;
+    text-decoration: none;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+.sticky-nav-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: 1vw; */
+    padding: 3vw 3vw;
+    text-decoration: none;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.sticky-tab-content{
+    margin-top: 0.3vh;
+    font-size: 1.7vh;
+    font-family: 'Lato',sans-serif;
+}
+.sticky-navbar::-webkit-scrollbar {
+    display: none;
+}
+.sticky-nav-item img {
+    margin-bottom: 5px;
+    /* scale: 1.2; */
+    height: 2.7vh;
+}
+.sticky-nav-home img {
+    margin-bottom: 5px;
+    /* scale: 1.2; */
+    height: 2.7vh;
+}
+
+.sticky-scroll-btn {
+    background-color:#003057 ;
+    /* border: 1px solid transparent; */
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /
+}
+
+/* Events Mobile View */
+@media  screen and (max-width:767px) {
+    #events-pc{
+        display: none;
+    }
+}
+@media  screen and (min-width:767px) {
+    #events-mobile{
+        display: none;
+    }
+}
+#events-mobile{
+    margin-top: 24vw;
+    margin-bottom: -11vw;
+}
+.products-mobile{
+    /* z-index: -1; */
+    /* margin-top: 21vw; */
+    /* margin-bottom: 21vw; */
+    /* height: 100vh; */
+    /* width: 100vw; */
+    
+    border: 2px solid transparent;
+    overflow: hidden;
+    /* background-size: 80vw 80vw; */
+    /* background-size: contain; */
+    position: relative;
+    /* background: url('static/home/assets/img/events-mobile-bg.png') no-repeat center center ; */
+    /* background-size: 61vw 167vw; */
+    margin-top: 20vw;
+    /* padding-bottom: 15vw; */
+}
+.content-events-mobile::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for webkit browsers */
+        }
+.content-events-mobile{
+    height: 130vw;
+    width: 95vw;
+    /* margin-top:10vh; */
+    /* margin-bottom: 20vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.content-events-mobile img{
+    margin: 1vh;
+    width:83vw ;
+}
+.events-title {
+    transform: rotate(90deg);
+    display: inline;
+    margin: 0 59vw;
+    width: 7vw;
+    margin-bottom: -18vw;
+}
+
+.arrows {
+    display: inline;
+    /* justify-content: center; */
+    /* margin-top: 1vw; */
+    /* margin-bottom: 1vw; */
+}
+
+.up-arrow {
+    width: 16vw; /* Adjust the size as needed */
+    /* height: auto; */
+    /* margin: 0 1vw; */
+    margin-left: 28vw;
+    margin-bottom: -29vw;
+}
+
+.down-arrow {
+    width: 16vw;
+    margin-left: 28vw;
+}
     
 </style>
 {% endblock css %}
 
+{% block lines %}
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 20vw;z-index: 1;">
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 34vw;z-index: 1;">
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 57vw;z-index: 1;"> 
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 63vw;z-index: 1;"> 
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 81vw;z-index: 1;"> 
+{% endblock lines %}
 
 
 {% block banner %}
-<section id="home-home">
+<section id="home-home home">
     <div  class="home-sec">
         <div class="lgx-banner-style"></div>
+        <center style="padding-top: 3vw;" class="home-sticky-navbar">
+        <div class="sticky-navbar" style="position: relative; z-index: 9999;">
+            <button class="sticky-scroll-btn sticky-left-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="sticky-navbar" id="sticky-navbar">
+                <div class="sticky-nav-home">
+                    <a href="{% url 'home:home' %}" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Logo 1" style="display: block;">
+                        <span class="sticky-tab-content">Home</span>
+                    </a>
+                </div>
+                <div class="sticky-nav-item">
+                    <a href="{% url 'home:home' %}#about" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/about_icon.png' %}" alt="Logo 2" style="display: block;">
+                        <span class="sticky-tab-content">About</span>
+                    </a>
+                </div>
+                <!-- <div class="sticky-nav-item">
+                    <a style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Logo 3" style="display: block;">
+                        <span class="sticky-tab-content">Announcements</span>
+                    </a>
+                </div> -->
+                <div class="sticky-nav-item">
+                    <a href="{% url 'home:home' %}#events" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Logo 4" style="display: block;">
+                        <span class="sticky-tab-content">Events</span>
+                    </a>
+                </div>
+                <div class="sticky-nav-item">
+                    <a href="{% url 'event:speakerlist' %}#events" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Logo 5" style="display: block;">
+                        <span class="sticky-tab-content">Speakers</span>
+                    </a>
+                </div>
+                <div class="sticky-nav-item">
+                    <a href="{% url 'home:home' %}#Gallery" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Logo 6" style="display: block;">
+                        <span class="sticky-tab-content">Gallery</span>
+                    </a>
+                </div>
+                <div class="sticky-nav-item">
+                    <a href="{% url 'sponsor:all' %}" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Logo 7" style="display: block;">
+                        <span class="sticky-tab-content">Sponsors</span>
+                    </a>
+                </div>
+                <div class="sticky-nav-item">
+                    <a href="{% url 'home:home' %}#contact" style="text-decoration: none;">
+                        <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Logo 7" style="display: block;">
+                        <span class="sticky-tab-content">Contact Us</span>
+                    </a>
+                </div>
+            </div>
+            <button class="sticky-scroll-btn sticky-right-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </center>
+        <script >
+            document.addEventListener('DOMContentLoaded', () => {
+                const navbar = document.getElementById('sticky-navbar');
+                const leftBtn = document.querySelector('.sticky-left-btn');
+                const rightBtn = document.querySelector('.sticky-right-btn');
+    
+                const scrollAmount = 100;
+    
+                leftBtn.addEventListener('click', () => {
+                    navbar.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+    
+                rightBtn.addEventListener('click', () => {
+                    navbar.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            });
+    
+        </script>
         <div class=" lgx-inner-fixed flex" style="display: flex;">
             <navbarleft class="navbarleft-home">
                 <div style="display: flex; flex-direction: column; ">
                     <a href="{% url 'home:home' %}" class="Navbarleft-a-tags home-h"
                         style="font-size: 2.8vw;font-weight: 700;display: flex;">
-                        <div class="verline hidden"
+                        <div class="verline "
                             style="position: absolute; width:2.5px; height: 7.5vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.3vh; margin-left: -0.8vh;">
                         </div>
                         HOME
@@ -1330,19 +1606,19 @@
                         </div>
                         SPEAKERS
                     </a>
-                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
+                    <a href="{% url 'home:home' %}#Gallery" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
                         onmouseout="hideVerticalLine(this)">
                         <div class="verline hidden"
                             style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
                         </div>
                         GALLERY
                     </a>
-                    <a href="{% url 'home:gallery' %}" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
+                    <a href="{% url 'schedule:all' %}" class="Navbarleft-a-tags" onmouseover="showVerticalLine(this)"
                         onmouseout="hideVerticalLine(this)">
                         <div class="verline hidden"
                             style="width:4px; height: 7.3vh ; background-color: #ffc812; border-radius: 50vw; margin-top: -2.4vh; margin-right: 0.5vh;">
                         </div>
-                        SPONSORS
+                        SCHEDULE   <!-- In place of sponsor -->
                     </a>
                     <a href="{% url 'home:home' %}#contact" class="Navbarleft-a-tags "
                         onmouseover="showVerticalLine(this)" onmouseout="hideVerticalLine(this)">
@@ -1527,7 +1803,7 @@
 
 {% block about %}
 
-<section>
+<section id="about-page">
 
     <div id="about">
         <div>
@@ -1542,85 +1818,97 @@
             </div> -->
 
             <div id="sticky-sidebar" class="sticky-sidebar">
-                <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/about_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sidebar Icons" >
-                <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Sidebar Icons" >
+                <a href="{% url 'home:home' %}">
+                <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Home Sidebar Icons" data-section="home">
+                </a>
+                <a href="{% url 'home:home' %}#about">
+                <img src="{% static 'home/assets/img/about_icon.png' %}" alt="About Sidebar Icons" data-section="about-page">
+                </a>
+                <!-- <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons"> -->
+                <a href="{% url 'home:home' %}#events">
+                <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Events Sidebar Icons" data-section="events">
+                </a>
+                <!-- <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons"> -->
+                <a href="{% url 'home:home' %}#Gallery">
+                <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Gallery Sidebar Icons" data-section="Gallery">
+                </a>
+                <!-- <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sponsors Sidebar Icons"> -->
+                <a href="{% url 'home:home' %}#contact">
+                <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Contact Sidebar Icons" data-section="contact">
+                </a>
             </div>
-            
+
             <div class="about-sec">
-                <img src="{%static 'home/assets/img/about-title-mobile.png' %}" style="position: absolute;width: 30vw; margin-left: 39vw;margin-top: 27vw;"> 
+                <img src="{%static 'home/assets/img/about-title-mobile.png' %}"
+                    style="position: absolute;width: 30vw; margin-left: 39vw;margin-top: 27vw;">
                 <div class="about-image">
                     <img src="{%static 'home/assets/img/about.png' %} " alt="">
                 </div>
-                <div class="about-video">
-                    <div class="about-text" onclick="toggleDivs();playVideo()">
+                <div class="about-video" onclick="hideAboutText(event)">
+                    <div class="about-text" >
                         <h1>ABOUT</h1>
                         <div class="about_content">
                             <div>
-                                The first ever industrial conclave of its own kind to enhance industry-academia collaboration is
-                                organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young minds
-                                towards
-                                research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time, IIT
-                                Guwahati
-                                Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave (RIC) -
+                                The first ever industrial conclave of its own kind to enhance industry-academia
+                                collaboration is
+                                organized at IIT Guwahati. Since 2015, Research conclave is organized to nurture young
+                                minds towards
+                                research, innovation and entrepreneurship by Students’ Academic Board (SAB). This time,
+                                IIT Guwahati
+                                Research Park and SAB along with IITG-TIC institutes the Research & Industrial Conclave
+                                (RIC) -
                                 INTEGRATION 2024.
                                 It is aimed at providing an exclusive platform for students, young
                                 innovators, entrepreneurs, industry
                             </div>
                         </div>
                     </div>
-                    <div class="about-side" onclick="toggleDivs();pauseVideo() ">
-                        <img src=" {% static  'home/assets/img/about_side.png' %}" alt="">
+                    <div class="about-side" onclick="showAboutText(event)">
+                        <img src="{% static 'home/assets/img/about_side.png' %}" alt="">
                     </div>
-            
-                    <video id="about-vid" controls autoplay loop muted style="z-index: 1;">
-                        <source src="{%static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
+
+                    <video id="about-vid" controls autoplay loop muted>
+                        <source src="{% static 'home/assets/img/about_video.mp4' %}" type="video/mp4">
                     </video>
-            
                 </div>
             </div>
             <script>
-                function toggleDivs() {
-                    const div1 = document.querySelector('.about-text');
-                    const div2 = document.querySelector('.about-side');
+                function showAboutText(event) {
+                    event.stopPropagation();
+                    const aboutText = document.querySelector('.about-text');
+                    const aboutVideo = document.querySelector('#about-vid');
+                    const title = document.querySelector('.about-image');
 
-                    if (div1.style.transform === 'translateX(100%)') {
 
-                        div1.style.transform = 'translateX(0%)';
-                        div1.style.zIndex = '5';
-                        div2.style.zIndex = '-1';
-                    } else {
-                        div1.style.transform = 'translateX(100%)';
+                    aboutText.classList.add('visible');
+                    aboutVideo.classList.add('video-fade');
+                    title.style.zIndex = '-1';
+                    pauseVideo();
+                }
 
-                        div1.style.zIndex = '-1';
-                        div1.addEventListener('transitionend', () => {
-                            setTimeout(() => {
-                                div2.style.zIndex = '4';
-                            }, 2000);
-                        });
+                function hideAboutText(event) {
+                    if (!event.target.closest('.about-text')) {
+                        const aboutText = document.querySelector('.about-text');
+                        const aboutVideo = document.querySelector('#about-vid');
+                        const title = document.querySelector('.about-image');
+
+
+                        aboutText.classList.remove('visible');
+                        aboutVideo.classList.remove('video-fade');
+                        title.style.zIndex = '5';
+                        playVideo();
                     }
-                };
-
-
+                }
 
                 function pauseVideo() {
                     var video = document.querySelector("#about-vid");
                     video.pause();
-                };
+                }
+
                 function playVideo() {
-                    const div1 = document.querySelector('.about-text');
-                    div1.addEventListener('transitionend', () => {
-                        var video = document.querySelector("#about-vid");
-                        video.play();
-                    });
-                };
-
-
+                    var video = document.querySelector("#about-vid");
+                    video.play();
+                }
             </script>
         </div>
         <!-- <div>
@@ -1720,11 +2008,10 @@
 {% endblock about %}
 
 {% block event %}
-<section>
-    <div id="events-pc" style="background-color: #fefbef;">
+<section id="events">
+    <div id="events-pc">
         <div class="lgx-inner-bg">
             <div class="lgx-inner">
-                <p>sdkhjbchsb</p>
                 <!-- <div class="container"> -->
                 <!-- <div class="row"> -->
                 <!-- <div class="col-xs-12"> -->
@@ -1824,10 +2111,32 @@
         </div>
         <!--//row-->
     </div>
-    <!--//lgx-inner-->
-    <div class="mobile-events">
-         <!-- mobile events code  -->
+    <div id="events-mobile">
+        <div class="arrows">
+            <img src="{% static 'home/assets/img/uparrow-events.png'%}" alt="up arrow" class="up-arrow" style="display: block;">
+            <img src="{% static 'home/assets/img/uparrow-events.png'%}" alt="up arrow" class="up-arrow" style="margin-bottom: -31vw;">
+        </div>
+        <img src="{% static 'home/assets/img/EVENTS.png' %}" alt="event-title" class="events-title">
+        <img src="{%static 'home/assets/img/events-mobile-bg.png'%}" style="position: absolute; z-index: -1;width: 62vw;margin-left: 19vw;height: 169vw;">
+        <div class="products-mobile">
+            <div class="content-events-mobile">
+
+                {% for i in product_list %}
+                        <div >
+                            <a href="{% url 'event:detail' i.name|slugify %}">
+
+                                <img src="{{i.pic.url}}" alt="...">
+                            </a>
+                        </div>               
+                {% endfor %}
+            </div>
+        </div>
+        <div class="arrows">
+            <img src="{% static 'home/assets/img/downarrow-events.png'%}" alt="down arrow" class="down-arrow" style="display: block;margin-top: 13vw;">
+            <img src="{% static 'home/assets/img/downarrow-events.png'%}" alt="down arrow" class="down-arrow" style="margin-top: -4vw;">
+        </div>
     </div>
+    
 
 
 </section>
@@ -1835,7 +2144,7 @@
 
 {% block gallery %}
 
-<section class="gallery-sec" style="margin-bottom: 4vw;">
+<section id="Gallery" class="gallery-sec" style="margin-bottom: 4vw;">
     <div class="gallery-section" style="display: flex; flex-direction: row;">
         <div style="display: flex;flex-direction: column;">
             <div class="gallery-blueline1"></div>
@@ -1854,14 +2163,17 @@
             <img src="{% static 'home/assets/img/g-y-l2.png' %}" style="position: absolute;" class="g-y-l2">
             <div class="gallery-bllueline"></div>
             <div class="view-btn" >
+                <a href="{% url 'home:gallery' %}">
                 <img src="{%static 'home/assets/img/g-viewblue.png' %}"  style="position: absolute;"> 
                 <img src="{%static 'home/assets/img/g-viewline.png' %}" style="position: absolute; margin-top: 0.4vw;margin-left: 0.2vw;"> 
                 <img src="{%static 'home/assets/img/g-view.png' %}" class="view-btn-text" > 
+                </a>
             </div>
         </div>
         <div>
             <img src="{%static 'home/assets/img/gallery-bluecard.png' %}" class="gallery-bluecard">
-            <p class="gallery-qoute" style="width: 0vw; position: absolute;">jbjdjhabebkewbkjeberbferfeisbnhdcbshjbcjh</p>
+            <p class="gallery-qoute" style="font-size: 1.3vw; width: 12vw;margin-top: 8vw;margin-left: -7vw; position: absolute; color: #ffc812;font-family: 'Lato',sans-serif;">"
+            <span style="color: white;">Research is formalized curiosity. It is poking and prying with a purpose.</span>"</p>
         </div>
 
         
@@ -1917,43 +2229,43 @@
 
 
 
-<!--<section>-->
-<!--    <div id="lgx-sponsors" class="lgx-sponsors">-->
-<!--        <div class="lgx-inner-bg">-->
-<!--            <div class="lgx-inner">-->
-<!--                <div class="container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-xs-12">-->
-<!--                            <div class="lgx-heading">-->
-<!--                                <h2 class="heading">Partners</h2>-->
-<!--                                <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                            <div class="col-xs-12">-->
-<!--                                <div class="sponsors-area">-->
-<!--                                    {% for i in sponsor_list %}-->
-<!--                                    {% if i.cat.name == "Partners" %}-->
-<!--                                    <div class="single">-->
-<!--                                        <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>-->
-<!--                                        <div class="speaker-info">-->
-<!--                                            <h5 class="font-weight-bold mt-4 mb-3">-->
-<!--                                                 <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>-->
-<!--                                            </h5>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    {% endif %}-->
-<!--                                    {% endfor %}-->
-<!--                                </div>-->
-<!--                            </div>-->
+<!-- <section>
+   <div id="lgx-sponsors" class="lgx-sponsors">
+       <div class="lgx-inner-bg">
+           <div class="lgx-inner">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-xs-12">
+                           <div class="lgx-heading">
+                               <h2 class="heading">Partners</h2>
+                               <img src="{% static 'home/assets/img/rr.png' %}" class="left" width="50%" height="3">
+                           </div>
+                       </div>
+                           <div class="col-xs-12">
+                               <div class="sponsors-area">
+                                   {% for i in sponsor_list %}
+                                   {% if i.cat.name == "Partners" %}
+                                   <div class="single">
+                                       <a class="" href=""><img src="{{i.pic.url}}" style="border-radius: 50%; height: 25rem; width: 25rem; border: 2px solid black;" alt="events" /></a>
+                                       <div class="speaker-info">
+                                           <h5 class="font-weight-bold mt-4 mb-3">
+                                                <p class="text-uppercase"><strong>{{i.name}}<br></strong></p>
+                                           </h5>
+                                       </div>
+                                   </div>
+                                   {% endif %}
+                                   {% endfor %}
+                               </div>
+                           </div>
 
-<!--                        </div>-->
+                       </div>
 
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                       </div>
+                   </div>
+               </div>
 
-<!--            </div>-->
-<!--</section>-->
+           </div>
+</section> -->
 
 
 {% endblock sponsor %}

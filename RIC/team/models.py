@@ -36,8 +36,13 @@ class Team(models.Model):
     dept = models.ForeignKey(Dept, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     cat = models.ForeignKey(Cat, on_delete=models.CASCADE)
-    pic = models.ImageField(upload_to='team', height_field=None, width_field=None, max_length=None,default="")
+    pic = models.ImageField(upload_to='team', height_field=None, width_field=None, max_length=None,default="",null=True,blank=True)
 
 
     def __str__(self):
         return self.name
+    
+class FacultyAdvisor(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.EmailField(max_length=254,null=True,blank=True)
+    dept = models.CharField(max_length=50)

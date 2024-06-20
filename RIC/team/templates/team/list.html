@@ -161,8 +161,32 @@
       color: var(--clr-gray-med);
       font-size: 0.9rem;
     }
-</style>
+    .team-sec {
+    /* background: #64a0d9; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    /* width: 80vw; */
+    /* max-width: 800px; */
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
 
+
+.faculty-table {
+    width: 70%;
+    /* border-collapse: collapse; */
+    margin: 0 auto;
+}
+
+.faculty-table th, .faculty-table td {
+    border: 1px solid #948f8f;
+    padding: 8px;
+    text-align: left;
+}
+
+  
+</style>
 
 <section>
   <div class="lgx-banner lgx-banner-music">
@@ -302,43 +326,31 @@
         </div>
 
 
+      </section>
+    <section class="team-sec team-section text-center">
+      <center><b>
+          <h2><u>Faculty Committee</u></h2>
+        </b></center>
+      <br><br><br>
+      <table class="faculty-table" >
+        <thead>
+          <tr>
+            <th style="color: rgb(233, 45, 45);font-size: 20px;">Name</th>
+            <th style="color: rgb(233, 45, 45);font-size: 20px;">Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in team_list %}
+          {% if i.cat.name == "8" %}
+          <tr>
+            <td style="color: black;font-weight: 700;">{{ i.name }}</td>
+            <td style="color: black;font-weight: 700;">{{ i.dept }}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
     </section>
-<!--    <section class="team-section text-center" style="overflow-x: hidden;">-->
-
-<!--      <center><b>-->
-<!--          <h2><u>Student Committee</u></h2>-->
-<!--        </b></center>-->
-<!--      <br><br><br>-->
-
-<!--      <div class="wrapper" style="display: flex; flex-wrap: wrap; justify-content: space-around;">-->
-
-<!--        {% for i in team_list %}-->
-<!--            {% if i.cat.name == "5" %}-->
-<!--                <a class="card" href="">-->
-<!--                  <div class="card-banner">-->
-<!--                    <p class="category-tag popular">{{i.name}}</p>-->
-<!--                    <p class="category-tag-right technology">{{i.position}}</p>-->
-<!--                    <img class="banner-img" src='{{i.pic.url}}' alt='Speaker'>-->
-<!--                  </div>-->
-<!--                  <div class="card-body" >-->
-                    <!--<h2 class="blog-title">{{i.position}}</h2>-->
-                    <!--<p class="blog-description">Looking to upgrade your gear? Here is the list of the best photography tools for this year</p>-->
-<!--                    <div class="card-profile">-->
-<!--                      <img class="profile-img" src='{{i.pic.url}}' alt=''>-->
-<!--                      <div class="card-profile-info">-->
-<!--                        <h3 class="profile-name">{{i.name}}</h3>-->
-<!--                        <p class="profile-followers">{{i.position}}</p>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </a>-->
-<!--            {% endif %}-->
-
-
-<!--        {% endfor %}-->
-<!--    </div>-->
-
-<!--    </section>-->
 <!--    <section class="team-section text-center" style="overflow-x: hidden;">-->
 
 <!--      <center><b>-->

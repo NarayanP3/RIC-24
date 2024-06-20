@@ -633,11 +633,13 @@
     <!--    your browser</a> to improve your experience.</p>-->
     <!--<![endif]-->
 
-    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 20vw;z-index: 1;">
+    {% block lines %}{% endblock lines %}
+
+    <!-- <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 20vw;z-index: 1;">
     <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 34vw;z-index: 1;">
     <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 57vw;z-index: 1;"> 
     <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 63vw;z-index: 1;"> 
-    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 81vw;z-index: 1;"> 
+    <img src="{%static 'home/assets/img/Line10.png' %}" alt="lines1" style="width: 0.6vw; position: absolute;margin-left: 81vw;z-index: 1;">  -->
 
 
 
@@ -688,6 +690,11 @@
                                         </a>
                                     </li> -->
                                     <li>
+                                        <a href="https://www.ric.iitg.ac.in/event/scientifique/">
+                                            <font color="white" style="font-family: 'Lato',sans-serif;"><b>Call For Papers</font></b>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{% url 'home:about' %}">
                                             <font color="white" style="font-family: 'Lato',sans-serif;"><b>About</font></b>
                                         </a>
@@ -713,12 +720,6 @@
                             </b></font></a></li> -->
                                     <!-- <li><a class="lgx-scroll" href="index.html#registration"><font color="white"><b>Registration
                             </b></font></a></li> -->
-                                    <li>
-                                        <a href="{% url 'sponsor:all' %}"> 
-                                            <font color="white" style="font-family: 'Lato',sans-serif;"><b>Sponsors
-                                                </b></font>
-                                        </a>
-                                    </li>
                                     <!--li><a class="lgx-scroll" href="team.html"target="_blank">Team</a></li-->
                                     <!-- <li><a class="lgx-scroll" href="accommodation.html"><font color="white"><b>Accommodation
                             </font></b></a></li> -->
@@ -730,12 +731,19 @@
                                             <font color="white" style="font-family: 'Lato',sans-serif;"><b>Schedule</font></b>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="{% url 'sponsor:all' %}"> 
+                                            <font color="white" style="font-family: 'Lato',sans-serif;"><b>Sponsors
+                                                </b></font>
+                                        </a>
+                                    </li>
 
                                     <li>
                                         <a href="{% url 'team:all' %}">
                                             <font color="white" style="font-family: 'Lato',sans-serif;"><b>Committee</font></b>
                                         </a>
                                     </li>
+
 
                                     <!--<li class="nav-item">-->
                                     <!--            <a class="nav-link" href="{% url 'home:home' %}#announcements">-->
@@ -1057,7 +1065,8 @@
 
 
         <!--FOOTER--> <!-- implemented by dhruvesh -->
-        <footer class="pcfooter" style="overflow-y: hidden;">
+        <section id="contact">
+        <footer id="contact" class="pcfooter" style="overflow-y: hidden;">
             <div id="lgx-footer" class="lgx-footer">
                 <!-- <div class="lgx-inner-footer"> -->
                 <div class="container">
@@ -1113,24 +1122,32 @@
                                 </p>
                                 <div style="display: flex; flex-direction: row; gap: 2vw;">
                                     <div>
+                                        <a href="https://www.iitg.ac.in/">
                                         <img src="{%static 'home/assets/img/footer-iitg-logo.png' %}"
                                             style="width: 55px;" alt="iitg-logo">
                                         <!-- <p>IIT Guwahati</p> -->
+                                         </a>
                                     </div>
                                     <div >
+                                        <a href="https://respark.iitg.ac.in/">
                                         <img src="{%static 'home/assets/img/footer-park-logo.png' %}"
                                             style="width: 55px;" alt="park-logo">
                                         <!-- <p>IITG Research Park</p> -->
+                                        </a>
                                     </div>
                                     <div>
+                                        <a href="https://www.iitg.ac.in/sab/">
                                         <img src="{%static 'home/assets/img/footer-sab-logo.png' %}"
                                             style="width: 55px; " alt="sab-logo">
                                         <!-- <p>Students’ Academic Board</p> -->
+                                         </a>
                                     </div>
                                     <div >
+                                        <a href="https://www.ric.iitg.ac.in/">
                                         <img src="{%static 'home/assets/img/footer-ric-logo.png' %}"
                                             style="width: 55px; height: 56;" alt="ric-logo">
                                         <!-- <p>Research and Industrial Conclave</p> -->
+                                         </a>
                                     </div>
                                 </div>
                             </div>
@@ -1165,14 +1182,14 @@
                                 </li>
                             </ul>
                             <h3 style="font-family: 'Lato',sans-serif;">Quick Links</h3>
-                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc23/">
+                            <a class="d-footer-link lgx-btn" href="https://www.ric.iitg.ac.in/">
                                 RIC'23
                             </a>
-                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc19/">
-                                RIC'19
+                            <a class="d-footer-link lgx-btn" href="https://event.iitg.ac.in/researchconclave/rc20/">
+                                RIC'20
                             </a>
-                            <a class="d-footer-link lgx-btn" href="http://event.iitg.ac.in/researchconclave/rc18/">
-                                RIC'18
+                            <a class="d-footer-link lgx-btn" href="https://event.iitg.ac.in/researchconclave/rc19/">
+                                RIC'19
                             </a>
                         </div>
                     </div>
@@ -1284,6 +1301,7 @@
 
             </div>
         </footer>
+        </section>
 
         <!--FOOTER END-->
 
@@ -1366,45 +1384,32 @@
 
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const sidebar = document.getElementById('sticky-sidebar');
-        const targetSection = document.getElementById('target-section');
-        const offset = 0;  // Adjust based on your layout
-        
-        function handleScroll() {
-            const sidebarRect = sidebar.getBoundingClientRect();
-            const targetRect = targetSection.getBoundingClientRect();
+<!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sticky-sidebar');
+            const targetSection = document.getElementById('Gallery'); // Adjust the target section
+            const offset = 900;  // Adjust based on your layout
             
-            if (targetRect.top <= offset) {
-                sidebar.classList.add('stop-position');
-                sidebar.style.top = `${targetSection.offsetTop + offset}px`;
-            } else {
-                sidebar.classList.remove('stop-position');
-                sidebar.style.top = '';
+            function handleScroll() {
+                const sidebarRect = sidebar.getBoundingClientRect();
+                const targetRect = targetSection.getBoundingClientRect();
+                
+                if (targetRect.top <= offset) {
+                    sidebar.classList.add('stop-position');
+                    sidebar.style.top = `${offset}px`; // Set top position with offset
+                } else {
+                    sidebar.classList.remove('stop-position');
+                    sidebar.style.top = '';
+                }
             }
-        }
+            
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();  // Initial check in case the page is already scrolled
+        });
+</script> -->
+
+
         
-        window.addEventListener('scroll', handleScroll);
-    });
-</script>
-
-
-
-    <script>
-       const sidebar = document.getElementById('sticky-sidebar');
-const offsetTop = 1040; // Adjust this value to your desired offset (in pixels)
-
-window.addEventListener('scroll', function () {
-  if (window.scrollY >= offsetTop) {
-    sidebar.classList.add('fixed');
-  } else {
-    sidebar.classList.remove('fixed');
-  }
-});
-          
-
-    </script>
 
     <script>
         // set the date and time when the div should stop displaying

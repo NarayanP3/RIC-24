@@ -146,45 +146,46 @@ class RICEvent(models.Model):
     razorpay_payment_id = models.CharField( max_length=100,null=True,blank=True)
     iitg_student = models.BooleanField(default=False,null=True,blank=True)
     remarks = models.CharField(max_length=50,default="None",blank=True,null=True)
+    full_paper_abstract = models.FileField(upload_to='full_papers/', validators=[FileExtensionValidator(allowed_extensions=['doc', 'docx'])], blank=True, null=True)
     # try_new = models.CharField(max_length=100,null=True,blank=True)
     # presenters = models.CharField(null=True, blank=True, max_length=400)
 
 
 
 
-    ricyear = models.ForeignKey(RICYEAR, null=True, blank=True, on_delete=models.SET_NULL)
+    # ricyear = models.ForeignKey(RICYEAR, null=True, blank=True, on_delete=models.SET_NULL)
 
-    presenters = models.TextField(null=True, blank=True)  # Change CharField to TextField
+    # presenters = models.TextField(null=True, blank=True)  # Change CharField to TextField
 
     # Override the save method to ensure presenters are stored as JSON
-    def save(self, *args, **kwargs):
-        if self.presenters:
-            try:
-                json.loads(self.presenters)  # Check if presenters can be deserialized
-            except json.JSONDecodeError:
-                raise ValueError("Invalid JSON format for presenters")
+    # def save(self, *args, **kwargs):
+    #     if self.presenters:
+    #         try:
+    #             json.loads(self.presenters)  # Check if presenters can be deserialized
+    #         except json.JSONDecodeError:
+    #             raise ValueError("Invalid JSON format for presenters")
 
-        super().save(*args, **kwargs)
+    #     super().save(*args, **kwargs)
 
-    # Method to get presenters as a Python object
-    def get_presenters(self):
-        if self.presenters:
-            return json.loads(self.presenters)
-        return []
+    # # Method to get presenters as a Python object
+    # def get_presenters(self):
+    #     if self.presenters:
+    #         return json.loads(self.presenters)
+    #     return []
 
-    # Method to set presenters from a Python object
-    def set_presenters(self, presenters):
-        self.presenters = json.dumps(presenters)
+    # # Method to set presenters from a Python object
+    # def set_presenters(self, presenters):
+    #     self.presenters = json.dumps(presenters)
 
-    # Property to access presenters as a Python object
-    @property
-    def presenters_list(self):
-        return self.get_presenters()
+    # # Property to access presenters as a Python object
+    # @property
+    # def presenters_list(self):
+    #     return self.get_presenters()
 
-    # Property to set presenters from a Python object
-    @presenters_list.setter
-    def presenters_list(self, presenters):
-        self.set_presenters(presenters)
+    # # Property to set presenters from a Python object
+    # @presenters_list.setter
+    # def presenters_list(self, presenters):
+    #     self.set_presenters(presenters)
 
     def _str_(self):
         return self.owner.email

@@ -78,6 +78,21 @@ class RICForm(forms.ModelForm):
         }
 
 
+class FullPaperSubmissionForm(forms.ModelForm):
+    class Meta:
+        model = RICEvent
+        fields = ['full_paper_abstract']
+        widgets = {
+            'full_paper_abstract': forms.ClearableFileInput(attrs={'class': 'form-control'}),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super(FullPaperSubmissionForm, self).__init__(*args, **kwargs)
+        # Remove the "Clear" checkbox
+        self.fields['full_paper_abstract'].widget.clear_checkbox_label = ''
+        self.fields['full_paper_abstract'].widget.template_name = 'django/forms/widgets/clearable_file_input.html'
+        self.fields['full_paper_abstract'].widget.initial_text = ''
+        self.fields['full_paper_abstract'].widget.input_text = 'Change'
 
 class ICForm(forms.ModelForm):
     TRUE_FALSE_CHOICES = (

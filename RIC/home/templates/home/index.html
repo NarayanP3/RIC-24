@@ -502,7 +502,7 @@
         .mobile-rlog{
             position: absolute;
             z-index: 99;
-            width: 81vw;
+            width: 78vw;
             margin-top: -6vw;
             margin-left: -4vw;
         }
@@ -564,31 +564,31 @@
             width: 700vw;
         }
     }
-    @media screen and (max-width:451px) {
-        .mobile-rlog{
-            width: 80vw;
-        }
-    }
-    @media screen and (max-width:386px) {
-        .mobile-rlog{
-            width: 79vw;
-        }
-    }
-    @media screen and (max-width:330px) {
-        .mobile-rlog{
-            width: 78vw;
-        }
-    }
-    @media screen and (max-width:300px) {
+    @media screen and (max-width:528px) {
         .mobile-rlog{
             width: 77vw;
         }
     }
-    @media screen and (max-width:269px) {
+    @media screen and (max-width:487px) {
         .mobile-rlog{
             width: 76vw;
         }
     }
+    @media screen and (max-width:410px) {
+        .mobile-rlog{
+            width: 75vw;
+        }
+    }
+    @media screen and (max-width:356px) {
+        .mobile-rlog{
+            width: 74vw;
+        }
+    }
+    @media screen and (max-width:320px) {
+        .mobile-rlog{
+            width: 73vw;
+        }
+    } 
 
 
     /* Events */
@@ -622,11 +622,12 @@
 
     .card-right-align {
         margin-left: 6vw;
+        padding-right: 0.8vw;
     }
-/* 
+
     .card:hover {
         transform: scale(1.05);
-    } */
+    }
 
     .icon-sidenavbar {
         /* position: fixed; */
@@ -880,13 +881,13 @@
         z-index: 1;
         color: white;
         font: 400 12px Arial;
-        max-width: 50vw;
+        max-width: 75vw;
     }
 
     .awNotices a {
         padding: 8px 25px 8px 10px;
         position: absolute;
-        top: 50%;
+        top: 4vh;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -1281,43 +1282,91 @@
         }
     }
 
-        .sticky-sidebar {
-            position: fixed;
-            left: 7vw;
-            flex-direction: column;
-            z-index: 1000;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            /* background-color: #f8f9fa; */
-            /* border-right: 1px solid #dee2e6; */
-            padding: 10px;
-        }
-        .sticky-sidebar img {
-            width: 3vw;
-            height: auto;
-            transition: width 0.3s ease, height 0.3s ease;
-            margin-top: 12vh;
-        }
-        .sticky-sidebar img:hover {
-            width: 4vw;
-            border-left: 1px solid blue;
-        }
+    .sticky-sidebar {
+  position: absolute;
+  top: 7vw;
+  left: 8vw;
+  flex-direction: column;
+  /* width: 180px; */
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: white; */
+  /* transition: position 0.3s ease, top 0.3s ease; Smooth transition for position changes */
+}
+.sticky-sidebar-gallery{
+    /* display: none; */
+    position: absolute;
+  /* top: 7vw; */
+  margin-bottom: 400px;
+  left: 8vw;
+  flex-direction: column;
+  /* width: 180px; */
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
     
+}
+.sticky-sidebar-gallery img{
+    /* display: none; */
+    width: 3vw;
+    height: auto;
+    margin-top: 12vh;
+}
+
+.sticky-sidebar img {
+  width: 3vw;
+  height: auto;
+  transition: width 0.3s ease, height 0.3s ease;
+  margin-top: 12vh;
+}
+
+.sticky-sidebar.active{
+    width: 4vw;
+    border-left: 2px solid blue;
+}
+
+.fixed {
+  position: fixed;
+  top:0px;
+}
+
+.sidebar-text {
+    position: absolute;
+    font-size: 1.8vw;
+    text-decoration: none;
+    color: #013A67;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap; 
+    margin-left: 10px;
+}
+#sticky-sidebar a:hover .sidebar-text {
+    opacity: 1;
+}
+
 @media screen and (max-width:767px) {
     .sticky-sidebar {
-        display: none;
+        display:none;
     }
 }
-    
-
-
         .stop-position {
             position: absolute;
             top: 0px;
             bottom: 0;
         }
-
+.home-sticky-navbar{
+    /* position:fixed; */
+    z-index: 999;
+}
+.fixed-sticky-navbar{
+    position: fixed;
+    margin-left: 8vw;
+    margin-top: -14vw;
+}
     /* mobile-sticky-navbar */
     @media screen and (min-width:767px) {
         .home-sticky-navbar{
@@ -1474,6 +1523,65 @@
     width: 16vw;
     margin-left: 28vw;
 }
+
+@media screen and (max-width : 767px) {
+    .countdown{
+        margin-top: 5vw;
+    }
+    
+}
+.notification{
+    position: absolute;
+    background-color: #003057;
+    left: 30%;
+    z-index: 9;
+    border-radius: 1vw;
+}
+#animated-text {
+    white-space: pre-wrap;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    font-size: 2.5vh;
+    color: white;
+    font-family:'Lato',sans-serif; 
+    padding: 2vw 2vw;
+    width: 36vw;
+}
+
+#animated-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 0.05s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width:1110px) {
+    #animated-text {
+        width: 60vw;
+    }
+    .notification{
+        left: 20vw;
+    }
+}
+@media screen and (max-width:767px) {
+    #animated-text{
+        font-size: 3vw;
+    }
+    .notification{
+        top: 46vw;
+        z-index: 100;
+    }
+}
     
 </style>
 {% endblock css %}
@@ -1490,8 +1598,60 @@
 {% block banner %}
 <section id="home-home home">
     <div  class="home-sec">
+        <center class="notification" >
+            <p id="animated-text" >The Deadline of Abtract Submission has been extended till 30th JUNE.</p>
+        </center>
+        <script>
+            // script.js
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('animated-text');
+    const textContent = textElement.textContent;
+    textElement.textContent = '';
+
+    // Split the text content into spans
+    textContent.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.animationDelay = `${index * 0.03}s`;
+        textElement.appendChild(span);
+    });
+
+    // Function to hide the text
+    function hideText() {
+        textElement.classList.add('hidden');
+    }
+
+    // Function to show the text
+    function showText() {
+        textElement.classList.remove('hidden');
+        textElement.style.animation = 'none';
+        textElement.offsetHeight; // Trigger reflow
+        textElement.style.animation = null;
+
+        // Re-animate text by resetting the span elements
+        const spans = textElement.querySelectorAll('span');
+        spans.forEach((span, index) => {
+            span.style.animationDelay = `${index * 0.03}s`;
+        });
+    }
+
+    // Initial animation duration + delay before hide
+    const initialDisplayTime = 10000; // 15 seconds
+    const reappearDelay = 5000; // 3 seconds
+
+    function cycleText() {
+        setTimeout(hideText, initialDisplayTime);
+        setTimeout(showText, initialDisplayTime + reappearDelay);
+    }
+
+    // Start the cycle initially and then repeat
+    cycleText();
+    setInterval(cycleText, initialDisplayTime + reappearDelay);
+});
+
+        </script>
         <div class="lgx-banner-style"></div>
-        <center style="padding-top: 3vw;" class="home-sticky-navbar">
+        <center style="padding-top: 3vw;" class="home-sticky-navbar" id="home-sticky-navbar">
         <div class="sticky-navbar" style="position: relative; z-index: 9999;">
             <button class="sticky-scroll-btn sticky-left-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1532,7 +1692,7 @@
                 </div>
                 <div class="sticky-nav-item">
                     <a href="{% url 'home:home' %}#Gallery" style="text-decoration: none;">
-                        <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Logo 6" style="display: block;">
+                        <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Logo 6" style="display: block;width: 3.4vh;">
                         <span class="sticky-tab-content">Gallery</span>
                     </a>
                 </div>
@@ -1556,7 +1716,7 @@
                 </svg>
             </button>
         </div>
-    </center>
+        </center>
         <script >
             document.addEventListener('DOMContentLoaded', () => {
                 const navbar = document.getElementById('sticky-navbar');
@@ -1681,12 +1841,12 @@
 
                     <section class="awNotices">
 
-                        <!--<a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">-->
-                        <!--    <i class="fa fa-bell"></i> Payment Portal Active-->
-                        <!--</a>-->
-                        <!--<a notice-color="red" href="#" class="">-->
-                        <!--    <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started-->
-                        <!--</a>-->
+                        <!-- <a notice-color="orange" target="_blank" href="https://rebrand.ly/ric23" class="active">
+                           <i class="fa fa-bell"></i> The Deadline for Abstract Submission has been extended till 30th June.
+                        </a>
+                        <a notice-color="red" href="#" class="active">
+                           <i class="fa fa-heart"></i> Registrations for EMPRENDIMIENTO and INNOVATION EXHIBIT are started
+                        </a> -->
 
 
 
@@ -1704,7 +1864,7 @@
                         <!--</a>-->
                     </section>
 
-                    <div class="countdown">
+                    <div class="countdown" id="countdown">
                         <div>
                             <div class="countdown-title">DAYS</div>
                             <div class="countdown-title-line"></div>
@@ -1817,27 +1977,80 @@
                 <img class="icon-sidenavbar" src="{%static 'home/assets/img/icon-contact.png' %}">
             </div> -->
 
-            <div id="sticky-sidebar" class="sticky-sidebar">
+            <div id="sticky-sidebar" class="sticky-sidebar about-sidebar">
                 <a href="{% url 'home:home' %}">
                 <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Home Sidebar Icons" data-section="home">
+                <span class="sidebar-text" style="margin-top: 15vh;">HOME</span>
                 </a>
                 <a href="{% url 'home:home' %}#about">
                 <img src="{% static 'home/assets/img/about_icon.png' %}" alt="About Sidebar Icons" data-section="about-page">
+                <span class="sidebar-text" style="margin-top: 14vh;">ABOUT</span>
                 </a>
                 <!-- <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons"> -->
                 <a href="{% url 'home:home' %}#events">
                 <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Events Sidebar Icons" data-section="events">
+                <span class="sidebar-text" style="margin-top: 13vh;">EVENTS</span>
                 </a>
                 <!-- <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons"> -->
                 <a href="{% url 'home:home' %}#Gallery">
-                <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Gallery Sidebar Icons" data-section="Gallery">
+                <img src="{% static 'home/assets/img/gallery_icon.png' %}" style="width: 4vw;" alt="Gallery Sidebar Icons" data-section="Gallery">
+                <span class="sidebar-text" style="margin-top: 13vh;">GALLERY</span>
                 </a>
                 <!-- <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sponsors Sidebar Icons"> -->
                 <a href="{% url 'home:home' %}#contact">
                 <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Contact Sidebar Icons" data-section="contact">
+                <span class="sidebar-text" style="margin-top: 12vh;">CONTACT</span>
                 </a>
             </div>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = {
+                    'home': document.getElementById('home'),
+                    'about-page': document.getElementById('about-page'),
+                    'events': document.getElementById('events'),
+                    'Gallery': document.getElementById('Gallery'),
+                    'contact': document.getElementById('contact')
+                };
+            
+                const icons = document.querySelectorAll('#sticky-sidebar img');
+            
+                // Function to add 'active' class to corresponding icon
+                function setActiveIcon(sectionId) {
+                    icons.forEach(icon => {
+                        const sectionName = icon.getAttribute('data-section');
+                        if (sectionName === sectionId) {
+                            icon.classList.add('active');
+                        } else {
+                            icon.classList.remove('active');
+                        }
+                    });
+                }
+            
+                // Function to handle scroll event
+                function handleScroll() {
+                    let currentSection = '';
+            
+                    // Determine which section is currently in view
+                    Object.keys(sections).forEach(sectionId => {
+                        const section = sections[sectionId];
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 150 && rect.bottom >= 150) { // Adjust threshold as needed
+                            currentSection = sectionId;
+                        }
+                    });
+            
+                    // Set active class on corresponding icon
+                    setActiveIcon(currentSection);
+                }
+            
+                // Event listener for scroll
+                window.addEventListener('scroll', handleScroll);
+            
+                // Initial call to handle scroll (in case page is loaded at a specific position)
+                handleScroll();
+            });
+        </script>            
+            
             <div class="about-sec">
                 <img src="{%static 'home/assets/img/about-title-mobile.png' %}"
                     style="position: absolute;width: 30vw; margin-left: 39vw;margin-top: 27vw;">
@@ -2143,7 +2356,26 @@
 {% endblock event %}
 
 {% block gallery %}
-
+<!-- <div id="sticky-sidebar" class="sticky-sidebar-gallery"> -->
+    <!-- <a href="{% url 'home:home' %}"> -->
+    <!-- <img src="{% static 'home/assets/img/home_icon.png' %}" alt="Home Sidebar Icons" data-section="home" class="x"> -->
+    <!-- </a> -->
+    <!-- <a href="{% url 'home:home' %}#about"> -->
+    <!-- <img src="{% static 'home/assets/img/about_icon.png' %}" alt="About Sidebar Icons" data-section="about-page" class="x"> -->
+    <!-- </a> -->
+    <!-- <img src="{% static 'home/assets/img/announcement_icon.png' %}" alt="Sidebar Icons"> -->
+    <!-- <a href="{% url 'home:home' %}#events"> -->
+    <!-- <img src="{% static 'home/assets/img/event_icon.png' %}" alt="Events Sidebar Icons" data-section="events" class="x"> -->
+    <!-- </a> -->
+    <!-- <img src="{% static 'home/assets/img/speaker_icon.png' %}" alt="Sidebar Icons"> -->
+    <!-- <a href="{% url 'home:home' %}#Gallery"> -->
+    <!-- <img src="{% static 'home/assets/img/gallery_icon.png' %}" alt="Gallery Sidebar Icons" data-section="Gallery" class="x"> -->
+    <!-- </a> -->
+    <!-- <img src="{% static 'home/assets/img/sponsor_icon.png' %}" alt="Sponsors Sidebar Icons"> -->
+    <!-- <a href="{% url 'home:home' %}#contact"> -->
+    <!-- <img src="{% static 'home/assets/img/contact_icon.png' %}" alt="Contact Sidebar Icons" data-section="contact" class="x"> -->
+    <!-- </a> -->
+<!-- </div> -->
 <section id="Gallery" class="gallery-sec" style="margin-bottom: 4vw;">
     <div class="gallery-section" style="display: flex; flex-direction: row;">
         <div style="display: flex;flex-direction: column;">

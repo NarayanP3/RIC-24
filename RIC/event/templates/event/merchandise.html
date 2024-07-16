@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% load static %}
+{% block css %}
+<style>
+    .merch-banner {
+        width: 100vw;
+        height: 26vw;
+        background-image: url('/static/home/assets/img/merch-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100vw 26vw;
+    }
+
+    /* @media screen and (max-width:767px) {
+        .merch-banner {
+            height: 35vw;
+            background-size: 100vw 35vw;
+            margin-top: 0;
+        }
+    } */
+
+    .custom-shape {
+        position: relative;
+        width: 16.2vw;
+        background-color: #fefbef;
+        height: 4.7vw;
+        clip-path: polygon(0 0, 100% 0, 100% 71%, 89% 100%, 0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5vw;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-shape:hover {
+        background-color: black;
+    }
+
+    .border-span {
+        width: 16vw;
+        height: 4.5vw;
+        clip-path: polygon(0 0, 100% 0, 100% 71%, 89% 100%, 0 100%);
+        background-color: #013a67;
+        border-radius: 0.4vw;
+        align-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .registration-tab {
+        color: #fefbef;
+        font-size: 2.1vw;
+        font-family: 'Lato', sans-serif;
+        transition: color 0.3s ease;
+    }
+
+    .custom-shape:hover .border-span {
+        background-color: #ffc812;
+    }
+
+    .custom-shape:hover .registration-tab {
+        color: black;
+    }
+
+    .merch-title {
+        position: relative;
+        display: inline-block;
+        font-size: 7vw;
+        font-family: 'LEMON MILK', sans-serif;
+        font-weight: 800;
+        margin-left: 2vw;
+        z-index: 1;
+    }
+
+    .outlined-text {
+        margin-left: 0.2vw;
+        color: transparent;
+        -webkit-text-stroke: 0.1vw white;
+        z-index: 2;
+    }
+
+    .filled-text {
+        position: absolute;
+        color: #00B0A6;
+        z-index: 1;
+    }
+</style>
+{% endblock css %}
+{% block banner %}
+<div class="merch-banner">
+    <img src="{% static 'home/assets/img/merch-sticker1.png' %}" style="width: 11vw;margin-left: 5vw;margin-top: 4vw;">
+    <img src="{% static 'home/assets/img/merch-sticker2.png' %}"
+        style="width: 8.5vw; margin-top: -10vw; margin-left:2vw">
+    <img src="{% static 'home/assets/img/merch-sticker3.png' %}"
+        style="width: 19vw; margin-left: -3vw;margin-top: 4.5vw;">
+    <img src="{% static 'home/assets/img/merch-sticker4.png' %}" style="width: 8vw;margin-left: 5vw;margin-top: 3.5vw;">
+    <div class="merch-title">
+        <div class="merch-title">
+            <span class="filled-text">MERCH</span>
+            <span class="outlined-text">MERCH</span>
+        </div>
+    </div>
+    <!-- <img style="width: 100vw;clip-path: inset(30px 0 0 0); " src="{%static 'home/assets/img/merch-bg.png' %}">  -->
+    <!-- <p style="color: #00B0A6;font-size: 7vw;font-weight:1000;font-family: 'Lato',sans-serif;">MERCH</p> -->
+</div>
+<!-- <img src="{%static 'home/assets/img/merch-bg.png' %}">  -->
+<!-- <h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1>
+<h1>merch</h1> -->
+
+
+{% endblock banner %}
+{% block content %}
+<div class="tshirts"
+    style="display: flex;flex-direction: column; gap: 4vw; align-items: center;margin-top: 4.5vw;margin-bottom: 4vw;">
+    <img src="{% static 'home/assets/img/tshirt-roundneck.png' %}" style="width: 68vw;">
+    <img src="{% static 'home/assets/img/tshirt-roundneck-navy.png' %}" style="width: 68vw;">
+    <img src="{% static 'home/assets/img/tshirt-whitepolo.png' %}" style="width: 68vw;">
+    <img src="{% static 'home/assets/img/tshirt-navypolo.png' %}" style="width: 68vw;">
+    <a href="https://forms.gle/5geob4sXSCddHBnKA" style="text-decoration: none;">
+        <div class="custom-shape">
+            <span class="border-span">
+                <center class="registration-tab">BUY NOW!</center>
+            </span>
+        </div>
+    </a>
+</div>
+{% endblock content %}

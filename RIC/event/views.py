@@ -40,3 +40,5 @@ class DeptSpeakerDetailView(DetailView):
     model = DeptSpeaker
     template_name='event/institutespeakerdetail.html'
 
+def merchandise_view(request):
+    return render(request, 'event/merchandise.html')

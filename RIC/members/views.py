@@ -5,7 +5,7 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from .models import Event1,Event2,RICEvent, IC, ICEvent,WorkshopBio,IntegrationBee,MathEvent, MathEventIndividual,DifferentiaChallenge,Accommodation
-from .forms import RICForm,ICForm ,AbstractForm,AbstractICForm,AbstractRICForm,WorkshopForm,AccommodationForm,IntegrationBeeForm,MathEventForm, MathEventIndividualForm,IDForm, StudDetailForm,DifferentiaChallengeForm
+from .forms import RICForm,ICForm ,AbstractForm,AbstractICForm,AbstractRICForm,WorkshopForm,AccommodationForm,IntegrationBeeForm,MathEventForm, MathEventIndividualForm,IDForm, StudDetailForm,DifferentiaChallengeForm,FullPaperSubmissionForm
 import razorpay
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView,ListView, DetailView, CreateView, UpdateView,DeleteView
@@ -767,29 +767,85 @@ class ProfileRICCreateView(LoginRequiredMixin, CreateView):
 
 
 @method_decorator(csrf_exempt,name='dispatch')
-class ProfileRICDetailView(LoginRequiredMixin,DetailView):
+
+
+@method_decorator(csrf_exempt,name='dispatch')
+class ProfileRICDetailView(LoginRequiredMixin, DetailView):
     model = RICEvent
     template_name = "members/profile_detail_ric.html"
+    context_object_name = 'object'
 
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        
+        # Handle JSON payload
+        if request.content_type == 'application/json':
+            try:
+                data = json.loads(request.body.decode('utf-8'))
+                payment_id = data.get('payment_id')
+
+                if payment_id:
+                    self.object.setpaymentid(payment_id)
+                    self.object.save()
+                    return JsonResponse({"message": "Worked fine"}, status=200)
+                else:
+                    return JsonResponse({"error": "payment_id not provided"}, status=400)
+            except json.JSONDecodeError:
+                return JsonResponse({"error": "Invalid JSON"}, status=400)
+        
+        # Handle form submission
+        form = FullPaperSubmissionForm(request.POST, request.FILES, instance=self.object)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('members:ric-detail', kwargs={'pk': self.object.pk}))
+        return self.render_to_response(self.get_context_data(form=form))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-
-        context['rupee'] = self.object.total/100
+        if 'form' not in context:
+            context['form'] = FullPaperSubmissionForm(instance=self.object)
+        context['rupee'] = self.object.total / 100
         return context
 
-    def post(self,request,*args,**kwargs):
-        a = json.loads(request.body.decode('utf-8'))
-        print(a['payment_id'])
-        print(type(self.get_object()))
-        self.get_object().setpaymentid(a['payment_id'])
-        # self.get_object().save()
-        print(self.get_object().razorpay_payment_id)
-        return JsonResponse({
-              "message":"Worked fine"
-            })
+# class ProfileRICDetailView(LoginRequiredMixin,DetailView):
+#     model = RICEvent
+#     template_name = "members/profile_detail_ric.html"
+#     context_object_name = 'object'
+    
 
+#     def post(self, request, *args, **kwargs):
+#         self.object = self.get_object()
+#         form = FullPaperSubmissionForm(request.POST, request.FILES, instance=self.object)
+#         if form.is_valid():
+#             form.save()
+#             context = self.get_context_data(form=form)
+#             return render(request, self.template_name, context)
+#         return self.render_to_response(self.get_context_data(form=form))
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         if 'form' not in context:
+#             context['form'] = FullPaperSubmissionForm(instance=self.object)
+#         return context
+
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+
+
+    #     context['rupee'] = self.object.total/100
+    #     return context
+
+    # def post(self,request,*args,**kwargs):
+    #     a = json.loads(request.body.decode('utf-8'))
+    #     print(a['payment_id'])
+    #     print(type(self.get_object()))
+    #     self.get_object().setpaymentid(a['payment_id'])
+    #     # self.get_object().save()
+    #     print(self.get_object().razorpay_payment_id)
+    #     return JsonResponse({
+    #           "message":"Worked fine"
+    #         })
 
 
 class ProfileICCreateView(LoginRequiredMixin,CreateView):

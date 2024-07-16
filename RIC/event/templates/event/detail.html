@@ -1,19 +1,239 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load bootstrap4 %}
+{% block css %}
+<style>
+  .custom-shape {
+    position: relative;
+    width: 16.2vw;
+    background-color: #fefbef;
+    height: 4.7vw;
+    clip-path: polygon(0 0, 100% 0, 100% 71%, 89% 100%, 0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5vw;
+    transition: background-color 0.3s ease;
+  }
+
+  .custom-shape:hover {
+    background-color: black;
+  }
+
+  .border-span {
+    width: 16vw;
+    height: 4.5vw;
+    clip-path: polygon(0 0, 100% 0, 100% 71%, 89% 100%, 0 100%);
+    background-color: #013a67;
+    border-radius: 0.4vw;
+    align-content: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .registration-tab {
+    color: #fefbef;
+    font-size: 2.1vw;
+    font-family: 'Lato', sans-serif;
+    transition: color 0.3s ease;
+  }
+
+  .custom-shape:hover .border-span {
+    background-color: #ffc812;
+  }
+
+  .custom-shape:hover .registration-tab {
+    color: black;
+  }
+</style>
+{% endblock css %}
 {% block banner %}
 <section>
-  <div class="lgx-banner lgx-banner-music">
-    <div class="lgx-banner-style">
-      <div class="lgx-inner lgx-inner-fixed">
-        <div class="container">
-          <div class="row">
-            <center><b>
-              <h2>{{object}}</h2>
-              <h3 style="color:#0011ff">{{object.subtitle}}</h3>
-            </b></center>
+  <div>
+    <div>
+      <div class="page-title">
+        <div style="position: relative; display: flex; flex-direction: column;">
+          <img style="position: absolute; " src="{% static 'home/assets/img/iitg-bg-pic.png' %}">
+          <div
+            style="position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;">
+            <p
+              style="font-size: 7vw; color: #00B0A6; font-family: 'Lemon Milk', sans-serif; font-weight: 700; margin: 0;text-shadow: -2px 2px 0 #FFFFFF, -2px -2px 0 #FFFFFF, 2px -2px 0 #FFFFFF, 2px 2px 0 #FFFFFF;">
+              {{object}}</p>
+            {% if user.is_authenticated %}
+
+            <!--{% if event.name != 'INTEGRATION BEE' %}-->
+            <!--  <center><h2> Registration Dates To Be Announced Soon</h2></center>-->
+            <!--{% endif %}-->
+            <!-- <div style="color:red;animation:blinker 1s linear infinite"> -->
+              <!-- {% if event.name == 'SCIENTIFIQUE' %} -->
+              <!--<center><h2> <a href="{% url 'members:create' %}" style="text-decoration: none; color: red;">Register for {{event.name}}</a></h2></center>-->
+              <!-- <center> -->
+                <!-- <h2 style="color: red;">Registration Closed</h2> -->
+              <!-- </center> -->
+              <!-- {% elif event.name != 'HACKATHON' and event.name != 'EMPRENDIMIENTO' %} -->
+              <!-- <a href="{% url 'home:redirection' %}"> Signup/Login </a> -->
+              <!-- {% endif %} -->
+            <!-- </div> -->
+
+            <!-- <div style="color:red"> -->
+              {% if user.is_superuser %}
+              {% if event.name == 'INTEGRATION BEE' %}
+              <a href="{% url 'members:integrationBee_create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'MATH OLYMPICS' %}
+              <a href="{% url 'members:mathEvent_create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == "D'SinoQuation" %}
+              <a href="{% url 'members:differentiaChallenge_create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'SCIENTIFIQUE' %}
+              <a href="{% url 'members:create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'ATELIER' %}
+              <a href="{% url 'members:workshop_create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'CONNAISSANCE' %}
+              <a href="{% url 'members:create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'DISCUTIR' %}
+              <a href="{% url 'members:create' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'EMPRENDIMIENTO' %}
+              <a href="https://forms.gle/uKriguj6A3WC98x56" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'HACKATHON' %}
+              <!-- <a href="{% url 'members:iccreate' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a> -->
+              {% elif event.name == 'INDSOL' %}
+              <a href="{% url 'members:iccreate' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'TECH TALK' %}
+              <a href="{% url 'members:iccreate' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% elif event.name == 'INNOVATION EXHIBIT' %}
+              <a href="{% url 'members:iccreate' %}" style="margin-top: 3vw;text-decoration: none;">
+                <div class="custom-shape">
+                  <span class="border-span">
+                    <center class="registration-tab">Register</center>
+                  </span>
+                </div>
+              </a>
+              {% endif %}
+              {%else%}
+              {% if event.name == 'EMPRENDIMIENTO' %}
+                <a href="https://forms.gle/uKriguj6A3WC98x56" style="margin-top: 3vw;text-decoration: none;">
+                  <div class="custom-shape">
+                    <span class="border-span">
+                      <center class="registration-tab">Register</center>
+                    </span>
+                  </div>
+                </a>
+                {% elif event.name == 'SCIENTIFIQUE' %}
+                <a href="#" style="margin-top: 3vw;text-decoration: none;">
+                  <div class="custom-shape">
+                    <span class="border-span">
+                      <center class="registration-tab">Registrations Closed</center>
+                    </span>
+                  </div>
+                </a>
+                {%endif%}
+              {% endif %}
+            <!-- </div> -->
+            {% else %}
+            <!-- <center> -->
+                {% if event.name == 'EMPRENDIMIENTO' %}
+                <a href="https://forms.gle/uKriguj6A3WC98x56" style="margin-top: 3vw;text-decoration: none;">
+                  <div class="custom-shape">
+                    <span class="border-span">
+                      <center class="registration-tab">Register</center>
+                    </span>
+                  </div>
+                </a>
+                {% elif event.name != 'HACKATHON' %}
+                <a href="{% url 'home:redirection' %}" style="margin-top: 3vw;text-decoration: none;">
+                  <div class="custom-shape">
+                    <span class="border-span">
+                      <center class="registration-tab">Signup/Login</center>
+                    </span>
+                  </div>
+                </a>
+                {% endif%}
+            <!-- </center> -->
+
+            {% endif %}
+
+            <!-- <a href="https://forms.gle/uKriguj6A3WC98x56" style="margin-top: 3vw;text-decoration: none;">
+              <div class="custom-shape">
+                <span class="border-span">
+                  <center class="registration-tab">Register</center>
+                </span>
+              </div>
+            </a> -->
+            <p
+              style="font-family: 'Lato',sans-serif; color:#fefbef;font-size: 1.8vw;font-weight: 600;margin-left: 65vw;width: 21vw;line-height: 2.5vw;">
+              {{object.subtitle}}</p>
           </div>
+          <img style="margin-top: 2vw;" src="{% static 'home/assets/img/events-bg-card.png' %}">
         </div>
+
+        <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
       <!--//.ROW-->
     </div>
@@ -27,199 +247,266 @@
 {% block content %}
 
 <style>
-  .line{
+  .line {
     position: absolute;
     width: 74%;
     color: #1E90FF;
     height: 1px;
     border-bottom: 1px dotted #03655fc1;
-    margin-top:11vh;
+    margin-top: 11vh;
     /* margin-left: -30px; */
   }
-  .dots{
+
+  .dots {
     position: absolute;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #0b7871c1;
   }
-  .title{
+
+  .title {
     margin-top: 8px;
     color: black;
   }
-  .dates{
+
+  .dates {
     color: #03655fc1;
     font-weight: 900;
     font-size: 1.2vw;
   }
-  .impdates{
+
+  .impdates {
     justify-content: space-between;
     display: flex;
     width: 80%;
     margin-top: 15px;
   }
+
   @media screen and (max-width: 1197px) {
-    .line{
+    .line {
       margin-top: 9.6vh;
     }
   }
 
   @media screen and (max-width: 1037px) {
-    .impdates{
+    .impdates {
       width: 95%;
     }
-    .line{
+
+    .line {
       width: 84%;
       margin-top: 5vh;
     }
-    .dates{
+
+    .dates {
       font-size: 2vw;
     }
   }
+
   @media screen and (max-width: 700px) {
-    .impdates{
+    .impdates {
       width: 90%;
     }
-    .line{
+
+    .line {
       width: 78%;
       margin-top: 7vh;
     }
-    .dates{
+
+    .dates {
       font-size: 2.2vw;
     }
-    .title{
+
+    .title {
       font-size: 2.2vw;
     }
   }
+
   @media screen and (max-width: 500px) {
-    .impdates{
+    .impdates {
       width: 98%;
     }
-    .dates{
+
+    .dates {
       font-size: 2.6vw;
     }
-    .title{
+
+    .title {
       font-size: 2.7vw;
     }
-    .line{
+
+    .line {
       width: 84%;
       margin-top: 7vh;
+    }
+  }
+
+  .event-poster {
+    width: 30vw;
+    margin-top: 2vw;
+  }
+
+  @media screen and (max-width : 700px) {
+    .event-poster {
+      width: 50vw;
     }
   }
 </style>
 
 
 
-          {% if event.name == 'SCIENTIFIQUE' %}
-            <center>
-                <div class="impdates">
-                <div class="line"></div>
-                  <div style="display: block;">
-                    <p class="dates">25th May <br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Begin of <br>Extended <br>Abstract <br>Submission</p>
-                  </div>
-                  <div style="display: block;">
-                    <p class="dates">20th June <br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Deadline of <br>Abstract <br>Submission</p>
-                  </div>
-                  <div style="display: block;">
-                    <p class="dates">25th June <br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Abstract <br>Acceptance <br>Notification</p>
-                  </div>
-                  <div style="display: block;">
-                    <p class="dates">21st July <br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Full Paper <br>Submission</p>
-                  </div>
-                  <div style="display: block;">
-                    <p class="dates">31st Aug.<br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Declaration of <br>Review <br>Results</p>
-                  </div>
-                  <div style="display: block;">
-                    <p class="dates">20th Sept. <br>2024</p>
-                    <div class="dots"></div>
-                    <p class="title">Final <br>Manuscript <br>Submission</p>
-                  </div>
-                </div>
-            </center>
-          {% else%}
-            {% if event.name != 'INTEGRATION BEE' %}
-              <center><h2> Registration Dates To Be Announced Soon</h2></center>
-            {% endif %}
-          {% endif %}
+{% if event.name == 'SCIENTIFIQUE' %}
+<center>
+  <div class="impdates">
+    <div class="line"></div>
+    <div style="display: block;">
+      <p class="dates">25th May <br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Begin of <br>Extended <br>Abstract <br>Submission</p>
+    </div>
+    <div style="display: block;">
+      <p class="dates">20th June <br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Deadline of <br>Abstract <br>Submission</p>
+    </div>
+    <div style="display: block;">
+      <p class="dates">25th June <br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Abstract <br>Acceptance <br>Notification</p>
+    </div>
+    <div style="display: block;">
+      <p class="dates">21st July <br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Full Paper <br>Submission</p>
+    </div>
+    <div style="display: block;">
+      <p class="dates">31st Aug.<br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Declaration of <br>Review <br>Results</p>
+    </div>
+    <div style="display: block;">
+      <p class="dates">20th Sept. <br>2024</p>
+      <div class="dots"></div>
+      <p class="title">Final <br>Manuscript <br>Submission</p>
+    </div>
+  </div>
+</center>
+{% else%}
+{% if event.name != 'INTEGRATION BEE' %}
+<center>
+  <h2> Registration Dates To Be Announced Soon</h2>
+</center>
+{% endif %}
+{% endif %}
 
-          <style>
-            @keyframes blinker {
-              50% { opacity: 0; }
-            }
-          </style>
+<style>
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
 
 
-{% if user.is_authenticated %}
-            <!--{% if event.name != 'INTEGRATION BEE' %}-->
-            <!--  <center><h2> Registration Dates To Be Announced Soon</h2></center>-->
-            <!--{% endif %}-->
-            <div style="color:red;animation:blinker 1s linear infinite">
-             {% if event.name == 'SCIENTIFIQUE' %}
-                <center><h2> <a href="{% url 'members:create' %}" style="text-decoration: none; color: red;">Register for {{event.name}}</a></h2></center>
-             {% else %}
-                <a href="{% url 'home:redirection' %}"> Signup/Login </a>
-             {% endif %}
-            </div>
-
+<!-- {% if user.is_authenticated %} -->
+<!--{% if event.name != 'INTEGRATION BEE' %}-->
+<!--  <center><h2> Registration Dates To Be Announced Soon</h2></center>-->
+<!--{% endif %}-->
+<!-- <div style="color:red;animation:blinker 1s linear infinite"> -->
+  <!-- {% if event.name == 'SCIENTIFIQUE' %} -->
+  <!-- <center> -->
+    <!-- <h2> <a href="{% url 'members:create' %}" style="text-decoration: none; color: red;">Register for {{event.name}}</a> -->
+    <!-- </h2> -->
+  <!-- </center> -->
+  <!-- {% else %} -->
+  <!-- <a href="{% url 'home:redirection' %}"> Signup/Login </a> -->
+  <!-- {% endif %} -->
+<!-- </div> -->
+<!-- 
 <div style="color:red">
-        {% if user.is_superuser %}
-            {% if event.name == 'INTEGRATION BEE' %}
-              <center><h2> <a  href="{% url 'members:integrationBee_create' %}">Register for Integration Bee</a></h2></center>
-            {% elif event.name == 'MATH OLYMPICS' %}
-              <center><h2> <a href="{% url 'members:mathEvent_create' %}">Register for Math Olympics</a></h2></center>
-            {% elif event.name == "D'SinoQuation" %}
-              <center><h2> <a href="{% url 'members:differentiaChallenge_create' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'SCIENTIFIQUE' %}
-              <center><h2> <a href="{% url 'members:create' %}" style="color: red;">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'ATELIER' %}
-              <center><h2> <a href="{% url 'members:workshop_create' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'CONNAISSANCE' %}
-              <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'DISCUTIR' %}
-              <center><h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'EMPRENDIMIENTO' %}
-              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'HACKATHON' %}
-            <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'INDSOL' %}
-              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'TECH TALK' %}
-              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-            {% elif event.name == 'INNOVATION EXHIBIT' %}
-              <center><h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2></center>
-            {% else %}
-              <center><h2> <a href="">Register </a></h2></center>
-            {% endif %}
-        {% endif %}
+  {% if user.is_superuser %}
+  {% if event.name == 'INTEGRATION BEE' %}
+  <center>
+    <h2> <a href="{% url 'members:integrationBee_create' %}">Register for Integration Bee</a></h2>
+  </center>
+  {% elif event.name == 'MATH OLYMPICS' %}
+  <center>
+    <h2> <a href="{% url 'members:mathEvent_create' %}">Register for Math Olympics</a></h2>
+  </center>
+  {% elif event.name == "D'SinoQuation" %}
+  <center>
+    <h2> <a href="{% url 'members:differentiaChallenge_create' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'SCIENTIFIQUE' %}
+  <center>
+    <h2> <a href="{% url 'members:create' %}" style="color: red;">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'ATELIER' %}
+  <center>
+    <h2> <a href="{% url 'members:workshop_create' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'CONNAISSANCE' %}
+  <center>
+    <h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'DISCUTIR' %}
+  <center>
+    <h2> <a href="{% url 'members:create' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'EMPRENDIMIENTO' %}
+  <center>
+    <h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2>
+    <img class="event-poster" src="{% static 'home/assets/img/startup poster.png'%}">
+  </center>
+  {% elif event.name == 'HACKATHON' %}
+  <center>
+    <h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'INDSOL' %}
+  <center>
+    <h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'TECH TALK' %}
+  <center>
+    <h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% elif event.name == 'INNOVATION EXHIBIT' %}
+  <center>
+    <h2> <a href="{% url 'members:iccreate' %}">Register for {{event.name}}</a></h2>
+  </center>
+  {% else %}
+  <center>
+    <h2> <a href="">Register </a></h2>
+  </center>
+  {% endif %}
+  {% endif %}
 </div>
 {% else %}
-<center><h2>
-  {% if event.name == 'HACKATHON' %}
-  {% else %}
-  <a href="{% url 'home:redirection' %}"> Signup/Login </a>
-  {% endif%}
-</h2></center>
+<center>
+  <h2>
+    {% if event.name == 'HACKATHON' %}
+    {% else %}
+    <a href="{% url 'home:redirection' %}"> Signup/Login </a>
+    {% endif%}
+  </h2>
+</center>
 
-{% endif %}
+{% endif %} -->
 
 
 <style>
-  table, th, td {
+  table,
+  th,
+  td {
     border: 1px solid black;
     border-radius: 10px;
     text-align: center;
   }
-  tr:hover {background-color: #D6EEEE;}
+
+  tr:hover {
+    background-color: #D6EEEE;
+  }
 
   /* Workshops */
   .card-item {
@@ -237,7 +524,7 @@
     padding: 0;
     background-color: #F8FFF8;
     border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
 
   .card-body p {
@@ -261,10 +548,10 @@
     padding: .5rem 1rem;
     letter-spacing: .05rem;
     text-decoration: none;
-    text-shadow: 0 1px 0 rgba(77,77,77,.5);
+    text-shadow: 0 1px 0 rgba(77, 77, 77, .5);
     background: #1E90FF;
     border-radius: .25rem;
-    box-shadow: 0 0 1px 1px rgba(77,77,77,.5);
+    box-shadow: 0 0 1px 1px rgba(77, 77, 77, .5);
     color: floralwhite;
     cursor: pointer;
     transition: .5s;
@@ -275,57 +562,58 @@
     color: #333;
   }
 
-  .time{
+  .time {
     display: flex;
   }
 
-  .time div{
+  .time div {
     flex: 1 1 0;
   }
 
-  .hackathon-sponsors{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
+  .hackathon-sponsors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  .hackathon-sponsors img{
-    width:20%;
+
+  .hackathon-sponsors img {
+    width: 20%;
   }
 </style>
 
 
-            <div class="container">
-    <div class="row">
-        <div class="col">
-            <h3>Registration fees details (fees will be paid on selection of abstract)</h3>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Registration fees details (fees will be paid on selection of abstract)</h3>
     </div>
-    <div class="row">
-        <div class="col">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Events</th>
-                        <th>Students</th>
-                        <th>Academicians</th>
-                        <th>Industry Experts</th>
-                        <th>Others</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for event in events %}
-                    <tr>
-                        <td>{{ event.name }}</td>
-                        <td>{{ event.fee_student }}</td>
-                        <td>{{ event.fee_academician }}</td>
-                        <td>{{ event.fee_industry_expert }}</td>
-                        <td>{{ event.fee_others }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Events</th>
+            <th>Students</th>
+            <th>Academicians</th>
+            <th>Industry Experts</th>
+            <th>Others</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for event in events %}
+          <tr>
+            <td>{{ event.name }}</td>
+            <td>{{ event.fee_student }}</td>
+            <td>{{ event.fee_academician }}</td>
+            <td>{{ event.fee_industry_expert }}</td>
+            <td>{{ event.fee_others }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 
 
@@ -361,6 +649,19 @@
 
 
 <!--{% endif %}-->
+{% if event.name == 'SCIENTIFIQUE' %}
+
+<div class="container" style="text-align: center;">
+  <h2>In association with <b>Springer</b></h2>
+  <div>
+    <img src="{% static 'home/assets/img/Springer.jpg' %}" alt="Devs Dungeon logo" width="40%" style="margin-top: 1vh;">
+    <p style="width: 55%;margin-left: 23%;text-align: center;color: #003057;">Only selected and peer-reviewed keynote
+      and contributed presentations of the conference will be published by Springer contigent upon the final quality and
+      ethics checks.</p>
+  </div>
+</div>
+
+{% endif %}
 
 {% if object.id == 2 %}
 
@@ -371,7 +672,9 @@
 
   <div class="card-item">
     <div class="card-body">
-      <center> <h2>{{i.title}}</h2></center>
+      <center>
+        <h2>{{i.title}}</h2>
+      </center>
       <div class="speaker">
         <h3 class="card-title center">Speaker : {{i.name|safe}}</h3>
       </div>
@@ -442,12 +745,8 @@
 {% elif event.name == "HACKATHON" %}
 <div class="container">
   <center>
-    <div
-            class="apply-button"
-            data-hackathon-slug="richackathon2024"
-            data-button-theme="light"
-            style="height: 44px; width: 312px"
-    ></div>
+    <div class="apply-button" data-hackathon-slug="richackathon2024" data-button-theme="light"
+      style="height: 44px; width: 312px"></div>
   </center>
 
   <div class="container">

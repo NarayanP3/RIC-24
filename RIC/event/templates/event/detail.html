@@ -249,11 +249,11 @@
 <style>
   .line {
     position: absolute;
-    width: 74%;
+    width: 70%;
     color: #1E90FF;
     height: 1px;
     border-bottom: 1px dotted #03655fc1;
-    margin-top: 11vh;
+    margin-top: 7.5vh;
     /* margin-left: -30px; */
   }
 
@@ -276,10 +276,33 @@
     font-size: 1.2vw;
   }
 
+  .register-button {
+    width: 17%;
+    background-color: #03655fc1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .register-link {
+    color: #F8FFF8;
+    font-size: 2.5vw;
+    font-weight: 550;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+
+  .register-link:hover {
+    color: #F8FFF8;
+    text-decoration: none;
+  }
+
   .impdates {
     justify-content: space-between;
     display: flex;
-    width: 80%;
+    width: 70%;
     margin-top: 15px;
   }
 
@@ -302,6 +325,14 @@
     .dates {
       font-size: 2vw;
     }
+
+    .register-button {
+      width: 25%;
+    }
+
+    .register-link {
+      font-size: 2.8vw;
+    }
   }
 
   @media screen and (max-width: 700px) {
@@ -321,6 +352,14 @@
     .title {
       font-size: 2.2vw;
     }
+
+    .register-button {
+      width: 40%;
+    }
+
+    .register-link {
+      font-size: 3vw;
+    }
   }
 
   @media screen and (max-width: 500px) {
@@ -339,6 +378,15 @@
     .line {
       width: 84%;
       margin-top: 7vh;
+    }
+
+    .register-button {
+      width: 60%;
+    }
+
+    .register-link {
+      font-size: 3.5vw;
+      padding: 8px 16px;
     }
   }
 
@@ -361,35 +409,38 @@
   <div class="impdates">
     <div class="line"></div>
     <div style="display: block;">
-      <p class="dates">25th May <br>2024</p>
+      <p class="dates">20th June <br>2025</p>
       <div class="dots"></div>
-      <p class="title">Begin of <br>Extended <br>Abstract <br>Submission</p>
+      <p class="title">Opening of <br>Extended <br>Abstract/Full paper <br>Submission</p>
     </div>
     <div style="display: block;">
-      <p class="dates">20th June <br>2024</p>
+      <p class="dates">15th August <br>2025</p>
       <div class="dots"></div>
-      <p class="title">Deadline of <br>Abstract <br>Submission</p>
+      <p class="title">Notification of <br>Acceptance for <br>Presentation</p>
     </div>
-    <div style="display: block;">
+    <!-- <div style="display: block;">
       <p class="dates">25th June <br>2024</p>
       <div class="dots"></div>
       <p class="title">Abstract <br>Acceptance <br>Notification</p>
+    </div> -->
+    <div style="display: block;">
+      <p class="dates">10th September <br>2025</p>
+      <div class="dots"></div>
+      <p class="title">Full Paper <br>Submission (For<br> publication track)</p>
     </div>
     <div style="display: block;">
-      <p class="dates">21st July <br>2024</p>
+      <p class="dates">31st October<br>2025</p>
       <div class="dots"></div>
-      <p class="title">Full Paper <br>Submission</p>
+      <p class="title">Declaration <br>of Review <br>Results</p>
     </div>
     <div style="display: block;">
-      <p class="dates">31st Aug.<br>2024</p>
+      <p class="dates">30th November <br>2025</p>
       <div class="dots"></div>
-      <p class="title">Declaration of <br>Review <br>Results</p>
+      <p class="title">Final <br>Manuscript <br>Submission to <br>Springer</p>
     </div>
-    <div style="display: block;">
-      <p class="dates">20th Sept. <br>2024</p>
-      <div class="dots"></div>
-      <p class="title">Final <br>Manuscript <br>Submission</p>
-    </div>
+  </div>
+  <div class="register-button">
+    <a href="" target="_blank" class="register-link">Register</a>
   </div>
 </center>
 {% else%}

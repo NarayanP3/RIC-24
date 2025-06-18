@@ -1,4 +1,4 @@
-#!C:\Users\naray\OneDrive\Documents\RIC\RIC\venv\Scripts\python.exe
+#!C:\Users\lenovo\Desktop\web dev\New folder\RIC-24\RIC\venv\Scripts\python.exe
 # Copyright (c) 2005-2012 Stephen John Machin, Lingfo Pty Ltd
 # This script is part of the xlrd package, which is released under a
 # BSD-style licence.

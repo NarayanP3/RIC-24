@@ -644,7 +644,7 @@ class ProfileCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -755,7 +755,7 @@ class ProfileRICCreateView(LoginRequiredMixin, CreateView):
         user.save()
         html_template = 'mail_ric.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message, email_from, recipient_list)
@@ -894,7 +894,7 @@ class ProfileICCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1037,7 +1037,7 @@ class WorkshopCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail_work.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1107,7 +1107,7 @@ class AccommodationCreateView(LoginRequiredMixin, CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1186,7 +1186,7 @@ class IntegrationBeeCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1250,7 +1250,7 @@ class DifferentiaChallengeCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1303,7 +1303,7 @@ class MathEventCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,
@@ -1357,7 +1357,7 @@ class MathEventIndCreateView(LoginRequiredMixin,CreateView):
         user.save()
         html_template = 'mail.html'
         html_message = render_to_string(html_template, context=context)
-        subject = 'Welcome to RIC 2024'
+        subject = 'Welcome to RIC 2025'
         email_from = settings.EMAIL_HOST_USER
         recipient_list = [email]
         message = EmailMessage(subject, html_message,

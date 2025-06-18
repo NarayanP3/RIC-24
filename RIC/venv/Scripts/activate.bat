@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\naray\OneDrive\Documents\RIC\RIC\venv
+set VIRTUAL_ENV=C:\Users\lenovo\Desktop\web dev\New folder\RIC-24\RIC\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

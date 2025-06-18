@@ -2,29 +2,43 @@ import os
 import brotli
 
 from django.core.files.base import ContentFile
-from django.core.files.storage import get_storage_class
+from django.core.files.storage import storages
+from django.core.files.storage.base import Storage
 from django.test import TestCase
 from django.test.utils import override_settings
 from django.utils.functional import LazyObject
 
 from compressor import storage
 from compressor.conf import settings
+from compressor.css import CssCompressor
 from compressor.tests.test_base import css_tag
 from compressor.tests.test_templatetags import render
 
 
 class GzipStorage(LazyObject):
     def _setup(self):
-        self._wrapped = get_storage_class(
-            "compressor.storage.GzipCompressorFileStorage"
-        )()
+        self._wrapped = storages.create_storage({
+            "BACKEND": "compressor.storage.GzipCompressorFileStorage"
+        })
 
 
 class BrotliStorage(LazyObject):
     def _setup(self):
-        self._wrapped = get_storage_class(
-            "compressor.storage.BrotliCompressorFileStorage"
-        )()
+        self._wrapped = storages.create_storage({
+            "BACKEND": "compressor.storage.BrotliCompressorFileStorage"
+        })
+
+
+class DummyPathNotImplementedStorage(Storage):
+    """
+     A dummy storage backend that mimics a remote storage that does not implement
+     `.path()` e.g. `storages.backends.s3.S3Storage`.
+    """
+    def exists(self, name):
+        return True
+
+    def path(self, name):
+        raise NotImplementedError
 
 
 @override_settings(COMPRESS_ENABLED=True)
@@ -87,5 +101,35 @@ class StorageTestCase(TestCase):
         self.assertTrue(
             os.path.exists(os.path.join(settings.COMPRESS_ROOT, "CACHE", "test.txt"))
         )
-        # Check that the file is stored at the same default location as before the new manifest storage.
+        # Check that the file is stored at the same default location as before
+        # the new manifest storage.
         self.assertTrue(self.default_storage.exists(os.path.join("CACHE", "test.txt")))
+
+
+class CompressorFileNameTestCase(TestCase):
+    @override_settings(
+        COMPRESS_ENABLED=True,
+        DEBUG=False,
+        COMPRESS_STORAGE=(
+            "compressor.tests.test_storages.DummyPathNotImplementedStorage"
+        ),
+    )
+    def test_storage_without_path_fallback(self):
+        """
+        Remote storages not implementing path need a fallback to a private
+        instance of CompressorFileStorage. This must not be dependent on
+        project settings.
+        """
+        old_default_storage = storage.default_storage
+        storage.default_storage = storage.DefaultStorage()
+
+        css = (
+            '<link rel="stylesheet" href="/static/css/one.css" type="text/css" />'
+        )
+        compressor = CssCompressor("css", css)
+        try:
+            # Remote storage would raise NotImplementedError if fallback is
+            # unsuccessful.
+            compressor.get_filename("css/one.css")
+        finally:
+            storage.default_storage = old_default_storage

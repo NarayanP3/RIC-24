@@ -6,12 +6,10 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /.idea
-/.venv
-*/.venv
-/.venv/*
+*/venv
+/venv/*
 */node_modules
 /RIC-24/node_modules/
-/.venv/
 **/__pycache__/
 __pycache__/
 /__pycache__/
